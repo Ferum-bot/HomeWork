@@ -66,6 +66,8 @@ public:
 		return;
 	}
 
+	~BigInteger() = default;
+
 	BigInteger& operator = (const int& number) {
 		this->number = make_number(number);
 		return *this;
@@ -137,8 +139,6 @@ public:
 		return *this < number || *this == number;
 	}
 
-	/*BigInteger operator + (const BigInteger& number);
-	BigInteger operator - (const BigInteger& number);*/
 
 	BigInteger operator +  (const BigInteger& number) {
 		bool sign1 = this->number[0] == '+' ? 1 : 0;
@@ -174,6 +174,7 @@ public:
 			return subtraction(number, *this);
 		}
 	}
+
 	BigInteger operator -() const {
 		BigInteger cur_num = 0;
 		if (cur_num == *this) {
@@ -187,6 +188,119 @@ public:
 			cur_num.number[0] = '+';
 		}
 		return cur_num;
+	}
+
+	BigInteger& operator ++() {
+		if (this->number[0] == '+') {
+			int n = this->number.size();
+			int fn = -1;
+			for (int i = 1; i < n; i++) {
+				if (this->number[i] == '9') {
+					continue;
+				}
+				fn = i;
+				break;
+			}
+			if (fn == -1) {
+				this->number.push_back('1');
+				fn = n;
+			}
+			else {
+				this->number[fn]++;
+			}
+			for (int i = 1; i < fn; i++) {
+				this->number[i] = '0';
+			}
+			return *this;
+		}
+		else {
+			int n = this->number.size();
+			int fn = -1;
+			for (int i = 1; i < n; i++) {
+				if (this->number[i] == '0') {
+					continue;
+				}
+				fn = i;
+				break;
+			}
+			if (fn == 1 && this->number[1] == '1' && fn + 1 == n) {
+				this->number[0] = '+';
+				this->number[1] = '0';
+				return *this;
+			}
+			if (this->number[fn] == 1 && fn + 1 == n) {
+				this->number.pop_back();
+			}
+			else {
+				this->number[fn]--;
+			}
+			for (int i = 1; i < fn; i++) {
+				this->number[i] = '9';
+			}
+			return *this;
+		}
+	}
+
+	BigInteger& operator --() {
+		int n = this->number.size();
+		if (this->number[0] == '+') {
+			int fn = -1;
+			for (int i = 1; i < n; i++) {
+				if (this->number[i] == '0') {
+					continue;
+				}
+				fn = i;
+				break;
+			}
+			if (fn == -1) {
+				this->number[0] = '-';
+				this->number[1] = '1';
+				return *this;
+			}
+			if (fn + 1 == n && this->number[fn] == '1' && n != 2) {
+				this->number.pop_back();
+			}
+			else {
+				this->number[fn]--;
+			}
+			for (int i = 1; i < fn; i++) {
+				this->number[i] = '9';
+			}
+			return *this;
+		}
+		else {
+			int fn = -1;
+			for (int i = 1; i < n; i++) {
+				if (this->number[i] == '9') {
+					continue;
+				}
+				fn = i;
+				break;
+			}
+			if (fn == -1) {
+				fn = n;
+				this->number.push_back('1');
+			}
+			else {
+				this->number[fn]++;
+			}
+			for (int i = 1; i < fn; i++) {
+				this->number[i] = '0';
+			}
+			return *this;
+		}
+	}
+
+	BigInteger operator ++(int) {
+		BigInteger result = *this;
+		++(*this);
+		return result;
+	}
+
+	BigInteger operator --(int) {
+		BigInteger result = *this;
+		--(*this);
+		return result;
 	}
 };
 
