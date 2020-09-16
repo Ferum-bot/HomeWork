@@ -190,6 +190,16 @@ public:
 		return cur_num;
 	}
 
+	BigInteger operator +=(const BigInteger& number) {
+		*this = *this + number;
+		return *this;
+	}
+
+	BigInteger operator -=(BigInteger& number) {
+		*this = *this - number;
+		return *this;
+	}
+
 	BigInteger& operator ++() {
 		if (this->number[0] == '+') {
 			int n = this->number.size();

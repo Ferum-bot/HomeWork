@@ -29,7 +29,7 @@ void test1() {
 				std::cout << "OK ";
 			}
 			else {
-				std::cout << "!Error! "  << mas[i] << ' ' << mas[j] << "||||" << val1 << ' ' << val2 << ' ';
+				std::cout << "!Error! " << mas[i] << ' ' << mas[j] << "||||" << val1 << ' ' << val2 << ' ';
 			}
 		}
 		std::cout << std::endl << std::endl;
@@ -91,6 +91,43 @@ void test3() {
 	}
 }
 
+void test4() {
+	int kol = 100; // number of tests
+	for (int num = 0; num < kol; num++) {
+		std::cout << "Test number " << num + 1 << " :" << std::endl;
+		int i = rnd() % sz;
+		int j = rnd() % sz;
+		int k = rnd() % sz;
+		BigInteger a = mas[i];
+		BigInteger b = mas[j];
+		BigInteger c = mas[k];
+		int ch1 = mas[i];
+		int ch2 = mas[j];
+		int ch3 = mas[k];
+		ch1 += ch2;
+		a += b;
+		ch2 -= ch3;
+		b -= c;
+		ch3 += ++ch1;
+		c += ++a;
+		ch1 -= ++ch2;
+		a -= ++b;
+		++ch2 += --ch3;
+		++b += --c;
+		std::vector<int64_t> res1 = { ch1, ch2, ch3 };
+		std::vector<BigInteger> res2 = { a, b, c };
+		for (int h = 0; h < 3; h++) {
+			if (to_string(res2[h]) == std::to_string(res1[h])) {
+				std::cout << "OK" << ' ';
+			}
+			else {
+				std::cout << "!Error!" << res1[h] << ' ' << res2[h] << "|| ";
+			}
+		}
+		std::cout << std::endl;
+	}
+}
+
 signed main() {
 
 	for (int i = 0; i < sz; i++) {
@@ -99,6 +136,7 @@ signed main() {
 	//test1(); // testing: > < >= <= == !=
 	//test2(); // testing: + -
 	//test3(); // testing: + - and different options of ++ --
+	test4(); // testing += and some other features
 
 	/*BigInteger a = 8;
 	BigInteger b = 8;
