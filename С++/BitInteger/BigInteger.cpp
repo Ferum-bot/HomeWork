@@ -8,7 +8,7 @@
 #include <ctime>
 
 const int sz = 1000; // start size of array
-const int MAX_VAL = 10; // max val of elements
+const int64_t MAX_VAL = 100000; // max val of elements
 int64_t mas[sz];
 std::mt19937 rnd(time(0));
 
@@ -128,24 +128,42 @@ void test4() {
 	}
 }
 
+void test5() {
+	int kol = 100; // Number of tests
+	for (int num = 0; num < kol; num++) {
+		std::cout << "Test number " << num + 1 << " :" << std::endl;
+		int i = rnd() % sz;
+		int j = rnd() % sz;
+		int k = rnd() % sz;
+		BigInteger a = mas[i];
+		BigInteger b = mas[j];
+		BigInteger c = mas[k];
+		int64_t val1 = mas[i], val2 = mas[j], val3 = mas[k];
+		std::vector<int64_t> res1 = { val1 * val2, val1 * val2 * val3, val1 + val2 * val3 - val3, ++val1 * val3 };
+		std::vector<BigInteger> res2 = { a * b, a * b * c, a + b * c - c, ++a * c };
+		for (int h = 0; h < (int)res1.size(); h++) {
+			if (std::to_string(res1[h]) == to_string(res2[h])) {
+				std::cout << "OK" << ' ';
+			}
+			else {
+				std::cout << "!Error! " << res1[h] << ' ' << res2[h] << "| ";
+			}
+		}
+		std::cout << std::endl;
+	}
+}
+
 signed main() {
 
 	for (int i = 0; i < sz; i++) {
-		mas[i] = rnd() % ((int)MAX_VAL);
+		mas[i] = rnd() % (MAX_VAL);
 	}
 	//test1(); // testing: > < >= <= == !=
 	//test2(); // testing: + -
 	//test3(); // testing: + - and different options of ++ --
-	test4(); // testing += and some other features
+	//test4(); // testing += and some other features
+	test5(); // testing * and + -
 
-	/*BigInteger a = 8;
-	BigInteger b = 8;
-	BigInteger c = 7;
-	int ch1 = 8;
-	int ch2 = 8;
-	int ch3 = 7;
-	std::cout << (++ch1) << ' ' << (ch1 - ++ch2) << ' ' << (ch1) << ' ' << (--ch1 + ++ch3) << ' ' << (ch1++ - ++ch2 + ch3--) << std::endl;
-	std::cout << (++a) << ' ' << (a - ++b) << ' ' << (a) << ' ' << (--a + ++c) << ' ' << (a++ - ++b + c--) << std::endl;*/
 	return 0;
 }
 

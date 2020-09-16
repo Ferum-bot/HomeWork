@@ -50,6 +50,87 @@ protected:
 		return result;
 	}
 
+	void cleaning(BigInteger& num) {
+		int n = num.size();
+		while (num.number[n] == '0' && n != 1) {
+			num.number.pop_back();
+			n--;
+		}
+	}
+
+	void prepare_for_mp(BigInteger& number, int sz) {
+		int n = number.size();
+		for (int i = n; i < sz; i++) {
+			number.number.push_back('0');
+		}
+		return;
+	}
+
+	std::pair<BigInteger, BigInteger> cut(BigInteger& number) {
+		int n = number.size();
+		BigInteger left, right;
+		left.number.pop_back();
+		right.number.pop_back();
+		for (int i = 1; i <= n / 2; i++) {
+			right.number.push_back(number.number[i]);
+		}
+		for (int i = n / 2 + 1; i <= n; i++) {
+			left.number.push_back(number.number[i]);
+		}
+		return { left, right };
+	}
+
+	void add_0(BigInteger& number, int kol) {
+		BigInteger num = 0;
+		num.number.pop_back();
+		for (int i = 0; i < kol; i++) {
+			num.number.push_back('0');
+		}
+		for (int i = 1; i <= number.size(); i++) {
+			num.number.push_back(number.number[i]);
+		}
+		number = num;
+		return;
+	}
+
+	BigInteger multiplication(BigInteger f_num, BigInteger s_num) {
+		int sz1 = f_num.size();
+		int sz2 = s_num.size();
+		if (sz1 == 1 && sz2 == 1) {
+			int val1 = f_num.number[1] - '0';
+			int val2 = s_num.number[1] - '0';
+			int res_val = val1 * val2;
+			BigInteger res = res_val;
+			return res;
+		}
+		int sz = sz1 >= sz2 ? sz1 : sz2;
+		if (sz % 2 != 0) {
+			sz++;
+		}
+		prepare_for_mp(f_num, sz);
+		prepare_for_mp(s_num, sz);
+		std::pair<BigInteger, BigInteger> pr1 = cut(f_num);
+		std::pair<BigInteger, BigInteger> pr2 = cut(s_num);
+		BigInteger l_f_num = pr1.first;
+		BigInteger r_f_num = pr1.second;
+		BigInteger l_s_num = pr2.first;
+		BigInteger r_s_num = pr2.second;
+		BigInteger val1 = multiplication(l_f_num, l_s_num);
+		BigInteger val2 = multiplication(r_f_num, r_s_num);
+		cleaning(l_f_num), cleaning(r_f_num);
+		cleaning(l_s_num), cleaning(r_s_num);
+		BigInteger sum1 = l_f_num + r_f_num;
+		BigInteger sum2 = l_s_num + r_s_num;
+		BigInteger val3 = multiplication(sum1, sum2);
+		cleaning(val1), cleaning(val2), cleaning(val3);
+		BigInteger val4 = val3 - val2 - val1;
+		cleaning(val4);
+		add_0(val1, sz);
+		add_0(val4, sz / 2);
+		return (val1 + val4 + val2);
+
+	}
+
 	friend int get_digit(const BigInteger& number, const int& id);
 	friend BigInteger addition(const BigInteger& first_num, const BigInteger& second_num);
 	friend void recalc(BigInteger& number, int pos);
@@ -77,6 +158,10 @@ public:
 	friend std::ostream& operator <<(std::ostream& cout, const BigInteger& number);
 
 	friend std::string to_string(const BigInteger& number);
+
+	int size() {
+		return ((int)this->number.size() - 1);
+	}
 
 	bool operator == (const BigInteger& number) {
 		if (this->number.size() != number.number.size()) {
@@ -310,6 +395,25 @@ public:
 	BigInteger operator --(int) {
 		BigInteger result = *this;
 		--(*this);
+		return result;
+	}
+
+	BigInteger operator *(const BigInteger& number) {
+		BigInteger left = *this;
+		BigInteger right = number;
+		bool sign1 = left.number[0] == '+' ? 1 : 0;
+		bool sign2 = right.number[0] == '+' ? 1 : 0;
+		left.number[0] = '+';
+		right.number[0] = '+';
+		BigInteger result = multiplication(left, right);
+		if (sign1 != sign2) {
+			result.number[0] = '-';
+		}
+		int n = result.size();
+		while (result.number[n] == '0' && n > 1) {
+			result.number.pop_back();
+			n--;
+		}
 		return result;
 	}
 };
