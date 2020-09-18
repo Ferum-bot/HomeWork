@@ -7,8 +7,8 @@
 #include <map>
 #include <ctime>
 
-const int sz = 1000; // start size of array
-const int64_t MAX_VAL = 100000; // max val of elements
+const int sz = 10000; // start size of array
+const int64_t MAX_VAL = 10000; // max val of elements
 int64_t mas[sz];
 std::mt19937 rnd(time(0));
 
@@ -153,6 +153,37 @@ void test5() {
 	}
 }
 
+void test6() {
+	int kol = 100; // numebr of tests
+	for (int num = 0; num < kol; num++) {
+		std::cout << "Test number " << num + 1 << " :" << std::endl;
+		int i = rnd() % sz;
+		int j = rnd() % sz;
+		int h = rnd() % sz;
+		int64_t ch1 = mas[i];
+		int64_t ch2 = mas[j];
+		int64_t ch3 = mas[h];
+		BigInteger a = mas[i];
+		BigInteger b = mas[j];
+		BigInteger c = mas[h];
+		std::vector<int64_t> res1 = { ch1 / ch2 * ch3 + ch1, ch1 / ch2, ch2 / ch1 - ch3, ch1 * ch2 / ch3 + --ch1, ch1++ + ch3 - ch2 / ch1 };
+		std::vector<BigInteger> res2 = {a / b * c + a, a / b, b / a - c, a * b / c + --a, a++ + c - (b / a)};
+		for (int k = 0; k < (int)res1.size(); k++) {
+			if (std::to_string(res1[k]) == to_string(res2[k])) {
+				std::cout << "OK "; 
+			}
+			else {
+				std::cout << "!Error! " << a << ' ' << b << " " << c << ' ' << res1[k] << ' ' << res2[k] << ' ';
+			}
+		}
+		std::cout << std::endl;
+	}
+}
+
+void test7() {
+
+}
+
 signed main() {
 
 	for (int i = 0; i < sz; i++) {
@@ -162,13 +193,27 @@ signed main() {
 	//test2(); // testing: + -
 	//test3(); // testing: + - and different options of ++ --
 	//test4(); // testing += and some other features
-	test5(); // testing * and + -
+	//test5(); // testing * and + -
+	test6(); // testing / and *
+	//test7() // testing all features 
+	
+	/*BigInteger a = 5532;
+	BigInteger b = 950;
+	BigInteger c = 739;
+	int64_t ch1 = 5532;
+	int64_t ch2 = 950;
+	int64_t ch3 = 739;
+	int64_t val1 = ch1 * ch2 / ch3 + --ch1;
+	BigInteger val2 = a * b / c + --a;
+	std::cout << val1 << std::endl;
+	std::cout << val2 << "\n";*/
 
+	/*BigInteger a, b;
+	std::cin >> a >> b;
+	std::cout << a / b;*/
 	return 0;
 }
 
 /*
-2 2 6
-
-8 8 7
+* 5532 950 739 12641 6242
 */

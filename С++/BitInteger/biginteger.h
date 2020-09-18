@@ -136,7 +136,44 @@ protected:
 	friend void recalc(BigInteger& number, int pos);
 	friend BigInteger subtraction(BigInteger& first_num, BigInteger& second_num);
 
+	void add_number(BigInteger& num, char val) {
+		BigInteger res = (val - '0');
+		int n = num.size();
+		for (int i = 1; i <= n; i++) {
+			res.number.push_back(num.number[i]);
+		}
+		cleaning(res);
+		num = res;
+		return;
+	}
+
+	BigInteger division(BigInteger& f_num, BigInteger& s_num) {
+		int pos = f_num.size();
+		BigInteger cur_num;
+		BigInteger answer;
+		cur_num.number.pop_back();
+		answer.number.pop_back();
+		int n = s_num.size() - 1;
+		while (n != 0) {
+			add_number(cur_num, f_num.number[pos]);
+			pos--;
+			n--;
+		}
+		while (pos != 0) {
+			add_number(cur_num, f_num.number[pos]);
+			pos--;
+			char digit = '0';
+			while (cur_num >= s_num) {
+				cur_num -= s_num;
+				digit++;
+			}
+			add_number(answer, digit);
+		}
+		return answer;
+	}
+
 public:
+
 	BigInteger() {
 		this->number = make_number(0);
 		return;
@@ -225,7 +262,7 @@ public:
 	}
 
 
-	BigInteger operator +  (const BigInteger& number) {
+	BigInteger operator + (const BigInteger& number) {
 		bool sign1 = this->number[0] == '+' ? 1 : 0;
 		bool sign2 = number.number[0] == '+' ? 1 : 0;
 		BigInteger val1 = *this;
@@ -241,26 +278,28 @@ public:
 		return subtraction(val2, val1);
 	}
 
-	BigInteger operator -(BigInteger& number) {
+	BigInteger operator -(const BigInteger& number) {
 		bool sign1 = this->number[0] == '+' ? 1 : 0;
 		bool sign2 = number.number[0] == '+' ? 1 : 0;
+		BigInteger f_num = *this;
+		BigInteger s_num = number;
 		if (sign1 && sign2) {
-			return subtraction(*this, number);
+			return subtraction(f_num, s_num);
 		}
 		if (sign1 && !sign2) {
-			return addition(*this, number);
+			return addition(f_num, s_num);
 		}
 		if (!sign1 && sign2) {
 			BigInteger cur_num2 = number;
 			cur_num2.number[0] = '-';
-			return addition(*this, cur_num2);
+			return addition(f_num, cur_num2);
 		}
 		if (!sign1 && !sign2) {
-			return subtraction(number, *this);
+			return subtraction(s_num, f_num);
 		}
 	}
 
-	BigInteger operator -() const {
+	BigInteger operator -()  {
 		BigInteger cur_num = 0;
 		if (cur_num == *this) {
 			return *this;
@@ -415,6 +454,24 @@ public:
 			n--;
 		}
 		return result;
+	}
+	
+	BigInteger operator /(const BigInteger& number) {
+		BigInteger f_num = *this;
+		BigInteger s_num = number;
+		bool sign1 = f_num.number[0] == '+' ? 1 : 0;
+		bool sign2 = s_num.number[0] == '+' ? 1 : 0;
+		f_num.number[0] = '+';
+		s_num.number[0] = '+';
+		if (f_num < s_num) {
+			BigInteger res = 0;
+			return res;
+		}
+		BigInteger res = division(f_num, s_num);
+		if (sign1 != sign2) {
+			res.number[0] = '-';
+		}
+		return res;
 	}
 };
 
