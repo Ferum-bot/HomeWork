@@ -181,6 +181,48 @@ void test6() {
 }
 
 void test7() {
+	int kol = 40; // number of tests
+	for (int num = 1; num <= kol; num++) {
+		std::cout << "Test number " << num << " :" << std::endl;
+		int i1 = rnd() % sz;
+		int i2 = rnd() % sz;
+		int i3 = rnd() % sz;
+		int i4 = rnd() % sz;
+		BigInteger a = mas[i1];
+		BigInteger b = mas[i2];
+		BigInteger c = mas[i3];
+		BigInteger d = mas[i4];
+		int64_t ch1 = mas[i1];
+		int64_t ch2 = mas[i2];
+		int64_t ch3 = mas[i3];
+		int64_t ch4 = mas[i4];
+		ch1 *= ch2++;
+		ch1 %= ch3 * ch1 / ch4 + ch2;
+		ch1 /= ch1 * ch1 % ch3 - ch2++;
+		ch4 -= ch1 % ch2 + ch3 / ch4;
+		ch2 %= ch2 * ch3 - ch3 / ch1;
+		ch3 /= ch1 % ch2 % ch4 * ch1;
+		a *= b++;
+		a %= c * a / d + b;
+		a /= a * a % c - b++;
+		d -= a % b + c / d;
+		b %= b * c - c / a;
+		c /= a % b % d * a;
+		std::vector<int64_t> res1 = { ch1, ch2, ch3, ch4 };
+		std::vector<BigInteger> res2 = { a, b, c, d };
+		for (int j = 0; j < 4; j++) {
+			if (std::to_string(res1[j]) == to_string(res2[j])) {
+				std::cout << "OK ";
+			}
+			else {
+				std::cout << "!Error! " << a << ' ' << b << ' ' << c << ' ' << d << ' ';
+			}
+		}
+		std::cout << "\n";
+	}
+}
+
+void test8() {
 
 }
 
@@ -194,23 +236,11 @@ signed main() {
 	//test3(); // testing: + - and different options of ++ --
 	//test4(); // testing += and some other features
 	//test5(); // testing * and + -
-	test6(); // testing / and *
-	//test7() // testing all features 
-	
-	/*BigInteger a = 5532;
-	BigInteger b = 950;
-	BigInteger c = 739;
-	int64_t ch1 = 5532;
-	int64_t ch2 = 950;
-	int64_t ch3 = 739;
-	int64_t val1 = ch1 * ch2 / ch3 + --ch1;
-	BigInteger val2 = a * b / c + --a;
-	std::cout << val1 << std::endl;
-	std::cout << val2 << "\n";*/
+	//test6(); // testing / and *
+	//test7(); // testing % and *= /=
+	//test8() // test all features
 
-	/*BigInteger a, b;
-	std::cin >> a >> b;
-	std::cout << a / b;*/
+
 	return 0;
 }
 

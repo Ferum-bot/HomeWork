@@ -319,7 +319,7 @@ public:
 		return *this;
 	}
 
-	BigInteger operator -=(BigInteger& number) {
+	BigInteger operator -=(const BigInteger& number) {
 		*this = *this - number;
 		return *this;
 	}
@@ -473,6 +473,33 @@ public:
 		}
 		return res;
 	}
+
+	BigInteger operator *= (const BigInteger& number) {
+		*this = *this * number;
+		return *this;
+	}
+
+	BigInteger operator /= (const BigInteger& number) {
+		*this = *this / number;
+		return *this;
+	}
+
+	BigInteger operator % (const BigInteger& number) {
+		BigInteger s_num = *this;
+		BigInteger f_num = number;
+		BigInteger res = s_num - s_num / f_num * f_num;
+		return res;
+	}
+
+	BigInteger operator %= (const BigInteger & number) {
+		*this = *this % number;
+		return *this;
+	}
+	
+	operator bool() const {
+		std::vector<char> cur = { '+', '0' };
+		return number == cur ? 0 : 1;
+	}
 };
 
 std::string to_string(const BigInteger& number) {
@@ -545,6 +572,7 @@ void recalc(BigInteger& number, int pos) {
 BigInteger subtraction(BigInteger& first_num, BigInteger& second_num) {
 	BigInteger result;
 	BigInteger num1 = first_num, num2 = second_num;
+	std::cout << num1 << ' ' << num2 << "\n";
 	if (num1 == num2) {
 		return result;
 	}
