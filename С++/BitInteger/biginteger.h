@@ -495,6 +495,10 @@ public:
 		*this = *this % number;
 		return *this;
 	}
+
+	std::string toString() {
+		return to_string(*this);
+	}
 	
 	operator bool() const {
 		std::vector<char> cur = { '+', '0' };
