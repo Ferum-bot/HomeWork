@@ -1,0 +1,10 @@
+^C:\МАТВЕЙ\SCHOOL\C++\HOMEWORK\С++\BITINTEGER\BUILD\CMAKEFILES\978B443F17C9F047027E53573403B84A\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Матвей/school/c++/HomeWork/С++/BitInteger -BC:/Матвей/school/c++/HomeWork/С++/BitInteger/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Матвей/school/c++/HomeWork/С++/BitInteger/build/BigInteger.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
