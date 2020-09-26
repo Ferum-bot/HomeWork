@@ -518,16 +518,16 @@ std::string to_string(const BigInteger& number) {
 	return result;
 }
 
-std::istream& operator >>(std::istream& cin, BigInteger& number) {
+std::istream& operator >>(std::istream& cinn, BigInteger& number) {
 	std::string cur_number;
-	std::cin >> cur_number;
+	cinn >> cur_number;
 	number.number = number.make_number(cur_number);
-	return cin;
+	return cinn;
 }
 
-std::ostream& operator <<(std::ostream& cout, const BigInteger& number) {
-	std::cout << to_string(number);
-	return cout;
+std::ostream& operator <<(std::ostream& coutt, const BigInteger& number) {
+	coutt << to_string(number);
+	return coutt;
 }
 
 int get_digit(const BigInteger& number, const int& id) {
