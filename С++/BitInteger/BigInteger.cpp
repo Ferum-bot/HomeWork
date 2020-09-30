@@ -231,8 +231,23 @@ BigInteger BigInteger::operator - (const BigInteger& value) {
     return subtraction(right, left);
 }
 
+
+BigInteger BigInteger::operator * (const BigInteger& value) {
+    BigInteger left = (*this);
+    BigInteger right = value;
+    bool sign1 = left.sign();
+    bool sign2 = right.sign();
+    left[0] = '+';
+    right[0] = '+';
+    BigInteger res = multiplication(left, right);
+    if (sign1 != sign2) {
+        res[0] = '-';
+    }
+    cleaning_value_from_zero(res);
+    return res;
+}
+
 /*
-BigInteger BigInteger::operator * (const BigInteger& value);
 BigInteger BigInteger::operator / (const BigInteger& value);
 BigInteger BigInteger::operator % (const BigInteger& value);
 */
@@ -249,8 +264,12 @@ BigInteger& BigInteger::operator -= (const BigInteger& value) {
     return (*this);
 }
 
+BigInteger& BigInteger::operator *= (const BigInteger& value) {
+    (*this) = (*this) * value;
+    return (*this);
+}
+
 /*
-BigInteger& BigInteger::operator *= (const BigInteger& value);
 BigInteger& BigInteger::operator /= (const BigInteger& value);
 BigInteger& BigInteger::operator %= (const BigInteger& value);
 */
@@ -487,4 +506,88 @@ BigInteger subtraction(BigInteger& left_value, BigInteger& right_value) {
         n--;
     }
     return res;
+}
+
+void prepare_for_mp(BigInteger& value, int size) {
+    int n = value.size();
+    for (int i = n; i < size; i++) {
+        value.push_back(0);
+    }
+    return;
+}
+
+std::pair<BigInteger, BigInteger> cut_value_for_mp(BigInteger& value) {
+    int n = value.size();
+    BigInteger left = 0, right = 0;
+    left.pop_back(), right.pop_back();
+    for (int i = 1; i <= (n / 2); i++) {
+        right.push_back(value[i]);
+    }
+    for (int i = (n / 2) + 1; i <= n; i++) {
+        left.push_back(value[i]);
+    }
+    return {left, right};
+}
+
+void cleaning_value_from_zero(BigInteger& value) {
+    int n = value.size();
+    while (n > 1 && value[n] == '0') {
+        value.pop_back();
+        n--;
+    }
+    return;
+}
+
+void adding_zero_to_the_begining(BigInteger& value, int kol) {
+    BigInteger res = 0;
+    res.pop_back();
+    for (int i = 0; i < kol; i++) {
+        res.push_back(0);
+    }
+    int n = value.size();
+    for (int i = 1; i <= n; i++) {
+        res.push_back(value[i]);
+    }
+    value = res;
+    return;
+}
+
+BigInteger multiplication(BigInteger& left_value, BigInteger& right_value) {
+    int sz1 = left_value.size();
+    int sz2 = right_value.size();
+    if (sz1 == sz2 && sz1 == 1) {
+        int val1 = left_value[1] - '0';
+        int val2 = right_value[1] - '0';
+        BigInteger res_val = val1 * val2;
+        return res_val;
+    }
+    int sz = sz1 >= sz2 ? sz1 : sz2;
+    if (sz % 2 != 0) {
+        sz++;
+    }
+    prepare_for_mp(left_value, sz);
+    prepare_for_mp(right_value, sz);
+    std::pair<BigInteger, BigInteger> pr1 = cut_value_for_mp(left_value);
+    std::pair<BigInteger, BigInteger> pr2 = cut_value_for_mp(right_value);
+    BigInteger l_f_num = pr1.first;
+    BigInteger r_f_num = pr1.second;
+    BigInteger l_s_num = pr2.first;
+    BigInteger r_s_num = pr2.second;
+    BigInteger val1 = multiplication(l_f_num, l_s_num);
+	BigInteger val2 = multiplication(r_f_num, r_s_num);
+    cleaning_value_from_zero(l_f_num);
+    cleaning_value_from_zero(r_f_num);
+    cleaning_value_from_zero(l_s_num);
+    cleaning_value_from_zero(r_s_num);
+    BigInteger sum1 = l_f_num + r_f_num;
+	BigInteger sum2 = l_s_num + r_s_num;
+	BigInteger val3 = multiplication(sum1, sum2);
+    cleaning_value_from_zero(val1);
+    cleaning_value_from_zero(val2);
+    cleaning_value_from_zero(val3);
+    BigInteger val4 = val3 - val2 - val1;
+    cleaning_value_from_zero(val4);
+    adding_zero_to_the_begining(val1, sz);
+    adding_zero_to_the_begining(val4, sz / 2);
+    return (val1 + val4 + val2);
 }
