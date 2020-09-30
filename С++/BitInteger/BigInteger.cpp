@@ -46,6 +46,7 @@ void BigInteger::push_front(int value) {
 
 void BigInteger::push_front(char value) {
     BigInteger curr = (value - '0');
+    curr[0] = (*this)[0];
     int n = this->size();
     for (int i = 1; i <= n; i++) {
         curr.push_back((*this)[i]);
@@ -231,7 +232,6 @@ BigInteger BigInteger::operator - (const BigInteger& value) {
     return subtraction(right, left);
 }
 
-
 BigInteger BigInteger::operator * (const BigInteger& value) {
     BigInteger left = (*this);
     BigInteger right = value;
@@ -247,13 +247,25 @@ BigInteger BigInteger::operator * (const BigInteger& value) {
     return res;
 }
 
-/*
-BigInteger BigInteger::operator / (const BigInteger& value);
-BigInteger BigInteger::operator % (const BigInteger& value);
-*/
+BigInteger BigInteger::operator / (const BigInteger& value) {
+    BigInteger left = (*this);
+    BigInteger right = value;
+    bool sign1 = left.sign();
+    bool sign2 = right.sign();
+    left[0] = '+';
+    right[0] = '+';
+    BigInteger res = division(left, right);
+    if (sign1 != sign2) {
+        res[0] = '-';
+    }
+    cleaning_value_from_zero(res);
+    return res;
+}
 
+BigInteger BigInteger::operator % (const BigInteger& value) {
+    return (*this) - (*this) / value * value;
+}
 
-// i dont sure about & after first BigIneger
 BigInteger& BigInteger::operator += (const BigInteger& value) {
     (*this) = (*this) + value;
     return (*this);
@@ -269,10 +281,15 @@ BigInteger& BigInteger::operator *= (const BigInteger& value) {
     return (*this);
 }
 
-/*
-BigInteger& BigInteger::operator /= (const BigInteger& value);
-BigInteger& BigInteger::operator %= (const BigInteger& value);
-*/
+BigInteger& BigInteger::operator /= (const BigInteger& value) {
+    (*this) = (*this) / value;
+    return (*this);
+}
+
+BigInteger& BigInteger::operator %= (const BigInteger& value) {
+    (*this) = (*this) % value;
+    return (*this);
+}
 
 BigInteger& BigInteger::operator --() {
     if (this->sign()) {
@@ -590,4 +607,32 @@ BigInteger multiplication(BigInteger& left_value, BigInteger& right_value) {
     adding_zero_to_the_begining(val1, sz);
     adding_zero_to_the_begining(val4, sz / 2);
     return (val1 + val4 + val2);
+}
+
+BigInteger division(BigInteger& left_value, BigInteger& right_value) {
+    BigInteger res = 0;
+    if (left_value < right_value) {
+        return res;
+    }
+    BigInteger cur_value = 0;
+    res.pop_back();
+    cur_value.pop_back();
+    int n = right_value.size() - 1;
+    int pos = left_value.size();
+    while (n != 0) {
+        cur_value.push_front(left_value[pos]);
+        pos--;
+        n--;
+    }
+    while (pos != 0) {
+        cur_value.push_front(left_value[pos]);
+        pos--;
+        char digit = '0';
+        while (cur_value >= right_value) {
+            cur_value -= right_value;
+            digit++;
+        }
+        res.push_front(digit);
+    }
+    return res;
 }
