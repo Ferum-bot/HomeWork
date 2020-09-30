@@ -24,9 +24,6 @@ public:
     friend std::istream& operator >> (std::istream& in, BigInteger& value);
     friend std::ostream& operator << (std::ostream& out, const BigInteger& value);
 
-    // do not forget to delete this line in release
-    friend std::string to_string(BigInteger& number);
-
 private:
 
     std::vector<char> original_number;
