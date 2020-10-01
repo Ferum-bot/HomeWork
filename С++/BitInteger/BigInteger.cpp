@@ -443,12 +443,6 @@ std::ostream& operator << (std::ostream& out, const BigInteger& value) {
     return out;
 }
 
-// dont forget to delete this line in Release
-std::string to_string(BigInteger& number){
-    std::string res = number.toString();
-    return res;
-}
-
 int get_digit(BigInteger& num, int index) {
     if (num.size() < index) {
         return 0;
