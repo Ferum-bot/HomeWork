@@ -18,11 +18,9 @@ void build(task::list& curr) {
 }
 
 void test1() {
-    task::list cur;
-    cur.push_back(12);
-    cur.push_back(11);
-    cur.push_back(30);
-    std::cout << cur.front();
+    task::list cur(8, 100);
+    std::cout << cur.size() << std::endl;
+    std::cout << cur.front() << ' ' << cur.back() << std::endl;
     return;
 }
 

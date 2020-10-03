@@ -11,13 +11,14 @@ namespace task {
         public:
 
             Node* next_node;
+            Node* prev_node;
 
             int value;
 
         public:
             
             Node();
-            Node(const int& value, Node* next = nullptr);
+            Node(const int& value, Node* next = nullptr, Node* prev = nullptr);
 
             Node(const Node& node);
 
@@ -61,6 +62,7 @@ namespace task {
     private:
 
         Node* head;
+        Node* tail;
 
         size_t sz;
 
