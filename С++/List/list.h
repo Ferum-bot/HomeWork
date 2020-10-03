@@ -4,9 +4,27 @@
 
 namespace task {
 
-
     class list {
+    private:
 
+        class Node {
+        public:
+
+            Node* next_node;
+
+            int value;
+
+        public:
+            
+            Node();
+            Node(const int& value, Node* next = nullptr);
+
+            Node(const Node& node);
+
+            ~Node();
+
+        };
+    
     public:
 
         list();
@@ -40,11 +58,11 @@ namespace task {
         void unique();
         void sort();
 
-        // Your code goes here?..
-
     private:
 
-        // Your code goes here...
+        Node* head;
+
+        size_t sz;
 
     };
 
