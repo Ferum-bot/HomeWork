@@ -18,7 +18,12 @@ void build(task::list& curr) {
 }
 
 void test1() {
-
+    task::list cur;
+    cur.push_back(12);
+    cur.push_back(11);
+    cur.push_back(30);
+    std::cout << cur.front();
+    return;
 }
 
 void test2() {
@@ -31,11 +36,9 @@ void test3() {
 
 signed main() {
     
-
-
     test1();
-    test2();
-    test3();
+    //test2();
+    //test3();
 
     return 0;
 }
