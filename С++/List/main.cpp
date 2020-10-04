@@ -43,14 +43,30 @@ void test2() {
 }
 
 void test3() {
-
+    task::list l1;
+    for (int i = 0; i < sz; i++) {
+        mas[i] = (i + 1) % 10;
+        l1.push_back(mas[i]);
+    }
+    sort(mas.begin(), mas.end());
+    l1.sort();
+    l1.unique();
+    for (auto& el : mas) {
+        std::cout << el << ' ';
+    }
+    std::cout << std::endl;
+    int n = l1.size();
+    for (int i = 0; i < n; i++) {
+        std::cout << l1.front() << ' ';
+        l1.pop_front();
+    }
 }
 
 signed main() {
     
-    test1();
+    //test1();
     //test2();
-    //test3();
+    test3();
 
     return 0;
 }

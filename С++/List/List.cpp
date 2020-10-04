@@ -41,7 +41,6 @@ namespace task {
 		}
 	}
 
-	
 	list::~list() {
 		delete head;
 	}
@@ -193,7 +192,11 @@ namespace task {
 		return res;
 	}
 
-	//void list::swap(list& other);
+	void list::swap(list& other) {
+		list curr = other;
+		other = (*this);
+		(*this) = curr;
+	}
 	
 	void list::remove(const int& value) {
 		if (!this->count(value)) {
@@ -212,7 +215,21 @@ namespace task {
 		(*this) = res;
 	}
 	
-	//void list::unique();
+	void list::unique() {
+		list res;
+		int n = static_cast<int>(this->size());
+		Node* curr = this->head;
+		for (int i = 0; i < n; i++) {
+			int value = curr->value;
+			int cnt_this = this->count(value);
+			int cnt_res = res.count(value);
+			if (!cnt_res) {
+				res.push_back(value);
+			}
+			curr = curr->next_node;
+		}
+		(*this) = res;
+	}
 	
 	void list::sort() {
 		if (this->empty() || this->size() == 1) {
