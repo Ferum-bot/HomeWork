@@ -66,6 +66,7 @@ namespace task {
 
         size_t sz;
 
+        bool check(const int& value) const;  
     };
 
 }  // namespace task

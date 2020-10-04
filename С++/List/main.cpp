@@ -18,9 +18,18 @@ void build(task::list& curr) {
 }
 
 void test1() {
-    task::list cur(8, 100);
-    std::cout << cur.size() << std::endl;
-    std::cout << cur.front() << ' ' << cur.back() << std::endl;
+    task::list l1, l2;
+    l1.push_back(4);
+    l1.push_back(5);
+    l1.push_front(3);
+    l1.push_front(2);
+    l1.push_back(6);
+    std::cout << l1.front() << ' ' << l1.back() << std::endl;
+    l1.push_back(3);
+    l1.remove(3);
+    std::cout << l1.size() << std::endl;
+    l1.pop_front();
+    std::cout << l1.front() << ' ' << l1.back() << std::endl;
     return;
 }
 
