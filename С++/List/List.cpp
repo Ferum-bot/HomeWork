@@ -57,6 +57,7 @@ namespace task {
 		this->tail = new Node();
 		this->head->next_node = this->tail;
 		this->tail->prev_node = this->head;
+		this->sz = 1;
 		for (int i = 1; i < n; i++) {
 			curr = curr->next_node;
 			this->push_back(curr->value);
@@ -176,25 +177,26 @@ namespace task {
 		}
 	}
 	
-	bool list::check(const int& value) const  {
+	int list::count(const int& value) const  {
 		if (this->empty()) {
-			return false;
+			return 0;
 		}
+		int res = 0;
 		int n = this->size();
 		Node* curr = this->head;
 		for (int i = 0; i < n; i++) {
 			if (curr->value == value) {
-				return true;
+				res++;
 			}
 			curr = curr->next_node;
 		}
-		return false;
+		return res;
 	}
 
 	//void list::swap(list& other);
 	
 	void list::remove(const int& value) {
-		if (!this->check(value)) {
+		if (!this->count(value)) {
 			return;
 		}
 		list res;
@@ -216,7 +218,29 @@ namespace task {
 		if (this->empty() || this->size() == 1) {
 			return;
 		}
-
+		int n = this->size();
+		list res;
+		for (int i = 0; i < n && !this->empty(); i++) {
+			int min_el = this->min_element();
+			int cnt = this->count(min_el);
+			this->remove(min_el);
+			for (int j = 0; j < cnt; j++) {
+				res.push_back(min_el);
+			}
+		}
+		(*this) = res;
 	}
 
+	int list::min_element() const {
+		int res = 1e9 + 7;
+		Node* curr = this->head;
+		int n = this->size();
+		for (int i = 0; i < n; i++) {
+			if (curr->value < res) {
+				res = curr->value;
+			}
+			curr = curr->next_node;
+		}
+		return res;
+	}
 }
