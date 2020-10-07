@@ -30,6 +30,7 @@ namespace task {
 
         list();
         list(size_t count, const int& value = int());
+        list(const list& other);
 
         ~list();
         list& operator=(const list& other);
