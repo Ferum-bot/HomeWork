@@ -68,7 +68,6 @@ namespace task {
         size_t sz;
 
         int count(const int& value) const;  
-        int min_element() const;
     };
 
 }  // namespace task
