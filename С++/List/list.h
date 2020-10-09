@@ -16,7 +16,7 @@ namespace task {
             int value;
 
         public:
-            
+
             Node();
             Node(const int& value, Node* next = nullptr, Node* prev = nullptr);
 
@@ -25,7 +25,7 @@ namespace task {
             ~Node();
 
         };
-    
+
     public:
 
         list();
@@ -66,8 +66,8 @@ namespace task {
         Node* tail;
 
         size_t sz;
-
-        int count(const int& value) const;  
+        
+        int count(const int& value) const;
     };
 
 }  // namespace task
