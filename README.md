@@ -5,5 +5,7 @@ Ha-ha, of course it is a joke. I am sure you like to laugh.
 
 ## What you can find:
     * Some cpp code, actually realisation of patterns and some specific classes
-    * Kotlin code, which store patterns
+    * Kotlin code, which store patterns and some useless programs
+    * Android small apps and some libraries
+    
     
