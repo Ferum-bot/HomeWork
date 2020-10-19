@@ -10,6 +10,8 @@ https://material.io/icons/ – на этом сайте можно найти и
 
 https://github.com/googlesamples – репозиторий от Google, можно найти примеры использования разного функционала в Android и не только.
 
+https://developer.android.com/guide/topics/manifest/manifest-intro.html?hl=ru - всё про Manifest
+
 ## Книги
 По Android-разработке много книг, но они быстро устаревают, поэтому лучше учиться по статьям или документации, но одна книга, достойная внимания, все же есть:
 
