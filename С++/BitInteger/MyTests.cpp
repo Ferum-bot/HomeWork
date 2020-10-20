@@ -11,7 +11,7 @@ const int sz = 10000; // start size of array
 const int64_t MAX_VAL = 10000; // max val of elements
 int64_t mas[sz];
 std::mt19937 rnd(time(0));
-
+/*
 void test1() {
 	int kol = 100; // Number of tests
 	for (int num = 0; num < kol; num++) {
@@ -225,12 +225,17 @@ void test7() {
 void test8() {
 
 }
+*/
+
+using std::cin;
+using std::cout;
+using std::endl;
 
 signed main() {
 
-	for (int i = 0; i < sz; i++) {
-		mas[i] = rnd() % (MAX_VAL);
-	}
+	//for (int i = 0; i < sz; i++) {
+	//	mas[i] = rnd() % (MAX_VAL);
+	//}
 	//test1(); // testing: > < >= <= == !=
 	//test2(); // testing: + -
 	//test3(); // testing: + - and different options of ++ --
@@ -240,7 +245,9 @@ signed main() {
 	//test7(); // testing % and *= /=
 	//test8() // test all features
 
-	
+	BigInteger a = 3;
+	BigInteger b = 2;
+	cout << a + b << endl;
 	return 0;
 }
 
