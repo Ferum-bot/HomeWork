@@ -24,3 +24,10 @@ So, now I have 3 useful modules in this repositories. They are:
 
 
 ## Android:
+-
+-
+-
+
+
+#### Lately, I will add new modules and new code, so this is not the end. 
+#### Check up all files and I am sure you will find something new for youself.
