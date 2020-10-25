@@ -24,8 +24,11 @@ Rational::Rational() {
 }
 
 Rational::Rational(const int& numerator, const int& denominator) {
+    if (denominator == 0) {
+        throw std::invalid_argument("zero division");
+    } 
     if (numerator == 0) {
-        this->numerator = numerator;
+        this->numerator = 0;
         this->denominator = 1;
         return;
     }
@@ -119,6 +122,9 @@ Rational operator * (const Rational& left, const Rational& right) {
 Rational operator / (const Rational& left, const Rational& right) {
     Rational currentRight = right;
     currentRight.swap();
+    if (currentRight.denominator == 0) {
+        throw std::domain_error("zero division");
+    }
     return left * currentRight;
 }
 

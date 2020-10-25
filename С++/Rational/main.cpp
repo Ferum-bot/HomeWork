@@ -220,7 +220,25 @@ void unitTest5() {
         }
     }
 
-    cout << "unitTest5 passed!" << endl;
+    cout << "UnitTest5 passed!" << endl;
+}
+
+void unitTest6() {
+    try {
+        Rational r(1, 0);
+        cout << "Doesn't throw in case of zero denominator" << endl;
+        return;
+    } catch (invalid_argument&) {
+    }
+
+    try {
+        auto x = Rational(1, 2) / Rational(0, 1);
+        cout << "Doesn't throw in case of division by zero" << endl;
+        return;
+    } catch (domain_error&) {
+    }
+
+    cout << "UnitTest6 passed!" << endl;
 }
 
 signed main() {
@@ -230,6 +248,7 @@ signed main() {
     unitTest3();
     unitTest4();
     unitTest5();
+    unitTest6();
 
     return 0;
 }
