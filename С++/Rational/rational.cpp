@@ -42,6 +42,15 @@ Rational::Rational(const int& numerator, const int& denominator) {
     this->denominator = this->denominator / gcd;
 }
 
+void Rational::swap() {
+    std::swap(numerator, denominator);
+    if (denominator < 0) {
+        numerator = -numerator;
+        denominator = -denominator;
+    }
+    return;
+}
+
 int Rational::Numerator() const {
     return numerator;
 }
@@ -96,4 +105,19 @@ Rational operator + (const Rational& left, const Rational& right) {
     numeratorValue /= gcd;
     denominatorValue /= gcd;
     return Rational(numeratorValue, denominatorValue);
+}
+
+Rational operator * (const Rational& left, const Rational& right) {
+    Rational result;
+    int gcd1 = Rational::gcd(Rational::abs(left.numerator), right.denominator);
+    int gcd2 = Rational::gcd(Rational::abs(right.numerator), left.denominator);
+    result.numerator = (left.numerator / gcd1) * (right.numerator / gcd2);
+    result.denominator = (left.denominator / gcd2) * (right.denominator / gcd1);
+    return result;
+}
+
+Rational operator / (const Rational& left, const Rational& right) {
+    Rational currentRight = right;
+    currentRight.swap();
+    return left * currentRight;
 }

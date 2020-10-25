@@ -13,6 +13,9 @@ public:
     friend Rational operator + (const Rational& left, const Rational& right);
     friend Rational operator - (const Rational& left, const Rational& right);
 
+    friend Rational operator * (const Rational& left, const Rational& right);
+    friend Rational operator / (const Rational& left, const Rational& right);
+
 public:
 
     Rational();
@@ -33,4 +36,5 @@ private:
     static int gcd(long long a, long long b);
     static int abs(const int& value);
 
+    void swap();
 };
