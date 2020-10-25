@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class Rational {
 public:
@@ -16,6 +17,9 @@ public:
     friend Rational operator * (const Rational& left, const Rational& right);
     friend Rational operator / (const Rational& left, const Rational& right);
 
+    friend std::ostream& operator << (std::ostream& out, const Rational& value);
+    friend std::istream& operator >> (std::istream& in, Rational& value);
+
 public:
 
     Rational();
@@ -29,6 +33,8 @@ public:
     int Denominator() const;
 
 private:
+
+    friend void checkIsEqualAndAssign(const std::string& currentStream, Rational& value);
 
     int numerator;
     int denominator;

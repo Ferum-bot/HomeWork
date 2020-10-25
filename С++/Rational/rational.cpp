@@ -121,3 +121,76 @@ Rational operator / (const Rational& left, const Rational& right) {
     currentRight.swap();
     return left * currentRight;
 }
+
+std::ostream& operator << (std::ostream& out, const Rational& value) {
+    out << value.Numerator() << '/' << value.Denominator();
+    return out;
+}
+
+std::istream& operator >> (std::istream& in, Rational& value) {
+    std::string currentStream;
+    in >> currentStream;
+    checkIsEqualAndAssign(currentStream, value);
+    return in;
+}
+
+void checkIsEqualAndAssign(const std::string& currentStream, Rational& value) {
+    if (currentStream.size() == 0) {
+        return;
+    }
+    size_t posOfChar = 0;
+    int numberOfChar = 0;
+    for (size_t i = 0; i < currentStream.size(); i++) {
+        if (currentStream[i] == '/') {
+            posOfChar = i;
+            numberOfChar++;
+            continue;
+        }
+        if (currentStream[i] == '+' || currentStream[i] == '-') {
+            if (i == 0) {
+                continue;
+            }
+            if (numberOfChar == 1 && posOfChar + 1 == i) {
+                continue;
+            }
+            return;
+        }
+        if (currentStream[i] < '0' || currentStream[i] > '9') {
+            return;
+        }
+    }
+    if (numberOfChar != 1) {
+        return;
+    }
+    if (posOfChar == 0 || posOfChar == currentStream.size() - 1) {
+        return;
+    }
+    int numerator = 0, denominator = 0;
+    bool sign = true;
+    for (size_t i = 0; i < posOfChar; i++) {
+        if (currentStream[i] == '+') {
+            continue;
+        }
+        if (currentStream[i] == '-') {
+            sign = false;
+            continue;
+        }
+        numerator *= 10;
+        numerator += currentStream[i] - '0';
+    }
+    for (size_t i = posOfChar + 1; i < currentStream.size(); i++) {
+        if (currentStream[i] == '+') {
+            continue;
+        }
+        if (currentStream[i] == '-') {
+            sign = sign == false;
+            continue;
+        }
+        denominator *= 10;
+        denominator += currentStream[i] - '0';
+    }
+    if (!sign) {
+        numerator *= -1;
+    }
+    value = Rational(numerator, denominator);
+}
