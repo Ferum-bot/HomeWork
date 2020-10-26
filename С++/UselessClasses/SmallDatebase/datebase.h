@@ -2,9 +2,10 @@
 #include <map>
 #include <set>
 #include <string>
+#include <iomanip>
 
 class Date {
-public:
+private:
 
     std::string year;
     std::string month;
@@ -48,9 +49,13 @@ public:
     friend std::ostream& operator << (std::ostream& out, const Date& date);
     friend std::istream& operator >> (std::istream& in, Date& date);
 
-public:
+private:
 
     static int convertToInt(const std::string& value);
+
+    void checkForCorrect() const;
+
+    friend Date getAllMembersFromString(const std::string& current);
 
 };
 

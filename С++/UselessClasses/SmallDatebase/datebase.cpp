@@ -195,5 +195,53 @@ void Datebase::Print() const {
 }
 
 std::ostream& operator << (std::ostream& out, const Date& date) {
-    
+    out << std::setfill('0');
+    out << std::setw(4);
+    out << date.year;
+    out << std::setw(2);
+    out << date.month;
+    out << std::setw(2);
+    out << date.day;
+    return out;
+}
+
+
+std::istream& operator >> (std::istream& in, Date& date) {
+    std::string current;
+    in >> current;
+    date = getAllMembersFromString(current);
+    date.checkForCorrect();
+    return in;
+}
+
+Date getAllMembersFromString(const std::string& current) {
+    int year = 0, month = 0, day = 0;
+    size_t posOfFirstSeparator = 0;
+    size_t posOfSecondSeparator = 0;
+    int numberOfSeparators = 0;
+    for (size_t i = 0; i < current.size(); i++) {
+        if (current[i] == '-' && i != 0) {
+            posOfFirstSeparator = i;
+            numberOfSeparators++;
+            break;
+        }
+    }
+    if (numberOfSeparators == 0) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }
+    for (size_t i = posOfFirstSeparator + 1; i < current.size(); i++) {
+        if (current[i] == '-' && i == current.size() - 1)
+    }
+}
+
+void Date::checkForCorrect() const {
+    if (Date::convertToInt(month) < 1 || Date::convertToInt(month) > 12) {
+        std::string excep = "Month value is invalid: " + month;
+        throw std::invalid_argument(excep);
+    }
+    if (Date::convertToInt(day) < 1 || Date::convertToInt(day) > 31) {
+        std::string excep = "Day value is invalid: " + day;
+        throw std::invalid_argument(excep);
+    }
 }
