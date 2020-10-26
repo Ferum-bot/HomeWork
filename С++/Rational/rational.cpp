@@ -159,17 +159,17 @@ void checkIsEqualAndAssign(const std::string& currentStream, Rational& value) {
             if (numberOfChar == 1 && posOfChar + 1 == i) {
                 continue;
             }
-            return;
+            throw invalid_argument("no expected sign before value");
         }
         if (currentStream[i] < '0' || currentStream[i] > '9') {
-            return;
+            throw invalid_argument("no expected sign in value");
         }
     }
     if (numberOfChar != 1) {
-        return;
+        throw invalid_argument("no expected number of separator");
     }
     if (posOfChar == 0 || posOfChar == currentStream.size() - 1) {
-        return;
+        throw invalid_argument("no expected position of separator");
     }
     int numerator = 0, denominator = 0;
     bool sign = true;
