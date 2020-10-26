@@ -198,8 +198,10 @@ std::ostream& operator << (std::ostream& out, const Date& date) {
     out << std::setfill('0');
     out << std::setw(4);
     out << date.year;
+    out << '-';
     out << std::setw(2);
     out << date.month;
+    out << '-';
     out << std::setw(2);
     out << date.day;
     return out;
@@ -209,6 +211,9 @@ std::ostream& operator << (std::ostream& out, const Date& date) {
 std::istream& operator >> (std::istream& in, Date& date) {
     std::string current;
     in >> current;
+    if (current.size() == 0) {
+        return in;
+    }
     date = Date::getAllMembersFromString(current);
     date.checkForCorrect();
     return in;
@@ -267,7 +272,7 @@ Date Date::getAllMembersFromString(const std::string& current) {
     return result;
 }
 
-int Date::getValueFrom(const std::string& current, const size_t& left, const size_t& right) {
+std::string Date::getValueFrom(const std::string& current, const size_t& left, const size_t& right) {
     int result = 0;
     int numberOfPlus = 0;
     int numberOfMinus = 0;
@@ -294,7 +299,7 @@ int Date::getValueFrom(const std::string& current, const size_t& left, const siz
     if (numberOfMinus == 1) {
         result *= -1;
     } 
-    return result;
+    return std::to_string(result);
 }
 
 bool Date::isDigit(const char& digit) {
@@ -332,6 +337,7 @@ void Datebase::DoAction(const std::string& action, const Date& date, const std::
                 std::cout << date << ' ' << el << std::endl;
             }
         }
+        return;
     }
     if (action == "Del") {
         if (event.size() == 0) {
@@ -345,6 +351,7 @@ void Datebase::DoAction(const std::string& action, const Date& date, const std::
                 std::cout << "Event not found" << std::endl;
             }
         }
+        return;
     }
 }
 

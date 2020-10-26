@@ -54,7 +54,7 @@ private:
     static int convertToInt(const std::string& value);
     static bool isDigit(const char& digit);
     static Date getAllMembersFromString(const std::string& current);
-    static int getValueFrom(const std::string& current, const size_t& left, const size_t& right);
+    static std::string getValueFrom(const std::string& current, const size_t& left, const size_t& right);
 
     void checkForCorrect() const;
 

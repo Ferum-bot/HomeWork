@@ -15,14 +15,28 @@ signed main() {
     Datebase db;
     string current;
     getline(cin, current);
-    while(current.size() != 0) {
+    while (current.size() != 0) {
         istringstream input(current);
         string action;
+        string event;
         input >> action;
         Date date;
-        input >> date;
-        
+        try {
+            input >> date;
+            input >> event;
+        }
+        catch(invalid_argument& ex) {
+            cout << ex.what() << endl;
+            getline(cin, current);
+            continue;
+        }
+        try {
+            db.DoAction(action, date, event);
+        }
+        catch (invalid_argument& ex) {
+            cout << ex.what() << endl;
+        }
         getline(cin, current);
-    }
+    }   
     return 0;
 }
