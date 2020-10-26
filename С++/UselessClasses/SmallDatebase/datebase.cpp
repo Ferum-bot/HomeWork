@@ -209,13 +209,19 @@ std::ostream& operator << (std::ostream& out, const Date& date) {
 std::istream& operator >> (std::istream& in, Date& date) {
     std::string current;
     in >> current;
-    date = getAllMembersFromString(current);
+    date = Date::getAllMembersFromString(current);
     date.checkForCorrect();
     return in;
 }
 
-Date getAllMembersFromString(const std::string& current) {
-    int year = 0, month = 0, day = 0;
+Date Date::getAllMembersFromString(const std::string& current) {
+    for (size_t i = 0; i < current.size(); i++) {
+        if (current[i] == '-' || current[i] == '+' || Date::isDigit(current[i])) {
+            continue;
+        }
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }
     size_t posOfFirstSeparator = 0;
     size_t posOfSecondSeparator = 0;
     int numberOfSeparators = 0;
@@ -231,8 +237,68 @@ Date getAllMembersFromString(const std::string& current) {
         throw std::invalid_argument(excep);
     }
     for (size_t i = posOfFirstSeparator + 1; i < current.size(); i++) {
-        if (current[i] == '-' && i == current.size() - 1)
+        if (current[i] != '-') {
+            continue;
+        }
+        if (current[i] == '-' && i == current.size() - 1) {
+            std::string excep = "Wrong date format: " + current;
+            throw std::invalid_argument(excep);
+        }
+        if (current[i] == '-' && !Date::isDigit(current[i + 1])) {
+            posOfSecondSeparator = i;
+            numberOfSeparators++;
+            break;
+        }
+        if (current[i] == '-' && Date::isDigit(current[i + 1]) && i - 1 == posOfFirstSeparator) {
+            continue;
+        }
+        posOfSecondSeparator = i;
+        numberOfSeparators++;
+        break;
     }
+    if (numberOfSeparators == 1) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }
+    Date result;
+    result.year = Date::getValueFrom(current, 0, posOfFirstSeparator);
+    result.month = Date::getValueFrom(current, posOfFirstSeparator + 1, posOfSecondSeparator);
+    result.day = Date::getValueFrom(current, posOfSecondSeparator + 1, current.size());
+    return result;
+}
+
+int Date::getValueFrom(const std::string& current, const size_t& left, const size_t& right) {
+    int result = 0;
+    int numberOfPlus = 0;
+    int numberOfMinus = 0;
+    for (size_t i = left; i < right; i++) {
+        if (current[i] == '+') {
+            numberOfPlus++;
+            continue;
+        }
+        if (current[i] == '-') {
+            numberOfMinus++;
+            continue;
+        }
+        result *= 10;
+        result += current[i] - '0';
+    }
+    if (numberOfPlus > 1) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }
+    if (numberOfMinus > 1) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }
+    if (numberOfMinus == 1) {
+        result *= -1;
+    } 
+    return result;
+}
+
+bool Date::isDigit(const char& digit) {
+    return digit >= '0' && digit <= '9';
 }
 
 void Date::checkForCorrect() const {
@@ -244,4 +310,57 @@ void Date::checkForCorrect() const {
         std::string excep = "Day value is invalid: " + day;
         throw std::invalid_argument(excep);
     }
+}
+
+void Datebase::DoAction(const std::string& action, const Date& date, const std::string& event) {
+    Datebase::CheckTheAction(action);
+    if (action == "Add") {
+        AddEvent(date, event);
+        return;
+    }
+    if (action == "Find") {
+        std::set<std::string> result = Find(date);
+        for (const auto& el : result) {
+            std::cout << el << std::endl;
+        }
+        return;
+    }
+    if (action == "Print") {
+        for (const auto& el : base) {
+            const Date& date = el.first;
+            for (const auto& el : el.second) {
+                std::cout << date << ' ' << el << std::endl;
+            }
+        }
+    }
+    if (action == "Del") {
+        if (event.size() == 0) {
+            std::cout << "Deleted " << DeleteDate(date) << " events" << std::endl;
+        }
+        else {
+            if (DeleteEvent(date, event)) {
+                std::cout << "Deleted successfully" << std::endl;
+            }
+            else {
+                std::cout << "Event not found" << std::endl;
+            }
+        }
+    }
+}
+
+void Datebase::CheckTheAction(const std::string& action) {
+    if (action == "Add") {
+        return;
+    }
+    if (action == "Del") {
+        return;
+    }
+    if (action == "Find") {
+        return;
+    }
+    if (action == "Print") {
+        return;
+    }
+    std::string excep = "Unknown command: " + action;
+    throw std::invalid_argument(excep);
 }

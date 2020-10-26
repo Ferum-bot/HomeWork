@@ -52,10 +52,11 @@ public:
 private:
 
     static int convertToInt(const std::string& value);
+    static bool isDigit(const char& digit);
+    static Date getAllMembersFromString(const std::string& current);
+    static int getValueFrom(const std::string& current, const size_t& left, const size_t& right);
 
     void checkForCorrect() const;
-
-    friend Date getAllMembersFromString(const std::string& current);
 
 };
 
@@ -75,9 +76,13 @@ public:
     std::set<std::string> Find(const Date& date) const;
     void Print() const;
 
+    void DoAction(const std::string& action, const Date& date, const std::string& event = "");
+
 private:
 
     std::map<Date, std::set<std::string>> base;
+
+    static void CheckTheAction(const std::string& action);
 
 };
 
