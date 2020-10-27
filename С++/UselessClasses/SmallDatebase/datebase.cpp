@@ -1,28 +1,28 @@
 #include "datebase.h"
 
 Date::Date() {
-    year = "0";
-    month = "0";
-    day = "0";
+    year = 0;
+    month = 0;
+    day = 0;
 }
 
 Date::Date(const int& year, const int& month, const int& day) {
-    this->year = std::to_string(year);
-    this->month = std::to_string(month);
-    this->day = std::to_string(day);
-}
-
-Date::Date(const std::string& year, const std::string& month, const std::string& day) {
     this->year = year;
     this->month = month;
     this->day = day;
+}
+
+Date::Date(const std::string& year, const std::string& month, const std::string& day) {
+    this->year = Date::convertToInt(year);
+    this->month = Date::convertToInt(month);
+    this->day = Date::convertToInt(day);
 }
 
 Date::Date(const Date& date) = default;
 
 Date::~Date() = default;
 
-void Date::setYear(const std::string& year) {
+/*void Date::setYear(const std::string& year) {
     if (year.size() == 0) {
         return;
     }
@@ -78,7 +78,7 @@ int Date::getMonthInt() const {
 int Date::getDayInt() const {
     return Date::convertToInt(day);
 }
-
+*/
 int Date::convertToInt(const std::string& value) {
     int result = 0;
     bool sign = true;
@@ -219,19 +219,65 @@ std::istream& operator >> (std::istream& in, Date& date) {
     return in;
 }
 
-Date Date::getAllMembersFromString(const std::string& current) {
+void Date::checkForCorrectSymbols(const std::string& current) {
     for (size_t i = 0; i < current.size(); i++) {
-        if (current[i] == '-' || current[i] == '+' || Date::isDigit(current[i])) {
-            continue;
+        if (current[i] != '-' && current[i] != '+' && !Date::isDigit(current[i])) {
+             std::string excep = "Wrong date format: " + current;
+            throw std::invalid_argument(excep);
         }
+    }
+}
+
+bool Date::isSeparator(const std::string& current, const size_t& index) {
+    if (index == 0 || index == current.size() - 1) {
+        return false;
+    }
+    if (Date::isDigit(current[index - 1]) && current[index] == '-') {
+        return true;
+    }
+    return false;
+}
+
+void Date::checkTheValidNumber(const std::string& current, const size_t& left, const size_t& right) {
+    if (left == right) {
         std::string excep = "Wrong date format: " + current;
         throw std::invalid_argument(excep);
     }
+    int numberOfMinus = 0;
+    int numberOfPlus = 0;
+    size_t posOfLastMinus = 0;
+    size_t posOfLastPlus = 0;
+    for (size_t i = left; i < right; i++) {
+        if (current[i] == '-') {
+            posOfLastMinus = i;
+            numberOfMinus++;
+        }
+        if (current[i] == '+') {
+            posOfLastPlus = i;
+            numberOfPlus++;
+        }
+    }
+    if (numberOfPlus + numberOfMinus > 1) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }
+    if (numberOfMinus == 1 && posOfLastMinus != left) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    } 
+    if (numberOfPlus == 1 && posOfLastPlus != left) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }
+}
+
+Date Date::getAllMembersFromString(const std::string& current) {
+    Date::checkForCorrectSymbols(current);
     size_t posOfFirstSeparator = 0;
     size_t posOfSecondSeparator = 0;
     int numberOfSeparators = 0;
     for (size_t i = 0; i < current.size(); i++) {
-        if (current[i] == '-' && i != 0) {
+        if (Date::isSeparator(current, i)) {
             posOfFirstSeparator = i;
             numberOfSeparators++;
             break;
@@ -242,37 +288,31 @@ Date Date::getAllMembersFromString(const std::string& current) {
         throw std::invalid_argument(excep);
     }
     for (size_t i = posOfFirstSeparator + 1; i < current.size(); i++) {
-        if (current[i] != '-') {
-            continue;
-        }
-        if (current[i] == '-' && i == current.size() - 1) {
-            std::string excep = "Wrong date format: " + current;
-            throw std::invalid_argument(excep);
-        }
-        if (current[i] == '-' && !Date::isDigit(current[i + 1])) {
+        if (Date::isSeparator(current, i)) {
             posOfSecondSeparator = i;
             numberOfSeparators++;
             break;
         }
-        if (current[i] == '-' && Date::isDigit(current[i + 1]) && i - 1 == posOfFirstSeparator) {
-            continue;
-        }
-        posOfSecondSeparator = i;
-        numberOfSeparators++;
-        break;
     }
     if (numberOfSeparators == 1) {
         std::string excep = "Wrong date format: " + current;
         throw std::invalid_argument(excep);
     }
+    Date::checkTheValidNumber(current, 0, posOfFirstSeparator);
+    Date::checkTheValidNumber(current, posOfFirstSeparator + 1, posOfSecondSeparator);
+    Date::checkTheValidNumber(current, posOfSecondSeparator + 1, current.size());
     Date result;
     result.year = Date::getValueFrom(current, 0, posOfFirstSeparator);
     result.month = Date::getValueFrom(current, posOfFirstSeparator + 1, posOfSecondSeparator);
     result.day = Date::getValueFrom(current, posOfSecondSeparator + 1, current.size());
+    /*if (result.year.size() > 4) {
+        std::string excep = "Wrong date format: " + current;
+        throw std::invalid_argument(excep);
+    }*/
     return result;
 }
 
-std::string Date::getValueFrom(const std::string& current, const size_t& left, const size_t& right) {
+int Date::getValueFrom(const std::string& current, const size_t& left, const size_t& right) {
     int result = 0;
     int numberOfPlus = 0;
     int numberOfMinus = 0;
@@ -299,7 +339,7 @@ std::string Date::getValueFrom(const std::string& current, const size_t& left, c
     if (numberOfMinus == 1) {
         result *= -1;
     } 
-    return std::to_string(result);
+    return result;
 }
 
 bool Date::isDigit(const char& digit) {
@@ -307,12 +347,12 @@ bool Date::isDigit(const char& digit) {
 }
 
 void Date::checkForCorrect() const {
-    if (Date::convertToInt(month) < 1 || Date::convertToInt(month) > 12) {
-        std::string excep = "Month value is invalid: " + month;
+    if (month < 1 || month > 12) {
+        std::string excep = "Month value is invalid: " + std::to_string(month);
         throw std::invalid_argument(excep);
     }
-    if (Date::convertToInt(day) < 1 || Date::convertToInt(day) > 31) {
-        std::string excep = "Day value is invalid: " + day;
+    if (day < 1 || day > 31) {
+        std::string excep = "Day value is invalid: " + std::to_string(day);
         throw std::invalid_argument(excep);
     }
 }

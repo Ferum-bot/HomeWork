@@ -7,9 +7,9 @@
 class Date {
 private:
 
-    std::string year;
-    std::string month;
-    std::string day;
+    int year;
+    int month;
+    int day;
 
 public:
 
@@ -21,21 +21,21 @@ public:
 
     ~Date();
 
-    void setYear(const std::string& year);
-    void setMonth(const std::string& month);
-    void setDay(const std::string& day);
+    //void setYear(const std::string& year);
+    //void setMonth(const std::string& month);
+    //void setDay(const std::string& day);
 
-    void setYear(const int& year);
-    void setMonth(const int& month);
-    void setDay(const int& day);
+    //void setYear(const int& year);
+    //void setMonth(const int& month);
+    //void setDay(const int& day);
 
-    std::string getYearString() const;
-    std::string getMonthString() const;
-    std::string getDayString() const;
+    //std::string getYearString() const;
+    //std::string getMonthString() const;
+    //std::string getDayString() const;
 
-    int getYearInt() const;
-    int getMonthInt() const;
-    int getDayInt() const;
+    //int getYearInt() const;
+    //int getMonthInt() const;
+    //int getDayInt() const;
 
 public:
 
@@ -54,7 +54,10 @@ private:
     static int convertToInt(const std::string& value);
     static bool isDigit(const char& digit);
     static Date getAllMembersFromString(const std::string& current);
-    static std::string getValueFrom(const std::string& current, const size_t& left, const size_t& right);
+    static int getValueFrom(const std::string& current, const size_t& left, const size_t& right);
+    static void checkForCorrectSymbols(const std::string& current);
+    static bool isSeparator(const std::string& current, const size_t& index);
+    static void checkTheValidNumber(const std::string& current, const size_t& left, const size_t& right);
 
     void checkForCorrect() const;
 
