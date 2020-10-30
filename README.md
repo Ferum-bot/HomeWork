@@ -12,20 +12,20 @@ So, now I have 3 useful modules in this repositories. They are:
 
 
 ## Kotlin:
--
+- Some useless classes
 -
 -
 
 
 ## C++:
--
+- Some useless classes
 -
 -
 
 
 ## Android:
--
--
+- Documents for Android SDK and some usefull links
+- 
 -
 
 
