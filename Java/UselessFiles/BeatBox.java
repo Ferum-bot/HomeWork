@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
 
 public class BeatBox {
@@ -27,6 +28,8 @@ class GUI {
     private JButton upTempo = null;
     private JButton downTempo = null;
     private JButton clear = null;
+    private JButton serialize = null;
+    private JButton restore = null;
 
     private ArrayList<JCheckBox> checkBoxList = null;
 
@@ -35,9 +38,9 @@ class GUI {
     private Track track = null;
 
     private final String[] instrumentsNames = {"Bass Drum", "Closed Hi-Hat", "Open Hi-Hat", "Acoustic Snare",
-                                                "Crash Cymbal", "Hand Clap", "High Tom", "Hi Bongo", "Maracas",
-                                                "Whistle", "Low Conga", "Cowbell", "Vibraslap", "Low-mid Tom", "High Agogo",
-                                                "Open Hi Conga"};
+            "Crash Cymbal", "Hand Clap", "High Tom", "Hi Bongo", "Maracas",
+            "Whistle", "Low Conga", "Cowbell", "Vibraslap", "Low-mid Tom", "High Agogo",
+            "Open Hi Conga"};
     private final int[] instruments = {35, 42, 46, 38, 49, 39, 50, 60, 70, 72, 64, 56, 58, 47, 67, 63};
 
 
@@ -67,6 +70,14 @@ class GUI {
         downTempo = new JButton("Tempo Down");
         downTempo.addActionListener(new MyTempDownActionListener());
         buttonBox.add(downTempo);
+
+        serialize = new JButton("Serialize");
+        serialize.addActionListener(new ActionListenerForSerialize());
+        buttonBox.add(serialize);
+
+        restore = new JButton("Restore");
+        restore.addActionListener(new ActionListenerForRestore());
+        buttonBox.add(restore);
 
         clear = new JButton("Clear");
         clear.addActionListener(new MyClearActionListener());
@@ -219,6 +230,55 @@ class GUI {
                     c.setSelected(false);
                 }
             }
+        }
+    }
+
+    private class ActionListenerForSerialize implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean[] arrayToSerialize = new boolean[256];
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox c = (JCheckBox) checkBoxList.get(i);
+                if (c.isSelected()) {
+                    arrayToSerialize[i] = true;
+                }
+            }
+
+            try {
+                FileOutputStream fileStream = new FileOutputStream(new File("CheckBox.ser"));
+                ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+                objectStream.writeObject(arrayToSerialize);
+
+            }
+            catch (Exception exc) {
+                System.out.println("Error");
+                exc.printStackTrace();
+            }
+        }
+    }
+
+    private class ActionListenerForRestore implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean[] arrayFromSerialize = new boolean[256];
+
+            try {
+                FileInputStream fileStream =  new FileInputStream("CheckBox.ser");
+                ObjectInputStream objectStream = new ObjectInputStream(fileStream);
+                arrayFromSerialize = (boolean[]) objectStream.readObject();
+            }
+            catch (Exception exc) {
+                exc.printStackTrace();
+            }
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox c = (JCheckBox) checkBoxList.get(i);
+                c.setSelected(arrayFromSerialize[i]);
+            }
+
+            sequencer.stop();
+            buildTrackAndStart();
         }
     }
 }
