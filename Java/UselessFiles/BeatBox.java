@@ -2,17 +2,22 @@ package com.company;
 
 import javax.sound.midi.*;
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.net.Socket;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Vector;
 
 public class BeatBox {
 
     public static void main(String[] args) {
         GUI main = new GUI();
-        main.buildGUI();
+        main.StartUp("Matvey");
     }
 
 }
@@ -30,12 +35,26 @@ class GUI {
     private JButton clear = null;
     private JButton serialize = null;
     private JButton restore = null;
+    private JButton send = null;
+
+    private JList incomingList = null;
+    private JTextField userMessage = null;
 
     private ArrayList<JCheckBox> checkBoxList = null;
+
+    private String userName = null;
+    private int cnt = 0;
+
+    private ObjectInputStream input = null;
+    private ObjectOutputStream output = null;
 
     private Sequencer sequencer = null;
     private Sequence sequence = null;
     private Track track = null;
+
+    private Vector<String> listVector = new Vector<String>();
+
+    private HashMap<String, boolean[]> currentSeqsMap = new HashMap<String,boolean[]>();
 
     private final String[] instrumentsNames = {"Bass Drum", "Closed Hi-Hat", "Open Hi-Hat", "Acoustic Snare",
             "Crash Cymbal", "Hand Clap", "High Tom", "Hi Bongo", "Maracas",
@@ -44,7 +63,23 @@ class GUI {
     private final int[] instruments = {35, 42, 46, 38, 49, 39, 50, 60, 70, 72, 64, 56, 58, 47, 67, 63};
 
 
-    public void buildGUI() {
+    public void StartUp(String name) {
+        userName = name;
+        try {
+            Socket sock = new Socket( "192.168.0.100",4242);
+            input = new ObjectInputStream(sock.getInputStream());
+            output = new ObjectOutputStream(sock.getOutputStream());
+            Thread remote = new Thread(new RemoteReader());
+            remote.start();
+        }
+        catch (Exception exc) {
+            exc.printStackTrace();
+        }
+        setUpMidi();
+        buildGUI();
+    }
+
+    private void buildGUI() {
 
         frame = new JFrame("Cyber BeatBox");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -82,6 +117,20 @@ class GUI {
         clear = new JButton("Clear");
         clear.addActionListener(new MyClearActionListener());
         buttonBox.add(clear);
+
+        send = new JButton("Send it!");
+        send.addActionListener(new MySendActionListener());
+        buttonBox.add(send);
+
+        userMessage = new JTextField();
+        buttonBox.add(userMessage);
+
+        incomingList = new JList();
+        incomingList.addListSelectionListener(new MyListSelectionListener());
+        incomingList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane theList = new JScrollPane(incomingList);
+        buttonBox.add(theList);
+        incomingList.setListData(listVector);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
@@ -191,6 +240,13 @@ class GUI {
         return event;
     }
 
+    private void changeSequence(boolean[] newSequence) {
+        for (int i = 0; i < 256; i++) {
+            JCheckBox c = (JCheckBox) checkBoxList.get(i);
+            c.setSelected(newSequence[i]);
+        }
+    }
+
     private class MyStartActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -281,4 +337,66 @@ class GUI {
             buildTrackAndStart();
         }
     }
+
+    private class MySendActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean[] checkboxState = new boolean[256];
+            for (int i = 0; i < 256; i++) {
+                checkboxState[i] = checkBoxList.get(i).isSelected();
+            }
+            String messageToSend = null;
+            try {
+                output.writeObject(userName + cnt++ + ": " + userMessage.getText());
+                output.writeObject(checkboxState);
+            }
+            catch (Exception exc) {
+                exc.printStackTrace();
+            }
+            finally {
+                userMessage.setText("");
+            }
+        }
+    }
+
+    private class MyListSelectionListener implements ListSelectionListener {
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+            if (!e.getValueIsAdjusting()) {
+                String selected = (String) incomingList.getSelectedValue();
+                if (selected != null) {
+                    boolean[] selectedState = (boolean[]) currentSeqsMap.get(selected);
+                    changeSequence(selectedState);
+                    sequencer.stop();
+                    buildTrackAndStart();
+                }
+            }
+        }
+    }
+
+    private class RemoteReader implements Runnable {
+
+        private boolean[] currentState = null;
+        private String nameToShow = null;
+        Object obj = null;
+
+        @Override
+        public void run() {
+            try {
+                while(true) {
+                    while ((obj = input.readObject()) != null) {
+                        nameToShow = (String) obj;
+                        currentState = (boolean[]) input.readObject();
+                        currentSeqsMap.put(nameToShow, currentState);
+                        listVector.add(nameToShow);
+                        incomingList.setListData(listVector);
+                    }
+                }
+            }
+            catch (Exception exc) {
+                exc.printStackTrace();
+            }
+        }
+    }
+
 }
