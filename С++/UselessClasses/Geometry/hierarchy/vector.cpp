@@ -17,6 +17,11 @@ Vector::Vector(const Point& start, const Point& finish) {
     y = finish.getY() - start.getY();
 }
 
+Vector::Vector(const Point& point) {
+    x = point.getX();
+    y = point.getY();
+}
+
 long double Vector::getX() const {
     return x;
 }
@@ -45,4 +50,8 @@ long double Vector::crossProduct(const Vector& first, const Vector& second) {
 
 std::pair<Vector, Vector> Vector::getTwoVectorsFromPoints(const Point& first, const Point& second, const Point& third) {
     return {Vector(first, second), Vector(second, third)};
+}
+
+long double Vector::getLength() const {
+    return sqrt(x * x + y * y);
 }

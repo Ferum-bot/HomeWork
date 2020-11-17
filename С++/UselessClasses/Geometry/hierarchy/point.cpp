@@ -4,6 +4,7 @@
 
 const long double Point::PI = 3.1415926;
 const long double Point::EPS = 1e-5;
+const long double Point::INF = 1e9 + 7;
 
 Point::Point(const Point& point) = default;
 
@@ -30,4 +31,10 @@ bool operator == (const Point& left, const Point& right) {
 
 bool operator != (const Point& left, const Point& right) {
     return !(left == right);
+}
+
+long double Point::getDist(const Point& first, const Point& second) {
+    long double deltaX = first.getX() - second.getX();
+    long double deltaY = first.getY() - second.getY();
+    return sqrt(deltaX * deltaX + deltaY * deltaY);
 }

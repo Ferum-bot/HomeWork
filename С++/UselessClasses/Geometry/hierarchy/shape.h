@@ -6,13 +6,6 @@
 #include "line.h"
 
 class Shape {
-protected:
-
-    static const long double PI;
-    static const long double EPS;
-
-    std::vector<Point> vertices;
-
 public:
 
     virtual ~Shape();

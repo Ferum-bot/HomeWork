@@ -2,11 +2,12 @@
 
 #include <math.h>
 
-class Point {
+class Point final {
 private:
 
     static const long double PI;
     static const long double EPS;
+    static const long double INF;
 
     long double x;
     long double y;
@@ -25,6 +26,10 @@ public:
 
     friend bool operator == (const Point& left, const Point& right);
     friend bool operator != (const Point& left, const Point& right);
+
+public:
+
+    static long double getDist(const Point& first, const Point& second);
 
 };
 

@@ -3,7 +3,7 @@
 #include "point.h"
 #include <math.h>
 
-class Line {
+class Line final{
 private:
 
     static const long double PI;

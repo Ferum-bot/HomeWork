@@ -262,7 +262,18 @@ TEST(Ellipse, Area) {
 
 */
 
-int main(int argc, char** argv) {
+signed main(int argc, char** argv) {
     //::testing::InitGoogleTest(&argc, argv);
-    return 0; //RUN_ALL_TESTS();
+    //RUN_ALL_TESTS()
+    
+    Point p1(1, 1);
+    Point p2(2,1);
+    Point p3(2, 2);
+    Point p4(1, 2);
+    std::vector<Point> sq = {p1, p2, p3, p4};
+    Polygon p(sq);
+    std::cout << p.perimeter() << std::endl;
+    std::cout << p.area() << std::endl;
+
+    return 0;
 }

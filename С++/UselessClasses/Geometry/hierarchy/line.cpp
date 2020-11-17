@@ -9,10 +9,10 @@ Line::Line(const Line& line) = default;
 Line::~Line() = default;
 
 Line::Line(const Point& start, const Point& finish) {
-    long double x1 = start.getX();
-    long double y1 = start.getY();
-    long double x2 = finish.getX();
-    long double y2 = finish.getY();
+    const long double x1 = start.getX();
+    const long double y1 = start.getY();
+    const long double x2 = finish.getX();
+    const long double y2 = finish.getY();
     
     a = y1 - y2;
     b = x2 - x1;

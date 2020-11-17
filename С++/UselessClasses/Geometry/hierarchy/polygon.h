@@ -50,4 +50,12 @@ protected:
     static bool isAboveZero(const long double& value);
     static bool isLessZero(const long double& value);
 
+protected:
+
+    static const long double PI;
+    static const long double EPS;
+    static const long double INF;
+
+    std::vector<Point> vertices;
+
 };

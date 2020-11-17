@@ -17,6 +17,7 @@ public:
 
     Vector(const long double& x, const long double& y);
     Vector(const Point& start, const Point& finish);
+    Vector(const Point& point);
 
     Vector(const Vector& vector);
 
@@ -24,6 +25,8 @@ public:
 
     long double getX() const;
     long double getY() const;
+
+    long double getLength() const;
 
     friend bool operator == (const Vector& left, const Vector& right);
     friend bool operator != (const Vector& left, const Vector& right);
