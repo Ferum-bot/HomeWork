@@ -1,10 +1,12 @@
 #pragma once
 
+#include <math.h>
+
 class Point {
 private:
 
-    const static long double PI = 3.1415926;
-    const static long double EPS = 1e-5;
+    static const long double PI;
+    static const long double EPS;
 
     long double x;
     long double y;

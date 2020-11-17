@@ -1,36 +1,36 @@
 #pragma once
 
+#include <vector>
+
 #include "point.h"
 #include "line.h"
 
 class Shape {
-private:
+protected:
 
-    static const long double PI = 3.1415926;
-    static const long double EPS = 1e-5;
+    static const long double PI;
+    static const long double EPS;
+
+    std::vector<Point> vertices;
 
 public:
 
-    virtual Shape();
-
-    virtual Shape(const Shape& another);
-
     virtual ~Shape();
 
-    virtual long double perimeter() const;
-    virtual long double area() const;
+    virtual long double perimeter() const = 0;
+    virtual long double area() const = 0;
 
-    virtual bool isCongruentTo(const Shape& another) const;
-    virtual bool isSimilarTo(const Shape& another) const;
+    virtual bool isCongruentTo(const Shape& another) const = 0;
+    virtual bool isSimilarTo(const Shape& another) const = 0;
 
-    virtual bool containsPoint(const Point& point) const;
+    virtual bool containsPoint(const Point& point) const = 0;
 
-    virtual void rotate(const Point& center, const long double& angle);
-    virtual void reflex(const Point& center);
-    virtual void reflex(const Line& axis);
-    virtual void scale(const Point& center, long double& coefficient);
+    virtual void rotate(const Point& center, const long double& angle) = 0;
+    virtual void reflex(const Point& center) = 0;
+    virtual void reflex(const Line& axis) = 0;
+    virtual void scale(const Point& center, long double& coefficient) = 0;
 
-    virtual bool operator == (const Shape& another) const;
-    virtual bool operator != (const Shape& another) const;
+    virtual bool operator == (const Shape& another) const = 0;
+    virtual bool operator != (const Shape& another) const = 0;
 
 };
