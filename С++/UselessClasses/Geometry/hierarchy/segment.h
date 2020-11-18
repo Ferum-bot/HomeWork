@@ -1,6 +1,7 @@
 #pragma once
 
 #include "point.h"
+#include "vector.h"
 
 class Segment final {
 private:
@@ -20,6 +21,15 @@ public:
 
     Point getFirstPoint() const;
     Point getSecondPoint() const;
+
+    long double getMaxX() const;
+    long double getMaxY() const;
+    long double getMinX() const;
+    long double getMinY() const;
+
+    long double getLength() const;
+
+    Vector getVector() const;
 
     friend bool operator == (const Segment& left, const Segment& right);
     friend bool operator != (const Segment& left, const Segment& right);

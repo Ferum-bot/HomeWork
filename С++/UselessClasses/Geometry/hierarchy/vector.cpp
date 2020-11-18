@@ -55,3 +55,9 @@ std::pair<Vector, Vector> Vector::getTwoVectorsFromPoints(const Point& first, co
 long double Vector::getLength() const {
     return sqrt(x * x + y * y);
 }
+
+long double Vector::getAngle(const Vector& first, const Vector& second) {
+    const long double x = Vector::dotProduct(first, second);
+    const long double y = Vector::crossProduct(first, second);
+    return atan2(y, x);
+}

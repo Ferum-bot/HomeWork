@@ -6,10 +6,8 @@ Segment::Segment(const Segment& segment) = default;
 
 Segment::~Segment() = default;
 
-Segment::Segment(const Point& first, const Point& second) {
-    this->first = first;
-    this->second = second;
-}
+Segment::Segment(const Point& _first, const Point& _second):
+first(_first), second(_second) {}
 
 Point Segment::getFirstPoint() const {
     return first;
@@ -27,4 +25,42 @@ bool operator == (const Segment& left, const Segment& right) {
 
 bool operator != (const Segment& left, const Segment& right) {
     return !(left == right);
+}
+
+long double Segment::getMaxX() const {
+    if (Point::leftIsAboveRight(first.getX(), second.getX())) {
+        return first.getX();
+    }
+    return second.getX();
+}
+
+long double Segment::getMaxY() const {
+    if (Point::leftIsAboveRight(first.getY(), second.getY())) {
+        return first.getY();
+    }
+    return second.getY();
+}
+
+long double Segment::getMinX() const {
+    if (Point::leftIsAboveRight(first.getX(), second.getX())) {
+        return second.getX();
+    }
+    return first.getX();
+}
+
+long double Segment::getMinY() const {
+    if (Point::leftIsAboveRight(first.getY(), second.getY())) {
+        return second.getY();
+    }
+    return first.getY();
+}
+
+long double Segment::getLength() const {
+    long double deltaX = first.getX() - second.getX();
+    long double deltaY = first.getY() - second.getY();
+    return sqrt(deltaX * deltaX + deltaY * deltaY);
+}
+
+Vector Segment::getVector() const {
+    return Vector(first, second);
 }

@@ -39,4 +39,6 @@ public:
     static std::pair<Vector, Vector> getTwoVectorsFromPoints(const Point& first, 
                                         const Point& second, const Point& third);
 
+    static long double getAngle(const Vector& first, const Vector& second);
+
 };

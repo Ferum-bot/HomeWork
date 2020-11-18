@@ -1,7 +1,7 @@
 #pragma once
 
 #include "point.h"
-#include <math.h>
+#include "segment.h"
 
 class Line final{
 private:
@@ -26,6 +26,11 @@ public:
     long double getA() const;
     long double getB() const;
     long double getC() const;
+
+    bool intersectsWithSegment(const Segment& segment) const;
+    bool intersectsWithLine(const Line& line) const;
+
+    Point getIntersection(const Line& line) const;
 
     friend bool operator == (const Line& left, const Line& right);
     friend bool operator != (const Line& left, const Line& right);

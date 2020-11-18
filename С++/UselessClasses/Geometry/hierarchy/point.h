@@ -1,6 +1,7 @@
 #pragma once
 
 #include <math.h>
+#include <algorithm>
 
 class Point final {
 private:
@@ -24,12 +25,19 @@ public:
     long double getX() const;
     long double getY() const;
 
+    void rotate(const Point& center, const long double& angle);
+    void reflex(const Point& center);
+
     friend bool operator == (const Point& left, const Point& right);
     friend bool operator != (const Point& left, const Point& right);
 
 public:
 
     static long double getDist(const Point& first, const Point& second);
+
+    static bool isEqual(const long double& first, const long double& second);
+    static bool isEqualToZero(const long double& value);
+    static bool leftIsAboveRight(const long double& left, const long double& right);
 
 };
 

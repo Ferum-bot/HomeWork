@@ -1,5 +1,3 @@
-#pragma once
-
 #include "point.h"
 
 const long double Point::PI = 3.1415926;
@@ -37,4 +35,30 @@ long double Point::getDist(const Point& first, const Point& second) {
     long double deltaX = first.getX() - second.getX();
     long double deltaY = first.getY() - second.getY();
     return sqrt(deltaX * deltaX + deltaY * deltaY);
+}
+
+bool Point::isEqual(const long double& first, const long double& second) {
+    return abs(first - second) < Point::EPS;
+}
+
+bool Point::isEqualToZero(const long double& value) {
+    return abs(value) < Point::EPS;
+}
+
+bool Point::leftIsAboveRight(const long double& left, const long double& right) {
+    const long double delta = left - right;
+    return delta > Point::EPS;
+}
+
+void Point::rotate(const Point& center, const long double& angle) {
+    x = (x - center.getX()) * cos(angle) - (y - center.getY()) * sin(angle) + center.getX();
+    y = (x - center.getX()) * sin(angle) + (y - center.getY()) * cos(angle) + center.getY();
+}
+
+void Point::reflex(const Point& center) {
+    long double vectorX = center.getX() - x;
+    long double vectorY = center.getY() - y;
+    x += 2 * vectorX;
+    y += 2 * vectorY;
+    return;
 }

@@ -4,6 +4,7 @@
 #include "line.h"
 #include "shape.h"
 #include "vector.h"
+#include "segment.h"
 
 #include <stdexcept>
 
@@ -49,6 +50,11 @@ protected:
     static bool isEqualToZero(const long double& value);
     static bool isAboveZero(const long double& value);
     static bool isLessZero(const long double& value);
+
+    static bool isPropotional(const std::vector<Segment>& first, const std::vector<Segment>& second);
+    static bool isAglesEqual(const std::vector<Segment>& first, const std::vector<Segment>& second);
+
+    static void shiftPolygon(std::vector<Segment>& polygon);
 
 protected:
 
