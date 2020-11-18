@@ -61,3 +61,9 @@ long double Vector::getAngle(const Vector& first, const Vector& second) {
     const long double y = Vector::crossProduct(first, second);
     return atan2(y, x);
 }
+
+Vector& Vector::operator *= (const long double& value) {
+    this->x *= value;
+    this->y *= value;
+    return (*this);
+}

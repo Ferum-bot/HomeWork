@@ -8,6 +8,8 @@ Point::Point(const Point& point) = default;
 
 Point::~Point() = default;
 
+Point::Point() {}
+
 Point::Point(const long double& x, const long double& y) {
     this->x = x;
     this->y = y;    
@@ -51,8 +53,8 @@ bool Point::leftIsAboveRight(const long double& left, const long double& right) 
 }
 
 void Point::rotate(const Point& center, const long double& angle) {
-    x = (x - center.getX()) * cos(angle) - (y - center.getY()) * sin(angle) + center.getX();
-    y = (x - center.getX()) * sin(angle) + (y - center.getY()) * cos(angle) + center.getY();
+    x = (x - center.getX()) * cos(angle) - (y - center.getY()) * sin(angle);
+    y = (x - center.getX()) * sin(angle) + (y - center.getY()) * cos(angle);
 }
 
 void Point::reflex(const Point& center) {

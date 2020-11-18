@@ -32,7 +32,14 @@ public:
 
     Point getIntersection(const Line& line) const;
 
+    long double getAngleFromLine(const Line& line) const;
+    long double getLengthToXLine() const;
+
     friend bool operator == (const Line& left, const Line& right);
     friend bool operator != (const Line& left, const Line& right);
+
+public:
+
+    static Line createAxisXLine();
 
 };

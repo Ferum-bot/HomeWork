@@ -15,7 +15,7 @@ private:
 
 public:
 
-
+    Point();
     Point(const long double& x, const long double& y);
 
     Point(const Point& point);

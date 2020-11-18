@@ -11,6 +11,7 @@
 class Polygon: public Shape {
 public:
 
+    Polygon();
     Polygon(const std::vector<Point>& vertices);
 
     Polygon(const Polygon& polygon);
@@ -22,6 +23,8 @@ public:
     virtual std::vector<Point> getVertices() const;
 
     virtual bool isConvex() const;
+
+    virtual void moveBy(const long double& deltaX, const long double& deltaY);
 
 public:
 
@@ -53,6 +56,7 @@ protected:
 
     static bool isPropotional(const std::vector<Segment>& first, const std::vector<Segment>& second);
     static bool isAglesEqual(const std::vector<Segment>& first, const std::vector<Segment>& second);
+    static long double getPropotionalCoefficient(const std::vector<Segment>& first, const std::vector<Segment>& second);
 
     static void shiftPolygon(std::vector<Segment>& polygon);
 

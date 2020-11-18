@@ -116,3 +116,22 @@ Point Line::getIntersection(const Line& line) const {
     x = (-line.b * y - line.c) / line.a;
     return Point(x, y);
 }
+
+Line Line::createAxisXLine() {
+    return Line(0, 1, 0);
+}
+
+long double Line::getAngleFromLine(const Line& line) const {
+    if (!this->intersectsWithLine(line)) {
+        return 0;
+    }
+    long double value = (a * line.a + b * line.b) / (sqrt(a * a + b * b) * sqrt(line.a * line.a + line.b * line.b));
+    return acos(value);
+}
+
+long double Line::getLengthToXLine() const {
+    if (Point::isEqualToZero(b)) {
+        return 0;
+    }
+    return -c / b;
+}

@@ -31,6 +31,8 @@ public:
     friend bool operator == (const Vector& left, const Vector& right);
     friend bool operator != (const Vector& left, const Vector& right);
 
+    Vector& operator *= (const long double& value);
+
 public:
 
     static long double dotProduct(const Vector& first, const Vector& second);

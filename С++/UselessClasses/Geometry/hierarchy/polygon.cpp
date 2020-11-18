@@ -9,6 +9,8 @@ Polygon::Polygon(const Polygon& polygon) = default;
 
 Polygon::~Polygon() = default;
 
+Polygon::Polygon() {}
+
 Polygon::Polygon(const std::vector<Point>& vertices) {
     if (vertices.size() < 3) {
         throw std::invalid_argument("Invalid number of vertices");
@@ -90,7 +92,34 @@ long double Polygon::area() const {
 }
 
 bool Polygon::isCongruentTo(const Shape& another) const {
-
+    const Polygon* current = dynamic_cast<const Polygon*>(&another);
+    if (current == nullptr) {
+        return false;
+    }
+    if (this->verticesCount() != current->verticesCount()) {
+        return false;
+    }
+    std::vector<Segment> sidesOfFirstPolygon = {};
+    std::vector<Segment> sidesOfSecondPolygon = {};
+    size_t size = this->verticesCount();
+    for (size_t i = 0; i < size; i++) {
+        Segment segFirst(vertices[i], vertices[(i + 1) % size]);
+        Segment segSecond(current->vertices[i], current->vertices[(i + 1) % size]);
+        sidesOfFirstPolygon.push_back(segFirst);
+        sidesOfSecondPolygon.push_back(segSecond);
+    }
+    for (size_t i = 0; i < size; i++) {
+        if (Polygon::isPropotional(sidesOfFirstPolygon, sidesOfSecondPolygon) &&
+            Polygon::isAglesEqual(sidesOfFirstPolygon, sidesOfSecondPolygon)) {
+            
+            long double value = Polygon::getPropotionalCoefficient(sidesOfFirstPolygon, sidesOfSecondPolygon);
+            if (Point::isEqual(value, 1)) {
+                 return true;
+            }
+        }
+        Polygon::shiftPolygon(sidesOfSecondPolygon);
+    }
+    return false;
 }
 
 bool Polygon::isSimilarTo(const Shape& another) const {
@@ -154,11 +183,28 @@ void Polygon::reflex(const Point& center) {
 }
 
 void Polygon::reflex(const Line& axis) {
-    
+    const Line axisXLine = Line::createAxisXLine();
+    long double angle = axis.getAngleFromLine(axisXLine);
+    size_t size = vertices.size();
+    this->rotate(Point(0, 0), angle);
+    long double deltaX = axis.getLengthToXLine();
+    this->moveBy(deltaX, 0);
+    for (size_t i = 0; i < size; i++) {
+        vertices[i] = Point(vertices[i].getX(), -vertices[i].getY());
+    }
+    this->moveBy(-deltaX, 0);
+    this->rotate(Point(0, 0), -angle);
+    return;
 }
 
 void Polygon::scale(const Point& center, long double& coefficient) {
-
+    size_t size = vertices.size();
+    for (size_t i = 0; i < size; i++) {
+        Vector v(center, vertices[i]);
+        v *= coefficient;
+        vertices[i] = Point(center.getX() + vertices[i].getX(), center.getY() + vertices[i].getY());
+    }
+    return;
 }
 
 bool Polygon::operator == (const Shape& another) const {
@@ -221,4 +267,16 @@ void Polygon::shiftPolygon(std::vector<Segment>& polygon) {
     result.push_back(polygon.front());
     polygon = result;
     return;
+}
+
+void Polygon::moveBy(const long double& deltaX, const long double& deltaY) {
+    size_t size = vertices.size();
+    for (size_t i = 0; i < size; i++) {
+        vertices[i] = Point(vertices[i].getX() + deltaX, vertices[i].getY() + deltaY);
+    }
+    return;
+}
+
+long double Polygon::getPropotionalCoefficient(const std::vector<Segment>& first, const std::vector<Segment>& second) {
+    return first[0].getLength() / second[0].getLength();
 }
