@@ -21,14 +21,6 @@ public:
 
 public:
 
-    virtual Point getFirstFocus() const override;
-    virtual Point getSecondFocus() const override;
-
-    virtual std::pair<Point, Point> focuses() const override;
-    virtual std::pair<Line, Line> directrices() const override;
-
-    virtual long double eccentricity() const override;
-
     virtual Point getCenter() const override;
 
 public:
@@ -38,8 +30,6 @@ public:
 
     virtual bool isCongruentTo(const Shape& another) const override;
     virtual bool isSimilarTo(const Shape& another) const override;
-
-    virtual bool containsPoint(const Point& point) const override;
 
     virtual void rotate(const Point& center, const long double& angle) override;
     virtual void reflex(const Point& center) override;

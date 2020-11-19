@@ -3,7 +3,7 @@
 #include "shape.h"
 
 class Ellipse: public Shape {
-private:
+protected:
 
     Point firstFocus;
     Point secondFocus;
@@ -12,6 +12,12 @@ private:
 
     long double a;
     long double b;
+    long double c;
+
+protected:
+
+    static const long double EPS;
+    static const long double PI;
 
 public:
 

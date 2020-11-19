@@ -49,7 +49,7 @@ bool Point::isEqualToZero(const long double& value) {
 
 bool Point::leftIsAboveRight(const long double& left, const long double& right) {
     const long double delta = left - right;
-    return delta > Point::EPS;
+    return delta >= Point::EPS;
 }
 
 void Point::rotate(const Point& center, const long double& angle) {

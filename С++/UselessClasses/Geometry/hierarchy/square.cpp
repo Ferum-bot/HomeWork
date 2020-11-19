@@ -6,12 +6,7 @@ Square::Square(const Square& square) = default;
 
 Square::~Square() = default;
 
-Square::Square(const Point& first, const Point& second) {
-    vertices.push_back(first);
-    vertices.push_back(Point(first.getX(), second.getY()));
-    vertices.push_back(second);
-    vertices.push_back(Point(second.getX(), first.getY()));
-}
+Square::Square(const Point& first, const Point& second): Rectangle(first, second) {}
 
 bool Square::isCongruentTo(const Shape& another) const {
     const Square* current = dynamic_cast<const Square*>(&another);
@@ -75,4 +70,22 @@ bool Square::operator == (const Shape& another) const {
         }
     }
     return true;
+}
+
+bool Square::operator != (const Shape& another) const {
+    return !(*this == another);
+}
+
+Circle Square::getCircumscribedCircle() const {
+    const long double rad = Vector(vertices[0], vertices[2]).getLength() / 2;
+    const long double x = (vertices[0].getX() + vertices[2].getX()) / 2;
+    const long double y = (vertices[0].getY() + vertices[2].getY()) / 2;
+    return Circle(Point(x, y), rad);
+}
+
+Circle Square::getInscribedCircle() const {
+    const long double rad = Vector(vertices[0], vertices[1]).getLength() / 2;
+    const long double x = (vertices[0].getX() + vertices[2].getX()) / 2;
+    const long double y = (vertices[0].getY() + vertices[2].getY()) / 2;
+    return Circle(Point(x, y), rad);
 }
