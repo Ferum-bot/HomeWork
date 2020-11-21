@@ -21,7 +21,7 @@ public:
     virtual void rotate(const Point& center, const long double& angle) = 0;
     virtual void reflex(const Point& center) = 0;
     virtual void reflex(const Line& axis) = 0;
-    virtual void scale(const Point& center, long double& coefficient) = 0;
+    virtual void scale(const Point& center, const long double& coefficient) = 0;
 
     virtual bool operator == (const Shape& another) const = 0;
     virtual bool operator != (const Shape& another) const = 0;

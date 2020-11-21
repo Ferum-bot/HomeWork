@@ -12,7 +12,7 @@
 #include "hierarchy/circle.h"
 #include "hierarchy/ellipse.h"
 #include "hierarchy/square.h"
-/*
+
 #include "gtest/gtest.h"
 
 double dist(const Point& a, const Point& b) {
@@ -260,20 +260,8 @@ TEST(Ellipse, Area) {
     ASSERT_NEAR(ellipse.area(), area, 1e-6);
 }
 
-*/
-
 signed main(int argc, char** argv) {
-    //::testing::InitGoogleTest(&argc, argv);
-    //RUN_ALL_TESTS()
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
     
-    Point p1(1, 1);
-    Point p2(2,1);
-    Point p3(2, 2);
-    Point p4(1, 2);
-    std::vector<Point> sq = {p1, p2, p3, p4};
-    Polygon p(sq);
-    std::cout << p.perimeter() << std::endl;
-    std::cout << p.area() << std::endl;
-
-    return 0;
 }

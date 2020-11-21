@@ -34,7 +34,7 @@ public:
     virtual void rotate(const Point& center, const long double& angle) override;
     virtual void reflex(const Point& center) override;
     virtual void reflex(const Line& axis) override;
-    virtual void scale(const Point& center, long double& coefficient) override;
+    virtual void scale(const Point& center, const long double& coefficient) override;
 
     virtual bool operator == (const Shape& another) const override;
     virtual bool operator != (const Shape& another) const override;

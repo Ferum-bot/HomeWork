@@ -60,7 +60,7 @@ void Circle::reflex(const Line& axis) {
     center.rotate(Point(0, 0), -angle);
 }
 
-void Circle::scale(const Point& center, long double& coefficient) {
+void Circle::scale(const Point& center, const long double& coefficient) {
     Ellipse::scale(center, coefficient);
     Vector v1(center, this->center);
     v1 *= coefficient;

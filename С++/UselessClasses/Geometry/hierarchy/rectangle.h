@@ -6,7 +6,7 @@ class Rectangle: public Polygon {
 public:
 
     Rectangle();
-    Rectangle(const Point& first, const Point& second/*some more*/);
+    Rectangle(const Point& first, const Point& second, const long double& ratio);
 
     Rectangle(const Rectangle& rectangle);
 

@@ -6,7 +6,7 @@ Square::Square(const Square& square) = default;
 
 Square::~Square() = default;
 
-Square::Square(const Point& first, const Point& second): Rectangle(first, second) {}
+Square::Square(const Point& first, const Point& second): Rectangle(first, second, 1) {}
 
 bool Square::isCongruentTo(const Shape& another) const {
     const Square* current = dynamic_cast<const Square*>(&another);

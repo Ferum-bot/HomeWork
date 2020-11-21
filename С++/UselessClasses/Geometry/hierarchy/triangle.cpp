@@ -4,6 +4,12 @@ Triangle::Triangle(const Triangle& triangle) = default;
 
 Triangle::~Triangle() = default;
 
+Triangle::Triangle(const Point& a, const Point& b, const Point& c) {
+    vertices.push_back(a);
+    vertices.push_back(b);
+    vertices.push_back(c);
+}
+
 Triangle::Triangle(const std::vector<Point>& vertices): Polygon(vertices) {
     if (this->verticesCount() != 3) {
         throw std::invalid_argument("invalid number of vertices");

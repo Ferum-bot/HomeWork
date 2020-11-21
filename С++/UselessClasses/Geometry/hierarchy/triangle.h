@@ -6,6 +6,7 @@
 class Triangle final : public Polygon {
 public:
 
+    Triangle(const Point& a, const Point& b, const Point& c);
     Triangle(const std::vector<Point>& vertices);
 
     Triangle(const Triangle& triangle);

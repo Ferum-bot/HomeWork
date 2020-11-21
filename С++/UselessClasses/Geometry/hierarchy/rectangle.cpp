@@ -6,7 +6,7 @@ Rectangle::~Rectangle() = default;
 
 Rectangle::Rectangle() {}
 
-Rectangle::Rectangle(const Point& first, const Point& second) {
+Rectangle::Rectangle(const Point& first, const Point& second, const long double& ratio) {
     vertices.push_back(first);
     vertices.push_back(Point(first.getX(), second.getY()));
     vertices.push_back(second);

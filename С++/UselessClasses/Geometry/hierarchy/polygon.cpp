@@ -197,7 +197,7 @@ void Polygon::reflex(const Line& axis) {
     return;
 }
 
-void Polygon::scale(const Point& center, long double& coefficient) {
+void Polygon::scale(const Point& center, const long double& coefficient) {
     size_t size = vertices.size();
     for (size_t i = 0; i < size; i++) {
         Vector v(center, vertices[i]);

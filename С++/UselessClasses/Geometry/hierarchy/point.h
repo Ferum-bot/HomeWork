@@ -4,7 +4,7 @@
 #include <algorithm>
 
 class Point final {
-private:
+public:
 
     static const long double PI;
     static const long double EPS;

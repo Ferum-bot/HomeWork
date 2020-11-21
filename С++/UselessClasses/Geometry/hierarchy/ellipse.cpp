@@ -118,7 +118,7 @@ void Ellipse::reflex(const Line& axis) {
     secondFocus.rotate(Point(0, 0), -angle);
 }
 
-void Ellipse::scale(const Point& center, long double& coefficient) {
+void Ellipse::scale(const Point& center, const long double& coefficient) {
     Vector v1(center, firstFocus);
     Vector v2(center, secondFocus);
     v1 *= coefficient;
