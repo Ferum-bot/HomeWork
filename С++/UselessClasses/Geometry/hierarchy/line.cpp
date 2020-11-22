@@ -135,3 +135,15 @@ long double Line::getLengthToXLine() const {
     }
     return -c / b;
 }
+
+Vector Line::getNormalVector() const {
+    return Vector(a / sqrt(a * a + b * b), b / sqrt(a * a + b * b));
+}
+
+bool Line::isContain(const Point& point) const {
+    return this->getDistFromPoint(point) < Point::EPS;
+}
+
+long double Line::getDistFromPoint(const Point& point) const {
+    return abs(a * point.x + b * point.y + c) / (sqrt(a * a + b  * b));
+}

@@ -159,6 +159,9 @@ bool Polygon::containsPoint(const Point& point) const {
         if (lineWhichContainsCurrentPoint.intersectsWithSegment(currentSegment)) {
             numberOfIntersections++;
         }
+        if (currentSegment.containPoint(point)) {
+            return true;
+        }
     }
     if (numberOfIntersections % 2 == 0) {
         return false;
@@ -183,17 +186,17 @@ void Polygon::reflex(const Point& center) {
 }
 
 void Polygon::reflex(const Line& axis) {
-    const Line axisXLine = Line::createAxisXLine();
-    long double angle = axis.getAngleFromLine(axisXLine);
-    size_t size = vertices.size();
-    this->rotate(Point(0, 0), angle);
-    long double deltaX = axis.getLengthToXLine();
-    this->moveBy(deltaX, 0);
+    size_t size = this->vertices.size();
     for (size_t i = 0; i < size; i++) {
-        vertices[i] = Point(vertices[i].getX(), -vertices[i].getY());
+        Point& point = vertices[i];
+        Vector norm = axis.getNormalVector();
+        norm *= axis.getDistFromPoint(point);
+        if (!axis.isContain((point + norm).getPoint())) {
+            norm *= -1;
+        }
+        norm *= 2;
+        point = (point + norm).getPoint();
     }
-    this->moveBy(-deltaX, 0);
-    this->rotate(Point(0, 0), -angle);
     return;
 }
 
@@ -202,7 +205,7 @@ void Polygon::scale(const Point& center, const long double& coefficient) {
     for (size_t i = 0; i < size; i++) {
         Vector v(center, vertices[i]);
         v *= coefficient;
-        vertices[i] = Point(center.getX() + vertices[i].getX(), center.getY() + vertices[i].getY());
+        vertices[i] = Point(center.getX() + v.getX(), center.getY() + v.getY());
     }
     return;
 }
@@ -216,8 +219,15 @@ bool Polygon::operator == (const Shape& another) const {
         return false;
     }
     size_t size = this->verticesCount();
+    size_t startPosition = 0;
     for (size_t i = 0; i < size; i++) {
-        if (vertices[i] != right->vertices[i]) {
+        if (vertices[0] == right->vertices[i]) {
+            startPosition = i;
+            break;
+        }
+    }
+    for (size_t i = 0; i < size; i++) {
+        if (vertices[i] != right->vertices[(startPosition + i) % size]) {
             return false;
         }
     }
@@ -279,4 +289,11 @@ void Polygon::moveBy(const long double& deltaX, const long double& deltaY) {
 
 long double Polygon::getPropotionalCoefficient(const std::vector<Segment>& first, const std::vector<Segment>& second) {
     return first[0].getLength() / second[0].getLength();
+}
+
+std::ostream& operator << (std::ostream& out, const Polygon& polygon) {
+    for (const Point& point : polygon.vertices) {
+        out << point.getX() << ' ' << point.getY() << std::endl;
+    }
+    return out;
 }

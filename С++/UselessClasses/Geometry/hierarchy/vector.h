@@ -28,8 +28,12 @@ public:
 
     long double getLength() const;
 
+    Point getPoint() const;
+
     friend bool operator == (const Vector& left, const Vector& right);
     friend bool operator != (const Vector& left, const Vector& right);
+
+    friend Vector operator + (const Point& left, const Vector& right);
 
     Vector& operator *= (const long double& value);
 

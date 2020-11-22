@@ -7,6 +7,7 @@
 #include "segment.h"
 
 #include <stdexcept>
+#include <iostream>
 
 class Polygon: public Shape {
 public:
@@ -25,6 +26,9 @@ public:
     virtual bool isConvex() const;
 
     virtual void moveBy(const long double& deltaX, const long double& deltaY);
+
+    friend std::ostream& operator <<(std::ostream& out, const Polygon& polygon);
+
 
 public:
 

@@ -16,6 +16,8 @@ public:
     Circle circumscribedCircle() const;
     Circle inscribedCircle() const;
 
+    friend std::ostream& operator <<(std::ostream& out, const Triangle& triangle);
+
 public:
 
     virtual bool isCongruentTo(const Shape& another) const override;

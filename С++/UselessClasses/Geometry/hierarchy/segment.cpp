@@ -64,3 +64,20 @@ long double Segment::getLength() const {
 Vector Segment::getVector() const {
     return Vector(first, second);
 }
+
+bool Segment::containPoint(const Point& point) const {
+    const long double a = first.y - second.y;
+    const long double b = second.x - first.x;
+    const long double c = first.x * second.y - second.x * first.y;
+    if (a * point.x + b * point.y + c < Point::EPS) {
+        if (Point::leftIsAboveRight(point.getX(), this->getMinX()) &&
+            Point::leftIsAboveRight(this->getMaxX(), point.getX()) &&
+            Point::leftIsAboveRight(point.getY(), this->getMinY()) &&
+            Point::leftIsAboveRight(this->getMaxY(), point.getY())) {
+        
+            return true;
+
+        }
+    }
+    return false;
+}

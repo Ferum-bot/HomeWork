@@ -64,7 +64,7 @@ void Circle::scale(const Point& center, const long double& coefficient) {
     Ellipse::scale(center, coefficient);
     Vector v1(center, this->center);
     v1 *= coefficient;
-    this->center = Point(this->center.getX() + center.getX(), this->center.getY() + center.getY());
+    this->center = Point(v1.getX() + center.getX(), v1.getY() + center.getY());
 }
 
 bool Circle::operator == (const Shape& another) const {

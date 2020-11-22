@@ -52,9 +52,12 @@ bool Point::leftIsAboveRight(const long double& left, const long double& right) 
     return delta >= Point::EPS;
 }
 
-void Point::rotate(const Point& center, const long double& angle) {
-    x = (x - center.getX()) * cos(angle) - (y - center.getY()) * sin(angle);
-    y = (x - center.getX()) * sin(angle) + (y - center.getY()) * cos(angle);
+void Point::rotate(const Point& center, const long double& angleDegrees) {
+    const long double angle = Point::convertToRadians(angleDegrees);
+    const long double newX = (x - center.getX()) * cos(angle) - (y - center.getY()) * sin(angle) + center.getX();
+    const long double newY = (x - center.getX()) * sin(angle) + (y - center.getY()) * cos(angle) + center.getY();
+    x = newX;
+    y = newY;
 }
 
 void Point::reflex(const Point& center) {
@@ -63,4 +66,8 @@ void Point::reflex(const Point& center) {
     x += 2 * vectorX;
     y += 2 * vectorY;
     return;
+}
+
+long double Point::convertToRadians(const long double& angle) {
+    return (angle * Point::PI) / 180;
 }

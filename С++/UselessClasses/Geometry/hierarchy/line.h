@@ -29,11 +29,15 @@ public:
 
     bool intersectsWithSegment(const Segment& segment) const;
     bool intersectsWithLine(const Line& line) const;
+    bool isContain(const Point& point) const;
 
     Point getIntersection(const Line& line) const;
 
     long double getAngleFromLine(const Line& line) const;
     long double getLengthToXLine() const;
+    long double getDistFromPoint(const Point& point) const;
+
+    Vector getNormalVector() const;
 
     friend bool operator == (const Line& left, const Line& right);
     friend bool operator != (const Line& left, const Line& right);

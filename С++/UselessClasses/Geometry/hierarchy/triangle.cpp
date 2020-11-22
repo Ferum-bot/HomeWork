@@ -87,8 +87,15 @@ bool Triangle::operator == (const Shape& another) const {
         return false;
     }
     size_t size = this->verticesCount();
+    size_t startPosition = 0;
     for (size_t i = 0; i < size; i++) {
-        if (vertices[i] != current->vertices[i]) {
+        if (vertices[0] == current->vertices[i]) {
+            startPosition = i;
+            break;
+        }
+    }
+    for (size_t i = 0; i < size; i++) {
+        if (vertices[i] != current->vertices[(i + startPosition) % size]) {
             return false;
         }
     }
@@ -97,4 +104,11 @@ bool Triangle::operator == (const Shape& another) const {
 
 bool Triangle::operator != (const Shape& another) const {
     return !(*this == another);
+}
+
+std::ostream& operator <<(std::ostream& out, const Triangle& triangle) {
+    for (size_t i = 0; i < triangle.verticesCount(); i++) {
+        out << triangle.vertices[i].getX() << ' ' << triangle.vertices[i].getY() << std::endl;
+    }
+    return out;
 }

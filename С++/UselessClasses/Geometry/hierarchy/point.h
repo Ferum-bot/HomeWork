@@ -3,6 +3,7 @@
 #include <math.h>
 #include <algorithm>
 
+
 class Point final {
 public:
 
@@ -25,7 +26,7 @@ public:
     long double getX() const;
     long double getY() const;
 
-    void rotate(const Point& center, const long double& angle);
+    void rotate(const Point& center, const long double& angleDegrees);
     void reflex(const Point& center);
 
     friend bool operator == (const Point& left, const Point& right);
@@ -38,6 +39,8 @@ public:
     static bool isEqual(const long double& first, const long double& second);
     static bool isEqualToZero(const long double& value);
     static bool leftIsAboveRight(const long double& left, const long double& right);
+
+    static long double convertToRadians(const long double& angle);
 
 };
 

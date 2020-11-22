@@ -13,7 +13,7 @@ Ellipse::Ellipse(const Point& first, const Point& second, const long double& sum
     firstFocus = first;
     secondFocus = second;
     this->sumOfDistance = sumOfDistance;
-    c = Vector(first, second).getLength() / 2;
+    c = Vector(first, second).getLength();
     a = sumOfDistance;
     b = a * sqrt(1 - c / a * c / a);
 }
@@ -68,11 +68,11 @@ Point Ellipse::getCenter() const {
 long double Ellipse::perimeter() const {
     long double value1 = Ellipse::PI * a * b + (a - b) * (a - b);
     value1 /= (a + b);
-    return 4 * value1;
+    return 2 * value1;
 }
 
 long double Ellipse::area() const {
-    return Ellipse::PI * a * b;
+    return Ellipse::PI * a * b / 4;
 }
 
 bool Ellipse::isCongruentTo(const Shape& another) const {
@@ -123,7 +123,7 @@ void Ellipse::scale(const Point& center, const long double& coefficient) {
     Vector v2(center, secondFocus);
     v1 *= coefficient;
     v2 *= coefficient;
-    firstFocus = Point(center.getX() + firstFocus.getX(), center.getY() + firstFocus.getY());
-    secondFocus = Point(center.getX() + secondFocus.getX(), center.getY() + secondFocus.getY());
+    firstFocus = Point(center.getX() + v1.getX(), center.getY() + v1.getY());
+    secondFocus = Point(center.getX() + v2.getX(), center.getY() + v2.getY());
 }
 

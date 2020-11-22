@@ -67,3 +67,11 @@ Vector& Vector::operator *= (const long double& value) {
     this->y *= value;
     return (*this);
 }
+
+Point Vector::getPoint() const {
+    return Point(x, y);
+}
+
+Vector operator + (const Point& left, const Vector& right) {
+    return Vector(left.getX() + right.getX(), left.getY() + right.getY());
+}

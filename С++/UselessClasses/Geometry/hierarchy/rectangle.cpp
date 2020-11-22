@@ -89,8 +89,15 @@ bool Rectangle::operator == (const Shape& another) const {
     if (current == nullptr) {
         return false;
     }
+    size_t startPosition = 0;
     for (size_t i = 0; i < 4; i++) {
-        if (vertices[i] != current->vertices[i]) {
+        if (vertices[0] == current->vertices[i]) {
+            startPosition = i;
+            break;
+        }
+    }
+    for (size_t i = 0; i < 4; i++) {
+        if (vertices[i] != current->vertices[(i + startPosition) % 4]) {
             return false;
         }
     }

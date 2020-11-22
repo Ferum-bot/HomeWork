@@ -262,6 +262,26 @@ TEST(Ellipse, Area) {
 
 signed main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-    
+    RUN_ALL_TESTS();
+
+    Point a(0, 0);
+    Point b(-1, -1);
+    Point c(1, -1);
+    Point d(-1, 1);
+    Point e(1, 1);
+
+    Triangle actual(a, b, c);
+    Triangle expected(a, d, e);
+    actual.rotate(a, 45);
+    actual.scale(a, 20);
+    actual.rotate(a , 45);
+    std::cout << actual << std::endl;
+    Line line(a, {1, 1});
+    actual.reflex(line);
+    std::cout << actual << std::endl;
+    actual.scale(a, 0.05);
+
+    std::cout << actual << std::endl;
+
+    return 0;
 }

@@ -31,6 +31,8 @@ public:
 
     Vector getVector() const;
 
+    bool containPoint(const Point& point) const;
+
     friend bool operator == (const Segment& left, const Segment& right);
     friend bool operator != (const Segment& left, const Segment& right);
 
