@@ -61,3 +61,9 @@ https://stackoverflow.com/questions/tagged/android
 ## Ссылка на Google Doc
 
 https://docs.google.com/document/d/1s8UK26wheF8VVr4IlmGYY796NPe1ovq3WgbL67scKqM/edit?usp=sharing
+
+## Api
+Полезные Api для создании приложений, помогают делать различные приложения для тренировки.
+
+https://developers.zomato.com/api
+(пример приложения https://github.com/Ebraheemb/RestaurantsExplorer)
