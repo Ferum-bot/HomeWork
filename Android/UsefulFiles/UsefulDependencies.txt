@@ -20,6 +20,7 @@ buildscript {
         swipe_to_refresh_layout_version = "1.1.0"
         material_version = "1.2.1"
         touch_image_view_viersion = "3.0.1"
+        delegate_adapter_version = "4.3.0"
     }
 
   dependencies {
@@ -130,4 +131,8 @@ dependencies {
 
   //PhotoView
   implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+  
+  // Delegate Adapter + viewBinding
+  implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0'
+  implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0'
 }
