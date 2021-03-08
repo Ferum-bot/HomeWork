@@ -7,25 +7,37 @@
 template<typename T = void>
 class ArcGraph final: public IGraph<T> {
 public:
-    virtual void AddEdge(int from, int to, T &&element) {};
 
-    ArcGraph() {};
+    ArcGraph();
 
-    ArcGraph(IGraph<T> *_oth) {};
+    ArcGraph(IGraph<T> *_oth);
 
-    virtual int VerticesCount() const { return 0; };
+    ArcGraph(const ArcGraph& graph);
 
-    virtual void GetNextVertices(int vertex, std::vector<int> &vertices) const {};
+    ~ArcGraph();
 
-    virtual void GetPrevVertices(int vertex, std::vector<int> &vertices) const {};
+    virtual void addEdge(const int32_t& from, const int32_t& to, T &&element);
 
-    virtual void DeepFirstSearch(int vertex, std::vector<int> &vertices) const {};
+    virtual int verticesCount() const noexcept;
 
-    virtual void BreadthFirstSearch(int vertex, std::vector<int> &vertices) const {};
+    virtual void getNextVertices(int vertex, std::vector<int> &vertices) const noexcept;
+
+    virtual void getPrevVertices(int vertex, std::vector<int> &vertices) const noexcept;
+
+    virtual void deepFirstSearch(int vertex, std::vector<int> &vertices) const noexcept;
+
+    virtual void breadthFirstSearch(int vertex, std::vector<int> &vertices) const noexcept;
+
+    ArcGraph<T>& operator = (const ArcGraph<T>& other) noexcept;
 
 private:
     
-    
+    std::vector<NodePair<T>*> pairsOfVertices;
+
+    void clearValue() noexcept;
+
+    bool isValueEmpty() const noexcept;
+    bool isValueNotEmpty() const noexcept;
 
 };
 

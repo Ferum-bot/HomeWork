@@ -6,6 +6,7 @@
 #include <utility>
 
 #include "src/nodePair.h"
+#include "src/nodePair.cpp"
 
 template<typename T>
 class IGraph {
@@ -16,17 +17,18 @@ public:
 
     IGraph(IGraph *_oth) {};
 
-    virtual void AddEdge(int from, int to, T &&_obj) = 0;
+    virtual void addEdge(int from, int to, T &&_obj) = 0;
 
-    virtual int VerticesCount() const = 0;
+    virtual int verticesCount() const = 0;
 
-    virtual void GetNextVertices(int vertex, std::vector<int> &vertices) const = 0;
+    virtual void getNextVertices(int vertex, std::vector<int> &vertices) const = 0;
 
-    virtual void GetPrevVertices(int vertex, std::vector<int> &vertices) const = 0;
+    virtual void getPrevVertices(int vertex, std::vector<int> &vertices) const = 0;
 
-    virtual void DeepFirstSearch(int vertex, std::vector<int> &vertices) const = 0;
+    virtual void deepFirstSearch(int vertex, std::vector<int> &vertices) const = 0;
 
-    virtual void BreadthFirstSearch(int vertex, std::vector<int> &vertices) const = 0;
+    virtual void breadthFirstSearch(int vertex, std::vector<int> &vertices) const = 0;
+
 };
 
 template<typename T = void>
