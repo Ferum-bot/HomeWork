@@ -6,7 +6,7 @@
 #include "../graph.h"
 
 template<typename T = void>
-class PtrsGraph : public IPtrsGraph<T> {
+class PtrsGraph final : public IPtrsGraph<T> {
 
 public:
     virtual void AddEdge(Node<T> *from, Node<T> *to, T &&_obj) {};

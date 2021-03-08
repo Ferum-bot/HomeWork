@@ -3,7 +3,9 @@
 #define HOMEWORK_1_GRAPH_H
 
 #include <vector>
-#include "src/node.h"
+#include <utility>
+
+#include "src/nodePair.h"
 
 template<typename T>
 class IGraph {

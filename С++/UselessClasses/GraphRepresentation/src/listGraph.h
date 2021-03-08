@@ -6,7 +6,7 @@
 
 
 template<typename T>
-class ListGraph : public IGraph<T> {
+class ListGraph final: public IGraph<T> {
 public:
     virtual void AddEdge(int from, int to, T &&element) {};
 

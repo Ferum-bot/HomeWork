@@ -5,7 +5,7 @@
 #include "../graph.h"
 
 template<typename T = void>
-class ArcGraph : public IGraph<T> {
+class ArcGraph final: public IGraph<T> {
 public:
     virtual void AddEdge(int from, int to, T &&element) {};
 
@@ -22,6 +22,11 @@ public:
     virtual void DeepFirstSearch(int vertex, std::vector<int> &vertices) const {};
 
     virtual void BreadthFirstSearch(int vertex, std::vector<int> &vertices) const {};
+
+private:
+    
+    
+
 };
 
 #endif //HOMEWORK_1_ARCGRAPH_H

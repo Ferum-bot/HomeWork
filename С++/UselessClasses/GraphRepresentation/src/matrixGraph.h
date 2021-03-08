@@ -6,7 +6,7 @@
 #include "../graph.h"
 
 template<typename T = void>
-class MatrixGraph : public IGraph<T> {
+class MatrixGraph final : public IGraph<T> {
 public:
     virtual void AddEdge(int from, int to, T &&element) {};
 

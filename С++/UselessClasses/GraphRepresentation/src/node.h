@@ -3,7 +3,14 @@
 #define HOMEWORK_1_NODE_H
 
 template<typename T>
-class Node {
+class Node final {
+public:
+
+
+private:
+
+    T* value;
+
 };
 
 #endif //HOMEWORK_1_NODE_H
