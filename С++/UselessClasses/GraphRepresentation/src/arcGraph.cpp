@@ -48,6 +48,3 @@ ArcGraph<T>& ArcGraph<T>::operator = (const ArcGraph<T>& other) noexcept {
         this->pairsOfVertices.push_back(copyPair);
     }
 }
-
-template<typename T>
-void ArcGraph<T>::addEdge()
