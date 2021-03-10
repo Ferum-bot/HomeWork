@@ -5,6 +5,7 @@
 #include "src/listGraph.h"
 #include "src/matrixGraph.h"
 #include "src/arcGraph.h"
+#include "src/arcGraph.cpp"
 #include "src/ptrsGraph.h"
 
 // TEST(IGraph, Creating) {
@@ -16,6 +17,7 @@
 
 
 int main(int argc, char **argv) {
-    
+    //IGraph<int>* arc = new ArcGraph<int>;
+
     return 0;
 }
