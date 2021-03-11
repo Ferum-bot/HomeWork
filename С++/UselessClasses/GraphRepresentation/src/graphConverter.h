@@ -1,43 +1,62 @@
 #pragma once
 
-#include "listGraph.h"
-#include "matrixGraph.h"
+#include "../graph.h"
+
 #include "arcGraph.h"
-#include "ptrsGraph.h"
+#include "matrixGraph.h"
+#include "listGraph.h"
 
-
-template<typename T>
 class GraphConverter final {
 public:
 
-    bool isArcGraph(IGraph<T>* graph);
-    bool isListGraph(IGraph<T>* graph);
-    bool isMatrixGraph(IGraph<T>* graph);
+    template<typename T>
+    static bool isArcGraph(IGraph<T>* graph) noexcept;
 
-    ArcGraph<T>* convertListGraphToAcrGraph(IGraph<T>* graph);
-    ArcGraph<T>* convertMatrixGraphToArcGraph(IGraph<T>* graph);
-    ArcGraph<T>* convertPtrsGraphToArcGraph(IGraph<T>* graph);
+    template<typename T>
+    static bool isListGraph(IGraph<T>* graph) noexcept;
 
-    MatrixGraph<T>* convertListGraphToMatrixGraph(IGraph<T>* graph);
-    MatrixGraph<T>* convertArcGraphToMatrixGraph(IGraph<T>* graph);
-    MatrixGraph<T>* convertPtrsGraphToMatrixGraph(IGraph<T>* graph);
+    template<typename T>
+    static bool isMatrixGraph(IGraph<T>* graph) noexcept;
 
-    ListGraph<T>* convertArcGraphToListGraph(IGraph<T>* graph);
-    ListGraph<T>* convertMatrixGraphToListGraph(IGraph<T>* graph);
-    ListGraph<T>* convertPtrsGraphToListGraph(IGraph<T>* graph);
+    template<typename T>
+    static ArcGraph<T>* toArcGraph(IGraph<T>* graph);
 
-    PtrsGraph<T>* convertListGraphToPtrsGraph(IGraph<T>* graph);
-    PtrsGraph<T>* convertMatrixGraphToPtrsGraph(IGraph<T>* graph);
-    PtrsGraph<T>* convertArcGraphToPtrsGraph(IGraph<T>* graph);
+    template<typename T>
+    static ListGraph<T>* toListGraph(IGraph<T>* graph);
+
+    template<typename T>
+    static MatrixGraph<T>* toMatrixGraph(IGraph<T>* graph);
+
+    template<typename T>
+    static ArcGraph<T>* createListGraphFromArcGraph(ListGraph<T>* listGraph);
+
+    template<typename T>
+    static ArcGraph<T>* createMatrixGraphFromArcGraph(MatrixGraph<T>* matrixGraph);
+
+    template<typename T>
+    static ListGraph<T>* createArcGraphFromListGraph(ArcGraph<T>* arcGraph);
+
+    template<typename T>
+    static ListGraph<T>* createMatrixGraphFromListGraph(MatrixGraph<T>* matrixGraph);
+
+    template<typename T>
+    static MatrixGraph<T>* createArcGraphFromMatrixGraph(ArcGraph<T>* arcGraph);
+
+    template<typename T>
+    static MatrixGraph<T>* createListGraphFromMatrixGraph(ListGraph<T>* listGraph);
 
 private:
 
-    ArcGraph<T>* convertListGraphToBase(ListGraph<T>* graph);
-    ArcGraph<T>* convertMatrixGraphToBase(MatrixGraph<T>* graph);
-    ArcGraph<T>* convertPtrsGraphToBase(PtrsGraph<T>* graph);
+    template<typename T>
+    static ArcGraph<T>* createBaseFromListGraph(ListGraph<T>* listGraph);
 
-    ListGraph<T>* convertBaseToListGraph(ArcGraph<T>* graph);
-    MatrixGraph<T>* convertBaseToMatrixGraph(ArcGraph<T>* graph);
-    PtrsGraph<T>* convertBaseToPtrsGraph(ArcGraph<T>* graph);
+    template<typename T>
+    static ArcGraph<T>* createBaseFromMatrixGraph(MatrixGraph<T>* matrixGraph);
+
+    template<typename T>
+    static ListGraph<T>* convertBaseToListGraph(ArcGraph<T>* baseGraph);
+
+    template<typename T>
+    static MatrixGraph<T>* convertBaseToMatrixGraph(ArcGraph<T>* baseGraph);
 
 };

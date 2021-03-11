@@ -1,6 +1,4 @@
-
-#ifndef HOMEWORK_1_PTRSGRAPH_H
-#define HOMEWORK_1_PTRSGRAPH_H
+#pragma once
 
 #include "node.h"
 #include "../graph.h"
@@ -23,5 +21,3 @@ public:
 
     virtual void BreadthFirstSearch(Node<T> *vertex, std::vector<Node<T> *> &vertices) const {};
 };
-
-#endif //HOMEWORK_1_PTRSGRAPH_H

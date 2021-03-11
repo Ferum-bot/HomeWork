@@ -1,13 +1,11 @@
-
-#ifndef HOMEWORK_1_MATRIXGRAPH_H
-#define HOMEWORK_1_MATRIXGRAPH_H
-
+#pragma once
 
 #include "../graph.h"
 
 template<typename T = void>
 class MatrixGraph final : public IGraph<T> {
 public:
+
     virtual void AddEdge(int from, int to, T &&element) {};
 
     MatrixGraph() {};
@@ -24,5 +22,3 @@ public:
 
     virtual void BreadthFirstSearch(int vertex, std::vector<int> &vertices) const {};
 };
-
-#endif //HOMEWORK_1_MATRIXGRAPH_H

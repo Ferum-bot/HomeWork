@@ -1,6 +1,4 @@
-#ifndef HOMEWORK_1_NODE_H
-#define HOMEWORK_1_NODE_H
-
+#pragma once
 
 template<typename T>
 class Node final {
@@ -34,5 +32,3 @@ private:
     void clearNode() noexcept;
 
 };
-
-#endif //HOMEWORK_1_NODE_H
