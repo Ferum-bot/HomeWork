@@ -14,7 +14,7 @@ public:
 
     ~ListGraph() noexcept;
 
-    virtual void addEdge(const int32_t& from, const int32_t& to, T &&element) override;
+    virtual void addEdge(const int32_t& from, const int32_t& to, T element) override;
 
     virtual int verticesCount() override;
 

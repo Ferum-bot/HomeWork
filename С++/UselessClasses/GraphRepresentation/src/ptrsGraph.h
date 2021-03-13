@@ -5,15 +5,14 @@
 
 template<typename T = void>
 class PtrsGraph final : public IPtrsGraph<T> {
-
 public:
 
     PtrsGraph();
     ~PtrsGraph();
 
-    virtual void addEdge(Node<T> *from, Node<T> *to, T &&_obj) override;
+    virtual void addEdge(Node<T> *from, Node<T> *to, const T &_obj) override;
 
-    virtual int verticesCount() const;
+    virtual int verticesCount() override;
 
     virtual void getNextVertices(Node<T> *vertex, std::vector<Node<T> *> &vertices) override;
 
@@ -25,7 +24,7 @@ public:
 
 private:
 
-    std::vector<std::tuple<Node<T>*, Node<T>*, T*>> edges;
+    std::vector<std::pair<Node<T>*, std::pair<Node<T>*, T*>>> edges;
 
     void clearValue();
 

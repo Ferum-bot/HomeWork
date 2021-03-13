@@ -14,7 +14,7 @@ public:
 
     ~MatrixGraph();
 
-    virtual void AddEdge(const int32_t& from, const int32_t& to, T &&element) override;
+    virtual void addEdge(const int32_t& from, const int32_t& to, T element) override;
 
     virtual int verticesCount() override;
 
@@ -26,11 +26,11 @@ public:
 
     virtual void breadthFirstSearch(const int32_t& vertex, std::vector<int32_t> &vertices) override;
 
-    std::vector<std::vector<T*>> getMatrix() const noexcept;
+    std::vector<std::map<int32_t, T>> getMatrix() const noexcept;
 
 private:
 
-    std::vector<std::vector<T*>> matrix;
+    std::vector<std::map<int32_t, T>> matrix;
 
     void clearValue();
 

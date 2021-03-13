@@ -11,7 +11,7 @@ public:
     ArcGraph(const ArcGraph& graph);
     virtual ~ArcGraph();
 
-    virtual void addEdge(const int32_t& from, const int32_t& to, T &&element) override;
+    virtual void addEdge(const int32_t& from, const int32_t& to, T element) override;
 
     virtual int verticesCount() override;
 

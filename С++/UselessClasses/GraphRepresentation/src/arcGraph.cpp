@@ -12,17 +12,30 @@ ArcGraph<T>::ArcGraph(IGraph<T>* other) {
     }
     if (GraphConverter::isArcGraph(other)) {
         ArcGraph<T>* arcGraph = GraphConverter::toArcGraph(other);
-        this = arcGraph->getCopy();
+            for (NodePair<T>* pair: arcGraph->pairsOfVertices) {
+            NodePair<T>* copyPair = new NodePair<T>(*pair);
+            this->pairsOfVertices.push_back(copyPair);
+        }
         return;
     }
     if(GraphConverter::isListGraph(other)) {
         ListGraph<T>* listGraph = GraphConverter::toListGraph(other);
-        this = GraphConverter::createArcGraphFromListGraph(listGraph);
+        ArcGraph<T>* newGraph = GraphConverter::createArcGraphFromListGraph(listGraph);
+        for (NodePair<T>* pair: newGraph->pairsOfVertices) {
+            NodePair<T>* copyPair = new NodePair<T>(*pair);
+            this->pairsOfVertices.push_back(copyPair);
+        }
+        delete newGraph;
         return;
     }
     if (GraphConverter::isMatrixGraph(other)) {
         MatrixGraph<T>* matrixGraph = GraphConverter::toMatrixGraph(other);
-        this = GraphConverter::createArcGraphFromMatrixGraph(matrixGraph);
+        ArcGraph<T>* newGraph = GraphConverter::createArcGraphFromMatrixGraph(matrixGraph);
+        for (NodePair<T>* pair: newGraph->pairsOfVertices) {
+            NodePair<T>* copyPair = new NodePair<T>(*pair);
+            this->pairsOfVertices.push_back(copyPair);
+        }
+        delete newGraph;
         return;
     }
 }
@@ -50,7 +63,7 @@ ArcGraph<T>::~ArcGraph() {
 }
 
 template<typename T>
-void ArcGraph<T>::addEdge(const int32_t& from, const int32_t& to, T &&element){
+void ArcGraph<T>::addEdge(const int32_t& from, const int32_t& to,T element){
     NodePair<T>* edge = new NodePair<T>(from, to, element);
     this->pairsOfVertices.push_back(edge);
 }

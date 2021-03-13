@@ -88,7 +88,7 @@ ArcGraph<T>* GraphConverter::createBaseFromListGraph(ListGraph<T>* listGraph) {
     ArcGraph<T>* resultGraph = new ArcGraph<T>();
     for (int32_t v = 0; v < size; v++) {
         for (const std::pair<int32_t, T*> pair : edges[v]) {
-            resultGraph->addEdge(v, pair.first, pair.second);
+            resultGraph->addEdge(v, pair.first, *pair.second);
         }
     }
     return resultGraph;
@@ -96,15 +96,12 @@ ArcGraph<T>* GraphConverter::createBaseFromListGraph(ListGraph<T>* listGraph) {
 
 template<typename T>
 ArcGraph<T>* GraphConverter::createBaseFromMatrixGraph(MatrixGraph<T>* matrixGraph) {
-    std::vector<std::vector<T*>> edges = matrixGraph->getMatrix();
+    std::vector<std::map<int32_t, T>> edges = matrixGraph->getMatrix();
     const int32_t size = edges.size();
     ArcGraph<T>* resultGraph = new ArcGraph<T>();
     for (int32_t v = 0; v < size; v++) {
-        for (int32_t u = 0; u < size; u++) {
-            if (edges[v][u] == nullptr) {
-                continue;
-            }
-            resultGraph->addEdge(v, u, *edges[v][u]);
+        for (auto pair : edges[v]) {
+            resultGraph->addEdge(v, pair.first, pair.second);
         }
     } 
     return resultGraph;

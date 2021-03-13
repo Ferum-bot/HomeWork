@@ -15,9 +15,6 @@ NodePair<T>::NodePair(int32_t firstNode, int32_t secondNode, const T& weght) noe
 
 template<typename T>
 NodePair<T>::NodePair(const NodePair& pair) noexcept {
-    if (this->valueIsNotEmpty()) {
-        this->clearValue();
-    }
     if (pair.valueIsEmpty()) {
         return;
     }
@@ -77,7 +74,9 @@ bool NodePair<T>::valueIsNotEmpty() const noexcept {
 
 template<typename T>
 void NodePair<T>::clearValue() noexcept {
-    delete this->weight;
+    if (this->weight != nullptr) {
+        delete this->weight;
+    }
     this->edge.first = -1;
     this->edge.second = -1;
 }

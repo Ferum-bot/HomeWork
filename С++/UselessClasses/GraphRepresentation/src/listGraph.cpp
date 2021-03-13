@@ -17,17 +17,45 @@ ListGraph<T>::ListGraph(IGraph<T>* oth) noexcept {
     }
     if (GraphConverter::isArcGraph(oth)) {
         ArcGraph<T>* arcGraph = GraphConverter::toArcGraph(oth);
-        this = GraphConverter::createListGraphFromArcGraph(arcGraph);
+        ListGraph<T>* other = GraphConverter::createListGraphFromArcGraph(arcGraph);
+        int32_t size = other->listOfEdges.size();
+        this->listOfEdges.resize(size);
+        for (int32_t v = 0; v < size; v++) {
+            for (const std::pair<int32_t, T*>& pair : other->listOfEdges[v]) {
+                T* newWeight = new T(*pair.second);
+                std::pair<int32_t, T*> newPair = std::pair(pair.first, newWeight);
+                this->listOfEdges[v].push_back(newPair);
+            }
+        }
+        delete other;
         return;
     }
     if (GraphConverter::isListGraph(oth)) {
-        ListGraph<T>* listGraph = GraphConverter::toListGraph(oth);
-        this = listGraph->getCopy();
+        ListGraph<T>* other = GraphConverter::toListGraph(oth);
+        int32_t size = other->listOfEdges.size();
+        this->listOfEdges.resize(size);
+        for (int32_t v = 0; v < size; v++) {
+            for (const std::pair<int32_t, T*>& pair : other->listOfEdges[v]) {
+                T* newWeight = new T(*pair.second);
+                std::pair<int32_t, T*> newPair = std::pair(pair.first, newWeight);
+                this->listOfEdges[v].push_back(newPair);
+            }
+        }
         return;
     }
     if (GraphConverter::isMatrixGraph(oth)) {
         MatrixGraph<T>* matrixGraph = GraphConverter::toMatrixGraph(oth);
-        this = GraphConverter::createListGraphFromMatrixGraph(matrixGraph);
+        ListGraph<T>* other = GraphConverter::createListGraphFromMatrixGraph(matrixGraph);
+        int32_t size = other->listOfEdges.size();
+        this->listOfEdges.resize(size);
+        for (int32_t v = 0; v < size; v++) {
+            for (const std::pair<int32_t, T*>& pair : other->listOfEdges[v]) {
+                T* newWeight = new T(*pair.second);
+                std::pair<int32_t, T*> newPair = std::pair(pair.first, newWeight);
+                this->listOfEdges[v].push_back(newPair);
+            }
+        }
+        delete other;
         return;
     }
 }
@@ -60,7 +88,7 @@ ListGraph<T>::~ListGraph() noexcept {
 }
 
 template<typename T>
-void ListGraph<T>::addEdge(const int32_t& from, const int32_t& to, T &&element) {
+void ListGraph<T>::addEdge(const int32_t& from, const int32_t& to,T element) {
     if (this->listOfEdges.size() <= from) {
         this->listOfEdges.resize(from + 1);
     }
@@ -156,7 +184,7 @@ void ListGraph<T>::clearValue() {
 
 template<typename T>
 ListGraph<T>* ListGraph<T>::getCopy() const noexcept {
-    ListGraph<T> copy = new ListGraph<T>();
+    ListGraph<T>* copy = new ListGraph<T>();
     int32_t size = this->listOfEdges.size();
     copy->listOfEdges.resize(size);
     for (int32_t v = 0; v < size; v++) {
