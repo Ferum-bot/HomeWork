@@ -81,7 +81,7 @@ void ArcGraph<T>::getPrevVertices(const int32_t& vertex, std::vector<int32_t> &v
 
 template<typename T>
 void ArcGraph<T>::deepFirstSearch(const int32_t& vertex, std::vector<int32_t> &vertices) {
-
+    
 }
 
 template<typename T>

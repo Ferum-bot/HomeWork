@@ -24,6 +24,7 @@ int main(int argc, char **argv) {
     for (int i = 0; i < 10; i++) {
         arcGr->addEdge(i, i + 1, 100);
     }
-    std::cout << arcGr->verticesCount();
+    std::cout << arcGr->verticesCount() << std::endl;
+    std::cout << 10 * 20 << std::endl;
     return 0;
 }
