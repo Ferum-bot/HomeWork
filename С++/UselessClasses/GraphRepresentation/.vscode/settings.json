@@ -2,6 +2,7 @@
     "cmake.configureOnOpen": false,
     "files.associations": {
         "vector": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "stdexcept": "cpp"
     }
 }
