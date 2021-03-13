@@ -6,8 +6,6 @@
 #include "src/nodePair.h"
 #include "src/node.h"
 
-#include "src/nodePair.cpp"
-
 template<typename T = void>
 class IGraph {
 public:

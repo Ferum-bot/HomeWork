@@ -28,22 +28,22 @@ public:
     static MatrixGraph<T>* toMatrixGraph(IGraph<T>* graph);
 
     template<typename T>
-    static ArcGraph<T>* createListGraphFromArcGraph(ListGraph<T>* listGraph);
+    static ListGraph<T>* createListGraphFromArcGraph(ArcGraph<T>* arcGraph);
 
     template<typename T>
-    static ArcGraph<T>* createMatrixGraphFromArcGraph(MatrixGraph<T>* matrixGraph);
+    static MatrixGraph<T>* createMatrixGraphFromArcGraph(ArcGraph<T>* arcGraph);
 
     template<typename T>
-    static ListGraph<T>* createArcGraphFromListGraph(ArcGraph<T>* arcGraph);
+    static ArcGraph<T>* createArcGraphFromListGraph(ListGraph<T>* listGraph);
 
     template<typename T>
-    static ListGraph<T>* createMatrixGraphFromListGraph(MatrixGraph<T>* matrixGraph);
+    static MatrixGraph<T>* createMatrixGraphFromListGraph(ListGraph<T>* listGraph);
 
     template<typename T>
-    static MatrixGraph<T>* createArcGraphFromMatrixGraph(ArcGraph<T>* arcGraph);
+    static ArcGraph<T>* createArcGraphFromMatrixGraph(MatrixGraph<T>* matrixGraph);
 
     template<typename T>
-    static MatrixGraph<T>* createListGraphFromMatrixGraph(ListGraph<T>* listGraph);
+    static ListGraph<T>* createListGraphFromMatrixGraph(MatrixGraph<T>* matrixGraph);
 
 private:
 

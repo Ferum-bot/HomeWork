@@ -25,6 +25,8 @@ public:
 
     ArcGraph<T>& operator = (const ArcGraph<T>& other) noexcept;
 
+    std::vector<NodePair<T>*> getListOfEdges() const noexcept;
+
 private:
     
     std::vector<NodePair<T>*> pairsOfVertices;

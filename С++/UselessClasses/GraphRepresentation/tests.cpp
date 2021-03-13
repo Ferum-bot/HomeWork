@@ -8,6 +8,13 @@
 #include "src/ptrsGraph.h"
 
 #include "src/arcGraph.cpp"
+#include "src/listGraph.cpp"
+#include "src/matrixGraph.cpp"
+
+#include "src/nodePair.cpp"
+#include "src/node.cpp"
+
+#include "src/graphConverter.cpp"
 
 TEST(IGraph, Creating) {
     // IGraph<int> *listGr = new ListGraph<int>;
@@ -20,11 +27,11 @@ TEST(IGraph, Creating) {
 int main(int argc, char **argv) {
     //IGraph<int>* arc = new ArcGraph<int>;
 
-    IGraph<int>* arcGr = new ArcGraph<int>;
-    for (int i = 0; i < 10; i++) {
-        arcGr->addEdge(i, i + 1, 100);
+    try{
+        int* x = new int(3);
     }
-    std::cout << arcGr->verticesCount() << std::endl;
-    delete arcGr;
+    catch(...) {
+        std::cout << "exception" << std::endl;
+    }
     return 0;
 }

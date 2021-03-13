@@ -21,8 +21,8 @@ NodePair<T>::NodePair(const NodePair& pair) noexcept {
     if (pair.valueIsEmpty()) {
         return;
     }
-    this->edge.first = pair->getFirstNode();
-    this->edge.second = pair->getSecondNode();
+    this->edge.first = pair.getFirstNode();
+    this->edge.second = pair.getSecondNode();
     this->weight = new T(*pair.weight);
 }
 

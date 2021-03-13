@@ -6,19 +6,36 @@ template<typename T = void>
 class MatrixGraph final : public IGraph<T> {
 public:
 
-    virtual void AddEdge(int from, int to, T &&element) {};
+    MatrixGraph();
 
-    MatrixGraph() {};
+    MatrixGraph(IGraph<T> *_oth);
 
-    MatrixGraph(IGraph<T> *_oth) {};
+    MatrixGraph(const MatrixGraph<T>& other);
 
-    virtual int VerticesCount() const { return 0; };
+    ~MatrixGraph();
 
-    virtual void GetNextVertices(int vertex, std::vector<int> &vertices) const {};
+    virtual void AddEdge(const int32_t& from, const int32_t& to, T &&element) override;
 
-    virtual void GetPrevVertices(int vertex, std::vector<int> &vertices) const {};
+    virtual int verticesCount() override;
 
-    virtual void DeepFirstSearch(int vertex, std::vector<int> &vertices) const {};
+    virtual void getNextVertices(const int32_t& vertex, std::vector<int32_t> &vertices) override;
 
-    virtual void BreadthFirstSearch(int vertex, std::vector<int> &vertices) const {};
+    virtual void getPrevVertices(const int32_t& vertex, std::vector<int32_t> &vertices) override;
+
+    virtual void deepFirstSearch(const int32_t& vertex, std::vector<int32_t> &vertices) override;
+
+    virtual void breadthFirstSearch(const int32_t& vertex, std::vector<int32_t> &vertices) override;
+
+    std::vector<std::vector<T*>> getMatrix() const noexcept;
+
+private:
+
+    std::vector<std::vector<T*>> matrix;
+
+    void clearValue();
+
+    bool valueIsEmpty() const noexcept;
+    bool valueIsNotEmpty() const noexcept;
+
+    MatrixGraph<T>* getCopy() const noexcept;
 };

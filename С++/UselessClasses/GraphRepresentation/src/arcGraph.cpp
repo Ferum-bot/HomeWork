@@ -57,7 +57,14 @@ void ArcGraph<T>::addEdge(const int32_t& from, const int32_t& to, T &&element){
 
 template<typename T>
 int ArcGraph<T>::verticesCount() {
-    return pairsOfVertices.size();
+    std::map<int32_t, bool> used;
+    for (const NodePair<T>* edge : this->pairsOfVertices) {
+        const int32_t firstVertice = edge->getFirstNode();
+        const int32_t secondVertice = edge->getSecondNode();
+        used[firstVertice] = true;
+        used[secondVertice] = true;
+    }
+    return used.size();
 }
 
 template<typename T>
@@ -82,12 +89,16 @@ void ArcGraph<T>::getPrevVertices(const int32_t& vertex, std::vector<int32_t> &v
 
 template<typename T>
 void ArcGraph<T>::deepFirstSearch(const int32_t& vertex, std::vector<int32_t> &vertices) {
-    
+    ListGraph<T>* listGraphCopy = GraphConverter::createListGraphFromArcGraph(this);
+    listGraphCopy->deepFirstSearch(vertex, vertices);
+    delete listGraphCopy;
 }
 
 template<typename T>
 void ArcGraph<T>::breadthFirstSearch(const int32_t& vertex, std::vector<int32_t> &vertices) {
-
+    ListGraph<T>* listGraphCopy = GraphConverter::createListGraphFromArcGraph(this);
+    listGraphCopy->breadthFirstSearch(vertex, vertices);
+    delete listGraphCopy;
 }
 
 template<typename T>
@@ -134,4 +145,9 @@ ArcGraph<T>* ArcGraph<T>::getCopy() const noexcept {
         resultCopy->addEdge(nodePair->getFirstNode(), nodePair->getSecondNode(), nodePair->getWeight());
     } 
     return resultCopy;
+}
+
+template<typename T>
+std::vector<NodePair<T>*> ArcGraph<T>::getListOfEdges() const noexcept {
+    return this->pairsOfVertices;
 }
