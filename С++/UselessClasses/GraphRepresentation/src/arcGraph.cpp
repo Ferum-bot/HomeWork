@@ -4,6 +4,7 @@
 
 #include "graphConverter.h"
 
+
 template<typename T>
 ArcGraph<T>::ArcGraph(IGraph<T>* other) {
     if (this->isValueNotEmpty()) {
