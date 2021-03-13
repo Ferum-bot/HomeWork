@@ -9,7 +9,6 @@ class PtrsGraph final : public IPtrsGraph<T> {
 public:
 
     PtrsGraph();
-
     ~PtrsGraph();
 
     virtual void addEdge(Node<T> *from, Node<T> *to, T &&_obj) override;
@@ -26,7 +25,9 @@ public:
 
 private:
 
-    std::vector<Node<T>*> nodes;
+    std::vector<std::tuple<Node<T>*, Node<T>*, T*>> edges;
 
-    bool isValueEmpty() const noexcept;
+    void clearValue();
+
+    ListGraph<T>* createListGraph() const noexcept;
 };

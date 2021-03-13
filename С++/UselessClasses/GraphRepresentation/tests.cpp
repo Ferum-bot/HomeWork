@@ -10,11 +10,15 @@
 #include "src/arcGraph.cpp"
 #include "src/listGraph.cpp"
 #include "src/matrixGraph.cpp"
+#include "src/ptrsGraph.cpp"
 
 #include "src/nodePair.cpp"
 #include "src/node.cpp"
 
 #include "src/graphConverter.cpp"
+
+template<typename T>
+int32_t Node<T>::minAvailableId = 1e9 + 7;
 
 TEST(IGraph, Creating) {
     // IGraph<int> *listGr = new ListGraph<int>;
@@ -26,12 +30,4 @@ TEST(IGraph, Creating) {
 
 int main(int argc, char **argv) {
     //IGraph<int>* arc = new ArcGraph<int>;
-
-    try{
-        int* x = new int(3);
-    }
-    catch(...) {
-        std::cout << "exception" << std::endl;
-    }
-    return 0;
 }

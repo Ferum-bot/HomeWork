@@ -3,16 +3,14 @@
 template<typename T>
 class Node final {
 public:
-
     Node() noexcept;
     ~Node() noexcept;
 
-    std::vector<std::pair<Node<T>*, T*>> getEdges() const noexcept;
-
-    void addEdge(Node<T>* node, T* weight) noexcept;
-
+    int32_t getIndex() const noexcept;
 private:
 
-    std::vector<std::pair<Node<T>*, T*>> edges;
+    int32_t id;
+
+    static int32_t minAvailableId;
 
 };
