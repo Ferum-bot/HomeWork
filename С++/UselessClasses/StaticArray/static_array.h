@@ -1,40 +1,42 @@
-//
-// Created by Denis on 12.03.2021.
-//
-
-#ifndef HOMEWORK_2_STATIC_ARRAY_H
-#define HOMEWORK_2_STATIC_ARRAY_H
+#include <stdexcept>
 
 template<typename T, size_t sz = 0>
 class static_array {
 public:
     class iterator {
     public:
-        iterator(const iterator &);
+    
+        friend class static_array;
 
+    public:
+        iterator(const iterator &);
         ~iterator();
 
         iterator &operator=(const iterator &);
 
         iterator &operator++();
-
         iterator &operator--();
 
-        T *operator->() const;
+        T *operator->();
+        T &operator*();
 
-        T &operator*() const;
+        bool operator == (const iterator &);
+        bool operator != (const iterator &);
 
-        friend bool operator==(const iterator &, const iterator &);
+    private:
 
-        friend bool operator!=(const iterator &, const iterator &);
+        T** begin;
+        T** end;
+
+        T** currentInterator;
+
+        iterator(T** currentInterator, T** begin, T** end);
     };
 
     static_array();
-
-    static_array(size_t sz);
+    static_array(size_t size);
 
     size_t current_size();
-
     size_t size();
 
     void clear();
@@ -44,13 +46,19 @@ public:
     template<class... Args>
     static_array::iterator emplace(size_t ind, Args &&... args);
 
-    void erase(static_array::iterator);
+    void erase(static_array::iterator it);
 
-    T &at(size_t ind);
+    T& at(size_t ind);
 
     static_array::iterator begin();
-
     static_array::iterator end();
-};
 
-#endif //HOMEWORK_2_STATIC_ARRAY_H
+private:
+
+    T** dataArray;
+
+    size_t dataArraySize;
+    size_t initializedSize;
+
+    bool isValueInitilized(const size_t& pos);
+};
