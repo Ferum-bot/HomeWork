@@ -5,7 +5,7 @@ class static_array {
 public:
     class iterator {
     public:
-    
+
         friend class static_array;
 
     public:
@@ -28,13 +28,15 @@ public:
         T** begin;
         T** end;
 
-        T** currentInterator;
+        T** currentIterator;
 
-        iterator(T** currentInterator, T** begin, T** end);
+        iterator(T** currentIterator, T** begin, T** end);
     };
 
     static_array();
     static_array(size_t size);
+
+    ~static_array();
 
     size_t current_size();
     size_t size();

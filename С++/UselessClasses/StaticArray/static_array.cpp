@@ -1,17 +1,17 @@
 #include "static_array.h"
 
 template<typename T, size_t sz>
-static_array<T, sz>::iterator::iterator(T** currentInterator, T** begin, T** end) {
-    this->currentInterator = currentInterator;
+static_array<T, sz>::iterator::iterator(T** currentIterator, T** begin, T** end) {
+    this->currentIterator = currentIterator;
     this->begin = begin;
-    this->end;
+    this->end = end;
 }
 
 template<typename T, size_t sz>
 static_array<T, sz>::iterator::iterator(const static_array<T, sz>::iterator& it) {
-    this->currentInterator = new T**(it.currentInterator);
-    this->begin = new T**(it.begin);
-    this->end = new T**(it.end);
+    this->currentIterator = it.currentIterator;
+    this->begin = it.begin;
+    this->end = it.end;
 }
 
 template<typename T, size_t sz>
@@ -20,31 +20,31 @@ static_array<T, sz>::iterator::~iterator() {
 }
 
 template<typename T, size_t sz>
-static_array<T, sz>::iterator& static_array<T, sz>::iterator::operator=(const static_array<T, sz>::iterator &it) {
-    this->currentInterator = new T**(it.currentInterator);
+typename static_array<T, sz>::iterator& static_array<T, sz>::iterator::operator=(const static_array<T, sz>::iterator &it) {
+    this->currentIterator = new T**(it.currentIterator);
     this->begin = new T(it.begin);
     this->end = new T(it.end);
     return *this;
  }
 
 template<typename T, size_t sz >
-static_array<T, sz>::iterator& static_array<T, sz>::iterator::operator++() {
-    if (this->currentInterator != this->end) {
-        this->currentInterator++;
+typename static_array<T, sz>::iterator& static_array<T, sz>::iterator::operator++() {
+    if (this->currentIterator != this->end) {
+        this->currentIterator++;
     }
-    while (this->currentInterator != this->end && !*this->currentInterator) {
-        ++this->currentInterator;
+    while (this->currentIterator != this->end && !*this->currentIterator) {
+        ++this->currentIterator;
     }
     return *this;
 }
 
 template<typename T, size_t sz >
-static_array<T, sz>::iterator& static_array<T, sz>::iterator::operator--() {
-    if (this->currentInterator != this->begin) {
-        --this->currentInterator;
+typename static_array<T, sz>::iterator& static_array<T, sz>::iterator::operator--() {
+    if (this->currentIterator != this->begin) {
+        --this->currentIterator;
     }
-    while (this->currentInterator != this->begin && !*this->currentInterator) {
-        --this->currentInterator;
+    while (this->currentIterator != this->begin && !*this->currentIterator) {
+        --this->currentIterator;
     }
     return *this;
 }
@@ -56,17 +56,17 @@ T *static_array<T, sz>::iterator::operator->() {
 
 template<typename T, size_t sz >
 T &static_array<T, sz>::iterator::operator*() {
-    return **this->currentInterator;
+    return **this->currentIterator;
 }
 
 template<typename T, size_t sz >
-bool static_array<T, sz>::iterator::operator==(const static_array<T, sz>::iterator &it1) {
-    return this->currentInterator == it1.currentInterator;
+bool static_array<T, sz>::iterator::operator == (const static_array<T, sz>::iterator &it) {
+    return this->currentIterator == it.currentIterator;
 }
 
 template<typename T, size_t sz>
-bool static_array<T, sz>::iterator::operator!=(const static_array<T, sz>::iterator &it1) {
-    return this->currentInterator != it1.currentInterator;
+bool static_array<T, sz>::iterator::operator != (const static_array<T, sz>::iterator &it) {
+    return this->currentIterator != it.currentIterator;
 }
 
 template<typename T, size_t sz>
@@ -81,13 +81,13 @@ static_array<T, sz>::static_array() {
 
 template<typename T, size_t sz>
 static_array<T, sz>::static_array(size_t size) {
-    if (sz < size) {
-        sz = size;
+    if (size < sz) {
+        size = sz;
     }
-    dataArray = new T*[sz + 1];
-    dataArraySize = sz;
+    dataArray = new T*[size + 1];
+    dataArraySize = size;
     initializedSize = 0;
-    for (size_t i = 0; i < sz; i++) {
+    for (size_t i = 0; i < size; i++) {
         dataArray[i] = nullptr;
     }
 }
@@ -119,21 +119,30 @@ void static_array<T, sz>::clear(){
 }
 
 template<typename T, size_t sz>
-static_array<T, sz>::iterator static_array<T, sz>::emplace(size_t ind, T&& obj) {
+typename static_array<T, sz>::iterator static_array<T, sz>::emplace(size_t ind, T&& obj) {
     if (!isValueInitilized(ind)) {
         initializedSize++;
     }
     dataArray[ind] = new T(std::forward<T>(obj));
+    return static_array<T, sz>::iterator(
+        dataArray + ind,
+        dataArray,
+        dataArray + dataArraySize
+    );
 }
 
 template<typename T, size_t sz>
 template<class... Args>
-static_array<T, sz>::iterator static_array<T, sz>::emplace(size_t ind, Args &&... args) {
+typename static_array<T, sz>::iterator static_array<T, sz>::emplace(size_t ind, Args &&... args) {
     if (!isValueInitilized(ind)) {
         initializedSize++;
     }
     dataArray[ind] = new T(std::forward<Args>(args)...);
-
+    return static_array<T, sz>::iterator(
+        dataArray + ind,
+        dataArray,
+        dataArray + dataArraySize
+    );
 }
 
 template<typename T, size_t sz>
@@ -155,7 +164,7 @@ T& static_array<T, sz>::at(size_t ind) {
 }
 
 template<typename T, size_t sz>
-static_array<T, sz>::iterator static_array<T, sz>::begin() {
+typename static_array<T, sz>::iterator static_array<T, sz>::begin() {
     return static_array<T, sz>::iterator(
         dataArray, 
         dataArray, 
@@ -164,12 +173,17 @@ static_array<T, sz>::iterator static_array<T, sz>::begin() {
 }
 
 template<typename T, size_t sz>
-static_array<T, sz>::iterator static_array<T, sz>::end() {
+typename static_array<T, sz>::iterator static_array<T, sz>::end() {
     return static_array<T, sz>::iterator(
         dataArray + dataArraySize, 
         dataArray, 
         dataArray + dataArraySize
     );
+}
+
+template<typename T, size_t sz>
+static_array<T, sz>::~static_array() {
+    clear();
 }
 
 template<typename T, size_t sz>
