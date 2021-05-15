@@ -2,6 +2,14 @@
 
 #include <type_traits>
 
+namespace std {
+
+    template<typename T>
+    struct type_identity {
+        using type = T;
+    };
+} 
+
 template<typename T>
 struct remove_ref: public std::type_identity<T> {};
 
