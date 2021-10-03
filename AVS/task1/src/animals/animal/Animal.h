@@ -5,8 +5,9 @@
 #include "../beast/Beast.h"
 #include "../bird/Bird.h"
 #include "../fish/Fish.h"
+#include "../../random/Random.h"
 
-struct Info {
+struct Animal {
 
     enum Key { Bird, Fish, Beast };
 
@@ -16,17 +17,17 @@ struct Info {
         Beast beast;
     };
 
-    char name[];
+    char* name;
     int weight;
     Key type;
 };
 
-void inputFromStream(Info& info, std::ifstream& input);
+void inputFromStream(Animal& info, std::ifstream& input);
 
-void randomInput(Info& info);
+void randomInput(Animal& info);
 
-void outputToStream(Info& info, std::ofstream& output);
+void outputToStream(Animal& info, std::ofstream& output);
 
-double calculateFunction(Info& info);
+double calculateFunction(Animal& info);
 
 #endif //TASK1_INFO_H

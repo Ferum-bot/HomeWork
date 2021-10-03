@@ -3,12 +3,13 @@
 
 #include <iostream>
 #include <fstream>
+#include "../../random/Random.h"
 
 struct Bird {
     bool isTransferable;
 };
 
-void inputFromStream(Bird& bird, std::fstream& input);
+void inputFromStream(Bird& bird, std::ifstream& input);
 
 void randomInput(Bird& bird);
 

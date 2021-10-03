@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "../../random/Random.h"
 
 struct Beast {
 
@@ -11,7 +12,7 @@ struct Beast {
     Type type;
 };
 
-void inputFromStream(Beast& beast, std::fstream& input);
+void inputFromStream(Beast& beast, std::ifstream& input);
 
 void randomInput(Beast& beast);
 

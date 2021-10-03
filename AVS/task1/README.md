@@ -5,7 +5,7 @@
 ```
 или
 ```
-./app/task -g <infile> <outfile1> <outfile2>
+./app/task -g <intput_file> <out_file_1> <out_file_2>
 ```
 
 ### Пояснение:
