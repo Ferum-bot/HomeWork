@@ -1,5 +1,5 @@
-#ifndef TASK1_INFO_H
-#define TASK1_INFO_H
+#ifndef TASK1_ANIMAL_H
+#define TASK1_ANIMAL_H
 
 #include <iostream>
 #include "../beast/Beast.h"
@@ -30,4 +30,4 @@ void outputToStream(Animal& info, std::ofstream& output);
 
 double calculateFunction(Animal& info);
 
-#endif //TASK1_INFO_H
+#endif //TASK1_ANIMAL_H
