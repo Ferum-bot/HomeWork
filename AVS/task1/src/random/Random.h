@@ -2,7 +2,6 @@
 #define AVS_TASK1_RANDOM_H
 
 #include <cstdlib>
-#include "../animals/animal/Animal.h"
 
 int randomSmallInt();
 

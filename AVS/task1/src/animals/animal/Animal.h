@@ -9,7 +9,7 @@
 
 struct Animal {
 
-    enum Key { Bird, Fish, Beast };
+    enum Key { BIRD, FISH, BEAST };
 
     union {
         Bird bird;
