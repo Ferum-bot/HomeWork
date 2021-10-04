@@ -14,6 +14,7 @@ void inputFromStream(Container& container, std::ifstream& input) {
     for (int i = 0; i < container.size; i++) {
         Animal animal;
         inputFromStream(animal, input);
+        *(container.data + i) = animal;
     }
 }
 

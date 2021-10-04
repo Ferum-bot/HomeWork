@@ -1,7 +1,7 @@
 #include "Animal.h"
 
 void inputFromStream(Animal& info, std::ifstream& input) {
-    char* name;
+    char* name = new char[64];
     int weight, type_int;
     Animal::Key type;
     input >> type_int >> name >> weight;

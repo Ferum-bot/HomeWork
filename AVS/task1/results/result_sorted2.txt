@@ -1,0 +1,41 @@
+The size of Container = 10
+This is fish with location: Sea
+The name of animal is XXX_SSS
+The weight of animal is 100
+The quotient from name to weight is 6.08
+This is fish with location: Lake
+The name of animal is PSSSSS
+The weight of animal is 39
+The quotient from name to weight is 12.6923
+This is fish with location: Ocean
+The name of animal is Sahar
+The weight of animal is 15
+The quotient from name to weight is 33
+This is fish with location: Sea
+The name of animal is Jonh
+The weight of animal is 17
+The quotient from name to weight is 23.4706
+This is the Beast with type: Herbivores
+The name of animal is NOT_MATVEY
+The weight of animal is 19
+The quotient from name to weight is 42.4211
+This is fish with location: Sea
+The name of animal is Mashs
+The weight of animal is 10
+The quotient from name to weight is 50.8
+This is the Beast with type: Predator
+The name of animal is Matvey
+The weight of animal is 5
+The quotient from name to weight is 126
+This is the Bird that is transferable
+The name of animal is Bob
+The weight of animal is 15
+The quotient from name to weight is 18.3333
+This is the Bird that is not transferable
+The name of animal is Stas
+The weight of animal is 1
+The quotient from name to weight is 411
+This is the Bird that is transferable
+The name of animal is WHO_ARE_YOU
+The weight of animal is 1
+The quotient from name to weight is 897
