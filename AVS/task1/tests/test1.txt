@@ -1,6 +1,6 @@
 5
-1 10 5 1567
-2 20 2 1142
-3 30 3 2342
-1 40 10 1567
-2 50 5 4353
+1 Bob 15 1
+2 Mashs 10 Sea
+3 Matvey 5 Predator
+1 Stas 1 0
+2 Jonh 17 Sea
