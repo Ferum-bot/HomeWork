@@ -1,24 +1,28 @@
 #include "Fish.h"
 
 void inputFromStream(Fish& fish, std::ifstream& input) {
-    char* location;
+    char* location = new char[64];
     input >> location;
 
     if (strcmp(location, "Sea") == 0) {
         fish.location = Fish::Sea;
+        delete[] location;
         return;
     }
     if (strcmp(location, "Ocean") == 0) {
         fish.location = Fish::Ocean;
+        delete[] location;
         return;
     }
     if (strcmp(location, "Lake") == 0) {
         fish.location = Fish::Lake;
+        delete[] location;
         return;
     }
     std::cout << "Invalid Fish location! Available only: Sea, Ocean, Lake \n";
     std::cout << "Setting to default: Sea \n";
     fish.location = Fish::Sea;
+    delete[] location;
 }
 
 void randomInput(Fish& fish) {

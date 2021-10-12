@@ -1,7 +1,7 @@
 #ifndef TASK1_CONTAINER_H
 #define TASK1_CONTAINER_H
 
-#include "../animals/info/Animal.h"
+#include "../animals/animal/Animal.h"
 
 struct Container {
     int size;

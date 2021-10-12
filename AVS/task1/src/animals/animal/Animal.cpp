@@ -1,24 +1,24 @@
 #include "Animal.h"
 
 void inputFromStream(Animal& info, std::ifstream& input) {
-    char* name;
+    char* name = new char[64];
     int weight, type_int;
     Animal::Key type;
     input >> type_int >> name >> weight;
 
     switch (type_int) {
         case 1: {
-            type = Animal::Bird;
+            type = Animal::BIRD;
             inputFromStream(info.bird, input);
             break;
         }
         case 2: {
-            type = Animal::Fish;
+            type = Animal::FISH;
             inputFromStream(info.fish, input);
             break;
         }
         case 3: {
-            type = Animal::Beast;
+            type = Animal::BEAST;
             inputFromStream(info.beast, input);
             break;
         }
@@ -41,17 +41,17 @@ void randomInput(Animal& info) {
 
     switch (type) {
         case 0: {
-            info.type = Animal::Bird;
+            info.type = Animal::BIRD;
             randomInput(info.bird);
             break;
         }
         case 1: {
-            info.type = Animal::Fish;
+            info.type = Animal::FISH;
             randomInput(info.fish);
             break;
         }
         case 2: {
-            info.type = Animal::Beast;
+            info.type = Animal::BEAST;
             randomInput(info.beast);
             break;
         }
@@ -60,15 +60,15 @@ void randomInput(Animal& info) {
 
 void outputToStream(Animal& info, std::ofstream& output) {
     switch (info.type) {
-        case Animal::Bird: {
+        case Animal::BIRD: {
             outputToStream(info.bird, output);
             break;
         }
-        case Animal::Beast: {
+        case Animal::BEAST: {
             outputToStream(info.beast, output);
             break;
         }
-        case Animal::Fish: {
+        case Animal::FISH: {
             outputToStream(info.fish, output);
             break;
         }
