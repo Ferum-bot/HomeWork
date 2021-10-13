@@ -2,10 +2,6 @@ package battleship.game.settings;
 
 public record GameSettings(
 
-    Boolean isTorpedoModeEnabled,
-
-    Boolean isRecoveryModeEnabled,
-
     Integer fieldWidth,
 
     Integer fieldHeight,
@@ -18,6 +14,10 @@ public record GameSettings(
 
     Integer destroyerCount,
 
-    Integer submarineCount
+    Integer submarineCount,
+
+    Boolean isTorpedoModeEnabled,
+
+    Boolean isRecoveryModeEnabled
 ) {
 }

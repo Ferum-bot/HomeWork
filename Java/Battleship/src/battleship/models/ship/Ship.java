@@ -33,4 +33,10 @@ abstract public class Ship {
 
         hitCoordinate.ifPresent(value -> value.setIsHit(true));
     }
+
+    public void sunkShip() {
+        coordinates.forEach(coordinate -> {
+            coordinate.setIsHit(true);
+        });
+    }
 }

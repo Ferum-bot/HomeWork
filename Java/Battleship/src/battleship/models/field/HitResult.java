@@ -1,5 +1,5 @@
 package battleship.models.field;
 
-public enum ActionResult {
+public enum HitResult {
     MISSED, HIT, SUNK;
 }

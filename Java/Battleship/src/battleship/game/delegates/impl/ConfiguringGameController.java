@@ -2,26 +2,48 @@ package battleship.game.delegates.impl;
 
 import battleship.game.GameState;
 import battleship.game.delegates.GameStateControllerDelegate;
+import battleship.game.generators.FieldGenerator;
+import battleship.game.generators.RandomFieldGenerator;
+import battleship.game.settings.GameSettings;
 import battleship.game.settings.HardwareSettings;
 import battleship.models.commands.impl.*;
 import battleship.models.field.GameField;
+import battleship.models.ship.Ship;
+
+import java.util.List;
 
 public class ConfiguringGameController implements GameStateControllerDelegate {
 
+    private final FieldGenerator fieldGenerator = new RandomFieldGenerator();
+
+    private HardwareSettings hardwareSettings;
+    private GameSettings gameSettings;
+
+    private GameState state;
+
+    private GameField field;
+
     @Override
-    public GameState handleState(HardwareSettings hardwareSettings, GameState state, GameField field) {
+    public GameState handleState(
+        HardwareSettings hardwareSettings, GameState state,
+        GameField field, GameSettings gameSettings
+    ) {
         hardwareSettings.outputProvider().showGameSettingsHint();
 
-        return launchConfiguringProcess(hardwareSettings, state, field);
+        this.hardwareSettings = hardwareSettings;
+        this.gameSettings = gameSettings;
+        this.state = state;
+        this.field = field;
+
+        return launchConfiguringProcess();
     }
 
-    private GameState launchConfiguringProcess(HardwareSettings hardwareSettings, GameState state, GameField field) {
-        var currentState = GameState.CONFIGURING;
-        while (currentState == GameState.CONFIGURING) {
+    private GameState launchConfiguringProcess() {
+        while (state == GameState.CONFIGURING) {
             var command = hardwareSettings.inputHandler().awaitUserInput();
 
             if (command instanceof Exit) {
-                currentState = GameState.EXIT;
+                state = GameState.EXIT;
                 continue;
             }
             if (command instanceof Undefined) {
@@ -34,18 +56,34 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
                 continue;
             }
             if (command instanceof HitCoordinate) {
-                hardwareSettings.outputProvider().undefinedCommand();
+                hardwareSettings.outputProvider().incorrectCommand();
                 hardwareSettings.outputProvider().showGameSettingsHint();
                 continue;
             }
             if (command instanceof SettingsInput settingsInput) {
-                var gameSettings = settingsInput.toGameSettings();
-                field.applySettings(gameSettings);
-                currentState = GameState.PLAYING;
+                handleGameSettingsInput(settingsInput);
                 continue;
             }
         }
 
-        return currentState;
+        return state;
+    }
+
+    private void handleGameSettingsInput(SettingsInput settingsInput) {
+        if (settingsIsCorrect(settingsInput)) {
+            var ships = generateField(settingsInput);
+            field.applySettings(ships);
+            state = GameState.PLAYING;
+        } else {
+            hardwareSettings.outputProvider().incorrectGameSettings();
+        }
+    }
+
+    private Boolean settingsIsCorrect(SettingsInput settings) {
+        return fieldGenerator.fieldExistsWith(settings.toGameSettings());
+    }
+
+    private List<Ship> generateField(SettingsInput settings) {
+        return fieldGenerator.generateShipsLocation(settings.toGameSettings());
     }
 }

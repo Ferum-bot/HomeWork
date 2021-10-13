@@ -1,6 +1,7 @@
 package battleship.ui.output;
 
 import battleship.models.field.GameField;
+import battleship.models.field.HitResult;
 import battleship.models.statistics.Statistics;
 import battleship.ui.util.ConsoleUtil;
 
@@ -33,7 +34,7 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append("  * help -> will show the full information about the game and available possibilities\n")
                 .append("  * exit -> will exit from game\n")
                 .append("  * x y  -> will hit at x and y coordinate\n")
-                .append("  * T x y -> will launch a torpedo, if this mode is active\n")
+                .append("  * x y T -> will launch a torpedo, if this mode is active\n")
                 .append("\n")
                 .append("Available ships by it number:\n")
                 .append("  1. Carrier(5 cells)\n")
@@ -49,7 +50,7 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append("If you want to get more information about the game and rules.\n")
                 .append("Write command help at any moment!\n\n")
                 .append("Now input the game setting by pattern: N M 1 2 3 4 5 M1 M2!\n")
-                .append("Example: 10 10 0 1 2 3 4 5 T R -> That means:\n")
+                .append("Example: 10 10 0 1 2 3 4 T R -> That means:\n")
                 .append("Field Size: 10x10\n")
                 .append("Number of ships by type: 0 -> Carrier, 1 -> Battleship and etc.\n")
                 .append("Enabled torpedo mode and recovery mode\n")
@@ -74,6 +75,35 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append(ConsoleUtil.getSeparator());
 
         print(text.toString());
+    }
+
+    @Override
+    public void incorrectGameSettings() {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Invalid game parameters!\n")
+                .append("I can't generate game field with this parameters\n")
+                .append("Please, try again!\n")
+                .append("If you want to see all available commands, write 'help'!\n")
+                .append("If you want to exit game, write 'exit'!\n")
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    @Override
+    public void showHitResult(HitResult result) {
+
+    }
+
+    @Override
+    public void torpedoMissed(Integer availableTorpedoCount) {
+
+    }
+
+    @Override
+    public void torpedoSunkShip(Integer availableTorpedoCount) {
+
     }
 
     @Override
