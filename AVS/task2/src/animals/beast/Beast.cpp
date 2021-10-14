@@ -18,6 +18,13 @@ Beast & Beast::operator=(const Beast &beast) {
     return *this;
 }
 
+Animal* Animal::copy() {
+    Beast* currentBeast = dynamic_cast<Beast*>(this);
+    Beast* copyBeast = new Beast(*name, *weight);
+    copyBeast->setType(currentBeast->getType());
+    return copyBeast;
+}
+
 Type Beast::getType() const {
     return type;
 }

@@ -11,6 +11,8 @@
 class Animal {
 public:
 
+    Animal();
+
     Animal(const std::string& name, const int32_t* weight);
 
     Animal(const Animal& animal);
@@ -19,9 +21,15 @@ public:
 
     virtual Animal& operator = (const Animal& animal);
 
+    virtual Animal* copy() = 0;
+
     std::string getName() const;
 
     int32_t getWeight() const;
+
+    void setName(const std::string& name) noexcept;
+
+    void setWeight(const int32_t& weight) noexcept;
 
 protected:
 

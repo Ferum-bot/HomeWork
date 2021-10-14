@@ -10,15 +10,13 @@
 class Container final {
 public:
 
-    Container(const int& size) noexcept;
+    Container(const size_t& size) noexcept;
 
     Container(const Container& container) noexcept;
 
     ~Container() noexcept;
 
     Container& operator = (const Container& container) noexcept;
-
-    void sort() noexcept;
 
     size_t getSize() const;
 
@@ -29,6 +27,8 @@ private:
     size_t size = 0;
 
     Animal* data;
+
+    void deleteData() noexcept;
 };
 
 
