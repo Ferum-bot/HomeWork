@@ -16,3 +16,6 @@ char* randomName(int length) {
     }
     return resultName;
 }
+/*
+ *
+ */

@@ -12,22 +12,10 @@ Container::~Container() {
 
 }
 
-void Container::writeToStream(const std::ofstream &stream) {
-
-}
-
-void Container::readFromStream(const std::ifstream &stream) {
-
-}
-
-void Container::randomInput() {
+Container::Container(const Container &container) {
 
 }
 
 void Container::sort() {
-
-}
-
-Container::Container(const Container &container) {
 
 }

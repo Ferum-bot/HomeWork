@@ -10,23 +10,23 @@
 class Container final {
 public:
 
-    Container(const int& size);
+    Container(const int& size) noexcept;
 
-    Container(const Container& container);
+    Container(const Container& container) noexcept;
 
-    ~Container();
+    ~Container() noexcept;
 
-    void writeToStream(const std::ofstream& stream);
+    Container& operator = (const Container& container) noexcept;
 
-    void readFromStream(const std::ifstream& stream);
+    void sort() noexcept;
 
-    void randomInput();
+    size_t getSize() const;
 
-    void sort();
+    Animal& operator [] (const size_t& pos) throw;
 
 private:
 
-    int size = 0;
+    size_t size = 0;
 
     Animal* data;
 };
