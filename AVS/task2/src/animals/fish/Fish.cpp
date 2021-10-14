@@ -19,7 +19,7 @@ Fish& Fish::operator=(const Fish &fish) {
     location = fish.location;
 }
 
-Animal * Animal::copy() {
+Animal * Fish::copy() {
     Fish* currentFish = dynamic_cast<Fish*>(this);
     Fish* copyFish = new Fish(*name, *weight);
     copyFish->setLocation(currentFish->getLocation());

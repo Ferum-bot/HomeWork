@@ -1,7 +1,12 @@
 #ifndef TASK2_INPUTPROVIDER_H
 #define TASK2_INPUTPROVIDER_H
 
+#pragma once
+
 #include "../../animals/animal/Animal.h"
+#include "../../animals/bird/Bird.h"
+#include "../../animals/fish/Fish.h"
+#include "../../animals/beast/Beast.h"
 #include <iostream>
 
 class InputProvider {

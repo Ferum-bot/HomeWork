@@ -5,8 +5,16 @@
 #ifndef TASK2_TASKCONTROLLER_H
 #define TASK2_TASKCONTROLLER_H
 
-#include "../ui/input/InputProvider.h"
-#include "../ui/output/OutputProvider.h"
+#pragma once
+
+#include "../ui/input/random/RandomInputProvider.h"
+#include "../ui/input/file/FileInputProvider.h"
+#include "../ui/output/file/FileOutputProvider.h"
+#include "../sorter/impl/StraightSelectorSorter.h"
+#include <fstream>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
 
 class TaskController final {
 public:
@@ -21,8 +29,28 @@ private:
 
     char** argumentsAliases;
 
-    InputProvider inputProvider;
-    OutputProvider outputProvider;
+    InputProvider* inputProvider;
+    OutputProvider* outputProvider;
+
+    Container* container;
+
+    ContainerSorter* sorter;
+
+    static double sortFunction(const Animal* animal) noexcept;
+
+    void configureController() noexcept;
+
+    void fillContainerFromFile(const std::istream& input) noexcept;
+
+    void fillRandomContainer(const std::istream& input) noexcept;
+
+    void fillContainer(const std::istream& input) noexcept;
+
+    void processContainer() const;
+
+    void sortContainer();
+
+    void showContainer() noexcept;
 };
 
 

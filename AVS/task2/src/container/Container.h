@@ -18,9 +18,11 @@ public:
 
     Container& operator = (const Container& container) noexcept;
 
+    Animal& operator [] (const size_t& pos) throw;
+
     size_t getSize() const;
 
-    Animal& operator [] (const size_t& pos) throw;
+    Container* copy() const;
 
 private:
 

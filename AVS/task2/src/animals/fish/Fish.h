@@ -20,6 +20,8 @@ public:
 
     Fish& operator = (const Fish& fish);
 
+    Animal * copy() override;
+
     Location getLocation() const;
 
     void setLocation(const Location& location);

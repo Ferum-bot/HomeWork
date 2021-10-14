@@ -20,6 +20,8 @@ public:
 
     Beast& operator = (const Beast& beast);
 
+    Animal * copy() override;
+
     Type getType() const;
 
     void setType(Type type);

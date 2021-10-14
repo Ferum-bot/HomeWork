@@ -18,6 +18,8 @@ public:
 
     Bird& operator = (const Bird& bird);
 
+    Animal * copy() override;
+
     void setIsTransferable(const bool& isTransferable);
 
     bool getIsTransferable() const;

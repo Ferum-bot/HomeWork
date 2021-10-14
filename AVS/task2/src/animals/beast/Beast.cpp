@@ -18,7 +18,7 @@ Beast & Beast::operator=(const Beast &beast) {
     return *this;
 }
 
-Animal* Animal::copy() {
+Animal* Beast::copy() {
     Beast* currentBeast = dynamic_cast<Beast*>(this);
     Beast* copyBeast = new Beast(*name, *weight);
     copyBeast->setType(currentBeast->getType());

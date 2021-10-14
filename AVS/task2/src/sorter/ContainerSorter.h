@@ -8,11 +8,14 @@
 #pragma once
 
 #include "../container/Container.h"
+#include <functional>
 
 class ContainerSorter {
 public:
 
-    virtual Container* sortContainer(const Container* container) = 0;
+    virtual Container* sortContainer(
+        const Container* container, std::function<double(const Animal*)> comparator
+    ) = 0;
 
 };
 
