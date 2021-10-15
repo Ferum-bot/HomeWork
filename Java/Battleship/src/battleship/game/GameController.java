@@ -1,15 +1,11 @@
 package battleship.game;
 
 import battleship.game.delegates.GameStateControllerDelegate;
-import battleship.game.delegates.impl.ConfiguringGameController;
-import battleship.game.delegates.impl.FinishedGameController;
-import battleship.game.delegates.impl.NotStartedGameController;
-import battleship.game.delegates.impl.PlayingGameController;
+import battleship.game.delegates.impl.*;
 import battleship.game.settings.GameSettings;
 import battleship.game.settings.HardwareSettings;
 import battleship.models.field.GameField;
-import battleship.ui.input.InputCommandsHandler;
-import battleship.ui.output.OutputGameInfoProvider;
+import battleship.models.info.InformationHolder;
 
 import static battleship.game.GameState.*;
 
@@ -24,6 +20,8 @@ public class GameController {
 
     private final GameField field;
 
+    private final InformationHolder informationHolder;
+
     private GameState state = NOT_STARTED;
 
     private GameSettings gameSettings;
@@ -35,6 +33,7 @@ public class GameController {
         configuringControllerDelegate = new ConfiguringGameController();
         playingControllerDelegate = new PlayingGameController();
         finishedControllerDelegate = new FinishedGameController();
+        informationHolder = new InformationHolder();
         field = new GameField();
     }
 
@@ -46,16 +45,16 @@ public class GameController {
         while (state != EXIT) {
             switch (state) {
                 case NOT_STARTED -> {
-                    state = notStartedControllerDelegate.handleState(hardwareSettings, state, field, gameSettings);
+                    state = notStartedControllerDelegate.handleState(hardwareSettings, gameSettings, state, field, informationHolder);
                 }
                 case CONFIGURING -> {
-                    state = configuringControllerDelegate.handleState(hardwareSettings, state, field, gameSettings);
+                    state = configuringControllerDelegate.handleState(hardwareSettings, gameSettings, state, field, informationHolder);
                 }
                 case PLAYING -> {
-                    state = playingControllerDelegate.handleState(hardwareSettings, state, field, gameSettings);
+                    state = playingControllerDelegate.handleState(hardwareSettings, gameSettings, state, field, informationHolder);
                 }
                 case FINISHED -> {
-                    state = finishedControllerDelegate.handleState(hardwareSettings, state, field, gameSettings);
+                    state = finishedControllerDelegate.handleState(hardwareSettings, gameSettings, state, field, informationHolder);
                 }
             }
         }

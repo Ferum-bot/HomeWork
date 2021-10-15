@@ -16,6 +16,6 @@ public record Statistics(
 
     Integer destroyerSunkCount,
 
-    Integer SubmarineSunkCount
+    Integer submarineSunkCount
 ) {
 }

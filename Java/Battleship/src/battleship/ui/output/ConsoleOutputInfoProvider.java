@@ -1,11 +1,20 @@
 package battleship.ui.output;
 
+import battleship.core.StringUtil;
 import battleship.models.field.GameField;
 import battleship.models.field.HitResult;
+import battleship.models.field.coordinate.FieldCoordinate;
 import battleship.models.statistics.Statistics;
 import battleship.ui.util.ConsoleUtil;
 
+import java.util.List;
+
 public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
+
+    private static final String EMPTY_HIT_SIGN = "$";
+    private static final String SHIP_HIT_SIGN = "?";
+    private static final String SHIP_SUNK_SIGN = "!";
+    private static final String UN_FIRED_SIGN = "#";
 
     @Override
     public void onGameStarted() {
@@ -49,11 +58,12 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append("\n")
                 .append("If you want to get more information about the game and rules.\n")
                 .append("Write command help at any moment!\n\n")
-                .append("Now input the game setting by pattern: N M 1 2 3 4 5 M1 M2!\n")
-                .append("Example: 10 10 0 1 2 3 4 T R -> That means:\n")
+                .append("Now input the game setting by pattern: N M 1 2 3 4 5 M1 6 M2!\n")
+                .append("Example: 10 10 0 1 2 3 4 T 5 R -> That means:\n")
                 .append("Field Size: 10x10\n")
                 .append("Number of ships by type: 0 -> Carrier, 1 -> Battleship and etc.\n")
-                .append("Enabled torpedo mode and recovery mode\n")
+                .append("Enabled torpedo mode with 5 torpedoes.\n")
+                .append("Enabled recovery mode.\n")
                 .append("Not your settings!\n")
                 .append(ConsoleUtil.getSeparator());
 
@@ -93,17 +103,72 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
 
     @Override
     public void showHitResult(HitResult result) {
+        var text = new StringBuilder().append(ConsoleUtil.getSeparator());
 
+        switch (result) {
+            case SUNK -> {
+                text.append("You just have sunk a ")
+                    .append(result.getExtraInformation())
+                    .append("\n");
+            }
+            case TORPEDO_SUNK -> {
+
+            }
+            case NO_AVAILABLE_TORPEDO -> {
+                noAvailableTorpedo();
+                return;
+            }
+            case MISSED -> {
+                text.append("You missed!\n");
+            }
+            case HIT -> {
+                text.append("You hit the ship!\n");
+            }
+            case TORPEDO_MESSED -> {
+                torpedoMissed(0);
+                return;
+            }
+        }
+        text.append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    @Override
+    public void noAvailableTorpedo() {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("No available Torpedoes!\n")
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
     }
 
     @Override
     public void torpedoMissed(Integer availableTorpedoCount) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Your Torpedo missed!\n")
+                .append("Available Torpedo count: ")
+                .append(availableTorpedoCount)
+                .append(ConsoleUtil.getSeparator());
 
+        print(text.toString());
     }
 
     @Override
-    public void torpedoSunkShip(Integer availableTorpedoCount) {
+    public void torpedoSunkShip(Integer availableTorpedoCount, HitResult result) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Your Torpedo just have sunk a ")
+                .append(result.getExtraInformation())
+                .append("\n")
+                .append("Available Torpedo count: ")
+                .append(availableTorpedoCount)
+                .append("\n")
+                .append(ConsoleUtil.getSeparator());
 
+        print(text.toString());
     }
 
     @Override
@@ -119,21 +184,104 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
     }
 
     @Override
-    public void onAwaitingHitCoordinate(GameField field) {
-
+    public void showGameField(GameField field) {
+        printGameFieldInfo();
+        printGameField(field);
     }
 
     @Override
     public void onGameCanceled(Statistics statistics) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("The game was Canceled!\n")
+                .append(parseGameStatistics(statistics))
+                .append(ConsoleUtil.getSeparator());
 
+        print(text.toString());
     }
 
     @Override
     public void onGameWined(Statistics statistics) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("You winned the game!\n")
+                .append(parseGameStatistics(statistics))
+                .append(ConsoleUtil.getSeparator());
 
+        print(text.toString());
     }
 
     private void print(String text) {
         System.out.print(text);
+    }
+
+    private void printGameFieldInfo() {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Current game field:\n\n")
+                .append("Cells aliases:\n")
+                .append("1. ")
+                .append(EMPTY_HIT_SIGN)
+                .append(" -> Means that the hit on this cell was missed.\n")
+                .append("2. ")
+                .append(UN_FIRED_SIGN)
+                .append(" -> Means that cell is unfired.\n")
+                .append("3. ")
+                .append(SHIP_HIT_SIGN)
+                .append(" -> Means that the hit on this cell damaged ship.\n")
+                .append("4. ")
+                .append(SHIP_SUNK_SIGN)
+                .append(" -> Means that the ship is sunk in this cell.\n\n");
+
+        print(text.toString());
+    }
+
+    private void printGameField(GameField field) {
+        var gameField = field.getField();
+        for (List<FieldCoordinate> fieldRow : gameField) {
+            for (FieldCoordinate cell : fieldRow) {
+                parseFieldCell(cell);
+            }
+            print("\n");
+        }
+        print(ConsoleUtil.getSeparator());
+    }
+
+    private void parseFieldCell(FieldCoordinate cell) {
+        var status = cell.getStatus();
+        switch (status) {
+            case NOT_SHOOT -> print(UN_FIRED_SIGN);
+            case EMPTY_SHOT -> print(EMPTY_HIT_SIGN);
+            case SHIP_SHOT -> print(SHIP_HIT_SIGN);
+            case SHIP_SUNK -> print(SHIP_SUNK_SIGN);
+        }
+    }
+
+    private StringBuilder parseGameStatistics(Statistics statistics) {
+        return new StringBuilder()
+                .append("Your Score: ")
+                .append(statistics.userScore())
+                .append("\n")
+                .append("Total missed shots: ")
+                .append(statistics.missedHits())
+                .append("\n")
+                .append("General ships sunk count: ")
+                .append(statistics.generalShipsSunk())
+                .append("\n")
+                .append("Carrier ships sunk count: ")
+                .append(statistics.carrierSunkCount())
+                .append("\n")
+                .append("Battleship ships sunk count: ")
+                .append(statistics.battleshipSunkCount())
+                .append("\n")
+                .append("Cruiser ships sunk count: ")
+                .append(statistics.cruiserSunkCount())
+                .append("\n")
+                .append("Destroyer ships sunk count: ")
+                .append(statistics.destroyerSunkCount())
+                .append("\n")
+                .append("Submarine ships sunk count: ")
+                .append(statistics.submarineSunkCount())
+                .append("\n");
     }
 }

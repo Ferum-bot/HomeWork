@@ -20,11 +20,13 @@ public interface OutputGameInfoProvider {
 
     void showHitResult(HitResult result);
 
+    void noAvailableTorpedo();
+
     void torpedoMissed(Integer availableTorpedoCount);
 
-    void torpedoSunkShip(Integer availableTorpedoCount);
+    void torpedoSunkShip(Integer availableTorpedoCount, HitResult result);
 
-    void onAwaitingHitCoordinate(GameField field);
+    void showGameField(GameField field);
 
     void onGameCanceled(Statistics statistics);
 

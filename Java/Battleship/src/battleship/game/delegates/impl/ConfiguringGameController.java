@@ -8,6 +8,7 @@ import battleship.game.settings.GameSettings;
 import battleship.game.settings.HardwareSettings;
 import battleship.models.commands.impl.*;
 import battleship.models.field.GameField;
+import battleship.models.info.InformationHolder;
 import battleship.models.ship.Ship;
 
 import java.util.List;
@@ -23,10 +24,12 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
 
     private GameField field;
 
+    private InformationHolder informationHolder;
+
     @Override
     public GameState handleState(
-        HardwareSettings hardwareSettings, GameState state,
-        GameField field, GameSettings gameSettings
+        HardwareSettings hardwareSettings, GameSettings gameSettings,
+        GameState state, GameField field, InformationHolder informationHolder
     ) {
         hardwareSettings.outputProvider().showGameSettingsHint();
 
@@ -34,6 +37,7 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
         this.gameSettings = gameSettings;
         this.state = state;
         this.field = field;
+        this.informationHolder = informationHolder;
 
         return launchConfiguringProcess();
     }

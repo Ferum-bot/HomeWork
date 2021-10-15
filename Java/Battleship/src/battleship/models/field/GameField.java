@@ -58,6 +58,14 @@ public class GameField {
         return HitResult.SUNK;
     }
 
+    public Boolean allShipsIsSunk() {
+        return ships.stream().allMatch(Ship::isSunk);
+    }
+
+    public void refreshAllHitShips() {
+
+    }
+
     private void generateFieldByShips() {
 
     }

@@ -13,6 +13,9 @@ public class SettingsInput implements UserCommand {
 
     private static final Character SPACE = ' ';
 
+    private static final String TORPEDO_FLAG = "T";
+    private static final String RECOVERY_FLAG = "R";
+
     public static Boolean matchesPattern(String userInput) {
         var formattedString = userInput.strip();
         var fieldWidth = getFieldWidth(formattedString);
@@ -22,11 +25,11 @@ public class SettingsInput implements UserCommand {
         var cruiserCount = getCruiserCount(formattedString);
         var destroyerCount = getDestroyerCount(formattedString);
         var submarineCount = getSubmarineCount(formattedString);
-        var isTorpedoModeEnabled = isTorpedoModeEnabled(formattedString);
+        var torpedoesCount = getTorpedoesCount(formattedString);
         var isRecoveryModeEnabled = isRecoveryModeEnabled(formattedString);
-        var objects = List.of(
+        List<Object> objects = List.of(
             fieldWidth, fieldHeight, carrierCount, battleshipCount, cruiserCount,
-            destroyerCount, submarineCount, isTorpedoModeEnabled, isRecoveryModeEnabled
+            destroyerCount, submarineCount, torpedoesCount, isRecoveryModeEnabled
         );
 
         return objects.stream().allMatch(Objects::nonNull) && isCorrectGeneralPattern(formattedString);
@@ -67,33 +70,15 @@ public class SettingsInput implements UserCommand {
     }
 
     private static Integer getBattleshipCount(String userInput) {
-        var thirdSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 3);
-        var forthSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 4);
-        if (thirdSpaceIndex == null || forthSpaceIndex == null) {
-            return null;
-        }
-        var actualString = userInput.substring(thirdSpaceIndex + 1, forthSpaceIndex);
-        return StringUtil.convertToInteger(actualString);
+        return getShipCountFrom(userInput, 3, 4);
     }
 
     private static Integer getCruiserCount(String userInput) {
-        var forthSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 4);
-        var fivesSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 5);
-        if (fivesSpaceIndex == null || forthSpaceIndex == null) {
-            return null;
-        }
-        var actualString = userInput.substring(forthSpaceIndex + 1, fivesSpaceIndex);
-        return StringUtil.convertToInteger(actualString);
+        return getShipCountFrom(userInput, 4, 5);
     }
 
     private static Integer getDestroyerCount(String userInput) {
-        var fivesSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 5);
-        var sixSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 6);
-        if (fivesSpaceIndex == null || sixSpaceIndex == null) {
-            return null;
-        }
-        var actualString = userInput.substring(fivesSpaceIndex + 1, sixSpaceIndex);
-        return StringUtil.convertToInteger(actualString);
+        return getShipCountFrom(userInput, 5, 6);
     }
 
     private static Integer getSubmarineCount(String userInput) {
@@ -111,12 +96,57 @@ public class SettingsInput implements UserCommand {
         return StringUtil.convertToInteger(actualString);
     }
 
-    private static Boolean isTorpedoModeEnabled(String userInput) {
+    private static Integer getShipCountFrom(String userInput, Integer firstSpaceNumber, Integer secondSpaceNumber) {
+        var firstSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, firstSpaceNumber);
+        var secondSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, secondSpaceNumber);
+        if (firstSpaceIndex == null || secondSpaceIndex == null) {
+            return null;
+        }
+        var actualString = userInput.substring(firstSpaceIndex + 1, secondSpaceIndex);
+        return StringUtil.convertToInteger(actualString);
+    }
 
+    private static Integer getTorpedoesCount(String userInput) {
+        var sevenSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 7);
+        var eightSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 8);
+        if (sevenSpaceIndex == null || eightSpaceIndex == null) {
+            return null;
+        }
+        var actualString = userInput.substring(sevenSpaceIndex + 1, eightSpaceIndex);
+        if (!actualString.equals(TORPEDO_FLAG)) {
+            return null;
+        }
+        var nineSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 9);
+        String countString;
+        if (nineSpaceIndex == null) {
+            countString = userInput.substring(eightSpaceIndex + 1);
+        } else {
+            countString = userInput.substring(eightSpaceIndex + 1, nineSpaceIndex);
+        }
+        return StringUtil.convertToInteger(countString);
     }
 
     private static Boolean isRecoveryModeEnabled(String userInput) {
-
+        var firstSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 7);
+        var secondSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 8);
+        if (firstSpaceIndex == null) {
+            return false;
+        }
+        String actualString;
+        if (secondSpaceIndex == null) {
+            actualString = userInput.substring(firstSpaceIndex + 1);
+        } else {
+            actualString = userInput.substring(firstSpaceIndex + 1, secondSpaceIndex);
+        }
+        if (actualString.equals(RECOVERY_FLAG)) {
+            return true;
+        }
+        firstSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 9);
+        if (firstSpaceIndex == null) {
+            return false;
+        }
+        actualString = userInput.substring(firstSpaceIndex + 1);
+        return actualString.equals(RECOVERY_FLAG);
     }
 
     private final String input;
@@ -141,12 +171,12 @@ public class SettingsInput implements UserCommand {
         var cruiserCount = getCruiserCount(input);
         var destroyerCount = getDestroyerCount(input);
         var submarineCount = getSubmarineCount(input);
-        var isTorpedoModeEnabled = isTorpedoModeEnabled(input);
+        var torpedoesCount = getTorpedoesCount(input);
         var isRecoveryModeEnabled = isRecoveryModeEnabled(input);
 
         return new GameSettings(
             fieldWidth, fieldHeight, carrierCount, battleshipCount, cruiserCount,
-            destroyerCount, submarineCount, isTorpedoModeEnabled, isRecoveryModeEnabled
+            destroyerCount, submarineCount, torpedoesCount, isRecoveryModeEnabled
         );
     }
 }

@@ -16,7 +16,7 @@ public record GameSettings(
 
     Integer submarineCount,
 
-    Boolean isTorpedoModeEnabled,
+    Integer torpedoCount,
 
     Boolean isRecoveryModeEnabled
 ) {
