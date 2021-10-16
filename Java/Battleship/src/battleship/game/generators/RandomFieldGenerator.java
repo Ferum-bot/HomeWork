@@ -114,8 +114,8 @@ public class RandomFieldGenerator implements FieldGenerator {
     private List<ShipCoordinate> generateCoordinatesWithLength(Integer length, GameSettings settings) {
         var height = settings.fieldHeight();
         var width = settings.fieldWidth();
-        for (int row = 1; row <= height; row++) {
-            for (int column = 1; column < width; column++) {
+        for (int row = 0; row < height; row++) {
+            for (int column = 0; column < width; column++) {
                 if (notAvailable(column, row)) {
                     continue;
                 }
@@ -135,10 +135,6 @@ public class RandomFieldGenerator implements FieldGenerator {
         );
     }
 
-    private Boolean isAvailable(Integer x, Integer y) {
-        return !notAvailable(x, y);
-    }
-
     private Boolean notEnoughSpace(Integer x, Integer y, Integer length) {
         for (int duriation = 0; duriation < DURATION_COUNT; duriation++) {
             var isDurationAvailable = true;
@@ -154,11 +150,11 @@ public class RandomFieldGenerator implements FieldGenerator {
             }
 
             if (isDurationAvailable) {
-                return true;
+                return false;
             }
         }
 
-        return false;
+        return true;
     }
 
     private List<ShipCoordinate> generateCoordinatesFrom(Integer x, Integer y, Integer length) {
@@ -181,6 +177,7 @@ public class RandomFieldGenerator implements FieldGenerator {
             if (!isDurationAvailable) {
                 continue;
             } else {
+                usedCoordinates.addAll(coordinates);
                 return coordinates;
             }
         }

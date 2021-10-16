@@ -9,7 +9,7 @@ public class ShipCoordinate {
     private Integer x;
     private Integer y;
 
-    private Boolean isHit;
+    private Boolean isHit = false;
 
     public ShipCoordinate(Integer x, Integer y) {
         this.x = x;
@@ -45,15 +45,7 @@ public class ShipCoordinate {
         return x;
     }
 
-    public void setX(Integer x) {
-        this.x = x;
-    }
-
     public Integer getY() {
         return y;
-    }
-
-    public void setY(Integer y) {
-        this.y = y;
     }
 }

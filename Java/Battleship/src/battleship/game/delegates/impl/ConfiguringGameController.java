@@ -75,13 +75,7 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
 
     private void handleGameSettingsInput(SettingsInput settingsInput) {
         if (settingsIsCorrect(settingsInput)) {
-            gameSettings = settingsInput.toGameSettings();
-            var ships = generateField(settingsInput);
-            field.applySettings(ships, gameSettings);
-            informationHolder.setTorpedoCount(gameSettings.torpedoCount());
-            hardwareSettings.outputProvider().onGameBegins();
-            hardwareSettings.outputProvider().showGameField(field);
-            state = GameState.PLAYING;
+            applyGameSettings(settingsInput);
         } else {
             hardwareSettings.outputProvider().incorrectGameSettings();
         }
@@ -93,5 +87,15 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
 
     private List<Ship> generateField(SettingsInput settings) {
         return fieldGenerator.generateShipsLocation(settings.toGameSettings());
+    }
+
+    private void applyGameSettings(SettingsInput settingsInput) {
+        var ships = generateField(settingsInput);
+        gameSettings = settingsInput.toGameSettings();
+        field.applySettings(ships, gameSettings);
+        informationHolder.setTorpedoCount(gameSettings.torpedoCount());
+        hardwareSettings.outputProvider().onGameBegins();
+        hardwareSettings.outputProvider().showGameField(field);
+        state = GameState.PLAYING;
     }
 }
