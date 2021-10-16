@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class ConsoleInputHandler implements InputCommandsHandler {
 
+    private final Scanner scanner = new Scanner(System.in);
+
     @Override
     public UserCommand awaitUserInput() {
-        var scanner = new Scanner(System.in);
         var userInput = scanner.nextLine();
-        scanner.close();
         return parseUserCommand(userInput);
     }
 

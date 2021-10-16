@@ -9,6 +9,12 @@ public interface OutputGameInfoProvider {
 
     void onGameStarted();
 
+    void onGameBegins();
+
+    void onGameCanceled(Statistics statistics);
+
+    void onGameWined(Statistics statistics);
+
     void showGameSettingsHint();
 
     void showHowToPlay();
@@ -24,8 +30,4 @@ public interface OutputGameInfoProvider {
     void showTorpedoHitResult(TorpedoHitResult result);
 
     void showGameField(GameField field);
-
-    void onGameCanceled(Statistics statistics);
-
-    void onGameWined(Statistics statistics);
 }

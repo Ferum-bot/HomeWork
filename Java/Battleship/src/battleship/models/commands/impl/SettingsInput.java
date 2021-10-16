@@ -4,6 +4,7 @@ import battleship.core.StringUtil;
 import battleship.game.settings.GameSettings;
 import battleship.models.commands.UserCommand;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,12 +28,12 @@ public class SettingsInput implements UserCommand {
         var submarineCount = getSubmarineCount(formattedString);
         var torpedoesCount = getTorpedoesCount(formattedString);
         var isRecoveryModeEnabled = isRecoveryModeEnabled(formattedString);
-        List<Object> objects = List.of(
-            fieldWidth, fieldHeight, carrierCount, battleshipCount, cruiserCount,
-            destroyerCount, submarineCount, torpedoesCount, isRecoveryModeEnabled
-        );
+        Object[] objects = {
+                fieldWidth, fieldHeight, carrierCount, battleshipCount, cruiserCount,
+                destroyerCount, submarineCount, torpedoesCount, isRecoveryModeEnabled
+        };
 
-        return objects.stream().allMatch(Objects::nonNull) && isCorrectGeneralPattern(formattedString);
+        return Arrays.stream(objects).allMatch(Objects::nonNull) && isCorrectGeneralPattern(formattedString);
     }
 
     private static Boolean isCorrectGeneralPattern(String userInput) {
@@ -84,11 +85,11 @@ public class SettingsInput implements UserCommand {
     private static Integer getSubmarineCount(String userInput) {
         var sixSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 6);
         var sevSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 7);
-        if (sixSpaceIndex == null || sevSpaceIndex == null) {
+        if (sixSpaceIndex == null) {
             return null;
         }
         String actualString;
-        if (sixSpaceIndex.equals(sevSpaceIndex)) {
+        if (sixSpaceIndex.equals(sevSpaceIndex) || sevSpaceIndex == null) {
             actualString = userInput.substring(sixSpaceIndex + 1);
         } else {
             actualString = userInput.substring(sixSpaceIndex + 1, sevSpaceIndex);
@@ -110,11 +111,11 @@ public class SettingsInput implements UserCommand {
         var sevenSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 7);
         var eightSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 8);
         if (sevenSpaceIndex == null || eightSpaceIndex == null) {
-            return null;
+            return 0;
         }
         var actualString = userInput.substring(sevenSpaceIndex + 1, eightSpaceIndex);
         if (!actualString.equals(TORPEDO_FLAG)) {
-            return null;
+            return 0;
         }
         var nineSpaceIndex = StringUtil.getCharPosByNumber(userInput, SPACE, 9);
         String countString;
@@ -123,7 +124,8 @@ public class SettingsInput implements UserCommand {
         } else {
             countString = userInput.substring(eightSpaceIndex + 1, nineSpaceIndex);
         }
-        return StringUtil.convertToInteger(countString);
+        var convertedInteger = StringUtil.convertToInteger(countString);
+        return convertedInteger == null ? 0 : convertedInteger;
     }
 
     private static Boolean isRecoveryModeEnabled(String userInput) {

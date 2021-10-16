@@ -34,6 +34,38 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
     }
 
     @Override
+    public void onGameBegins() {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("The game begins!\n")
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    @Override
+    public void onGameCanceled(Statistics statistics) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("The game was Canceled!\n")
+                .append(parseGameStatistics(statistics))
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    @Override
+    public void onGameWined(Statistics statistics) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("You win the game!\n")
+                .append(parseGameStatistics(statistics))
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    @Override
     public void showGameSettingsHint() {
         var text = new StringBuilder()
                 .append(ConsoleUtil.getSeparator())
@@ -64,7 +96,7 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append("Number of ships by type: 0 -> Carrier, 1 -> Battleship and etc.\n")
                 .append("Enabled torpedo mode with 5 torpedoes.\n")
                 .append("Enabled recovery mode.\n")
-                .append("Not your settings!\n")
+                .append("Now your settings!\n")
                 .append(ConsoleUtil.getSeparator());
 
         print(text.toString());
@@ -150,28 +182,6 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
         printGameField(field);
     }
 
-    @Override
-    public void onGameCanceled(Statistics statistics) {
-        var text = new StringBuilder()
-                .append(ConsoleUtil.getSeparator())
-                .append("The game was Canceled!\n")
-                .append(parseGameStatistics(statistics))
-                .append(ConsoleUtil.getSeparator());
-
-        print(text.toString());
-    }
-
-    @Override
-    public void onGameWined(Statistics statistics) {
-        var text = new StringBuilder()
-                .append(ConsoleUtil.getSeparator())
-                .append("You winned the game!\n")
-                .append(parseGameStatistics(statistics))
-                .append(ConsoleUtil.getSeparator());
-
-        print(text.toString());
-    }
-
     private void print(String text) {
         System.out.print(text);
     }
@@ -205,6 +215,8 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
             }
             print("\n");
         }
+        print("\n");
+        print("Now your turn!\n");
         print(ConsoleUtil.getSeparator());
     }
 

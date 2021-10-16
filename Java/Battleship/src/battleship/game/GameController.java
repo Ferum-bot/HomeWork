@@ -23,7 +23,7 @@ public class GameController {
 
     private GameState state = NOT_STARTED;
 
-    private GameSettings gameSettings;
+    private GameSettings gameSettings = GameSettings.empty();
 
     public GameController(HardwareSettings hardwareSettings) {
         this.hardwareSettings = hardwareSettings;

@@ -20,4 +20,10 @@ public record GameSettings(
 
     Boolean isRecoveryModeEnabled
 ) {
+
+    public static GameSettings empty() {
+        return new GameSettings(
+            0, 0, 0, 0, 0, 0, 0, 0, false
+        );
+    }
 }
