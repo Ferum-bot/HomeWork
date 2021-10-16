@@ -4,9 +4,11 @@ import java.util.List;
 
 abstract public class Ship {
 
-    private Integer shipLength;
+    private final List<ShipCoordinate> coordinates;
 
-    private List<ShipCoordinate> coordinates;
+    public Ship(List<ShipCoordinate> coordinates) {
+        this.coordinates = coordinates;
+    }
 
     public abstract Integer getShipLength();
 
