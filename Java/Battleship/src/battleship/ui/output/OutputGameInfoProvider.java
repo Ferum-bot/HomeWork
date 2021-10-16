@@ -1,6 +1,7 @@
 package battleship.ui.output;
 
-import battleship.models.field.HitResult;
+import battleship.game.action_result.HitResult;
+import battleship.game.action_result.TorpedoHitResult;
 import battleship.models.field.GameField;
 import battleship.models.statistics.Statistics;
 
@@ -20,11 +21,7 @@ public interface OutputGameInfoProvider {
 
     void showHitResult(HitResult result);
 
-    void noAvailableTorpedo();
-
-    void torpedoMissed(Integer availableTorpedoCount);
-
-    void torpedoSunkShip(Integer availableTorpedoCount, HitResult result);
+    void showTorpedoHitResult(TorpedoHitResult result);
 
     void showGameField(GameField field);
 

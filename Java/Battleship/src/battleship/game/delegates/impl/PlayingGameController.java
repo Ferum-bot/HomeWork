@@ -11,6 +11,8 @@ import battleship.models.info.InformationHolder;
 
 public class PlayingGameController implements GameStateControllerDelegate  {
 
+    private static final String TORPEDO_MODE_ARG = "T";
+
     private HardwareSettings hardwareSettings;
 
     private GameState gameState;
@@ -24,7 +26,7 @@ public class PlayingGameController implements GameStateControllerDelegate  {
     ) {
         gameService = new GameService(gameSettings, field, informationHolder);
         this.hardwareSettings = hardwareSettings;
-        this.gameState = gameState;
+        this.gameState = state;
 
         return launchPlaying();
     }
@@ -65,15 +67,25 @@ public class PlayingGameController implements GameStateControllerDelegate  {
     }
 
     private void hitActionDelegate(HitCoordinate hitCoordinate) {
-        var actionResult = gameService.performUserHit(hitCoordinate);
-        var gameField = gameService.getGameField();
-        hardwareSettings.outputProvider().showGameField(gameField);
-        hardwareSettings.outputProvider().showHitResult(actionResult);
+        if (isTorpedoHit(hitCoordinate)) {
+            var result = gameService.performTorpedoUserHit(hitCoordinate);
+            hardwareSettings.outputProvider().showTorpedoHitResult(result);
+        } else {
+            var result = gameService.performDefaultUserHit(hitCoordinate);
+            hardwareSettings.outputProvider().showHitResult(result);
+        }
+
+        var field = gameService.getGameField();
+        hardwareSettings.outputProvider().showGameField(field);
 
         if (gameService.isGameWin()) {
             var statistics = gameService.getGameStatistic();
             hardwareSettings.outputProvider().onGameWined(statistics);
             gameState = GameState.EXIT;
         }
+    }
+
+    private Boolean isTorpedoHit(HitCoordinate hitCoordinate) {
+        return hitCoordinate.args().equals(TORPEDO_MODE_ARG);
     }
 }

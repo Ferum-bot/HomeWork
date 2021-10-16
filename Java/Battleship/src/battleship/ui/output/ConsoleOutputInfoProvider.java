@@ -1,8 +1,8 @@
 package battleship.ui.output;
 
-import battleship.core.StringUtil;
+import battleship.game.action_result.TorpedoHitResult;
 import battleship.models.field.GameField;
-import battleship.models.field.HitResult;
+import battleship.game.action_result.HitResult;
 import battleship.models.field.coordinate.FieldCoordinate;
 import battleship.models.statistics.Statistics;
 import battleship.ui.util.ConsoleUtil;
@@ -108,25 +108,14 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
         switch (result) {
             case SUNK -> {
                 text.append("You just have sunk a ")
-                    .append(result.getExtraInformation())
+                    .append(result.getShipName())
                     .append("\n");
-            }
-            case TORPEDO_SUNK -> {
-
-            }
-            case NO_AVAILABLE_TORPEDO -> {
-                noAvailableTorpedo();
-                return;
             }
             case MISSED -> {
                 text.append("You missed!\n");
             }
             case HIT -> {
                 text.append("You hit the ship!\n");
-            }
-            case TORPEDO_MESSED -> {
-                torpedoMissed(0);
-                return;
             }
         }
         text.append(ConsoleUtil.getSeparator());
@@ -135,40 +124,12 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
     }
 
     @Override
-    public void noAvailableTorpedo() {
-        var text = new StringBuilder()
-                .append(ConsoleUtil.getSeparator())
-                .append("No available Torpedoes!\n")
-                .append(ConsoleUtil.getSeparator());
-
-        print(text.toString());
-    }
-
-    @Override
-    public void torpedoMissed(Integer availableTorpedoCount) {
-        var text = new StringBuilder()
-                .append(ConsoleUtil.getSeparator())
-                .append("Your Torpedo missed!\n")
-                .append("Available Torpedo count: ")
-                .append(availableTorpedoCount)
-                .append(ConsoleUtil.getSeparator());
-
-        print(text.toString());
-    }
-
-    @Override
-    public void torpedoSunkShip(Integer availableTorpedoCount, HitResult result) {
-        var text = new StringBuilder()
-                .append(ConsoleUtil.getSeparator())
-                .append("Your Torpedo just have sunk a ")
-                .append(result.getExtraInformation())
-                .append("\n")
-                .append("Available Torpedo count: ")
-                .append(availableTorpedoCount)
-                .append("\n")
-                .append(ConsoleUtil.getSeparator());
-
-        print(text.toString());
+    public void showTorpedoHitResult(TorpedoHitResult result) {
+        switch (result) {
+            case MISSED -> torpedoMissed(result.getAvailableTorpedoCount());
+            case SUNK -> torpedoSunkShip(result.getAvailableTorpedoCount(), result.getShipName());
+            case NO_AVAILABLE_TORPEDOES -> noAvailableTorpedo();
+        }
     }
 
     @Override
@@ -283,5 +244,39 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append("Submarine ships sunk count: ")
                 .append(statistics.submarineSunkCount())
                 .append("\n");
+    }
+
+    private void noAvailableTorpedo() {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("No available Torpedoes!\n")
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    private void torpedoMissed(Integer availableTorpedoCount) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Your Torpedo missed!\n")
+                .append("Available Torpedo count: ")
+                .append(availableTorpedoCount)
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    private void torpedoSunkShip(Integer availableTorpedoCount, String shipName) {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Your Torpedo just have sunk a ")
+                .append(shipName)
+                .append("\n")
+                .append("Available Torpedo count: ")
+                .append(availableTorpedoCount)
+                .append("\n")
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
     }
 }

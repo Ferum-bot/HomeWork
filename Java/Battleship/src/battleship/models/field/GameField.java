@@ -1,9 +1,12 @@
 package battleship.models.field;
 
+import battleship.game.action_result.FieldActionHolder;
+import battleship.game.settings.GameSettings;
 import battleship.models.field.coordinate.FieldCoordinate;
 import battleship.models.ship.Ship;
 import battleship.models.ship.ShipCoordinate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,63 +18,80 @@ public class GameField {
 
     private List<Ship> ships;
 
-    public void applySettings(List<Ship> ships) {
+    public void applySettings(List<Ship> ships, GameSettings settings) {
         this.ships = ships;
-        generateFieldByShips();
+        generateEmptyField(settings);
     }
 
     public List<List<FieldCoordinate>> getField() {
         return field;
     }
 
-    public HitResult defaultShootAt(FieldCoordinate coordinate) {
+    public FieldActionHolder defaultShootAt(FieldCoordinate coordinate) {
         var shipCoordinate = coordinate.toShipCoordinate();
-        var shootShip = findShootShip(shipCoordinate);
+        var shootShip = findShipAtField(shipCoordinate);
 
         if (shootShip.isEmpty()) {
             setEmptyShootAt(coordinate);
-            return HitResult.MISSED;
+            return FieldActionHolder.missedHit();
         }
 
         var ship = shootShip.get();
         ship.hitShipAt(shipCoordinate);
         if (ship.isSunk()) {
             setShipIsSunk(ship);
-            return HitResult.SUNK;
+            return FieldActionHolder.shipSunk(ship);
         } else {
             setShipIsShoot(coordinate, ship);
-            return HitResult.HIT;
+            return FieldActionHolder.shipHit(ship);
         }
     }
 
-    public HitResult torpedoShootAt(FieldCoordinate coordinate) {
+    public FieldActionHolder torpedoShootAt(FieldCoordinate coordinate) {
         var shipCoordinate = coordinate.toShipCoordinate();
-        var shootShip = findShootShip(shipCoordinate);
+        var shootShip = findShipAtField(shipCoordinate);
 
         if (shootShip.isEmpty()) {
             setEmptyShootAt(coordinate);
-            return HitResult.MISSED;
+            return FieldActionHolder.missedHit();
         }
 
         var ship = shootShip.get();
         setShipIsSunk(ship);
-        return HitResult.SUNK;
+        return FieldActionHolder.shipSunk(ship);
     }
 
     public Boolean allShipsIsSunk() {
         return ships.stream().allMatch(Ship::isSunk);
     }
 
-    public void refreshAllHitShips() {
-
+    public void recoverAllShipCoordinates(Ship ship) {
+        var coordinates = ship.getCoordinates().stream().map(ShipCoordinate::toFieldCoordinate);
+        coordinates.forEach(this::setCoordinateNotShoot);
     }
 
-    private void generateFieldByShips() {
+    private void setCoordinateNotShoot(FieldCoordinate coordinate) {
+        findCoordinateAtField(coordinate).ifPresent(foundCoordinate -> {
+            foundCoordinate.setStatus(NOT_SHOOT);
+        });
+    }
 
+    private void generateEmptyField(GameSettings settings) {
+        var height = settings.fieldHeight();
+        var width = settings.fieldWidth();
+        field = new ArrayList<>();
+        for (int row = 0; row < height; row++) {
+            var fieldRow = new ArrayList<FieldCoordinate>();
+            for (int column = 0; column < width; column++) {
+                var coordinate = new FieldCoordinate(column, row);
+                fieldRow.add(coordinate);
+            }
+            field.add(fieldRow);
+        }
     }
 
     private void setEmptyShootAt(FieldCoordinate coordinate) {
-        findShootCoordinate(coordinate).ifPresent(shootCoordinate -> {
+        findCoordinateAtField(coordinate).ifPresent(shootCoordinate -> {
             shootCoordinate.setStatus(EMPTY_SHOT);
         });
     }
@@ -80,27 +100,26 @@ public class GameField {
         ship.sunkShip();
         ship.getCoordinates().forEach(coordinate -> {
             var fieldCoordinate = coordinate.toFieldCoordinate();
-            findShootCoordinate(fieldCoordinate)
+            findCoordinateAtField(fieldCoordinate)
                     .ifPresent(shootCoordinate -> shootCoordinate.setStatus(SHIP_SUNK));
         });
     }
 
     private void setShipIsShoot(FieldCoordinate coordinate, Ship ship) {
         var shipCoordinate = coordinate.toShipCoordinate();
-        findShootCoordinate(coordinate).ifPresent(shootCoordinate -> {
+        findCoordinateAtField(coordinate).ifPresent(shootCoordinate -> {
             shootCoordinate.setStatus(SHIP_SHOT);
             ship.hitShipAt(shipCoordinate);
         });
     }
 
-    private Optional<Ship> findShootShip(ShipCoordinate coordinate) {
+    private Optional<Ship> findShipAtField(ShipCoordinate coordinate) {
         return ships.stream()
                 .filter(ship -> ship.isPlacedAt(coordinate))
                 .findAny();
     }
 
-    private Optional<FieldCoordinate> findShootCoordinate(FieldCoordinate coordinate) {
-        var width = field.size();
+    private Optional<FieldCoordinate> findCoordinateAtField(FieldCoordinate coordinate) {
         for (List<FieldCoordinate> fieldRow : field) {
             var shootCoordinate = fieldRow.stream()
                     .filter(fieldCoordinate -> fieldCoordinate.equals(coordinate))

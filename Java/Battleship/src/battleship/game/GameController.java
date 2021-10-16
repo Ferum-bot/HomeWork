@@ -14,7 +14,6 @@ public class GameController {
     private final GameStateControllerDelegate notStartedControllerDelegate;
     private final GameStateControllerDelegate configuringControllerDelegate;
     private final GameStateControllerDelegate playingControllerDelegate;
-    private final GameStateControllerDelegate finishedControllerDelegate;
 
     private final HardwareSettings hardwareSettings;
 
@@ -32,7 +31,6 @@ public class GameController {
         notStartedControllerDelegate = new NotStartedGameController();
         configuringControllerDelegate = new ConfiguringGameController();
         playingControllerDelegate = new PlayingGameController();
-        finishedControllerDelegate = new FinishedGameController();
         informationHolder = new InformationHolder();
         field = new GameField();
     }
@@ -52,9 +50,6 @@ public class GameController {
                 }
                 case PLAYING -> {
                     state = playingControllerDelegate.handleState(hardwareSettings, gameSettings, state, field, informationHolder);
-                }
-                case FINISHED -> {
-                    state = finishedControllerDelegate.handleState(hardwareSettings, gameSettings, state, field, informationHolder);
                 }
             }
         }

@@ -1,6 +1,7 @@
 package battleship.models.ship;
 
 import java.util.List;
+import java.util.Objects;
 
 abstract public class Ship {
 
@@ -11,6 +12,21 @@ abstract public class Ship {
     }
 
     public abstract Integer getShipLength();
+
+    public abstract String getShipName();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ship ship = (Ship) o;
+        return coordinates.equals(ship.coordinates);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(coordinates);
+    }
 
     public List<ShipCoordinate> getCoordinates() {
         return coordinates;
@@ -39,6 +55,12 @@ abstract public class Ship {
     public void sunkShip() {
         coordinates.forEach(coordinate -> {
             coordinate.setIsHit(true);
+        });
+    }
+
+    public void recoverShip() {
+        coordinates.forEach(coordinate -> {
+            coordinate.setIsHit(false);
         });
     }
 }

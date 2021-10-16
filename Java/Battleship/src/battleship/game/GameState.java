@@ -4,6 +4,5 @@ public enum GameState {
     NOT_STARTED,
     CONFIGURING,
     PLAYING,
-    FINISHED,
     EXIT;
 }

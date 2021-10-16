@@ -53,6 +53,10 @@ public class InformationHolder {
         availableTorpedoCount = count;
     }
 
+    public Integer getAvailableTorpedoCount() {
+        return availableTorpedoCount;
+    }
+
     public void decreaseTorpedoCount() {
         availableTorpedoCount--;
     }

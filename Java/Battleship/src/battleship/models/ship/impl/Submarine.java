@@ -17,4 +17,9 @@ public class Submarine extends Ship {
     public Integer getShipLength() {
         return SHIP_LENGTH;
     }
+
+    @Override
+    public String getShipName() {
+        return this.getClass().getName();
+    }
 }

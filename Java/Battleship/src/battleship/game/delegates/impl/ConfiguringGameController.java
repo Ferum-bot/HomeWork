@@ -75,8 +75,10 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
 
     private void handleGameSettingsInput(SettingsInput settingsInput) {
         if (settingsIsCorrect(settingsInput)) {
+            gameSettings = settingsInput.toGameSettings();
             var ships = generateField(settingsInput);
-            field.applySettings(ships);
+            field.applySettings(ships, gameSettings);
+            informationHolder.setTorpedoCount(gameSettings.torpedoCount());
             state = GameState.PLAYING;
         } else {
             hardwareSettings.outputProvider().incorrectGameSettings();
