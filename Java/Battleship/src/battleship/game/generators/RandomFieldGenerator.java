@@ -1,12 +1,12 @@
 package battleship.game.generators;
 
+import battleship.core.util.RandomUtil;
 import battleship.game.settings.GameSettings;
 import battleship.models.ship.Ship;
 import battleship.models.ship.ShipCoordinate;
 import battleship.models.ship.impl.*;
 
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomFieldGenerator implements FieldGenerator {
 
@@ -122,13 +122,13 @@ public class RandomFieldGenerator implements FieldGenerator {
         var width = settings.fieldWidth();
         for (int row = 0; row < height; row++) {
             for (int column = 0; column < width; column++) {
-                if (notAvailable(column, row)) {
+                if (notAvailable(column, row, settings)) {
                     continue;
                 }
-                if (notEnoughSpace(column, row, length)) {
+                if (notEnoughSpace(column, row, length, settings)) {
                     continue;
                 }
-                return generateCoordinatesFrom(column, row, length);
+                return generateCoordinatesFrom(column, row, length, settings);
             }
         }
 
@@ -138,43 +138,36 @@ public class RandomFieldGenerator implements FieldGenerator {
     private Optional<List<ShipCoordinate>> tryToGenerateFromRandomCoordinates(Integer length, GameSettings settings) {
         var height = settings.fieldHeight();
         var width = settings.fieldWidth();
-        var randomRows = generateRandomIndexes(height);
-        var randomColumns = generateRandomIndexes(width);
+        var randomRows = RandomUtil.generateRandomIndexes(height);
+        var randomColumns = RandomUtil.generateRandomIndexes(width);
 
         for (Integer row: randomRows) {
             for (Integer column: randomColumns) {
-                if (notAvailable(column, row)) {
+                if (notAvailable(column, row, settings)) {
                     continue;
                 }
-                if (notEnoughSpace(column, row, length)) {
+                if (notEnoughSpace(column, row, length, settings)) {
                     continue;
                 }
-                return Optional.of(generateCoordinatesFrom(column, row, length));
+                return Optional.of(generateCoordinatesFrom(column, row, length, settings));
             }
         }
 
         return Optional.empty();
     }
 
-    private List<Integer> generateRandomIndexes(Integer length) {
-        Set<Integer> uniqueRandomIndexes = new HashSet<>();
-        List<Integer> randomIndexes = new LinkedList<>();
-        for (int i = 0; i < length * 2; i++) {
-            int random = ThreadLocalRandom.current().nextInt(0, length);
-            if (uniqueRandomIndexes.add(random)) {
-                randomIndexes.add(random);
-            }
+    private Boolean notAvailable(Integer x, Integer y, GameSettings settings) {
+        var maxWidth = settings.fieldWidth();
+        var maxHeight = settings.fieldHeight();
+        if (x >= maxWidth || y >= maxHeight) {
+            return true;
         }
-        return randomIndexes;
-    }
-
-    private Boolean notAvailable(Integer x, Integer y) {
         return usedCoordinates.stream().anyMatch(coordinate ->
             coordinate.getY().equals(y) && coordinate.getX().equals(x)
         );
     }
 
-    private Boolean notEnoughSpace(Integer x, Integer y, Integer length) {
+    private Boolean notEnoughSpace(Integer x, Integer y, Integer length, GameSettings settings) {
         for (int duriation = 0; duriation < DURATION_COUNT; duriation++) {
             var isDurationAvailable = true;
 
@@ -182,7 +175,7 @@ public class RandomFieldGenerator implements FieldGenerator {
                 var currentX = x + X_OFF_SETS.get(duriation) * additionalLength;
                 var currentY = y + Y_OFF_SETS.get(duriation) * additionalLength;
 
-                if (notAvailable(currentX, currentY)) {
+                if (notAvailable(currentX, currentY, settings)) {
                     isDurationAvailable = false;
                     break;
                 }
@@ -196,7 +189,7 @@ public class RandomFieldGenerator implements FieldGenerator {
         return true;
     }
 
-    private List<ShipCoordinate> generateCoordinatesFrom(Integer x, Integer y, Integer length) {
+    private List<ShipCoordinate> generateCoordinatesFrom(Integer x, Integer y, Integer length, GameSettings settings) {
         for (int duriation = 0; duriation < DURATION_COUNT; duriation++) {
             var coordinates = new LinkedList<ShipCoordinate>();
             var isDurationAvailable = true;
@@ -205,7 +198,7 @@ public class RandomFieldGenerator implements FieldGenerator {
                 var currentX = x + X_OFF_SETS.get(duriation) * additionalLength;
                 var currentY = y + Y_OFF_SETS.get(duriation) * additionalLength;
 
-                if (notAvailable(currentX, currentY)) {
+                if (notAvailable(currentX, currentY, settings)) {
                     isDurationAvailable = false;
                     break;
                 }

@@ -72,10 +72,7 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append("Not let's configure the game!\n\n")
                 .append("Short Terms of Use\n")
                 .append("Available commands in any moment:\n")
-                .append("  * help -> will show the full information about the game and available possibilities\n")
-                .append("  * exit -> will exit from game\n")
-                .append("  * x y  -> will hit at x and y coordinate\n")
-                .append("  * x y T -> will launch a torpedo, if this mode is active\n")
+                .append(getAllCommandsInfo())
                 .append("\n")
                 .append("Available ships by it number:\n")
                 .append("  1. Carrier(5 cells)\n")
@@ -104,7 +101,50 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
 
     @Override
     public void showHowToPlay() {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Hot to play:\n\n")
+                .append("First you must input the game settings. The pattern of game settings is:\n")
+                .append("W H 1 2 3 4 5 EXTRA_MODE_1 EXTRA_MODE_2\n")
+                .append("What does it means:\n")
+                .append("W -> game field width.\n")
+                .append("H -> game field height.\n")
+                .append("1 -> Carrier count(5 cells).\n")
+                .append("2 -> Battleship count(4 cells).\n")
+                .append("3 -> Cruise count(3 cells).\n")
+                .append("4 -> Destroyer count(2 cells).\n")
+                .append("5 -> Submarine count(1 cells).\n")
+                .append("Than, you can activate two game mods: Torpedo mode and Recovery mode.\n")
+                .append("To activate Torpedo mode, add this after ships count 'T <TORPEDOES_COUNT>'.\n")
+                .append("For example, to start game with width 5, height 7, carrier count 1, battleship count 0, cruiser count 1,\n")
+                .append("destroyer count 0, submarine count 1 and enable Torpedo mode with 3 torpedoes, write this:\n")
+                .append("5 7 1 0 1 0 1 T 3\n")
+                .append("If you want to activate Recovery mode, just add a 'R' alias after ships count!\n")
+                .append("For example:\n")
+                .append("5 7 1 0 1 0 1 R\n")
+                .append("If you want to activate both Torpedoes and Recovery modes, write this:\n")
+                .append("5 7 1 0 1 0 1 T 3 R\n\n")
+                .append("In any moment you can write this commands:\n")
+                .append("  * help -> will show the full information about the game and available possibilities\n")
+                .append("  * exit -> will exit from game\n")
+                .append("All available commands in a game:\n")
+                .append(getAllCommandsInfo())
+                .append("About game field:\n\n")
+                .append("The field coordinates start at (1, 1) to (WIDTH, HEIGHT)\n")
+                .append("The left top corner is (1, 1) and right bottom corner is (WIDTH, HEIGHT)\n")
+                .append("Horizontally this is the x-axis, vertically this is the Y-axis\n")
+                .append("The field cells aliases:\n")
+                .append(getFieldAliasesInfo())
+                .append("For example, field with width 4 and height 5:\n\n")
+                .append("    ##$#\n")
+                .append("    #!##\n")
+                .append("    #!##\n")
+                .append("    ##?#\n")
+                .append("    ####\n")
+                .append("\n\n")
+                .append(ConsoleUtil.getSeparator());
 
+        print(text.toString());
     }
 
     @Override
@@ -191,18 +231,7 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append(ConsoleUtil.getSeparator())
                 .append("Current game field:\n\n")
                 .append("Cells aliases:\n")
-                .append("1. ")
-                .append(EMPTY_HIT_SIGN)
-                .append(" -> Means that the hit on this cell was missed.\n")
-                .append("2. ")
-                .append(UN_FIRED_SIGN)
-                .append(" -> Means that cell is unfired.\n")
-                .append("3. ")
-                .append(SHIP_HIT_SIGN)
-                .append(" -> Means that the hit on this cell damaged ship.\n")
-                .append("4. ")
-                .append(SHIP_SUNK_SIGN)
-                .append(" -> Means that the ship is sunk in this cell.\n\n");
+                .append(getFieldAliasesInfo());
 
         print(text.toString());
     }
@@ -290,5 +319,29 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
                 .append(ConsoleUtil.getSeparator());
 
         print(text.toString());
+    }
+
+    private StringBuilder getFieldAliasesInfo() {
+        return new StringBuilder()
+                .append("1. ")
+                .append(EMPTY_HIT_SIGN)
+                .append(" -> Means that the hit on this cell was missed.\n")
+                .append("2. ")
+                .append(UN_FIRED_SIGN)
+                .append(" -> Means that cell is unfired.\n")
+                .append("3. ")
+                .append(SHIP_HIT_SIGN)
+                .append(" -> Means that the hit on this cell damaged ship.\n")
+                .append("4. ")
+                .append(SHIP_SUNK_SIGN)
+                .append(" -> Means that the ship is sunk in this cell.\n\n");
+    }
+
+    private StringBuilder getAllCommandsInfo() {
+        return new StringBuilder()
+                .append("  * help -> will show the full information about the game and available possibilities\n")
+                .append("  * exit -> will exit from game\n")
+                .append("  * x y  -> will hit at x and y coordinate\n")
+                .append("  * x y T -> will launch a torpedo, if this mode is active\n");
     }
 }

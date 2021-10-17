@@ -1,4 +1,4 @@
-package battleship.core;
+package battleship.core.util;
 
 public class StringUtil {
 

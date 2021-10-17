@@ -1,14 +1,15 @@
 package battleship.models.commands.impl;
 
-import battleship.core.StringUtil;
+import battleship.core.util.StringUtil;
 import battleship.game.settings.GameSettings;
 import battleship.models.commands.UserCommand;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
-public class SettingsInput implements UserCommand {
+public record SettingsInput(
+    String input
+) implements UserCommand {
 
     private static final String COMMAND_NAME = "User Settings input";
 
@@ -151,8 +152,6 @@ public class SettingsInput implements UserCommand {
         return actualString.equals(RECOVERY_FLAG);
     }
 
-    private final String input;
-
     public SettingsInput(String input) {
         this.input = input.strip();
     }
@@ -177,8 +176,8 @@ public class SettingsInput implements UserCommand {
         var isRecoveryModeEnabled = isRecoveryModeEnabled(input);
 
         return new GameSettings(
-            fieldWidth, fieldHeight, carrierCount, battleshipCount, cruiserCount,
-            destroyerCount, submarineCount, torpedoesCount, isRecoveryModeEnabled
+                fieldWidth, fieldHeight, carrierCount, battleshipCount, cruiserCount,
+                destroyerCount, submarineCount, torpedoesCount, isRecoveryModeEnabled
         );
     }
 }

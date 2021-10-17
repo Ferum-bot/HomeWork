@@ -1,5 +1,8 @@
 package battleship.game.delegates.impl;
 
+import battleship.core.guards.CommandGuard;
+import battleship.core.guards.GuardResult;
+import battleship.core.guards.impl.HitCommandGuard;
 import battleship.game.GameService;
 import battleship.game.GameState;
 import battleship.game.delegates.GameStateControllerDelegate;
@@ -13,7 +16,10 @@ public class PlayingGameController implements GameStateControllerDelegate  {
 
     private static final String TORPEDO_MODE_ARG = "T";
 
+    private final CommandGuard hitCommandGuard = new HitCommandGuard();
+
     private HardwareSettings hardwareSettings;
+    private GameSettings gameSettings;
 
     private GameState gameState;
 
@@ -26,6 +32,7 @@ public class PlayingGameController implements GameStateControllerDelegate  {
     ) {
         gameService = new GameService(gameSettings, field, informationHolder);
         this.hardwareSettings = hardwareSettings;
+        this.gameSettings = gameSettings;
         this.gameState = state;
 
         return launchPlaying();
@@ -67,6 +74,12 @@ public class PlayingGameController implements GameStateControllerDelegate  {
     }
 
     private void hitActionDelegate(HitCoordinate hitCoordinate) {
+        var guardResult = hitCommandGuard.checkForCorrectness(hitCoordinate, gameSettings);
+        if (guardResult == GuardResult.FAILURE) {
+            hardwareSettings.outputProvider().incorrectCommand();
+            return;
+        }
+
         if (isTorpedoHit(hitCoordinate)) {
             var result = gameService.performTorpedoUserHit(hitCoordinate);
             hardwareSettings.outputProvider().showTorpedoHitResult(result);
