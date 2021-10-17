@@ -20,6 +20,6 @@ public class Cruiser extends Ship {
 
     @Override
     public String getShipName() {
-        return this.getClass().getName();
+        return this.getClass().getSimpleName();
     }
 }

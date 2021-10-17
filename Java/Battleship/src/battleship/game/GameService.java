@@ -85,6 +85,9 @@ public class GameService {
             informationHolder.increaseMissedHits();
             return;
         }
+        if (hitResult == HitResult.HIT) {
+            return;
+        }
         var sunkShip = fieldActionHolder.effectedShip();
         sunkShip.ifPresent(ship -> {
             if (ship instanceof Carrier) {

@@ -6,6 +6,7 @@ import battleship.models.ship.ShipCoordinate;
 import battleship.models.ship.impl.*;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomFieldGenerator implements FieldGenerator {
 
@@ -112,6 +113,11 @@ public class RandomFieldGenerator implements FieldGenerator {
     }
 
     private List<ShipCoordinate> generateCoordinatesWithLength(Integer length, GameSettings settings) {
+        var randomGeneratedCoordinates = tryToGenerateFromRandomCoordinates(length, settings);
+        if (randomGeneratedCoordinates.isPresent()) {
+            return randomGeneratedCoordinates.get();
+        }
+
         var height = settings.fieldHeight();
         var width = settings.fieldWidth();
         for (int row = 0; row < height; row++) {
@@ -127,6 +133,39 @@ public class RandomFieldGenerator implements FieldGenerator {
         }
 
         return Collections.emptyList();
+    }
+
+    private Optional<List<ShipCoordinate>> tryToGenerateFromRandomCoordinates(Integer length, GameSettings settings) {
+        var height = settings.fieldHeight();
+        var width = settings.fieldWidth();
+        var randomRows = generateRandomIndexes(height);
+        var randomColumns = generateRandomIndexes(width);
+
+        for (Integer row: randomRows) {
+            for (Integer column: randomColumns) {
+                if (notAvailable(column, row)) {
+                    continue;
+                }
+                if (notEnoughSpace(column, row, length)) {
+                    continue;
+                }
+                return Optional.of(generateCoordinatesFrom(column, row, length));
+            }
+        }
+
+        return Optional.empty();
+    }
+
+    private List<Integer> generateRandomIndexes(Integer length) {
+        Set<Integer> uniqueRandomIndexes = new HashSet<>();
+        List<Integer> randomIndexes = new LinkedList<>();
+        for (int i = 0; i < length * 2; i++) {
+            int random = ThreadLocalRandom.current().nextInt(0, length);
+            if (uniqueRandomIndexes.add(random)) {
+                randomIndexes.add(random);
+            }
+        }
+        return randomIndexes;
     }
 
     private Boolean notAvailable(Integer x, Integer y) {
@@ -174,9 +213,7 @@ public class RandomFieldGenerator implements FieldGenerator {
                 coordinates.add(coordinate);
             }
 
-            if (!isDurationAvailable) {
-                continue;
-            } else {
+            if (isDurationAvailable) {
                 usedCoordinates.addAll(coordinates);
                 return coordinates;
             }
