@@ -1,29 +1,97 @@
 package battleship.game.settings;
 
-public record GameSettings(
+import battleship.models.commands.impl.SettingsInput;
 
-    Integer fieldWidth,
+public class GameSettings {
 
-    Integer fieldHeight,
+    private Integer fieldWidth = 0;
 
-    Integer carrierCount,
+    private Integer fieldHeight = 0;
 
-    Integer battleshipCount,
+    private Integer carrierCount = 0;
 
-    Integer cruiserCount,
+    private Integer battleshipCount = 0;
 
-    Integer destroyerCount,
+    private Integer cruiserCount = 0;
 
-    Integer submarineCount,
+    private Integer destroyerCount = 0;
 
-    Integer torpedoCount,
+    private Integer submarineCount = 0;
 
-    Boolean isRecoveryModeEnabled
-) {
+    private Integer torpedoCount = 0;
+
+    private Boolean isRecoveryModeEnabled = false;
 
     public static GameSettings empty() {
-        return new GameSettings(
-            0, 0, 0, 0, 0, 0, 0, 0, false
-        );
+        return new GameSettings();
+    }
+
+    public GameSettings() {
+
+    }
+
+    public GameSettings(
+        Integer fieldWidth, Integer fieldHeight, Integer carrierCount,
+        Integer battleshipCount, Integer cruiserCount, Integer destroyerCount,
+        Integer submarineCount, Integer torpedoCount, Boolean isRecoveryModeEnabled
+    ) {
+        this.fieldWidth = fieldWidth;
+        this.fieldHeight = fieldHeight;
+        this.carrierCount = carrierCount;
+        this.battleshipCount = battleshipCount;
+        this.cruiserCount = cruiserCount;
+        this.destroyerCount = destroyerCount;
+        this.submarineCount = submarineCount;
+        this.torpedoCount = torpedoCount;
+        this.isRecoveryModeEnabled = isRecoveryModeEnabled;
+    }
+
+    public Integer getFieldWidth() {
+        return fieldWidth;
+    }
+
+    public Integer getFieldHeight() {
+        return fieldHeight;
+    }
+
+    public Integer getCarrierCount() {
+        return carrierCount;
+    }
+
+    public Integer getBattleshipCount() {
+        return battleshipCount;
+    }
+
+    public Integer getCruiserCount() {
+        return cruiserCount;
+    }
+
+    public Integer getDestroyerCount() {
+        return destroyerCount;
+    }
+
+    public Integer getSubmarineCount() {
+        return submarineCount;
+    }
+
+    public Integer getTorpedoCount() {
+        return torpedoCount;
+    }
+
+    public Boolean isRecoveryModeEnabled() {
+        return isRecoveryModeEnabled;
+    }
+
+    public void applySettings(SettingsInput settingsInput) {
+        var anotherSettings = settingsInput.toGameSettings();
+        fieldWidth = anotherSettings.fieldWidth;
+        fieldHeight = anotherSettings.fieldHeight;
+        carrierCount = anotherSettings.carrierCount;
+        battleshipCount = anotherSettings.battleshipCount;
+        cruiserCount = anotherSettings.cruiserCount;
+        destroyerCount = anotherSettings.destroyerCount;
+        submarineCount = anotherSettings.submarineCount;
+        torpedoCount = anotherSettings.torpedoCount;
+        isRecoveryModeEnabled = anotherSettings.isRecoveryModeEnabled;
     }
 }

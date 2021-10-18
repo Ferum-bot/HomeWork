@@ -25,6 +25,8 @@ public interface OutputGameInfoProvider {
 
     void incorrectGameSettings();
 
+    void invalidHitCommand();
+
     void showHitResult(HitResult result);
 
     void showTorpedoHitResult(TorpedoHitResult result);

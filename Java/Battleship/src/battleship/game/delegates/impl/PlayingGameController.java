@@ -76,7 +76,7 @@ public class PlayingGameController implements GameStateControllerDelegate  {
     private void hitActionDelegate(HitCoordinate hitCoordinate) {
         var guardResult = hitCommandGuard.checkForCorrectness(hitCoordinate, gameSettings);
         if (guardResult == GuardResult.FAILURE) {
-            hardwareSettings.outputProvider().incorrectCommand();
+            hardwareSettings.outputProvider().invalidHitCommand();
             return;
         }
 

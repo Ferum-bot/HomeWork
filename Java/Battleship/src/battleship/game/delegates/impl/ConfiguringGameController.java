@@ -85,17 +85,17 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
         return fieldGenerator.fieldExistsWith(settings.toGameSettings());
     }
 
-    private List<Ship> generateField(SettingsInput settings) {
-        return fieldGenerator.generateShipsLocation(settings.toGameSettings());
-    }
-
     private void applyGameSettings(SettingsInput settingsInput) {
         var ships = generateField(settingsInput);
-        gameSettings = settingsInput.toGameSettings();
+        gameSettings.applySettings(settingsInput);
         field.applySettings(ships, gameSettings);
-        informationHolder.setTorpedoCount(gameSettings.torpedoCount());
+        informationHolder.setTorpedoCount(gameSettings.getTorpedoCount());
         hardwareSettings.outputProvider().onGameBegins();
         hardwareSettings.outputProvider().showGameField(field);
         state = GameState.PLAYING;
+    }
+
+    private List<Ship> generateField(SettingsInput settings) {
+        return fieldGenerator.generateShipsLocation(settings.toGameSettings());
     }
 }

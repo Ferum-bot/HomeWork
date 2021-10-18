@@ -174,6 +174,18 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
     }
 
     @Override
+    public void invalidHitCommand() {
+        var text = new StringBuilder()
+                .append(ConsoleUtil.getSeparator())
+                .append("Invalid Hit command!\n")
+                .append("The coordinates must be from 1 to width/height of the field!\n")
+                .append("Please try again!\n")
+                .append(ConsoleUtil.getSeparator());
+
+        print(text.toString());
+    }
+
+    @Override
     public void showHitResult(HitResult result) {
         var text = new StringBuilder().append(ConsoleUtil.getSeparator());
 

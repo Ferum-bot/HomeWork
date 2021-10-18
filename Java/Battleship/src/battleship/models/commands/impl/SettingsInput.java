@@ -39,7 +39,7 @@ public record SettingsInput(
 
     private static Boolean isCorrectGeneralPattern(String userInput) {
         var spaceCount = StringUtil.countSpaces(userInput);
-        return spaceCount >= 6 && spaceCount <= 8;
+        return spaceCount >= 6 && spaceCount <= 9;
     }
 
     private static Integer getFieldWidth(String userInput) {

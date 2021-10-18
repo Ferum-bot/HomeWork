@@ -16,10 +16,10 @@ public class HitCommandGuard implements CommandGuard {
 
         var xCoordinate = hitCommand.x();
         var yCoordinate = hitCommand.y();
-        if (xCoordinate < 1 || yCoordinate < 1) {
+        if (xCoordinate < 0 || yCoordinate < 0) {
             return GuardResult.FAILURE;
         }
-        if (xCoordinate > settings.fieldWidth() || yCoordinate > settings.fieldHeight()) {
+        if (xCoordinate >= settings.getFieldWidth() || yCoordinate >= settings.getFieldHeight()) {
             return GuardResult.FAILURE;
         }
 

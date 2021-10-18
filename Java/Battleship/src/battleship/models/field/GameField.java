@@ -77,8 +77,8 @@ public class GameField {
     }
 
     private void generateEmptyField(GameSettings settings) {
-        var height = settings.fieldHeight();
-        var width = settings.fieldWidth();
+        var height = settings.getFieldHeight();
+        var width = settings.getFieldWidth();
         field = new ArrayList<>();
         for (int row = 0; row < height; row++) {
             var fieldRow = new ArrayList<FieldCoordinate>();

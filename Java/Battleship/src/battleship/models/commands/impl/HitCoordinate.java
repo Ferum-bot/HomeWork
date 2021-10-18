@@ -30,8 +30,8 @@ public record HitCoordinate(
         }
 
         var formattedString = userInput.strip();
-        var xCoordinate = getXCoordinate(formattedString);
-        var yCoordinate = getYCoordinate(formattedString);
+        var xCoordinate = getXCoordinate(formattedString) - 1;
+        var yCoordinate = getYCoordinate(formattedString) - 1;
         var args = getArgs(formattedString);
         return new HitCoordinate(xCoordinate, yCoordinate, args);
     }
