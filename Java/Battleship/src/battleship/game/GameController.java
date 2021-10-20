@@ -9,6 +9,11 @@ import battleship.models.info.InformationHolder;
 
 import static battleship.game.GameState.*;
 
+/**
+ * Main game controller. Handle current game state.
+ * @author matvejpopov
+ * @version 1.0.0
+ */
 public class GameController {
 
     private final GameStateControllerDelegate notStartedControllerDelegate;
@@ -35,6 +40,9 @@ public class GameController {
         field = new GameField();
     }
 
+    /**
+     * Method starts the game.
+     */
     public void startGame() {
         launchGameEngine();
     }

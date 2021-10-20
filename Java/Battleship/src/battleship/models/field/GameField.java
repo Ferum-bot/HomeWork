@@ -12,12 +12,22 @@ import java.util.Optional;
 
 import static battleship.models.field.coordinate.CoordinateStatus.*;
 
+/**
+ * Abstraction for battleship game field.
+ * @author matvejpopov
+ * @version 1.0.0
+ */
 public class GameField {
 
     private List<List<FieldCoordinate>> field;
 
     private List<Ship> ships;
 
+    /**
+     * Sets new ships and generates game field depending on game settings.
+     * @param ships ships to place on game field
+     * @param settings game settings
+     */
     public void applySettings(List<Ship> ships, GameSettings settings) {
         this.ships = ships;
         generateEmptyField(settings);
@@ -27,6 +37,12 @@ public class GameField {
         return field;
     }
 
+    /**
+     * Method to perform default shoot at field. Changes ship and cell status.
+     * @param coordinate field coordinate.
+     * @return result of shoot
+     * @see FieldActionHolder
+     */
     public FieldActionHolder defaultShootAt(FieldCoordinate coordinate) {
         var shipCoordinate = coordinate.toShipCoordinate();
         var shootShip = findShipAtField(shipCoordinate);
@@ -47,6 +63,12 @@ public class GameField {
         }
     }
 
+    /**
+     * Method to perform torpedo shoot at field. Changes ship and cell status.
+     * @param coordinate field coordinate
+     * @return result of shoow
+     * @see FieldActionHolder
+     */
     public FieldActionHolder torpedoShootAt(FieldCoordinate coordinate) {
         var shipCoordinate = coordinate.toShipCoordinate();
         var shootShip = findShipAtField(shipCoordinate);
@@ -61,10 +83,18 @@ public class GameField {
         return FieldActionHolder.shipSunk(ship);
     }
 
+    /**
+     * Checks that all ships on field is sunk
+     * @return true if all ships is sunk and false otherwise.
+     */
     public Boolean allShipsIsSunk() {
         return ships.stream().allMatch(Ship::isSunk);
     }
 
+    /**
+     * Recovers all coordinates with this ship.
+     * @param ship ship to coordinates recover.
+     */
     public void recoverAllShipCoordinates(Ship ship) {
         var coordinates = ship.getCoordinates().stream().map(ShipCoordinate::toFieldCoordinate);
         coordinates.forEach(this::setCoordinateNotShoot);

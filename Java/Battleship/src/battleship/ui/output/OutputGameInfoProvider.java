@@ -5,6 +5,11 @@ import battleship.game.action_result.TorpedoHitResult;
 import battleship.models.field.GameField;
 import battleship.models.statistics.Statistics;
 
+/**
+ * Output info game provider.
+ * @author matvejpopov
+ * @version 1.0.0
+ */
 public interface OutputGameInfoProvider {
 
     void onGameStarted();

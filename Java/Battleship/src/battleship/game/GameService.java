@@ -14,6 +14,11 @@ import battleship.models.statistics.Statistics;
 
 import java.util.Optional;
 
+/**
+ * Main game business logic class. Provides main game logic.
+ * @author matvejpopov
+ * @version 1.0.0
+ */
 public class GameService {
 
     private final GameSettings gameSettings;
@@ -38,10 +43,20 @@ public class GameService {
         return gameField;
     }
 
+    /**
+     * Checks if game is win.
+     * @return true if win and false otherwise.
+     */
     public Boolean isGameWin() {
         return gameField.allShipsIsSunk();
     }
 
+    /**
+     * Performs default hit on game cell.
+     * @param coordinate: field cell.
+     * @return hit result.
+     * @see HitResult
+     */
     public HitResult performDefaultUserHit(HitCoordinate coordinate) {
         informationHolder.increaseScore();
 
@@ -55,6 +70,12 @@ public class GameService {
         return hitResult;
     }
 
+    /**
+     * Performs torpedo hit on game cell.
+     * @param coordinate: field cell.
+     * @return hit result.
+     * @see TorpedoHitResult
+     */
     public TorpedoHitResult performTorpedoUserHit(HitCoordinate coordinate) {
         if (!informationHolder.isTorpedoAvailable()) {
             return TorpedoHitResult.NO_AVAILABLE_TORPEDOES;
