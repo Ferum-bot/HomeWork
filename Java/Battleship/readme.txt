@@ -1,0 +1,67 @@
+Hello!
+This is Battle ship game!
+The rules are simple, I have a filed with fixed size.
+You write some game params(field size, number of ships, game mode).
+I generate a filed, if it possible, and than the game starts!
+You input the hit coordinates and I will tell did you hit or not
+Try to sunk all the ships in the minimum number of moves!
+Have fun and enjoy!
+
+How to play:
+
+First you must input the game settings. The pattern of game settings is:
+W H 1 2 3 4 5 EXTRA_MODE_1 EXTRA_MODE_2
+What does it means:
+W -> game field width.
+H -> game field height.
+1 -> Carrier count(5 cells).
+2 -> Battleship count(4 cells).
+3 -> Cruise count(3 cells).
+4 -> Destroyer count(2 cells).
+5 -> Submarine count(1 cells).
+Than, you can activate two game mods: Torpedo mode and Recovery mode.
+To activate Torpedo mode, add this after ships count 'T <TORPEDOES_COUNT>'.
+For example, to start game with width 5, height 7, carrier count 1, battleship count 0, cruiser count 1,
+destroyer count 0, submarine count 1 and enable Torpedo mode with 3 torpedoes, write this:
+5 7 1 0 1 0 1 T 3
+If you want to activate Recovery mode, just add a 'R' alias after ships count!
+For example:
+5 7 1 0 1 0 1 R
+If you want to activate both Torpedoes and Recovery modes, write this:
+5 7 1 0 1 0 1 T 3 R
+
+In any moment you can write this commands:
+  * help -> will show the full information about the game and available possibilities
+  * exit -> will exit from game
+All available commands in a game:
+  * help -> will show the full information about the game and available possibilities
+  * exit -> will exit from game
+  * x y  -> will hit at x and y coordinate
+  * x y T -> will launch a torpedo, if this mode is active
+About game field:
+
+The field coordinates start at (1, 1) to (WIDTH, HEIGHT)
+The left top corner is (1, 1) and right bottom corner is (WIDTH, HEIGHT)
+Horizontally this is the x-axis, vertically this is the Y-axis
+The field cells aliases:
+1. $ -> Means that the hit on this cell was missed.
+2. # -> Means that cell is unfired.
+3. ? -> Means that the hit on this cell damaged ship.
+4. ! -> Means that the ship is sunk in this cell.
+
+For example, field with width 4 and height 5:
+
+    ##$#
+    #!##
+    #!##
+    ##?#
+    ####
+
+Now input the game setting by pattern: N M 1 2 3 4 5 M1 6 M2!
+Example: 10 10 0 1 2 3 4 T 5 R -> That means:
+Field Size: 10x10
+Number of ships by type: 0 -> Carrier, 1 -> Battleship and etc.
+Enabled torpedo mode with 5 torpedoes.
+Enabled recovery mode.
+
+

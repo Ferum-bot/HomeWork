@@ -103,7 +103,7 @@ public class ConsoleOutputInfoProvider implements OutputGameInfoProvider {
     public void showHowToPlay() {
         var text = new StringBuilder()
                 .append(ConsoleUtil.getSeparator())
-                .append("Hot to play:\n\n")
+                .append("How to play:\n\n")
                 .append("First you must input the game settings. The pattern of game settings is:\n")
                 .append("W H 1 2 3 4 5 EXTRA_MODE_1 EXTRA_MODE_2\n")
                 .append("What does it means:\n")
