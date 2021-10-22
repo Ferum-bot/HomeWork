@@ -1,5 +1,8 @@
 package battleship.game.delegates.impl;
 
+import battleship.core.guards.CommandGuard;
+import battleship.core.guards.GuardResult;
+import battleship.core.guards.impl.SettingsInputGuard;
 import battleship.game.GameState;
 import battleship.game.delegates.GameStateControllerDelegate;
 import battleship.game.generators.FieldGenerator;
@@ -16,6 +19,8 @@ import java.util.List;
 public class ConfiguringGameController implements GameStateControllerDelegate {
 
     private final FieldGenerator fieldGenerator = new RandomFieldGenerator();
+
+    private final CommandGuard settingsInputGuard = new SettingsInputGuard();
 
     private HardwareSettings hardwareSettings;
     private GameSettings gameSettings;
@@ -74,11 +79,18 @@ public class ConfiguringGameController implements GameStateControllerDelegate {
     }
 
     private void handleGameSettingsInput(SettingsInput settingsInput) {
-        if (settingsIsCorrect(settingsInput)) {
-            applyGameSettings(settingsInput);
-        } else {
+        if (!settingsIsCorrect(settingsInput)) {
             hardwareSettings.outputProvider().incorrectGameSettings();
+            return;
         }
+
+        var correctnessResult = settingsInputGuard.checkForCorrectness(settingsInput, gameSettings);
+        if (correctnessResult == GuardResult.FAILURE) {
+            hardwareSettings.outputProvider().incorrectGameSettings();
+            return;
+        }
+
+        applyGameSettings(settingsInput);
     }
 
     private Boolean settingsIsCorrect(SettingsInput settings) {
