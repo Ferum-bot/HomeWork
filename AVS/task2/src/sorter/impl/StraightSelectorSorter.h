@@ -5,9 +5,9 @@
 #ifndef TASK2_STRAIGHTSELECTORSORTER_H
 #define TASK2_STRAIGHTSELECTORSORTER_H
 
-#pragma once
-
 #include "../ContainerSorter.h"
+
+#pragma once
 
 class StraightSelectorSorter: public ContainerSorter {
 

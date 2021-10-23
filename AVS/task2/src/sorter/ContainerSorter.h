@@ -5,10 +5,10 @@
 #ifndef TASK2_CONTAINERSORTER_H
 #define TASK2_CONTAINERSORTER_H
 
-#pragma once
-
 #include "../container/Container.h"
 #include <functional>
+
+#pragma once
 
 class ContainerSorter {
 public:
