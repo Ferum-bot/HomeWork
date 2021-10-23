@@ -22,7 +22,7 @@ Bird& Bird::operator=(const Bird &bird) {
 
 Animal* Bird::copy() {
     Bird* currentBird = dynamic_cast<Bird*>(this);
-    Bird* copyBird = new Bird(*name, *weight);
+    Bird* copyBird = new Bird(*name, weight);
     copyBird->setIsTransferable(currentBird->getIsTransferable());
     return copyBird;
 }
@@ -31,6 +31,6 @@ bool Bird::getIsTransferable() const {
     return *isTransferable;
 }
 
-void Bird::setIsTransferable(const bool& isTransferable) {
-    this->isTransferable = &isTransferable
+void Bird::setIsTransferable(bool isTransferable) {
+    this->isTransferable = &isTransferable;
 }

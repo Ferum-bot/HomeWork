@@ -20,7 +20,7 @@ public:
 
     Animal * copy() override;
 
-    void setIsTransferable(const bool& isTransferable);
+    void setIsTransferable(bool isTransferable);
 
     bool getIsTransferable() const;
 

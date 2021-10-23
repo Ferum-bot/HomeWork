@@ -5,15 +5,17 @@
 #ifndef TASK2_RANDOMINPUTPROVIDER_H
 #define TASK2_RANDOMINPUTPROVIDER_H
 
+#pragma once
+
 #include "../InputProvider.h"
 #include "../../../random/RandomUtil.h"
 
 class RandomInputProvider: public InputProvider {
 public:
 
-    size_t readInputSizeFrom(const std::istream &input) override;
+    size_t readInputSizeFrom(std::istream &input) override;
 
-    Animal * readAnimalFrom(const std::istream &input) override;
+    Animal * readAnimalFrom(std::istream &input) override;
 
 private:
 

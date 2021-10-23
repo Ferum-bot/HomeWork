@@ -4,13 +4,13 @@
 
 #include "FileInputProvider.h"
 
-size_t FileInputProvider::readInputSizeFrom(const std::istream &input) {
+size_t FileInputProvider::readInputSizeFrom(std::istream &input) {
     size_t result;
     input >> result;
     return result;
 }
 
-Animal * FileInputProvider::readAnimalFrom(const std::istream &input) {
+Animal * FileInputProvider::readAnimalFrom(std::istream &input) {
     int32_t animalType;
     input >> animalType;
     Animal* animal;
@@ -34,13 +34,13 @@ Animal * FileInputProvider::readAnimalFrom(const std::istream &input) {
     return animal;
 }
 
-Beast * FileInputProvider::readBeast(const std::istream &input) const {
+Beast * FileInputProvider::readBeast(std::istream &input) const {
     std::string name;
     int32_t weight;
-    cin >> name >> weight;
+    input >> name >> weight;
     Beast* beast = new Beast(name, weight);
     std::string type;
-    cin >> type;
+    input >> type;
     if (type ==  "Predator") {
         beast->setType(Beast::Predator);
         return beast;
@@ -57,10 +57,10 @@ Beast * FileInputProvider::readBeast(const std::istream &input) const {
     return beast;
 }
 
-Bird * FileInputProvider::readBird(const std::istream &input) const {
+Bird * FileInputProvider::readBird(std::istream &input) const {
     std::string name;
     int32_t weight;
-    cin >> name >> weight;
+    input >> name >> weight;
     Bird* bird = new Bird(name, weight);
     bool isTransferable;
     input >> isTransferable;
@@ -68,10 +68,10 @@ Bird * FileInputProvider::readBird(const std::istream &input) const {
     return bird;
 }
 
-Fish * FileInputProvider::readFish(const std::istream &input) const {
+Fish * FileInputProvider::readFish(std::istream &input) const {
     std::string name;
     int32_t weight;
-    cin >> name >> weight;
+    input >> name >> weight;
     Fish* fish = new Fish(name, weight);
     std::string location;
     input >> location;

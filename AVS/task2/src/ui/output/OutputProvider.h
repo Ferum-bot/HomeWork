@@ -5,18 +5,21 @@
 #ifndef TASK2_OUTPUTPROVIDER_H
 #define TASK2_OUTPUTPROVIDER_H
 
+#pragma once
+
 #include "../../animals/animal/Animal.h"
 #include "../../animals/bird/Bird.h"
 #include "../../animals/fish/Fish.h"
 #include "../../animals/beast/Beast.h"
+#include "../../container/Container.h"
 #include <iostream>
 
 class OutputProvider {
 public:
 
-    virtual void writeMessageTo(const std::string& message, const std::ostream& output) = 0;
+    virtual void writeMessageTo(const std::string& message, std::ostream& output) = 0;
 
-    virtual void writeAnimalTo(const Animal* animal, const std::ostream& output) = 0;
+    virtual void writeAnimalTo(Animal* animal, std::ostream& output) = 0;
 
     virtual void invalidParametersList() = 0;
 

@@ -14,7 +14,7 @@ class ContainerSorter {
 public:
 
     virtual Container* sortContainer(
-        const Container* container, std::function<double(const Animal*)> comparator
+        const Container* container, std::function<double(const Animal)> comparator
     ) = 0;
 
 };

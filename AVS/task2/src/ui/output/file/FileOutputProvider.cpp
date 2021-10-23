@@ -4,11 +4,11 @@
 
 #include "FileOutputProvider.h"
 
-void FileOutputProvider::writeMessageTo(const std::string &message, const std::ostream &output) {
-    output << message << endl;
+void FileOutputProvider::writeMessageTo(const std::string &message, std::ostream &output) {
+    output << message << std::endl;
 }
 
-void FileOutputProvider::writeAnimalTo(const Animal *animal, const std::ostream &output) {
+void FileOutputProvider::writeAnimalTo(Animal* animal, std::ostream &output) {
     Beast* beast = dynamic_cast<Beast*>(animal);
     Bird* bird = dynamic_cast<Bird*>(animal);
     Fish* fish = dynamic_cast<Fish*>(animal);
@@ -65,7 +65,7 @@ void FileOutputProvider::processStarted() {
     std::cout << "Process started.\n";
 }
 
-void FileOutputProvider::writeBeast(const Beast *beast, const std::ostream &output) {
+void FileOutputProvider::writeBeast(const Beast *beast, std::ostream &output) {
     output << "This is the Beast: ";
     output << "Name: " << beast->getName() << " ";
     output << "Weight: " << beast->getWeight() << " ";
@@ -86,14 +86,14 @@ void FileOutputProvider::writeBeast(const Beast *beast, const std::ostream &outp
     }
 }
 
-void FileOutputProvider::writeBird(const Bird *bird, const std::ostream &output) {
+void FileOutputProvider::writeBird(const Bird *bird, std::ostream &output) {
     output << "This is the Bird: ";
     output << "Name: " << bird->getName() << " ";
     output << "Weight: " << bird->getWeight() << " ";
     output << "Is transferable: " << bird->getIsTransferable() << std::endl;
 }
 
-void FileOutputProvider::writeFish(const Fish *fish, const std::ostream &output) {
+void FileOutputProvider::writeFish(const Fish *fish, std::ostream &output) {
     output << "This is the Fish: ";
     output << "Name: " << fish->getName() << " ";
     output << "Weight: " << fish->getWeight() << " ";

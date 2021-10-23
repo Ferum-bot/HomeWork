@@ -4,24 +4,23 @@
 
 #include "Animal.h"
 
-Animal::Animal(const std::string &name, const int32_t *weight) {
+Animal::Animal(std::string name, int weight) {
     this->name = &name;
-    this->weight = &weight;
+    this->weight = weight;
 }
 
 Animal::Animal(const Animal &animal) {
-    this->name = new std::string(animal.name);
-    this->weight = new int32_t(animal.weight);
+    this->name = new std::string(*animal.name);
+    this->weight = int32_t(animal.weight);
 }
 
 Animal& Animal::operator=(const Animal &animal) {
-    this->name = new std::string(animal.name);
-    this->weight = new int32_t(animal.weight);
+    this->name = new std::string(*animal.name);
+    this->weight = int32_t(animal.weight);
     return *this;
 }
 
 Animal::~Animal() {
-    delete weight;
     delete name;
 }
 
@@ -30,5 +29,9 @@ std::string Animal::getName() const {
 }
 
 int32_t Animal::getWeight() const {
-    return *weight;
+    return weight;
+}
+
+Animal *Animal::copy() {
+    return this;
 }

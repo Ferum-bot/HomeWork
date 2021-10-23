@@ -5,6 +5,8 @@
 #ifndef NEW_SEMINAR1_CONTAINER_H
 #define NEW_SEMINAR1_CONTAINER_H
 
+#pragma once
+
 #include "../animals/animal/Animal.h"
 
 class Container final {
@@ -18,7 +20,7 @@ public:
 
     Container& operator = (const Container& container) noexcept;
 
-    Animal& operator [] (const size_t& pos) throw;
+    Animal& operator [] (const size_t& pos) const;
 
     size_t getSize() const;
 

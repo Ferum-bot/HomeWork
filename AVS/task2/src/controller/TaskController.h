@@ -11,7 +11,6 @@
 #include "../ui/input/file/FileInputProvider.h"
 #include "../ui/output/file/FileOutputProvider.h"
 #include "../sorter/impl/StraightSelectorSorter.h"
-#include <fstream>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
@@ -36,15 +35,15 @@ private:
 
     ContainerSorter* sorter;
 
-    static double sortFunction(const Animal* animal) noexcept;
+    static double sortFunction(const Animal animal) noexcept;
 
     void configureController() noexcept;
 
-    void fillContainerFromFile(const std::istream& input) noexcept;
+    void fillContainerFromFile(std::istream& input) noexcept;
 
-    void fillRandomContainer(const std::istream& input) noexcept;
+    void fillRandomContainer(std::istream& input) noexcept;
 
-    void fillContainer(const std::istream& input) noexcept;
+    void fillContainer(std::istream& input) noexcept;
 
     void processContainer() const;
 

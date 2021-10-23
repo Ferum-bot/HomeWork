@@ -4,7 +4,7 @@
 
 #include "Container.h"
 
-Container::Container(const size_t& size) {
+Container::Container(const size_t& size) noexcept {
     this->size = size;
     this->data = new Animal[size];
 }
@@ -13,7 +13,7 @@ Container::~Container() {
     deleteData();
 }
 
-Container::Container(const Container &container) {
+Container::Container(const Container &container) noexcept {
     if (this == &container) {
         return;
     }
@@ -21,7 +21,7 @@ Container::Container(const Container &container) {
     size = container.size;
     data = new Animal[size];
     for (size_t i = 0; i < size; i++) {
-        (data + i) = container[i]->copy();
+        *(data + i) = *(container[i].copy());
     }
 }
 
@@ -33,15 +33,17 @@ Container & Container::operator=(const Container &container) noexcept {
     size = container.size;
     data = new Animal[size];
     for (size_t i = 0; i < size; i++) {
-        (data + i) = container[i]->copy();
+        *(data + i) = *(container[i].copy());
     }
+
+    return *this;
 }
 
-Animal* Container::operator[](const size_t &pos) throw() {
+Animal& Container::operator [] (const size_t &pos) const {
     if (pos >= size) {
         throw std::out_of_range("To big position to access data");
     }
-    return (data + pos);
+    return *(data + pos);
 }
 
 size_t Container::getSize() const {

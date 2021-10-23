@@ -33,7 +33,7 @@ void TaskController::configureController() noexcept {
 
     if (std::strcmp(argumentsAliases[1], "-f") == 0) {
         std::ifstream inputStream(argumentsAliases[2]);
-        fillContainer(inp);
+        fillContainer(inputStream);
 
         return;
     }
@@ -49,23 +49,23 @@ void TaskController::configureController() noexcept {
     exit(2);
 }
 
-void TaskController::fillContainerFromFile(const std::istream& input) noexcept {
+void TaskController::fillContainerFromFile(std::istream& input) noexcept {
     inputProvider = new FileInputProvider();
     fillContainer(input);
 }
 
-void TaskController::fillRandomContainer(const std::istream &input) noexcept {
+void TaskController::fillRandomContainer(std::istream &input) noexcept {
     srand(time(nullptr));
     inputProvider = new RandomInputProvider();
-    fillContainer(input)
+    fillContainer(input);
 }
 
-void TaskController::fillContainer(const std::istream &input) noexcept {
+void TaskController::fillContainer(std::istream &input) noexcept {
     size_t size;
     input >> size;
     container = new Container(size);
     for (size_t i = 0; i < size; i++) {
-        container[i] = *(inputProvider->readAnimalFrom(input))
+        (*container)[i] = *(inputProvider->readAnimalFrom(input));
     }
 }
 
@@ -74,7 +74,7 @@ void TaskController::processContainer() const {
     const size_t size = container->getSize();
     outputProvider->writeMessageTo(&"The The size of Container = " [size], output);
     for (size_t i = 0; i < size; i++) {
-        outputProvider->writeAnimalTo(&container[i], output);
+        outputProvider->writeAnimalTo(&(*container)[i], output);
     }
 }
 
@@ -89,15 +89,15 @@ void TaskController::showContainer() noexcept {
     const size_t size = container->getSize();
     outputProvider->writeMessageTo(&"The size of sorted container = " [ size], output);
     for (size_t i = 0; i < size; i++) {
-        outputProvider->writeAnimalTo(&container[i], output);
+        outputProvider->writeAnimalTo(&(*container)[i], output);
     }
 }
 
-double TaskController::sortFunction(const Animal *animal) noexcept {
+double TaskController::sortFunction(const Animal animal) noexcept {
     int sumOfCodes = 0;
-    int length = animal->getName().length();
+    int length = animal.getName().length();
     for (int i = 0; i < length; i++) {
-        sumOfCodes += animal->getName().at(i);
+        sumOfCodes += animal.getName().at(i);
     }
-    return (double)sumOfCodes / (double) info.weight;
+    return (double) sumOfCodes / (double) animal.getWeight();
 }

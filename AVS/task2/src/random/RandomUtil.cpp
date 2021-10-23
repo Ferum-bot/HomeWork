@@ -17,7 +17,7 @@ std::string RandomUtil::randomName() {
     std::string result;
     for (int32_t i = 0; i < length; i++) {
         char randomCharacter = 'a' + randomInt() % 25;
-        result.append(randomCharacter);
+        result += randomCharacter;
     }
     return result;
 }

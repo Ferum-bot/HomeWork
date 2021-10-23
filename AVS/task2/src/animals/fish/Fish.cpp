@@ -11,22 +11,23 @@ Fish::Fish(const Fish &fish): Animal(fish) {
 }
 
 Fish::~Fish() noexcept {
-    delete location;
+
 }
 
 Fish& Fish::operator=(const Fish &fish) {
     Animal::operator=(fish);
     location = fish.location;
+    return *this;
 }
 
 Animal * Fish::copy() {
-    Fish* currentFish = dynamic_cast<Fish*>(this);
-    Fish* copyFish = new Fish(*name, *weight);
+    Fish *currentFish = dynamic_cast<Fish *>(this);
+    Fish *copyFish = new Fish(*name, weight);
     copyFish->setLocation(currentFish->getLocation());
     return copyFish;
 }
 
-Location Fish::getLocation() const {
+Fish::Location Fish::getLocation() const {
     return location;
 }
 

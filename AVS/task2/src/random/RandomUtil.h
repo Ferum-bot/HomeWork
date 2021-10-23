@@ -5,6 +5,8 @@
 #ifndef TASK2_RANDOMUTIL_H
 #define TASK2_RANDOMUTIL_H
 
+#pragma once
+
 #include <cstdlib>
 #include <string>
 

@@ -12,9 +12,9 @@
 class InputProvider {
 public:
 
-    virtual Animal* readAnimalFrom(const std::istream& input) = 0;
+    virtual Animal* readAnimalFrom(std::istream& input) = 0;
 
-    virtual size_t readInputSizeFrom(const std::istream& input) = 0;
+    virtual size_t readInputSizeFrom(std::istream& input) = 0;
 
 private:
 

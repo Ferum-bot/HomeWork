@@ -5,23 +5,23 @@
 #include "RandomInputProvider.h"
 
 
-size_t RandomInputProvider::readInputSizeFrom(const std::istream &input) {
+size_t RandomInputProvider::readInputSizeFrom(std::istream &input) {
     return RandomUtil::randomInt();
 }
 
-Animal * RandomInputProvider::readAnimalFrom(const std::istream &input) {
+Animal * RandomInputProvider::readAnimalFrom(std::istream &input) {
     int32_t type = randomType();
     Animal* animal;
     switch (type) {
-        1: {
+        case 1: {
             animal = randomBeast();
             break;
         }
-        2: {
+        case 2: {
             animal = randomBird();
             break;
         }
-        3: {
+        case 3: {
             animal = randomFish();
             break;
         }
@@ -44,7 +44,7 @@ Beast * RandomInputProvider::randomBeast() const {
     int32_t type = RandomUtil::randomInt() % 3 + 1;
     switch (type) {
         case 1: {
-            beast->setType(Beast::Predator)
+            beast->setType(Beast::Predator);
             break;
         }
         case 2: {
@@ -78,15 +78,15 @@ Fish * RandomInputProvider::randomFish() const {
 
     int32_t type = RandomUtil::randomInt() % 3 + 1;
     switch (type) {
-        1: {
+        case 1: {
             fish->setLocation(Fish::SEA);
             break;
         }
-        2: {
+        case 2: {
             fish->setLocation(Fish::OCEAN);
             break;
         }
-        3: {
+        case 3: {
             fish->setLocation(Fish::LAKE);
             break;
         }

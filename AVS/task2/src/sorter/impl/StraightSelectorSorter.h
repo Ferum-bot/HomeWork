@@ -5,13 +5,15 @@
 #ifndef TASK2_STRAIGHTSELECTORSORTER_H
 #define TASK2_STRAIGHTSELECTORSORTER_H
 
+#pragma once
+
 #include "../ContainerSorter.h"
 
 class StraightSelectorSorter: public ContainerSorter {
 
     Container * sortContainer(
-        const Container *container, std::function<double (const Animal *)> comparator
-    ) override
+        const Container *container, std::function<double (const Animal)> comparator
+    ) override;
 
 };
 
