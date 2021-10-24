@@ -9,6 +9,9 @@ Have fun and enjoy!
 
 How to play:
 
+First run the jar file from Jar directory.
+Then follow this tutorial:
+
 First you must input the game settings. The pattern of game settings is:
 W H 1 2 3 4 5 EXTRA_MODE_1 EXTRA_MODE_2
 What does it means:

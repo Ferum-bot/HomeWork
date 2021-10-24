@@ -18,4 +18,9 @@ it can not be recovered, since it is already sunk.
  1. JDK 17 (better from Oracle)
  2. Computer with JVM
  3. Any code editor
+
+## How to run:
+  1. Get absolute path of JAR/Game.jar file
+  2. Copy this path
+  3. Write this command in terminal `java -jar <your_absolute_path>`
  
