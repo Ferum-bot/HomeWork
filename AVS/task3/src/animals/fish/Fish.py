@@ -25,3 +25,14 @@ class Location(enum.Enum):
     sea = "Sea"
     ocean = "Ocean"
     lake = "Lake"
+
+
+def get_location_by_name(name):
+    if name == "Sea":
+        return Location.sea
+    elif name == "Ocean":
+        return Location.ocean
+    elif name == "Lake":
+        return Location.lake
+    else:
+        return Location.sea

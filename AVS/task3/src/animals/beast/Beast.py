@@ -25,3 +25,14 @@ class BeastType(enum.Enum):
     predator = "Predator"
     herbivores = "Herbivores"
     insectivores = "Insectivores"
+
+
+def get_type_by_name(name):
+    if name == "Predator":
+        return BeastType.predator
+    elif name == "Herbivores":
+        return BeastType.herbivores
+    elif name == "Insectivores":
+        return BeastType.insectivores
+    else:
+        return BeastType.predator
