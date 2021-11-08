@@ -1,0 +1,61 @@
+The size of Container = 15
+This is the Beast with type: Herbivores
+The name of animal is GOODBuy
+The weight of animal is 52
+The quotient from name to weight is 11.5577
+This is fish with location: Ocean
+The name of animal is Sahar
+The weight of animal is 150
+The quotient from name to weight is 3.3
+This is fish with location: Lake
+The name of animal is Maksim
+The weight of animal is 137
+The quotient from name to weight is 4.45255
+This is fish with location: Sea
+The name of animal is Jonh
+The weight of animal is 17
+The quotient from name to weight is 23.4706
+This is the Bird that is transferable
+The name of animal is Bobby
+The weight of animal is 151
+The quotient from name to weight is 3.27152
+This is fish with location: Sea
+The name of animal is I_AM_NOT
+The weight of animal is 110
+The quotient from name to weight is 5.87273
+This is the Bird that is transferable
+The name of animal is Bob
+The weight of animal is 15
+The quotient from name to weight is 18.3333
+This is the Bird that is not transferable
+The name of animal is oppps
+The weight of animal is 13
+The quotient from name to weight is 43.2308
+This is fish with location: Sea
+The name of animal is Mashs
+The weight of animal is 10
+The quotient from name to weight is 50.8
+This is fish with location: Lake
+The name of animal is PSSSSS
+The weight of animal is 7
+The quotient from name to weight is 70.7143
+This is the Beast with type: Predator
+The name of animal is Matvey
+The weight of animal is 5
+The quotient from name to weight is 126
+This is the Bird that is transferable
+The name of animal is WHO_ARE_YOU
+The weight of animal is 4
+The quotient from name to weight is 224.25
+This is the Beast with type: Herbivores
+The name of animal is NOT_MATVEY
+The weight of animal is 3
+The quotient from name to weight is 268.667
+This is fish with location: Sea
+The name of animal is XXX_SSS
+The weight of animal is 2
+The quotient from name to weight is 304
+This is the Bird that is not transferable
+The name of animal is Stas
+The weight of animal is 1
+The quotient from name to weight is 411

@@ -1,0 +1,4001 @@
+The size of Container = 1000
+This is the Beast with type: Insectivores
+The name of animal is yqhqhn
+The weight of animal is 493801
+The quotient from name to weight is 0.0013467
+This is the Beast with type: Predator
+The name of animal is altvotsc
+The weight of animal is 472488
+The quotient from name to weight is 0.00186248
+This is the Bird that is not transferable
+The name of animal is flwa
+The weight of animal is 211619
+The quotient from name to weight is 0.00201305
+This is fish with location: Lake
+The name of animal is teywyyyent
+The weight of animal is 484953
+The quotient from name to weight is 0.00236518
+This is the Beast with type: Herbivores
+The name of animal is gisg
+The weight of animal is 661772
+The quotient from name to weight is 0.000643726
+This is fish with location: Ocean
+The name of animal is zkdfp
+The weight of animal is 872726
+The quotient from name to weight is 0.000622188
+This is fish with location: Ocean
+The name of animal is lkyrkofjl
+The weight of animal is 220976
+The quotient from name to weight is 0.00445297
+This is the Bird that is not transferable
+The name of animal is qqeebfrsgefb
+The weight of animal is 859057
+The quotient from name to weight is 0.00146789
+This is fish with location: Sea
+The name of animal is rfrunewrx
+The weight of animal is 915708
+The quotient from name to weight is 0.00110406
+This is the Beast with type: Insectivores
+The name of animal is kyreycns
+The weight of animal is 755734
+The quotient from name to weight is 0.00117502
+This is the Beast with type: Predator
+The name of animal is hei
+The weight of animal is 210319
+The quotient from name to weight is 0.00147395
+This is the Beast with type: Herbivores
+The name of animal is kxjpb
+The weight of animal is 400514
+The quotient from name to weight is 0.00135576
+This is the Beast with type: Predator
+The name of animal is iaspq
+The weight of animal is 323144
+The quotient from name to weight is 0.00167727
+This is the Beast with type: Predator
+The name of animal is zkimmywpe
+The weight of animal is 697452
+The quotient from name to weight is 0.00144096
+This is the Beast with type: Insectivores
+The name of animal is sdevtqawambm
+The weight of animal is 952627
+The quotient from name to weight is 0.00135625
+This is the Beast with type: Predator
+The name of animal is jlreidp
+The weight of animal is 816647
+The quotient from name to weight is 0.000913491
+This is the Bird that is transferable
+The name of animal is jevbhkj
+The weight of animal is 362352
+The quotient from name to weight is 0.00204221
+This is fish with location: Lake
+The name of animal is lhwm
+The weight of animal is 406694
+The quotient from name to weight is 0.00108189
+This is the Beast with type: Predator
+The name of animal is wzqw
+The weight of animal is 129250
+The quotient from name to weight is 0.00365957
+This is the Bird that is transferable
+The name of animal is ogumw
+The weight of animal is 339620
+The quotient from name to weight is 0.00164596
+This is the Beast with type: Insectivores
+The name of animal is cjrybjtsxy
+The weight of animal is 847106
+The quotient from name to weight is 0.00131743
+This is the Beast with type: Herbivores
+The name of animal is wfznl
+The weight of animal is 415036
+The quotient from name to weight is 0.00135169
+This is the Beast with type: Insectivores
+The name of animal is sicdi
+The weight of animal is 603253
+The quotient from name to weight is 0.000868624
+This is the Bird that is not transferable
+The name of animal is lvrodgl
+The weight of animal is 927157
+The quotient from name to weight is 0.000821867
+This is the Bird that is not transferable
+The name of animal is amiznmcuv
+The weight of animal is 463058
+The quotient from name to weight is 0.00212932
+This is fish with location: Ocean
+The name of animal is owbfe
+The weight of animal is 642255
+The quotient from name to weight is 0.000826774
+This is the Beast with type: Insectivores
+The name of animal is dbu
+The weight of animal is 478909
+The quotient from name to weight is 0.000657745
+This is the Bird that is transferable
+The name of animal is ovpf
+The weight of animal is 967260
+The quotient from name to weight is 0.000457995
+This is the Beast with type: Predator
+The name of animal is xuoyere
+The weight of animal is 244700
+The quotient from name to weight is 0.00320801
+This is the Bird that is not transferable
+The name of animal is hufsuii
+The weight of animal is 35735
+The quotient from name to weight is 0.0214076
+This is fish with location: Ocean
+The name of animal is vrgvvpproic
+The weight of animal is 131773
+The quotient from name to weight is 0.0092887
+This is the Beast with type: Herbivores
+The name of animal is owodaseb
+The weight of animal is 479308
+The quotient from name to weight is 0.00177756
+This is fish with location: Sea
+The name of animal is bzokyr
+The weight of animal is 340347
+The quotient from name to weight is 0.00197739
+This is fish with location: Ocean
+The name of animal is wbvoajxj
+The weight of animal is 358617
+The quotient from name to weight is 0.00243993
+This is the Bird that is transferable
+The name of animal is pqrruoh
+The weight of animal is 726465
+The quotient from name to weight is 0.00108058
+This is fish with location: Ocean
+The name of animal is caidogpypx
+The weight of animal is 312159
+The quotient from name to weight is 0.00345978
+This is fish with location: Lake
+The name of animal is opekavk
+The weight of animal is 810270
+The quotient from name to weight is 0.00092932
+This is the Beast with type: Herbivores
+The name of animal is cqmkdv
+The weight of animal is 867498
+The quotient from name to weight is 0.00074467
+This is the Beast with type: Insectivores
+The name of animal is zjhankkqmw
+The weight of animal is 30224
+The quotient from name to weight is 0.0361964
+This is the Beast with type: Predator
+The name of animal is rzqaja
+The weight of animal is 949476
+The quotient from name to weight is 0.000683535
+This is the Beast with type: Predator
+The name of animal is wdbunkhcnqu
+The weight of animal is 620478
+The quotient from name to weight is 0.00192432
+This is the Beast with type: Herbivores
+The name of animal is mkprmde
+The weight of animal is 365575
+The quotient from name to weight is 0.00205703
+This is the Beast with type: Predator
+The name of animal is ugldhexiy
+The weight of animal is 639699
+The quotient from name to weight is 0.00153041
+This is the Bird that is transferable
+The name of animal is iignqgdjc
+The weight of animal is 972853
+The quotient from name to weight is 0.000970342
+This is fish with location: Ocean
+The name of animal is jbgbl
+The weight of animal is 179862
+The quotient from name to weight is 0.00285219
+This is the Bird that is transferable
+The name of animal is wbolxa
+The weight of animal is 359206
+The quotient from name to weight is 0.0018179
+This is fish with location: Ocean
+The name of animal is fbay
+The weight of animal is 373456
+The quotient from name to weight is 0.00111928
+This is the Bird that is transferable
+The name of animal is voajpnosu
+The weight of animal is 893700
+The quotient from name to weight is 0.00111559
+This is the Bird that is transferable
+The name of animal is rrttdg
+The weight of animal is 533473
+The quotient from name to weight is 0.0012428
+This is the Bird that is transferable
+The name of animal is dpulnhez
+The weight of animal is 705347
+The quotient from name to weight is 0.00123911
+This is the Bird that is transferable
+The name of animal is uoiqutf
+The weight of animal is 638855
+The quotient from name to weight is 0.0012225
+This is the Bird that is not transferable
+The name of animal is dynnmegr
+The weight of animal is 628819
+The quotient from name to weight is 0.00138037
+This is fish with location: Ocean
+The name of animal is gagfzkx
+The weight of animal is 516750
+The quotient from name to weight is 0.00145912
+This is fish with location: Lake
+The name of animal is kmpigbjioamk
+The weight of animal is 842799
+The quotient from name to weight is 0.0015057
+This is the Bird that is transferable
+The name of animal is bfhm
+The weight of animal is 984166
+The quotient from name to weight is 0.000419645
+This is the Beast with type: Insectivores
+The name of animal is publalknbqjw
+The weight of animal is 585869
+The quotient from name to weight is 0.00220698
+This is the Beast with type: Predator
+The name of animal is joteo
+The weight of animal is 455200
+The quotient from name to weight is 0.00119728
+This is the Beast with type: Herbivores
+The name of animal is roexikohvc
+The weight of animal is 966131
+The quotient from name to weight is 0.00112821
+This is the Beast with type: Herbivores
+The name of animal is rvmwygor
+The weight of animal is 959946
+The quotient from name to weight is 0.000946928
+This is the Beast with type: Herbivores
+The name of animal is pyz
+The weight of animal is 20267
+The quotient from name to weight is 0.0175162
+This is the Beast with type: Insectivores
+The name of animal is tzuzwuxk
+The weight of animal is 895194
+The quotient from name to weight is 0.00105005
+This is fish with location: Lake
+The name of animal is mnc
+The weight of animal is 38044
+The quotient from name to weight is 0.00835874
+This is fish with location: Lake
+The name of animal is herqhi
+The weight of animal is 296259
+The quotient from name to weight is 0.00216365
+This is fish with location: Sea
+The name of animal is roywyiqsdjo
+The weight of animal is 631557
+The quotient from name to weight is 0.00195707
+This is the Beast with type: Insectivores
+The name of animal is mrncchcda
+The weight of animal is 660961
+The quotient from name to weight is 0.00140856
+This is the Beast with type: Herbivores
+The name of animal is icebe
+The weight of animal is 841174
+The quotient from name to weight is 0.000599163
+This is the Beast with type: Herbivores
+The name of animal is ukjyyp
+The weight of animal is 296653
+The quotient from name to weight is 0.00230572
+This is the Beast with type: Insectivores
+The name of animal is vdhcnrryq
+The weight of animal is 34473
+The quotient from name to weight is 0.0288052
+This is the Beast with type: Predator
+The name of animal is hxz
+The weight of animal is 853149
+The quotient from name to weight is 0.000405556
+This is the Beast with type: Herbivores
+The name of animal is mmsgtfymwwki
+The weight of animal is 334377
+The quotient from name to weight is 0.00398951
+This is the Bird that is not transferable
+The name of animal is wtqijgkb
+The weight of animal is 319848
+The quotient from name to weight is 0.00271066
+This is the Bird that is not transferable
+The name of animal is vwcnrcrv
+The weight of animal is 770470
+The quotient from name to weight is 0.00115644
+This is the Beast with type: Predator
+The name of animal is kkq
+The weight of animal is 643352
+The quotient from name to weight is 0.000508275
+This is the Bird that is not transferable
+The name of animal is mhgacxhnzq
+The weight of animal is 370029
+The quotient from name to weight is 0.00292139
+This is the Beast with type: Insectivores
+The name of animal is zwyumlh
+The weight of animal is 610109
+The quotient from name to weight is 0.00131124
+This is the Beast with type: Predator
+The name of animal is jzoflycopmv
+The weight of animal is 723251
+The quotient from name to weight is 0.00168545
+This is the Bird that is transferable
+The name of animal is njsgjhkhtbfq
+The weight of animal is 408392
+The quotient from name to weight is 0.00314404
+This is fish with location: Sea
+The name of animal is ghfnbconie
+The weight of animal is 225586
+The quotient from name to weight is 0.00462351
+This is fish with location: Lake
+The name of animal is byyxcq
+The weight of animal is 393022
+The quotient from name to weight is 0.00170983
+This is the Beast with type: Predator
+The name of animal is chqtyfqgmr
+The weight of animal is 790904
+The quotient from name to weight is 0.00138323
+This is the Bird that is transferable
+The name of animal is ibckjw
+The weight of animal is 985495
+The quotient from name to weight is 0.000643332
+This is the Bird that is transferable
+The name of animal is vmyntmlh
+The weight of animal is 555910
+The quotient from name to weight is 0.00160997
+This is the Bird that is not transferable
+The name of animal is kdnzesctw
+The weight of animal is 76351
+The quotient from name to weight is 0.0129533
+This is the Bird that is not transferable
+The name of animal is sunuggjt
+The weight of animal is 476283
+The quotient from name to weight is 0.00186234
+This is fish with location: Lake
+The name of animal is zyz
+The weight of animal is 857723
+The quotient from name to weight is 0.000425545
+This is fish with location: Sea
+The name of animal is jspr
+The weight of animal is 915198
+The quotient from name to weight is 0.000488419
+This is the Beast with type: Predator
+The name of animal is cucbvgex
+The weight of animal is 317032
+The quotient from name to weight is 0.00269689
+This is the Beast with type: Herbivores
+The name of animal is ootidfvd
+The weight of animal is 15056
+The quotient from name to weight is 0.0573193
+This is fish with location: Ocean
+The name of animal is xaausqsc
+The weight of animal is 770156
+The quotient from name to weight is 0.00113354
+This is the Bird that is not transferable
+The name of animal is vsubhaj
+The weight of animal is 703318
+The quotient from name to weight is 0.00107348
+This is fish with location: Sea
+The name of animal is rfqcevedkwk
+The weight of animal is 409894
+The quotient from name to weight is 0.00288123
+This is the Bird that is transferable
+The name of animal is brvuqt
+The weight of animal is 884987
+The quotient from name to weight is 0.000763853
+This is the Bird that is not transferable
+The name of animal is blx
+The weight of animal is 745480
+The quotient from name to weight is 0.000437302
+This is the Bird that is not transferable
+The name of animal is sldendgb
+The weight of animal is 656268
+The quotient from name to weight is 0.00127235
+This is the Beast with type: Predator
+The name of animal is ciamyxiq
+The weight of animal is 684389
+The quotient from name to weight is 0.00126975
+This is the Beast with type: Insectivores
+The name of animal is yqyrvzyfmg
+The weight of animal is 130534
+The quotient from name to weight is 0.008764
+This is the Bird that is not transferable
+The name of animal is uvlac
+The weight of animal is 119112
+The quotient from name to weight is 0.00452515
+This is fish with location: Lake
+The name of animal is modfvjap
+The weight of animal is 335515
+The quotient from name to weight is 0.00254832
+This is the Beast with type: Herbivores
+The name of animal is eggw
+The weight of animal is 704509
+The quotient from name to weight is 0.000604676
+This is the Bird that is transferable
+The name of animal is xoctb
+The weight of animal is 492722
+The quotient from name to weight is 0.00110407
+This is the Beast with type: Herbivores
+The name of animal is mgpfhugk
+The weight of animal is 803380
+The quotient from name to weight is 0.00106674
+This is the Bird that is transferable
+The name of animal is eyfmgsdvhhnl
+The weight of animal is 119586
+The quotient from name to weight is 0.010829
+This is the Beast with type: Predator
+The name of animal is pmxinpdyc
+The weight of animal is 334964
+The quotient from name to weight is 0.00294957
+This is fish with location: Sea
+The name of animal is wlo
+The weight of animal is 680387
+The quotient from name to weight is 0.000496776
+This is the Bird that is not transferable
+The name of animal is kbgbtgue
+The weight of animal is 31394
+The quotient from name to weight is 0.0268523
+This is fish with location: Lake
+The name of animal is lmxqb
+The weight of animal is 674269
+The quotient from name to weight is 0.000812732
+This is fish with location: Sea
+The name of animal is oijwrzy
+The weight of animal is 296891
+The quotient from name to weight is 0.00268786
+This is the Beast with type: Herbivores
+The name of animal is uedvt
+The weight of animal is 676263
+The quotient from name to weight is 0.00081625
+This is the Bird that is not transferable
+The name of animal is lnewhlzlakw
+The weight of animal is 377965
+The quotient from name to weight is 0.00318283
+This is the Beast with type: Herbivores
+The name of animal is mcibtv
+The weight of animal is 969934
+The quotient from name to weight is 0.000664994
+This is the Bird that is not transferable
+The name of animal is ydobpa
+The weight of animal is 228234
+The quotient from name to weight is 0.00279976
+This is the Bird that is not transferable
+The name of animal is ccu
+The weight of animal is 373505
+The quotient from name to weight is 0.000843362
+This is fish with location: Sea
+The name of animal is grcg
+The weight of animal is 834810
+The quotient from name to weight is 0.000501911
+This is the Beast with type: Predator
+The name of animal is xoffy
+The weight of animal is 915740
+The quotient from name to weight is 0.000607159
+This is the Beast with type: Herbivores
+The name of animal is ipvjihsybwii
+The weight of animal is 783761
+The quotient from name to weight is 0.00167526
+This is fish with location: Lake
+The name of animal is ojw
+The weight of animal is 818800
+The quotient from name to weight is 0.000410357
+This is the Beast with type: Herbivores
+The name of animal is lltsndn
+The weight of animal is 751354
+The quotient from name to weight is 0.00102082
+This is the Beast with type: Predator
+The name of animal is zojvsftfeh
+The weight of animal is 912639
+The quotient from name to weight is 0.00120201
+This is the Bird that is transferable
+The name of animal is qbpypk
+The weight of animal is 489832
+The quotient from name to weight is 0.00135353
+This is the Bird that is transferable
+The name of animal is ujtoredp
+The weight of animal is 886924
+The quotient from name to weight is 0.000988811
+This is fish with location: Lake
+The name of animal is xojfwbpfanic
+The weight of animal is 996845
+The quotient from name to weight is 0.00128505
+This is fish with location: Sea
+The name of animal is yzley
+The weight of animal is 566559
+The quotient from name to weight is 0.00101137
+This is fish with location: Ocean
+The name of animal is ohzfim
+The weight of animal is 527267
+The quotient from name to weight is 0.00123846
+This is the Bird that is not transferable
+The name of animal is zump
+The weight of animal is 5464
+The quotient from name to weight is 0.0841874
+This is the Bird that is transferable
+The name of animal is afgfh
+The weight of animal is 309554
+The quotient from name to weight is 0.00164107
+This is the Beast with type: Predator
+The name of animal is rcvxcpdl
+The weight of animal is 794086
+The quotient from name to weight is 0.0010956
+This is the Bird that is not transferable
+The name of animal is kgzihgqdisvu
+The weight of animal is 963817
+The quotient from name to weight is 0.00136125
+This is the Beast with type: Predator
+The name of animal is oqlezxa
+The weight of animal is 223196
+The quotient from name to weight is 0.00345884
+This is the Bird that is transferable
+The name of animal is qltvdgyitem
+The weight of animal is 515467
+The quotient from name to weight is 0.00234739
+This is the Beast with type: Herbivores
+The name of animal is wgakayd
+The weight of animal is 760338
+The quotient from name to weight is 0.000978512
+This is the Bird that is not transferable
+The name of animal is kqfoavqqfuws
+The weight of animal is 741482
+The quotient from name to weight is 0.00178966
+This is the Beast with type: Insectivores
+The name of animal is kcairezs
+The weight of animal is 608673
+The quotient from name to weight is 0.00141291
+This is the Beast with type: Predator
+The name of animal is fkx
+The weight of animal is 211382
+The quotient from name to weight is 0.00155642
+This is the Bird that is not transferable
+The name of animal is sgx
+The weight of animal is 469752
+The quotient from name to weight is 0.000719529
+This is the Beast with type: Predator
+The name of animal is cjvtqssko
+The weight of animal is 67732
+The quotient from name to weight is 0.0147641
+This is the Bird that is transferable
+The name of animal is nybcdglttpe
+The weight of animal is 528088
+The quotient from name to weight is 0.00224205
+This is the Bird that is transferable
+The name of animal is kocvkyz
+The weight of animal is 635867
+The quotient from name to weight is 0.00123453
+This is the Beast with type: Predator
+The name of animal is krrhmt
+The weight of animal is 353612
+The quotient from name to weight is 0.00187776
+This is the Bird that is not transferable
+The name of animal is qiswxh
+The weight of animal is 649441
+The quotient from name to weight is 0.0010409
+This is fish with location: Ocean
+The name of animal is lreveprcozuw
+The weight of animal is 389849
+The quotient from name to weight is 0.00342697
+This is the Beast with type: Predator
+The name of animal is eqmn
+The weight of animal is 701206
+The quotient from name to weight is 0.000617508
+This is the Bird that is transferable
+The name of animal is fjvdwtksbhcz
+The weight of animal is 669494
+The quotient from name to weight is 0.00195073
+This is the Bird that is transferable
+The name of animal is kqluylb
+The weight of animal is 530792
+The quotient from name to weight is 0.00145443
+This is the Beast with type: Herbivores
+The name of animal is opt
+The weight of animal is 365612
+The quotient from name to weight is 0.000927212
+This is the Bird that is not transferable
+The name of animal is zztvmkxrxy
+The weight of animal is 423170
+The quotient from name to weight is 0.00276248
+This is fish with location: Lake
+The name of animal is msnzw
+The weight of animal is 831387
+The quotient from name to weight is 0.000691615
+This is the Beast with type: Herbivores
+The name of animal is lyaetdz
+The weight of animal is 278447
+The quotient from name to weight is 0.00274738
+This is the Bird that is not transferable
+The name of animal is lbmuenxhu
+The weight of animal is 803684
+The quotient from name to weight is 0.00122436
+This is the Bird that is transferable
+The name of animal is wzgqlzgo
+The weight of animal is 104924
+The quotient from name to weight is 0.00858717
+This is the Beast with type: Predator
+The name of animal is qcwyqr
+The weight of animal is 124289
+The quotient from name to weight is 0.00546307
+This is the Beast with type: Insectivores
+The name of animal is lsiluikdv
+The weight of animal is 192993
+The quotient from name to weight is 0.00509345
+This is fish with location: Lake
+The name of animal is wxpzngbitkmo
+The weight of animal is 374465
+The quotient from name to weight is 0.00355707
+This is the Beast with type: Herbivores
+The name of animal is uqntbngkonzn
+The weight of animal is 992537
+The quotient from name to weight is 0.00133698
+This is the Beast with type: Predator
+The name of animal is xqgdhnvva
+The weight of animal is 681880
+The quotient from name to weight is 0.0014416
+This is the Beast with type: Predator
+The name of animal is drgyysr
+The weight of animal is 540104
+The quotient from name to weight is 0.00145898
+This is fish with location: Ocean
+The name of animal is hdksuvtch
+The weight of animal is 755648
+The quotient from name to weight is 0.0012969
+This is the Beast with type: Herbivores
+The name of animal is ceugxvjb
+The weight of animal is 529051
+The quotient from name to weight is 0.00162933
+This is fish with location: Lake
+The name of animal is vco
+The weight of animal is 407153
+The quotient from name to weight is 0.000805594
+This is the Bird that is transferable
+The name of animal is ipcotbv
+The weight of animal is 329664
+The quotient from name to weight is 0.00230234
+This is the Beast with type: Herbivores
+The name of animal is qixzzo
+The weight of animal is 187722
+The quotient from name to weight is 0.00369163
+This is the Beast with type: Insectivores
+The name of animal is mfs
+The weight of animal is 399979
+The quotient from name to weight is 0.000815043
+This is the Bird that is transferable
+The name of animal is gzypukqtlxer
+The weight of animal is 979492
+The quotient from name to weight is 0.00138235
+This is the Beast with type: Predator
+The name of animal is bxdxrqijmild
+The weight of animal is 550945
+The quotient from name to weight is 0.00235595
+This is the Beast with type: Predator
+The name of animal is urgvzs
+The weight of animal is 189168
+The quotient from name to weight is 0.00364227
+This is the Bird that is transferable
+The name of animal is pumtuehx
+The weight of animal is 286653
+The quotient from name to weight is 0.00312573
+This is the Bird that is not transferable
+The name of animal is ukdnahgfacu
+The weight of animal is 550779
+The quotient from name to weight is 0.0020934
+This is fish with location: Ocean
+The name of animal is untlpmiskrek
+The weight of animal is 328761
+The quotient from name to weight is 0.00401812
+This is fish with location: Lake
+The name of animal is psjubikwc
+The weight of animal is 90902
+The quotient from name to weight is 0.0107588
+This is fish with location: Sea
+The name of animal is sbuvmif
+The weight of animal is 231772
+The quotient from name to weight is 0.00329634
+This is the Beast with type: Insectivores
+The name of animal is qgcpkgxw
+The weight of animal is 352953
+The quotient from name to weight is 0.00248192
+This is fish with location: Sea
+The name of animal is ltame
+The weight of animal is 407989
+The quotient from name to weight is 0.00130151
+This is the Bird that is not transferable
+The name of animal is epshospidm
+The weight of animal is 906664
+The quotient from name to weight is 0.00119559
+This is fish with location: Ocean
+The name of animal is bglvjorceb
+The weight of animal is 423847
+The quotient from name to weight is 0.00249147
+This is the Bird that is transferable
+The name of animal is dvt
+The weight of animal is 242787
+The quotient from name to weight is 0.00137569
+This is the Bird that is not transferable
+The name of animal is fgmdaaz
+The weight of animal is 314200
+The quotient from name to weight is 0.00232336
+This is the Bird that is not transferable
+The name of animal is quqtojpzoc
+The weight of animal is 789583
+The quotient from name to weight is 0.00141847
+This is the Beast with type: Insectivores
+The name of animal is mhjtqouvxln
+The weight of animal is 701203
+The quotient from name to weight is 0.00175698
+This is the Beast with type: Herbivores
+The name of animal is pvqvifsoqnwf
+The weight of animal is 502531
+The quotient from name to weight is 0.00266252
+This is the Beast with type: Predator
+The name of animal is zxzswgiyixpz
+The weight of animal is 726691
+The quotient from name to weight is 0.00190728
+This is fish with location: Lake
+The name of animal is wftomwrfexr
+The weight of animal is 287188
+The quotient from name to weight is 0.00427246
+This is fish with location: Lake
+The name of animal is uwyo
+The weight of animal is 246213
+The quotient from name to weight is 0.00190079
+This is fish with location: Sea
+The name of animal is lspewoade
+The weight of animal is 840636
+The quotient from name to weight is 0.00114675
+This is the Beast with type: Predator
+The name of animal is ktn
+The weight of animal is 596706
+The quotient from name to weight is 0.000558064
+This is the Bird that is not transferable
+The name of animal is flolhrsuazn
+The weight of animal is 17411
+The quotient from name to weight is 0.0693814
+This is the Beast with type: Predator
+The name of animal is ifhg
+The weight of animal is 409706
+The quotient from name to weight is 0.00101048
+This is the Beast with type: Insectivores
+The name of animal is qtlosjcjg
+The weight of animal is 463668
+The quotient from name to weight is 0.00210711
+This is the Bird that is not transferable
+The name of animal is czurr
+The weight of animal is 498238
+The quotient from name to weight is 0.001136
+This is the Beast with type: Herbivores
+The name of animal is gtyhzad
+The weight of animal is 312540
+The quotient from name to weight is 0.00244129
+This is fish with location: Ocean
+The name of animal is bprrm
+The weight of animal is 162686
+The quotient from name to weight is 0.00336231
+This is the Beast with type: Predator
+The name of animal is tum
+The weight of animal is 308095
+The quotient from name to weight is 0.00111005
+This is fish with location: Sea
+The name of animal is aggpcbidf
+The weight of animal is 53869
+The quotient from name to weight is 0.0170599
+This is fish with location: Sea
+The name of animal is ttmcfxc
+The weight of animal is 848580
+The quotient from name to weight is 0.000896792
+This is the Bird that is transferable
+The name of animal is ogccfsc
+The weight of animal is 338916
+The quotient from name to weight is 0.00214802
+This is the Bird that is not transferable
+The name of animal is ixjmix
+The weight of animal is 749470
+The quotient from name to weight is 0.000887294
+This is fish with location: Ocean
+The name of animal is gdxkzht
+The weight of animal is 561384
+The quotient from name to weight is 0.00137517
+This is the Beast with type: Herbivores
+The name of animal is mpehytpzi
+The weight of animal is 103957
+The quotient from name to weight is 0.0096386
+This is the Beast with type: Herbivores
+The name of animal is wprvdwylklmi
+The weight of animal is 439711
+The quotient from name to weight is 0.00304746
+This is fish with location: Ocean
+The name of animal is qntsnbyy
+The weight of animal is 620465
+The quotient from name to weight is 0.00145697
+This is the Bird that is transferable
+The name of animal is jubyxtznuzky
+The weight of animal is 268364
+The quotient from name to weight is 0.00513109
+This is the Beast with type: Herbivores
+The name of animal is msg
+The weight of animal is 646328
+The quotient from name to weight is 0.000505935
+This is the Beast with type: Insectivores
+The name of animal is ygopbfeawpa
+The weight of animal is 708229
+The quotient from name to weight is 0.00165624
+This is fish with location: Lake
+The name of animal is lplpvvecf
+The weight of animal is 48248
+The quotient from name to weight is 0.0202703
+This is the Bird that is not transferable
+The name of animal is gkmfkoa
+The weight of animal is 434049
+The quotient from name to weight is 0.00169566
+This is the Bird that is transferable
+The name of animal is phlevfuxbxc
+The weight of animal is 994529
+The quotient from name to weight is 0.0012056
+This is fish with location: Ocean
+The name of animal is pwrbtckmjq
+The weight of animal is 477383
+The quotient from name to weight is 0.00228957
+This is the Beast with type: Predator
+The name of animal is evhj
+The weight of animal is 825473
+The quotient from name to weight is 0.000519702
+This is the Bird that is not transferable
+The name of animal is woug
+The weight of animal is 17255
+The quotient from name to weight is 0.0260794
+This is the Bird that is transferable
+The name of animal is ydefabt
+The weight of animal is 698060
+The quotient from name to weight is 0.00105292
+This is fish with location: Sea
+The name of animal is axmxivgzevsa
+The weight of animal is 59343
+The quotient from name to weight is 0.0223278
+This is fish with location: Lake
+The name of animal is oowc
+The weight of animal is 442815
+The quotient from name to weight is 0.000993643
+This is the Bird that is not transferable
+The name of animal is nas
+The weight of animal is 126790
+The quotient from name to weight is 0.00253963
+This is the Bird that is not transferable
+The name of animal is ymbohyq
+The weight of animal is 304928
+The quotient from name to weight is 0.00254814
+This is fish with location: Lake
+The name of animal is nfwfr
+The weight of animal is 19869
+The quotient from name to weight is 0.0275303
+This is fish with location: Sea
+The name of animal is yxfdrzx
+The weight of animal is 139524
+The quotient from name to weight is 0.00572661
+This is the Bird that is not transferable
+The name of animal is iviaccw
+The weight of animal is 65259
+The quotient from name to weight is 0.0113701
+This is the Bird that is transferable
+The name of animal is nbqxxuladg
+The weight of animal is 309317
+The quotient from name to weight is 0.00351096
+This is the Beast with type: Predator
+The name of animal is tyg
+The weight of animal is 119098
+The quotient from name to weight is 0.00285479
+This is fish with location: Lake
+The name of animal is sfxfqqppohr
+The weight of animal is 792084
+The quotient from name to weight is 0.00153772
+This is fish with location: Lake
+The name of animal is mlddbsao
+The weight of animal is 872042
+The quotient from name to weight is 0.000960963
+This is fish with location: Lake
+The name of animal is wwwvrofydvyq
+The weight of animal is 455700
+The quotient from name to weight is 0.00301734
+This is the Beast with type: Herbivores
+The name of animal is arzykqfctbjd
+The weight of animal is 718402
+The quotient from name to weight is 0.00180261
+This is fish with location: Sea
+The name of animal is nidgjb
+The weight of animal is 9578
+The quotient from name to weight is 0.0649405
+This is fish with location: Ocean
+The name of animal is cvlkjlrs
+The weight of animal is 615180
+The quotient from name to weight is 0.00142235
+This is fish with location: Ocean
+The name of animal is ncjdbywyk
+The weight of animal is 133347
+The quotient from name to weight is 0.00735675
+This is the Bird that is not transferable
+The name of animal is nhno
+The weight of animal is 348495
+The quotient from name to weight is 0.00124822
+This is the Beast with type: Herbivores
+The name of animal is ffgedc
+The weight of animal is 276758
+The quotient from name to weight is 0.00219325
+This is fish with location: Ocean
+The name of animal is aaqycc
+The weight of animal is 625263
+The quotient from name to weight is 0.00100118
+This is the Beast with type: Herbivores
+The name of animal is rezqyklivmfo
+The weight of animal is 692257
+The quotient from name to weight is 0.0019227
+This is the Bird that is transferable
+The name of animal is vub
+The weight of animal is 316614
+The quotient from name to weight is 0.00105175
+This is the Bird that is transferable
+The name of animal is mdkk
+The weight of animal is 387883
+The quotient from name to weight is 0.00109054
+This is fish with location: Lake
+The name of animal is obdabueyhxt
+The weight of animal is 699178
+The quotient from name to weight is 0.00169199
+This is the Bird that is transferable
+The name of animal is zjoa
+The weight of animal is 486915
+The quotient from name to weight is 0.000895433
+This is the Beast with type: Herbivores
+The name of animal is oqygefr
+The weight of animal is 469149
+The quotient from name to weight is 0.00163061
+This is the Bird that is transferable
+The name of animal is vlzfyes
+The weight of animal is 531914
+The quotient from name to weight is 0.00147956
+This is the Bird that is transferable
+The name of animal is jxm
+The weight of animal is 174794
+The quotient from name to weight is 0.00191654
+This is the Bird that is transferable
+The name of animal is qiwrlzrvok
+The weight of animal is 587162
+The quotient from name to weight is 0.00192621
+This is fish with location: Ocean
+The name of animal is ajlrozrz
+The weight of animal is 437733
+The quotient from name to weight is 0.00204234
+This is fish with location: Sea
+The name of animal is svecowvdsuq
+The weight of animal is 144501
+The quotient from name to weight is 0.00848437
+This is the Bird that is not transferable
+The name of animal is ydryubbpr
+The weight of animal is 362844
+The quotient from name to weight is 0.00274223
+This is the Bird that is not transferable
+The name of animal is gemujdj
+The weight of animal is 778208
+The quotient from name to weight is 0.000953473
+This is the Beast with type: Herbivores
+The name of animal is oavwht
+The weight of animal is 283162
+The quotient from name to weight is 0.00234848
+This is the Beast with type: Herbivores
+The name of animal is bpkjfr
+The weight of animal is 506080
+The quotient from name to weight is 0.00126265
+This is the Bird that is transferable
+The name of animal is eseqvfsyg
+The weight of animal is 203870
+The quotient from name to weight is 0.00485113
+This is the Beast with type: Insectivores
+The name of animal is zxdccdbwld
+The weight of animal is 411418
+The quotient from name to weight is 0.00258861
+This is the Bird that is not transferable
+The name of animal is aosbkvzhdv
+The weight of animal is 967940
+The quotient from name to weight is 0.0011261
+This is fish with location: Sea
+The name of animal is jdt
+The weight of animal is 369283
+The quotient from name to weight is 0.00087196
+This is fish with location: Ocean
+The name of animal is mfzuig
+The weight of animal is 774785
+The quotient from name to weight is 0.000849268
+This is fish with location: Sea
+The name of animal is nnfsrwqn
+The weight of animal is 309788
+The quotient from name to weight is 0.00288262
+This is fish with location: Ocean
+The name of animal is uxyfxktvjjfc
+The weight of animal is 336199
+The quotient from name to weight is 0.00396789
+This is the Beast with type: Predator
+The name of animal is nvsxjbczc
+The weight of animal is 749517
+The quotient from name to weight is 0.00131685
+This is the Bird that is not transferable
+The name of animal is szspbwz
+The weight of animal is 863896
+The quotient from name to weight is 0.00092951
+This is the Bird that is not transferable
+The name of animal is qzm
+The weight of animal is 304283
+The quotient from name to weight is 0.00113053
+This is the Bird that is not transferable
+The name of animal is uwtawzcqqe
+The weight of animal is 412939
+The quotient from name to weight is 0.00270258
+This is the Beast with type: Predator
+The name of animal is emuipuj
+The weight of animal is 604947
+The quotient from name to weight is 0.00126788
+This is the Beast with type: Predator
+The name of animal is crn
+The weight of animal is 72077
+The quotient from name to weight is 0.00448132
+This is the Bird that is transferable
+The name of animal is mguknozlmegx
+The weight of animal is 55454
+The quotient from name to weight is 0.0238035
+This is the Bird that is not transferable
+The name of animal is pigegawzk
+The weight of animal is 951988
+The quotient from name to weight is 0.00101787
+This is the Bird that is not transferable
+The name of animal is cmwmghwwqi
+The weight of animal is 165731
+The quotient from name to weight is 0.00663123
+This is the Bird that is not transferable
+The name of animal is njdxk
+The weight of animal is 239099
+The quotient from name to weight is 0.00227103
+This is fish with location: Sea
+The name of animal is umfcnvnfjt
+The weight of animal is 644803
+The quotient from name to weight is 0.00168889
+This is the Beast with type: Herbivores
+The name of animal is iwlsaandiujn
+The weight of animal is 127584
+The quotient from name to weight is 0.0101031
+This is the Beast with type: Herbivores
+The name of animal is syec
+The weight of animal is 834928
+The quotient from name to weight is 0.000522201
+This is fish with location: Ocean
+The name of animal is qpelawr
+The weight of animal is 507404
+The quotient from name to weight is 0.0015057
+This is fish with location: Lake
+The name of animal is nidayllpxmjq
+The weight of animal is 460387
+The quotient from name to weight is 0.00284326
+This is the Beast with type: Predator
+The name of animal is vporbdebn
+The weight of animal is 500046
+The quotient from name to weight is 0.00192382
+This is fish with location: Sea
+The name of animal is bxlpwngjkyp
+The weight of animal is 309613
+The quotient from name to weight is 0.00392748
+This is fish with location: Ocean
+The name of animal is tvmnmuklaqw
+The weight of animal is 358653
+The quotient from name to weight is 0.00340998
+This is the Bird that is transferable
+The name of animal is iayqoawqv
+The weight of animal is 713375
+The quotient from name to weight is 0.00139338
+This is the Beast with type: Predator
+The name of animal is rpyualtt
+The weight of animal is 987915
+The quotient from name to weight is 0.000912022
+This is fish with location: Lake
+The name of animal is cpwkoe
+The weight of animal is 463845
+The quotient from name to weight is 0.00139917
+This is the Beast with type: Insectivores
+The name of animal is mzqaihfaq
+The weight of animal is 626181
+The quotient from name to weight is 0.0015363
+This is fish with location: Lake
+The name of animal is yzdfsmnnayz
+The weight of animal is 550071
+The quotient from name to weight is 0.00223426
+This is the Beast with type: Insectivores
+The name of animal is hnou
+The weight of animal is 979790
+The quotient from name to weight is 0.000451117
+This is the Bird that is not transferable
+The name of animal is jec
+The weight of animal is 238373
+The quotient from name to weight is 0.0012837
+This is the Beast with type: Insectivores
+The name of animal is ymffufqfkflz
+The weight of animal is 881048
+The quotient from name to weight is 0.00148346
+This is the Bird that is not transferable
+The name of animal is xypawhiyi
+The weight of animal is 538548
+The quotient from name to weight is 0.00186427
+This is fish with location: Ocean
+The name of animal is yoiiqtjsdxk
+The weight of animal is 82283
+The quotient from name to weight is 0.0148147
+This is the Beast with type: Insectivores
+The name of animal is rrj
+The weight of animal is 819286
+The quotient from name to weight is 0.000407672
+This is the Beast with type: Predator
+The name of animal is scqygui
+The weight of animal is 55995
+The quotient from name to weight is 0.0138048
+This is the Bird that is not transferable
+The name of animal is twacvypdkhbv
+The weight of animal is 31837
+The quotient from name to weight is 0.0411157
+This is the Bird that is transferable
+The name of animal is kppkhk
+The weight of animal is 476257
+The quotient from name to weight is 0.00136271
+This is fish with location: Sea
+The name of animal is asimnreqhyhr
+The weight of animal is 909769
+The quotient from name to weight is 0.00143663
+This is the Bird that is not transferable
+The name of animal is fzi
+The weight of animal is 952267
+The quotient from name to weight is 0.000345491
+This is fish with location: Sea
+The name of animal is tytv
+The weight of animal is 726021
+The quotient from name to weight is 0.000648742
+This is fish with location: Lake
+The name of animal is jgu
+The weight of animal is 633268
+The quotient from name to weight is 0.00051479
+This is the Beast with type: Predator
+The name of animal is cwqcojtblc
+The weight of animal is 413311
+The quotient from name to weight is 0.00258401
+This is fish with location: Lake
+The name of animal is ohpv
+The weight of animal is 690015
+The quotient from name to weight is 0.000644914
+This is the Beast with type: Herbivores
+The name of animal is ogwazcbrnpt
+The weight of animal is 813135
+The quotient from name to weight is 0.001477
+This is fish with location: Sea
+The name of animal is auvmy
+The weight of animal is 842919
+The quotient from name to weight is 0.000666731
+This is the Beast with type: Herbivores
+The name of animal is oblofgenbtw
+The weight of animal is 899711
+The quotient from name to weight is 0.0013082
+This is fish with location: Lake
+The name of animal is hfdtlyxvwsq
+The weight of animal is 825748
+The quotient from name to weight is 0.00149682
+This is fish with location: Sea
+The name of animal is kzqf
+The weight of animal is 479687
+The quotient from name to weight is 0.000925604
+This is the Beast with type: Herbivores
+The name of animal is zlowqrjtqx
+The weight of animal is 607011
+The quotient from name to weight is 0.00188135
+This is the Beast with type: Predator
+The name of animal is lzwtmvsp
+The weight of animal is 939810
+The quotient from name to weight is 0.000977857
+This is fish with location: Ocean
+The name of animal is cxmdjqwmb
+The weight of animal is 906120
+The quotient from name to weight is 0.00107381
+This is the Beast with type: Predator
+The name of animal is twouiztprae
+The weight of animal is 332889
+The quotient from name to weight is 0.00369493
+This is the Beast with type: Insectivores
+The name of animal is aplppdoewa
+The weight of animal is 18502
+The quotient from name to weight is 0.0577775
+This is the Beast with type: Herbivores
+The name of animal is uuurkfuzdc
+The weight of animal is 509443
+The quotient from name to weight is 0.00218278
+This is fish with location: Lake
+The name of animal is qbyyfhdbr
+The weight of animal is 167394
+The quotient from name to weight is 0.00580069
+This is the Beast with type: Predator
+The name of animal is gsz
+The weight of animal is 930757
+The quotient from name to weight is 0.000365294
+This is fish with location: Lake
+The name of animal is zehhppucyani
+The weight of animal is 328283
+The quotient from name to weight is 0.00397218
+This is fish with location: Lake
+The name of animal is rmig
+The weight of animal is 57707
+The quotient from name to weight is 0.00746876
+This is fish with location: Lake
+The name of animal is btu
+The weight of animal is 747747
+The quotient from name to weight is 0.000442663
+This is the Bird that is transferable
+The name of animal is jtrqvwzol
+The weight of animal is 641423
+The quotient from name to weight is 0.00160113
+This is fish with location: Lake
+The name of animal is mizqqzzcxbja
+The weight of animal is 41283
+The quotient from name to weight is 0.0321198
+This is the Beast with type: Predator
+The name of animal is wuqkaqqc
+The weight of animal is 319403
+The quotient from name to weight is 0.00274888
+This is the Beast with type: Predator
+The name of animal is kiclsv
+The weight of animal is 807176
+The quotient from name to weight is 0.000807754
+This is the Beast with type: Predator
+The name of animal is obmlhd
+The weight of animal is 699287
+The quotient from name to weight is 0.000900918
+This is the Beast with type: Predator
+The name of animal is uuchcg
+The weight of animal is 499366
+The quotient from name to weight is 0.00127962
+This is the Bird that is not transferable
+The name of animal is njjqlvdggmfx
+The weight of animal is 564038
+The quotient from name to weight is 0.00230126
+This is fish with location: Sea
+The name of animal is fmqmhlc
+The weight of animal is 120981
+The quotient from name to weight is 0.00614973
+This is the Bird that is not transferable
+The name of animal is rycvjlpet
+The weight of animal is 849096
+The quotient from name to weight is 0.00117183
+This is the Beast with type: Predator
+The name of animal is kcp
+The weight of animal is 233210
+The quotient from name to weight is 0.00136358
+This is fish with location: Sea
+The name of animal is apfr
+The weight of animal is 168895
+The quotient from name to weight is 0.00251636
+This is the Beast with type: Insectivores
+The name of animal is rlwrzbclzgrg
+The weight of animal is 979106
+The quotient from name to weight is 0.00135225
+This is the Bird that is transferable
+The name of animal is qzcm
+The weight of animal is 508146
+The quotient from name to weight is 0.000871797
+This is the Beast with type: Predator
+The name of animal is mnonledryb
+The weight of animal is 874034
+The quotient from name to weight is 0.00123794
+This is the Beast with type: Insectivores
+The name of animal is hejbgyw
+The weight of animal is 340228
+The quotient from name to weight is 0.00221028
+This is fish with location: Lake
+The name of animal is fzsxioccjd
+The weight of animal is 76431
+The quotient from name to weight is 0.0141173
+This is the Bird that is transferable
+The name of animal is pvpuwmhnw
+The weight of animal is 841780
+The quotient from name to weight is 0.00121172
+This is fish with location: Sea
+The name of animal is tbwmjfymo
+The weight of animal is 11570
+The quotient from name to weight is 0.0856525
+This is the Bird that is transferable
+The name of animal is vghxyzj
+The weight of animal is 147218
+The quotient from name to weight is 0.00539336
+This is the Bird that is not transferable
+The name of animal is qoooasrkovu
+The weight of animal is 142788
+The quotient from name to weight is 0.00857915
+This is the Bird that is transferable
+The name of animal is ytv
+The weight of animal is 210590
+The quotient from name to weight is 0.00168574
+This is the Beast with type: Herbivores
+The name of animal is ruvc
+The weight of animal is 180033
+The quotient from name to weight is 0.00248843
+This is the Bird that is not transferable
+The name of animal is fljmpzgkp
+The weight of animal is 679919
+The quotient from name to weight is 0.00144282
+This is the Bird that is transferable
+The name of animal is jjxukfhmespe
+The weight of animal is 477112
+The quotient from name to weight is 0.00272473
+This is the Beast with type: Predator
+The name of animal is hbtcdwjcok
+The weight of animal is 838878
+The quotient from name to weight is 0.0012624
+This is fish with location: Lake
+The name of animal is orike
+The weight of animal is 930509
+The quotient from name to weight is 0.000578178
+This is the Beast with type: Insectivores
+The name of animal is rggnyfqrt
+The weight of animal is 457151
+The quotient from name to weight is 0.00217871
+This is fish with location: Lake
+The name of animal is ere
+The weight of animal is 147595
+The quotient from name to weight is 0.00214099
+This is the Beast with type: Predator
+The name of animal is pxwmnviv
+The weight of animal is 399357
+The quotient from name to weight is 0.00228117
+This is the Bird that is transferable
+The name of animal is fqyi
+The weight of animal is 491719
+The quotient from name to weight is 0.000896854
+This is fish with location: Sea
+The name of animal is ezzbps
+The weight of animal is 688281
+The quotient from name to weight is 0.00097344
+This is the Beast with type: Herbivores
+The name of animal is lmqjzoqmxhet
+The weight of animal is 979194
+The quotient from name to weight is 0.0013603
+This is the Beast with type: Insectivores
+The name of animal is fjyzwwpi
+The weight of animal is 872043
+The quotient from name to weight is 0.00103894
+This is the Bird that is not transferable
+The name of animal is enxprdmez
+The weight of animal is 405054
+The quotient from name to weight is 0.00244165
+This is the Bird that is not transferable
+The name of animal is kdebovti
+The weight of animal is 27261
+The quotient from name to weight is 0.0314002
+This is the Beast with type: Insectivores
+The name of animal is kti
+The weight of animal is 439455
+The quotient from name to weight is 0.000746379
+This is the Bird that is transferable
+The name of animal is wfuukelbngh
+The weight of animal is 659431
+The quotient from name to weight is 0.00179852
+This is fish with location: Sea
+The name of animal is kxgrribz
+The weight of animal is 149698
+The quotient from name to weight is 0.00589854
+This is the Bird that is not transferable
+The name of animal is nndxy
+The weight of animal is 48229
+The quotient from name to weight is 0.011632
+This is fish with location: Ocean
+The name of animal is osm
+The weight of animal is 506033
+The quotient from name to weight is 0.000662012
+This is the Beast with type: Predator
+The name of animal is kojtwezndfx
+The weight of animal is 326830
+The quotient from name to weight is 0.00371447
+This is fish with location: Lake
+The name of animal is tsvyieijrkn
+The weight of animal is 559103
+The quotient from name to weight is 0.00217849
+This is fish with location: Lake
+The name of animal is dpzydlortci
+The weight of animal is 569228
+The quotient from name to weight is 0.00212217
+This is the Beast with type: Herbivores
+The name of animal is rpr
+The weight of animal is 324398
+The quotient from name to weight is 0.0010481
+This is the Bird that is not transferable
+The name of animal is unnoepfme
+The weight of animal is 774512
+The quotient from name to weight is 0.00125627
+This is the Beast with type: Herbivores
+The name of animal is gyrwqha
+The weight of animal is 613591
+The quotient from name to weight is 0.00125654
+This is the Beast with type: Predator
+The name of animal is nsvxkeaqgn
+The weight of animal is 405737
+The quotient from name to weight is 0.00269633
+This is fish with location: Lake
+The name of animal is ufmafhdsoim
+The weight of animal is 871105
+The quotient from name to weight is 0.00134427
+This is the Beast with type: Herbivores
+The name of animal is awqglnzov
+The weight of animal is 387308
+The quotient from name to weight is 0.00258451
+This is fish with location: Lake
+The name of animal is zaoayw
+The weight of animal is 539988
+The quotient from name to weight is 0.00123521
+This is the Bird that is not transferable
+The name of animal is klykycccct
+The weight of animal is 105030
+The quotient from name to weight is 0.0102447
+This is the Bird that is transferable
+The name of animal is ebsjedfmcdmi
+The weight of animal is 245951
+The quotient from name to weight is 0.00506198
+This is the Beast with type: Predator
+The name of animal is calmobdx
+The weight of animal is 637817
+The quotient from name to weight is 0.00132013
+This is fish with location: Ocean
+The name of animal is mmgmy
+The weight of animal is 166740
+The quotient from name to weight is 0.00330455
+This is the Beast with type: Predator
+The name of animal is rxsrvbkxnwhf
+The weight of animal is 249412
+The quotient from name to weight is 0.00537665
+This is fish with location: Sea
+The name of animal is cqbjxr
+The weight of animal is 889634
+The quotient from name to weight is 0.000730638
+This is fish with location: Sea
+The name of animal is fgnwmunigjx
+The weight of animal is 297906
+The quotient from name to weight is 0.00404154
+This is fish with location: Sea
+The name of animal is npqoujpgmya
+The weight of animal is 871699
+The quotient from name to weight is 0.00138924
+This is the Bird that is not transferable
+The name of animal is oagazz
+The weight of animal is 272846
+The quotient from name to weight is 0.00238963
+This is the Beast with type: Predator
+The name of animal is bfzeaficfoiy
+The weight of animal is 327733
+The quotient from name to weight is 0.00385985
+This is fish with location: Ocean
+The name of animal is npntx
+The weight of animal is 362728
+The quotient from name to weight is 0.00156591
+This is the Bird that is not transferable
+The name of animal is yyumn
+The weight of animal is 998854
+The quotient from name to weight is 0.000578663
+This is fish with location: Lake
+The name of animal is nsml
+The weight of animal is 325326
+The quotient from name to weight is 0.00135864
+This is fish with location: Ocean
+The name of animal is sgz
+The weight of animal is 623296
+The quotient from name to weight is 0.000545487
+This is fish with location: Sea
+The name of animal is smvvtplbgzu
+The weight of animal is 78206
+The quotient from name to weight is 0.0158044
+This is fish with location: Lake
+The name of animal is eqlkslcdb
+The weight of animal is 703647
+The quotient from name to weight is 0.00134869
+This is the Bird that is transferable
+The name of animal is fbnmofc
+The weight of animal is 81320
+The quotient from name to weight is 0.00898918
+This is the Bird that is transferable
+The name of animal is savww
+The weight of animal is 557391
+The quotient from name to weight is 0.00101903
+This is the Bird that is transferable
+The name of animal is byxz
+The weight of animal is 636101
+The quotient from name to weight is 0.000724728
+This is fish with location: Lake
+The name of animal is fwvsinws
+The weight of animal is 251185
+The quotient from name to weight is 0.00359496
+This is the Bird that is not transferable
+The name of animal is rdcdiqsdmhn
+The weight of animal is 877873
+The quotient from name to weight is 0.00133163
+This is the Bird that is transferable
+The name of animal is cnimwa
+The weight of animal is 238596
+The quotient from name to weight is 0.00267817
+This is the Bird that is transferable
+The name of animal is kzctym
+The weight of animal is 541426
+The quotient from name to weight is 0.00124486
+This is the Bird that is transferable
+The name of animal is zore
+The weight of animal is 649799
+The quotient from name to weight is 0.000689444
+This is the Beast with type: Herbivores
+The name of animal is rdblicidj
+The weight of animal is 248455
+The quotient from name to weight is 0.00376326
+This is the Bird that is not transferable
+The name of animal is lqc
+The weight of animal is 184256
+The quotient from name to weight is 0.00173671
+This is fish with location: Lake
+The name of animal is oudszbx
+The weight of animal is 321055
+The quotient from name to weight is 0.00243883
+This is the Bird that is transferable
+The name of animal is luc
+The weight of animal is 847266
+The quotient from name to weight is 0.000382406
+This is the Bird that is transferable
+The name of animal is uuzwzpbts
+The weight of animal is 766464
+The quotient from name to weight is 0.00135427
+This is the Beast with type: Predator
+The name of animal is turo
+The weight of animal is 456284
+The quotient from name to weight is 0.00100376
+This is the Beast with type: Predator
+The name of animal is hfbf
+The weight of animal is 414647
+The quotient from name to weight is 0.000979146
+This is the Beast with type: Herbivores
+The name of animal is fkwzj
+The weight of animal is 13150
+The quotient from name to weight is 0.0422814
+This is the Beast with type: Predator
+The name of animal is lofxnqgtzt
+The weight of animal is 320370
+The quotient from name to weight is 0.00349908
+This is fish with location: Lake
+The name of animal is obokw
+The weight of animal is 956891
+The quotient from name to weight is 0.000570598
+This is the Bird that is not transferable
+The name of animal is rnhzcq
+The weight of animal is 40495
+The quotient from name to weight is 0.0163477
+This is the Beast with type: Insectivores
+The name of animal is emzdh
+The weight of animal is 767573
+The quotient from name to weight is 0.000698305
+This is the Beast with type: Predator
+The name of animal is dudnemx
+The weight of animal is 129134
+The quotient from name to weight is 0.00586213
+This is the Beast with type: Predator
+The name of animal is azpfzyvdbb
+The weight of animal is 182643
+The quotient from name to weight is 0.00596793
+This is the Bird that is not transferable
+The name of animal is okdxw
+The weight of animal is 687271
+The quotient from name to weight is 0.000810452
+This is the Beast with type: Predator
+The name of animal is dumvkwz
+The weight of animal is 738659
+The quotient from name to weight is 0.00107221
+This is the Bird that is not transferable
+The name of animal is aemm
+The weight of animal is 158560
+The quotient from name to weight is 0.00262361
+This is fish with location: Ocean
+The name of animal is omngknmepwpm
+The weight of animal is 841656
+The quotient from name to weight is 0.00155883
+This is the Bird that is transferable
+The name of animal is wrqxy
+The weight of animal is 515035
+The quotient from name to weight is 0.00113973
+This is fish with location: Ocean
+The name of animal is naoqcldfcndm
+The weight of animal is 504456
+The quotient from name to weight is 0.00249378
+This is the Bird that is not transferable
+The name of animal is ymsmpezfie
+The weight of animal is 765504
+The quotient from name to weight is 0.00143304
+This is the Bird that is transferable
+The name of animal is umehw
+The weight of animal is 862051
+The quotient from name to weight is 0.000638013
+This is the Bird that is transferable
+The name of animal is iaj
+The weight of animal is 656600
+The quotient from name to weight is 0.000469083
+This is the Bird that is transferable
+The name of animal is pusdsnvbc
+The weight of animal is 925671
+The quotient from name to weight is 0.00106301
+This is the Bird that is transferable
+The name of animal is iqjrwhsjrsy
+The weight of animal is 586913
+The quotient from name to weight is 0.00209912
+This is the Bird that is not transferable
+The name of animal is wrjq
+The weight of animal is 486145
+The quotient from name to weight is 0.000929764
+This is fish with location: Sea
+The name of animal is hggsosfimn
+The weight of animal is 883461
+The quotient from name to weight is 0.00121907
+This is fish with location: Ocean
+The name of animal is yhudxfhr
+The weight of animal is 70309
+The quotient from name to weight is 0.0125446
+This is the Bird that is transferable
+The name of animal is ojjz
+The weight of animal is 506069
+The quotient from name to weight is 0.000879327
+This is the Beast with type: Herbivores
+The name of animal is noapw
+The weight of animal is 893072
+The quotient from name to weight is 0.000614732
+This is the Bird that is transferable
+The name of animal is hcqp
+The weight of animal is 3631
+The quotient from name to weight is 0.117874
+This is fish with location: Lake
+The name of animal is qcv
+The weight of animal is 159151
+The quotient from name to weight is 0.0020735
+This is the Beast with type: Herbivores
+The name of animal is zqdog
+The weight of animal is 682486
+The quotient from name to weight is 0.000804412
+This is the Bird that is transferable
+The name of animal is xtyvczlk
+The weight of animal is 463641
+The quotient from name to weight is 0.00196488
+This is the Beast with type: Insectivores
+The name of animal is umiwoarem
+The weight of animal is 17475
+The quotient from name to weight is 0.0561946
+This is the Beast with type: Insectivores
+The name of animal is hnxkhbgl
+The weight of animal is 33347
+The quotient from name to weight is 0.0256095
+This is fish with location: Sea
+The name of animal is zzdl
+The weight of animal is 217300
+The quotient from name to weight is 0.00208007
+This is the Beast with type: Herbivores
+The name of animal is rfhpcu
+The weight of animal is 813241
+The quotient from name to weight is 0.000796812
+This is fish with location: Lake
+The name of animal is qhvbhrb
+The weight of animal is 828091
+The quotient from name to weight is 0.00090449
+This is the Beast with type: Herbivores
+The name of animal is uvml
+The weight of animal is 929787
+The quotient from name to weight is 0.000486133
+This is fish with location: Sea
+The name of animal is zbiinok
+The weight of animal is 343144
+The quotient from name to weight is 0.00220899
+This is the Bird that is transferable
+The name of animal is traohjdn
+The weight of animal is 946339
+The quotient from name to weight is 0.000906652
+This is fish with location: Lake
+The name of animal is lvan
+The weight of animal is 375462
+The quotient from name to weight is 0.00115325
+This is the Bird that is transferable
+The name of animal is rhvnsw
+The weight of animal is 30181
+The quotient from name to weight is 0.0225307
+This is the Bird that is not transferable
+The name of animal is egauymeb
+The weight of animal is 288524
+The quotient from name to weight is 0.00293563
+This is the Beast with type: Herbivores
+The name of animal is edua
+The weight of animal is 164230
+The quotient from name to weight is 0.00252694
+This is the Bird that is transferable
+The name of animal is wvqftkyza
+The weight of animal is 729115
+The quotient from name to weight is 0.0013921
+This is fish with location: Lake
+The name of animal is yqhvyivgcs
+The weight of animal is 563039
+The quotient from name to weight is 0.00198388
+This is the Bird that is not transferable
+The name of animal is lzzheboacvsi
+The weight of animal is 369238
+The quotient from name to weight is 0.00352076
+This is the Bird that is transferable
+The name of animal is ulcanvaqbg
+The weight of animal is 917407
+The quotient from name to weight is 0.00115543
+This is the Beast with type: Predator
+The name of animal is rebduttax
+The weight of animal is 970055
+The quotient from name to weight is 0.00100922
+This is the Beast with type: Insectivores
+The name of animal is zevhkqp
+The weight of animal is 59109
+The quotient from name to weight is 0.0131452
+This is the Beast with type: Insectivores
+The name of animal is jcorw
+The weight of animal is 356377
+The quotient from name to weight is 0.0015405
+This is the Bird that is not transferable
+The name of animal is hchckury
+The weight of animal is 460789
+The quotient from name to weight is 0.00187721
+This is fish with location: Ocean
+The name of animal is dprmawrnyu
+The weight of animal is 749426
+The quotient from name to weight is 0.00148514
+This is the Bird that is transferable
+The name of animal is uvaeidplfole
+The weight of animal is 75413
+The quotient from name to weight is 0.0169732
+This is the Bird that is transferable
+The name of animal is neuvoftztant
+The weight of animal is 688197
+The quotient from name to weight is 0.0019413
+This is the Beast with type: Insectivores
+The name of animal is lrqnluyi
+The weight of animal is 745330
+The quotient from name to weight is 0.00120215
+This is fish with location: Ocean
+The name of animal is hbnalnohrif
+The weight of animal is 910678
+The quotient from name to weight is 0.00127707
+This is the Beast with type: Insectivores
+The name of animal is ezp
+The weight of animal is 971990
+The quotient from name to weight is 0.000344654
+This is the Bird that is not transferable
+The name of animal is lsrakq
+The weight of animal is 606559
+The quotient from name to weight is 0.00107821
+This is the Beast with type: Herbivores
+The name of animal is agzt
+The weight of animal is 407218
+The quotient from name to weight is 0.00107559
+This is fish with location: Ocean
+The name of animal is vzpxpos
+The weight of animal is 514696
+The quotient from name to weight is 0.00157374
+This is the Beast with type: Predator
+The name of animal is azs
+The weight of animal is 564837
+The quotient from name to weight is 0.000591321
+This is the Beast with type: Herbivores
+The name of animal is cbme
+The weight of animal is 329018
+The quotient from name to weight is 0.00123701
+This is the Bird that is transferable
+The name of animal is qfh
+The weight of animal is 800849
+The quotient from name to weight is 0.000398327
+This is fish with location: Lake
+The name of animal is iowt
+The weight of animal is 311401
+The quotient from name to weight is 0.00144829
+This is the Bird that is not transferable
+The name of animal is caiolwwb
+The weight of animal is 774505
+The quotient from name to weight is 0.00110522
+This is fish with location: Lake
+The name of animal is cccmi
+The weight of animal is 650116
+The quotient from name to weight is 0.000786014
+This is the Beast with type: Insectivores
+The name of animal is ujeo
+The weight of animal is 441471
+The quotient from name to weight is 0.000985342
+This is fish with location: Ocean
+The name of animal is ujytsjz
+The weight of animal is 838403
+The quotient from name to weight is 0.000957773
+This is the Beast with type: Insectivores
+The name of animal is nsv
+The weight of animal is 667823
+The quotient from name to weight is 0.000513609
+This is fish with location: Ocean
+The name of animal is nipje
+The weight of animal is 992589
+The quotient from name to weight is 0.000537987
+This is fish with location: Sea
+The name of animal is amqjzrtr
+The weight of animal is 376869
+The quotient from name to weight is 0.00236422
+This is fish with location: Ocean
+The name of animal is fkdtb
+The weight of animal is 668619
+The quotient from name to weight is 0.000782209
+This is the Bird that is transferable
+The name of animal is bhlrxnadoq
+The weight of animal is 944836
+The quotient from name to weight is 0.00113776
+This is the Beast with type: Insectivores
+The name of animal is csppyfhsfcv
+The weight of animal is 824463
+The quotient from name to weight is 0.00145428
+This is fish with location: Sea
+The name of animal is uidoxjmome
+The weight of animal is 801520
+The quotient from name to weight is 0.00135867
+This is fish with location: Lake
+The name of animal is knrvh
+The weight of animal is 26078
+The quotient from name to weight is 0.0212056
+This is fish with location: Sea
+The name of animal is ictm
+The weight of animal is 240385
+The quotient from name to weight is 0.00178464
+This is fish with location: Lake
+The name of animal is mlmjwqswnuvg
+The weight of animal is 846531
+The quotient from name to weight is 0.00159002
+This is the Beast with type: Insectivores
+The name of animal is grothny
+The weight of animal is 921537
+The quotient from name to weight is 0.000845327
+This is fish with location: Lake
+The name of animal is efyxdumbowrx
+The weight of animal is 104955
+The quotient from name to weight is 0.0126912
+This is fish with location: Sea
+The name of animal is xsupithhker
+The weight of animal is 948408
+The quotient from name to weight is 0.00128109
+This is the Beast with type: Predator
+The name of animal is ctqnpdckdqmk
+The weight of animal is 329677
+The quotient from name to weight is 0.00389775
+This is fish with location: Ocean
+The name of animal is eewszaburrlo
+The weight of animal is 764464
+The quotient from name to weight is 0.00172278
+This is fish with location: Ocean
+The name of animal is oeuxydad
+The weight of animal is 53954
+The quotient from name to weight is 0.0160692
+This is the Bird that is transferable
+The name of animal is phqyjubtxnnp
+The weight of animal is 537296
+The quotient from name to weight is 0.00249211
+This is the Bird that is not transferable
+The name of animal is nrvzfcvgjmhp
+The weight of animal is 47335
+The quotient from name to weight is 0.027823
+This is the Bird that is transferable
+The name of animal is hgvftwkfjjxz
+The weight of animal is 379391
+The quotient from name to weight is 0.00349244
+This is fish with location: Sea
+The name of animal is jvecosuy
+The weight of animal is 268192
+The quotient from name to weight is 0.00331106
+This is the Bird that is not transferable
+The name of animal is uszus
+The weight of animal is 237290
+The quotient from name to weight is 0.00246955
+This is fish with location: Sea
+The name of animal is uflr
+The weight of animal is 654146
+The quotient from name to weight is 0.000674161
+This is the Bird that is not transferable
+The name of animal is svqkmkyqoqj
+The weight of animal is 716567
+The quotient from name to weight is 0.0017207
+This is the Bird that is transferable
+The name of animal is blwupse
+The weight of animal is 463536
+The quotient from name to weight is 0.00166114
+This is fish with location: Lake
+The name of animal is wlf
+The weight of animal is 684129
+The quotient from name to weight is 0.000480903
+This is the Bird that is not transferable
+The name of animal is gqrfhg
+The weight of animal is 846825
+The quotient from name to weight is 0.000754583
+This is fish with location: Ocean
+The name of animal is aqopimdey
+The weight of animal is 52131
+The quotient from name to weight is 0.0185878
+This is fish with location: Lake
+The name of animal is dyoslmmfot
+The weight of animal is 73212
+The quotient from name to weight is 0.0150522
+This is fish with location: Ocean
+The name of animal is nhloaumw
+The weight of animal is 76746
+The quotient from name to weight is 0.0114012
+This is fish with location: Lake
+The name of animal is irsbe
+The weight of animal is 95678
+The quotient from name to weight is 0.00557077
+This is the Beast with type: Herbivores
+The name of animal is uodtqdqjzdr
+The weight of animal is 620649
+The quotient from name to weight is 0.00195279
+This is the Bird that is not transferable
+The name of animal is movtcowf
+The weight of animal is 138512
+The quotient from name to weight is 0.00638934
+This is the Beast with type: Predator
+The name of animal is gemyplc
+The weight of animal is 780695
+The quotient from name to weight is 0.000964525
+This is fish with location: Sea
+The name of animal is cnexbr
+The weight of animal is 465267
+The quotient from name to weight is 0.00137985
+This is the Bird that is not transferable
+The name of animal is fxr
+The weight of animal is 988343
+The quotient from name to weight is 0.000339963
+This is fish with location: Ocean
+The name of animal is swmktlpkqisx
+The weight of animal is 165687
+The quotient from name to weight is 0.00812375
+This is the Beast with type: Insectivores
+The name of animal is rhkchabs
+The weight of animal is 150809
+The quotient from name to weight is 0.0055567
+This is the Beast with type: Insectivores
+The name of animal is avdybkmolwj
+The weight of animal is 361781
+The quotient from name to weight is 0.00330034
+This is fish with location: Sea
+The name of animal is mspcmv
+The weight of animal is 296032
+The quotient from name to weight is 0.00223624
+This is the Beast with type: Predator
+The name of animal is rcij
+The weight of animal is 209686
+The quotient from name to weight is 0.00202207
+This is the Beast with type: Predator
+The name of animal is xibnqqohem
+The weight of animal is 471850
+The quotient from name to weight is 0.00229734
+This is the Bird that is not transferable
+The name of animal is opvbqgemyiwa
+The weight of animal is 123818
+The quotient from name to weight is 0.0105558
+This is the Bird that is transferable
+The name of animal is leo
+The weight of animal is 75116
+The quotient from name to weight is 0.00426008
+This is the Bird that is not transferable
+The name of animal is xfrz
+The weight of animal is 483929
+The quotient from name to weight is 0.00094642
+This is fish with location: Ocean
+The name of animal is fuwibwp
+The weight of animal is 174645
+The quotient from name to weight is 0.0044204
+This is the Bird that is not transferable
+The name of animal is lpnvohnkhqgt
+The weight of animal is 501199
+The quotient from name to weight is 0.0026257
+This is the Bird that is not transferable
+The name of animal is yfqq
+The weight of animal is 788718
+The quotient from name to weight is 0.000569278
+This is fish with location: Ocean
+The name of animal is tkvsw
+The weight of animal is 187357
+The quotient from name to weight is 0.00306901
+This is the Beast with type: Insectivores
+The name of animal is lghedsypqsx
+The weight of animal is 920762
+The quotient from name to weight is 0.0013163
+This is the Bird that is transferable
+The name of animal is ojaeanko
+The weight of animal is 365997
+The quotient from name to weight is 0.0022951
+This is fish with location: Lake
+The name of animal is nvgjtfsgs
+The weight of animal is 36079
+The quotient from name to weight is 0.0273844
+This is the Bird that is transferable
+The name of animal is pajhcsx
+The weight of animal is 728563
+The quotient from name to weight is 0.00103354
+This is the Bird that is transferable
+The name of animal is eauyyvdtv
+The weight of animal is 930547
+The quotient from name to weight is 0.00108431
+This is fish with location: Sea
+The name of animal is xxurivcgs
+The weight of animal is 530277
+The quotient from name to weight is 0.00190655
+This is the Beast with type: Predator
+The name of animal is uydsbp
+The weight of animal is 786344
+The quotient from name to weight is 0.000843142
+This is the Bird that is not transferable
+The name of animal is mdoexdp
+The weight of animal is 791176
+The quotient from name to weight is 0.000951748
+This is the Bird that is not transferable
+The name of animal is mccaksbacqsw
+The weight of animal is 959393
+The quotient from name to weight is 0.00132063
+This is fish with location: Sea
+The name of animal is gcwlcokbyvn
+The weight of animal is 406575
+The quotient from name to weight is 0.00293427
+This is the Beast with type: Insectivores
+The name of animal is hiyqqxqx
+The weight of animal is 525728
+The quotient from name to weight is 0.00172903
+This is the Bird that is not transferable
+The name of animal is swqxjqkxmrq
+The weight of animal is 971857
+The quotient from name to weight is 0.00128517
+This is fish with location: Lake
+The name of animal is cosg
+The weight of animal is 395994
+The quotient from name to weight is 0.00108082
+This is the Beast with type: Predator
+The name of animal is kzivdailnina
+The weight of animal is 431886
+The quotient from name to weight is 0.00297301
+This is fish with location: Sea
+The name of animal is vywvxisklfk
+The weight of animal is 959290
+The quotient from name to weight is 0.00129262
+This is the Beast with type: Predator
+The name of animal is emojzb
+The weight of animal is 672850
+The quotient from name to weight is 0.000961581
+This is the Beast with type: Predator
+The name of animal is anfl
+The weight of animal is 329317
+The quotient from name to weight is 0.00126626
+This is the Bird that is transferable
+The name of animal is vbakwnrsqza
+The weight of animal is 650158
+The quotient from name to weight is 0.00186109
+This is the Bird that is not transferable
+The name of animal is myxyoliorq
+The weight of animal is 834911
+The quotient from name to weight is 0.00135703
+This is the Bird that is transferable
+The name of animal is gtlhxwamhm
+The weight of animal is 916425
+The quotient from name to weight is 0.00118831
+This is the Bird that is not transferable
+The name of animal is ptrugiz
+The weight of animal is 675228
+The quotient from name to weight is 0.00116849
+This is the Beast with type: Predator
+The name of animal is uiloawo
+The weight of animal is 490235
+The quotient from name to weight is 0.0015666
+This is the Beast with type: Insectivores
+The name of animal is rsjljefwbd
+The weight of animal is 510758
+The quotient from name to weight is 0.00209297
+This is the Beast with type: Insectivores
+The name of animal is qyiprlcyms
+The weight of animal is 148883
+The quotient from name to weight is 0.00750254
+This is the Beast with type: Insectivores
+The name of animal is tdbmtvkxhe
+The weight of animal is 359817
+The quotient from name to weight is 0.00302654
+This is the Bird that is not transferable
+The name of animal is gnxg
+The weight of animal is 996503
+The quotient from name to weight is 0.00043753
+This is the Beast with type: Insectivores
+The name of animal is spmgwv
+The weight of animal is 278612
+The quotient from name to weight is 0.00242631
+This is the Bird that is not transferable
+The name of animal is xvn
+The weight of animal is 960754
+The quotient from name to weight is 0.000362216
+This is fish with location: Lake
+The name of animal is hkyqctbdaezq
+The weight of animal is 674342
+The quotient from name to weight is 0.00191446
+This is fish with location: Sea
+The name of animal is hrxyj
+The weight of animal is 270483
+The quotient from name to weight is 0.00208886
+This is the Bird that is transferable
+The name of animal is xoxbvnjufgo
+The weight of animal is 660340
+The quotient from name to weight is 0.00184148
+This is the Beast with type: Predator
+The name of animal is szoh
+The weight of animal is 494618
+The quotient from name to weight is 0.000913837
+This is fish with location: Sea
+The name of animal is lsygozm
+The weight of animal is 481906
+The quotient from name to weight is 0.00163725
+This is the Bird that is not transferable
+The name of animal is wgs
+The weight of animal is 692137
+The quotient from name to weight is 0.000486898
+This is the Beast with type: Herbivores
+The name of animal is twtuzohf
+The weight of animal is 394790
+The quotient from name to weight is 0.00229742
+This is the Beast with type: Predator
+The name of animal is cnrpfbg
+The weight of animal is 694642
+The quotient from name to weight is 0.00106242
+This is fish with location: Lake
+The name of animal is cihghhwrpny
+The weight of animal is 514410
+The quotient from name to weight is 0.00232305
+This is the Bird that is not transferable
+The name of animal is zjox
+The weight of animal is 941219
+The quotient from name to weight is 0.000487665
+This is the Beast with type: Herbivores
+The name of animal is lofvpnqmrro
+The weight of animal is 732027
+The quotient from name to weight is 0.00166934
+This is the Beast with type: Herbivores
+The name of animal is beckb
+The weight of animal is 426834
+The quotient from name to weight is 0.00117844
+This is fish with location: Sea
+The name of animal is lzqaf
+The weight of animal is 479735
+The quotient from name to weight is 0.00112979
+This is fish with location: Lake
+The name of animal is zovwxfzismw
+The weight of animal is 687357
+The quotient from name to weight is 0.00183602
+This is fish with location: Sea
+The name of animal is chyy
+The weight of animal is 175686
+The quotient from name to weight is 0.00253293
+This is the Beast with type: Insectivores
+The name of animal is iprunyoxf
+The weight of animal is 650467
+The quotient from name to weight is 0.00155581
+This is the Beast with type: Herbivores
+The name of animal is gdbklcqo
+The weight of animal is 734095
+The quotient from name to weight is 0.0011429
+This is the Bird that is transferable
+The name of animal is rxqeb
+The weight of animal is 207514
+The quotient from name to weight is 0.00263115
+This is fish with location: Ocean
+The name of animal is wyzsi
+The weight of animal is 422083
+The quotient from name to weight is 0.00137888
+This is fish with location: Lake
+The name of animal is pdsn
+The weight of animal is 480832
+The quotient from name to weight is 0.000908841
+This is the Bird that is not transferable
+The name of animal is qwrw
+The weight of animal is 686657
+The quotient from name to weight is 0.000677194
+This is fish with location: Ocean
+The name of animal is pqzg
+The weight of animal is 160968
+The quotient from name to weight is 0.00279559
+This is fish with location: Ocean
+The name of animal is bxmwj
+The weight of animal is 80790
+The quotient from name to weight is 0.00683253
+This is the Beast with type: Herbivores
+The name of animal is kyxrokm
+The weight of animal is 451012
+The quotient from name to weight is 0.0017494
+This is fish with location: Sea
+The name of animal is rnczugiun
+The weight of animal is 928599
+The quotient from name to weight is 0.00107366
+This is the Bird that is not transferable
+The name of animal is kxmoj
+The weight of animal is 220048
+The quotient from name to weight is 0.00251309
+This is the Bird that is not transferable
+The name of animal is tmvvllz
+The weight of animal is 195427
+The quotient from name to weight is 0.00408848
+This is the Bird that is transferable
+The name of animal is xoydjgmluogk
+The weight of animal is 646683
+The quotient from name to weight is 0.002035
+This is fish with location: Sea
+The name of animal is azpwmdrlilr
+The weight of animal is 949162
+The quotient from name to weight is 0.0012727
+This is the Beast with type: Predator
+The name of animal is hpkhpmupytax
+The weight of animal is 909208
+The quotient from name to weight is 0.00146391
+This is the Beast with type: Herbivores
+The name of animal is nbuusq
+The weight of animal is 301816
+The quotient from name to weight is 0.0022199
+This is the Beast with type: Insectivores
+The name of animal is vclzlk
+The weight of animal is 806647
+The quotient from name to weight is 0.000820681
+This is fish with location: Sea
+The name of animal is leid
+The weight of animal is 579115
+The quotient from name to weight is 0.000714884
+This is the Beast with type: Insectivores
+The name of animal is tkpmcuow
+The weight of animal is 956800
+The quotient from name to weight is 0.000930184
+This is the Bird that is not transferable
+The name of animal is yacjsnjwgn
+The weight of animal is 990651
+The quotient from name to weight is 0.00109625
+This is fish with location: Ocean
+The name of animal is nppq
+The weight of animal is 791009
+The quotient from name to weight is 0.000565101
+This is fish with location: Sea
+The name of animal is jvcjylzuxe
+The weight of animal is 914253
+The quotient from name to weight is 0.00122286
+This is the Beast with type: Insectivores
+The name of animal is weswipfavipr
+The weight of animal is 68139
+The quotient from name to weight is 0.0193575
+This is the Bird that is transferable
+The name of animal is pchbobdpzkda
+The weight of animal is 436360
+The quotient from name to weight is 0.00288752
+This is the Bird that is not transferable
+The name of animal is eiyezpu
+The weight of animal is 674635
+The quotient from name to weight is 0.0011547
+This is fish with location: Ocean
+The name of animal is pinrovxnomlc
+The weight of animal is 320449
+The quotient from name to weight is 0.00414106
+This is the Beast with type: Predator
+The name of animal is qeoz
+The weight of animal is 839023
+The quotient from name to weight is 0.000532763
+This is the Beast with type: Predator
+The name of animal is rxzoscfaks
+The weight of animal is 92199
+The quotient from name to weight is 0.0119524
+This is fish with location: Sea
+The name of animal is ubqjknxr
+The weight of animal is 50287
+The quotient from name to weight is 0.017599
+This is fish with location: Sea
+The name of animal is ehlsj
+The weight of animal is 492488
+The quotient from name to weight is 0.00108429
+This is fish with location: Lake
+The name of animal is rbkp
+The weight of animal is 305317
+The quotient from name to weight is 0.00141165
+This is fish with location: Sea
+The name of animal is sgxkrnuh
+The weight of animal is 321176
+The quotient from name to weight is 0.00277107
+This is the Bird that is transferable
+The name of animal is sdii
+The weight of animal is 215956
+The quotient from name to weight is 0.00196799
+This is the Beast with type: Insectivores
+The name of animal is wivdgr
+The weight of animal is 240403
+The quotient from name to weight is 0.00274123
+This is the Beast with type: Herbivores
+The name of animal is jlpuiffytefv
+The weight of animal is 310354
+The quotient from name to weight is 0.00422099
+This is the Bird that is transferable
+The name of animal is cdhtuafty
+The weight of animal is 990981
+The quotient from name to weight is 0.000980846
+This is fish with location: Sea
+The name of animal is yrf
+The weight of animal is 113082
+The quotient from name to weight is 0.00298014
+This is fish with location: Ocean
+The name of animal is ose
+The weight of animal is 812126
+The quotient from name to weight is 0.000402647
+This is the Bird that is transferable
+The name of animal is vahnwvtdsc
+The weight of animal is 531277
+The quotient from name to weight is 0.00206295
+This is the Beast with type: Herbivores
+The name of animal is yaqjlrp
+The weight of animal is 719169
+The quotient from name to weight is 0.00107207
+This is the Bird that is not transferable
+The name of animal is ssbpt
+The weight of animal is 366887
+The quotient from name to weight is 0.00151545
+This is the Bird that is transferable
+The name of animal is aicejlvsj
+The weight of animal is 786948
+The quotient from name to weight is 0.00121355
+This is fish with location: Lake
+The name of animal is wokss
+The weight of animal is 203019
+The quotient from name to weight is 0.00279284
+This is the Bird that is transferable
+The name of animal is zzsaok
+The weight of animal is 991005
+The quotient from name to weight is 0.000680118
+This is fish with location: Ocean
+The name of animal is qncwtghqadr
+The weight of animal is 842332
+The quotient from name to weight is 0.00141037
+This is the Beast with type: Insectivores
+The name of animal is hkrebpeyaith
+The weight of animal is 161017
+The quotient from name to weight is 0.00794947
+This is fish with location: Lake
+The name of animal is gacbdzjfqk
+The weight of animal is 867912
+The quotient from name to weight is 0.00120634
+This is fish with location: Ocean
+The name of animal is squktnrcok
+The weight of animal is 780908
+The quotient from name to weight is 0.00142014
+This is fish with location: Lake
+The name of animal is dbsnqnj
+The weight of animal is 127516
+The quotient from name to weight is 0.0058973
+This is the Beast with type: Predator
+The name of animal is ayinjv
+The weight of animal is 130093
+The quotient from name to weight is 0.00505023
+This is the Bird that is not transferable
+The name of animal is oxew
+The weight of animal is 364163
+The quotient from name to weight is 0.00123846
+This is the Bird that is not transferable
+The name of animal is xxokacadi
+The weight of animal is 849348
+The quotient from name to weight is 0.00112557
+This is the Beast with type: Herbivores
+The name of animal is kqcfrbk
+The weight of animal is 885886
+The quotient from name to weight is 0.000835322
+This is the Beast with type: Herbivores
+The name of animal is oswigghs
+The weight of animal is 700513
+The quotient from name to weight is 0.00124908
+This is the Beast with type: Predator
+The name of animal is pclh
+The weight of animal is 467123
+The quotient from name to weight is 0.000905543
+This is the Bird that is transferable
+The name of animal is rqgzcktoq
+The weight of animal is 996751
+The quotient from name to weight is 0.00100125
+This is fish with location: Sea
+The name of animal is wktceqftyle
+The weight of animal is 769048
+The quotient from name to weight is 0.00156427
+This is the Bird that is transferable
+The name of animal is qklr
+The weight of animal is 409851
+The quotient from name to weight is 0.00107844
+This is the Bird that is transferable
+The name of animal is vyxcvcwhfxs
+The weight of animal is 962352
+The quotient from name to weight is 0.00128331
+This is the Beast with type: Insectivores
+The name of animal is hnddigy
+The weight of animal is 994714
+The quotient from name to weight is 0.000746948
+This is fish with location: Sea
+The name of animal is yzalsss
+The weight of animal is 282467
+The quotient from name to weight is 0.00280741
+This is the Beast with type: Herbivores
+The name of animal is lrlfmajfegiq
+The weight of animal is 133275
+The quotient from name to weight is 0.00951416
+This is the Beast with type: Predator
+The name of animal is naguydf
+The weight of animal is 676191
+The quotient from name to weight is 0.00110915
+This is the Bird that is not transferable
+The name of animal is cpbpf
+The weight of animal is 6291
+The quotient from name to weight is 0.0831346
+This is the Bird that is not transferable
+The name of animal is xdjhkyqu
+The weight of animal is 543997
+The quotient from name to weight is 0.00163236
+This is the Beast with type: Insectivores
+The name of animal is flk
+The weight of animal is 626873
+The quotient from name to weight is 0.000505685
+This is the Beast with type: Insectivores
+The name of animal is doaihmku
+The weight of animal is 517629
+The quotient from name to weight is 0.0016421
+This is the Beast with type: Herbivores
+The name of animal is drdwbokeeefz
+The weight of animal is 740278
+The quotient from name to weight is 0.00172368
+This is the Beast with type: Predator
+The name of animal is fpvhr
+The weight of animal is 17185
+The quotient from name to weight is 0.0320047
+This is fish with location: Lake
+The name of animal is zayjmdga
+The weight of animal is 729523
+The quotient from name to weight is 0.001172
+This is the Beast with type: Insectivores
+The name of animal is izlgqcfqlx
+The weight of animal is 529039
+The quotient from name to weight is 0.00206601
+This is the Beast with type: Insectivores
+The name of animal is zrsgdxubpoe
+The weight of animal is 674233
+The quotient from name to weight is 0.00179908
+This is fish with location: Sea
+The name of animal is vtknlyfdx
+The weight of animal is 594177
+The quotient from name to weight is 0.00168637
+This is fish with location: Lake
+The name of animal is kdczqalq
+The weight of animal is 532052
+The quotient from name to weight is 0.0016145
+This is the Bird that is not transferable
+The name of animal is hgbanrnv
+The weight of animal is 174350
+The quotient from name to weight is 0.00489819
+This is the Bird that is transferable
+The name of animal is zmvm
+The weight of animal is 717841
+The quotient from name to weight is 0.000638024
+This is the Beast with type: Herbivores
+The name of animal is bjvxlcq
+The weight of animal is 985383
+The quotient from name to weight is 0.000773303
+This is the Beast with type: Herbivores
+The name of animal is bekkbe
+The weight of animal is 305417
+The quotient from name to weight is 0.00200382
+This is the Beast with type: Insectivores
+The name of animal is gsjpu
+The weight of animal is 892879
+The quotient from name to weight is 0.000619345
+This is the Bird that is transferable
+The name of animal is szzwolewa
+The weight of animal is 554880
+The quotient from name to weight is 0.00182742
+This is the Beast with type: Herbivores
+The name of animal is qchtln
+The weight of animal is 915506
+The quotient from name to weight is 0.00070999
+This is the Beast with type: Insectivores
+The name of animal is wgsierfn
+The weight of animal is 170033
+The quotient from name to weight is 0.00511077
+This is the Beast with type: Predator
+The name of animal is aqvxoh
+The weight of animal is 124405
+The quotient from name to weight is 0.00532937
+This is the Bird that is not transferable
+The name of animal is qyspyfhxfoa
+The weight of animal is 585922
+The quotient from name to weight is 0.00207877
+This is the Bird that is transferable
+The name of animal is iwufcnrnlphg
+The weight of animal is 528990
+The quotient from name to weight is 0.00246318
+This is fish with location: Sea
+The name of animal is sjpjnomto
+The weight of animal is 136193
+The quotient from name to weight is 0.00731315
+This is the Bird that is not transferable
+The name of animal is wypfoyaiuept
+The weight of animal is 654005
+The quotient from name to weight is 0.00203974
+This is the Bird that is transferable
+The name of animal is boegiffvqr
+The weight of animal is 791852
+The quotient from name to weight is 0.00134747
+This is the Beast with type: Herbivores
+The name of animal is ytqmbeadg
+The weight of animal is 573523
+The quotient from name to weight is 0.00167038
+This is the Bird that is not transferable
+The name of animal is fzazxez
+The weight of animal is 110524
+The quotient from name to weight is 0.00711158
+This is fish with location: Lake
+The name of animal is uqejtna
+The weight of animal is 564986
+The quotient from name to weight is 0.00134517
+This is fish with location: Lake
+The name of animal is knwapbo
+The weight of animal is 665782
+The quotient from name to weight is 0.0011325
+This is the Beast with type: Herbivores
+The name of animal is aec
+The weight of animal is 824947
+The quotient from name to weight is 0.000360023
+This is the Bird that is not transferable
+The name of animal is ysd
+The weight of animal is 363006
+The quotient from name to weight is 0.000925605
+This is fish with location: Ocean
+The name of animal is lczkwrfkcuu
+The weight of animal is 395662
+The quotient from name to weight is 0.00306069
+This is the Beast with type: Predator
+The name of animal is ufluxvun
+The weight of animal is 123810
+The quotient from name to weight is 0.00734189
+This is the Beast with type: Predator
+The name of animal is wngqtpiam
+The weight of animal is 729110
+The quotient from name to weight is 0.00134959
+This is fish with location: Sea
+The name of animal is npmgjjxvu
+The weight of animal is 637395
+The quotient from name to weight is 0.00157045
+This is fish with location: Ocean
+The name of animal is zwjlij
+The weight of animal is 546931
+The quotient from name to weight is 0.0012177
+This is the Beast with type: Herbivores
+The name of animal is frvopoiqduz
+The weight of animal is 143812
+The quotient from name to weight is 0.00851807
+This is fish with location: Ocean
+The name of animal is zjyybnx
+The weight of animal is 955485
+The quotient from name to weight is 0.000835178
+This is the Bird that is transferable
+The name of animal is qehjyx
+The weight of animal is 17557
+The quotient from name to weight is 0.0378766
+This is fish with location: Sea
+The name of animal is sspkltrk
+The weight of animal is 101133
+The quotient from name to weight is 0.00883984
+This is fish with location: Lake
+The name of animal is ukf
+The weight of animal is 333802
+The quotient from name to weight is 0.000976627
+This is the Beast with type: Herbivores
+The name of animal is mcwwsnar
+The weight of animal is 985750
+The quotient from name to weight is 0.00089475
+This is fish with location: Ocean
+The name of animal is nkhtocbntyvn
+The weight of animal is 488806
+The quotient from name to weight is 0.00270046
+This is fish with location: Ocean
+The name of animal is haogyarwypmr
+The weight of animal is 684909
+The quotient from name to weight is 0.00193018
+This is the Bird that is not transferable
+The name of animal is lylisvfrsnrk
+The weight of animal is 807232
+The quotient from name to weight is 0.00165628
+This is the Bird that is not transferable
+The name of animal is mtrq
+The weight of animal is 253243
+The quotient from name to weight is 0.00178485
+This is the Beast with type: Predator
+The name of animal is dhdsx
+The weight of animal is 55252
+The quotient from name to weight is 0.0097553
+This is the Beast with type: Herbivores
+The name of animal is vaugjiiv
+The weight of animal is 231910
+The quotient from name to weight is 0.00374714
+This is the Beast with type: Herbivores
+The name of animal is ygcxgskynz
+The weight of animal is 684885
+The quotient from name to weight is 0.00163677
+This is fish with location: Sea
+The name of animal is fetgozmtlrd
+The weight of animal is 751592
+The quotient from name to weight is 0.00159927
+This is the Beast with type: Predator
+The name of animal is fxs
+The weight of animal is 551372
+The quotient from name to weight is 0.000611203
+This is the Beast with type: Predator
+The name of animal is uyqdazvat
+The weight of animal is 340012
+The quotient from name to weight is 0.00294401
+This is the Bird that is transferable
+The name of animal is utodjwv
+The weight of animal is 587490
+The quotient from name to weight is 0.0013396
+This is the Beast with type: Herbivores
+The name of animal is frntd
+The weight of animal is 431206
+The quotient from name to weight is 0.00125694
+This is fish with location: Lake
+The name of animal is cedh
+The weight of animal is 805281
+The quotient from name to weight is 0.000501688
+This is fish with location: Sea
+The name of animal is vayzscxx
+The weight of animal is 966950
+The quotient from name to weight is 0.000943172
+This is the Bird that is not transferable
+The name of animal is gvhnyxkglsq
+The weight of animal is 895238
+The quotient from name to weight is 0.001365
+This is fish with location: Ocean
+The name of animal is pqvsnxagtw
+The weight of animal is 685630
+The quotient from name to weight is 0.00163791
+This is the Beast with type: Insectivores
+The name of animal is zvpvgbiuhpby
+The weight of animal is 727542
+The quotient from name to weight is 0.00182532
+This is fish with location: Sea
+The name of animal is otfhdk
+The weight of animal is 673112
+The quotient from name to weight is 0.000950808
+This is the Beast with type: Insectivores
+The name of animal is yqwzeczja
+The weight of animal is 475331
+The quotient from name to weight is 0.0021038
+This is fish with location: Ocean
+The name of animal is igcdj
+The weight of animal is 216267
+The quotient from name to weight is 0.00237207
+This is the Bird that is transferable
+The name of animal is hwnr
+The weight of animal is 276980
+The quotient from name to weight is 0.00161383
+This is the Beast with type: Herbivores
+The name of animal is bxsxhs
+The weight of animal is 4550
+The quotient from name to weight is 0.147692
+This is the Bird that is not transferable
+The name of animal is hdj
+The weight of animal is 277253
+The quotient from name to weight is 0.00111811
+This is the Bird that is transferable
+The name of animal is wpq
+The weight of animal is 113425
+The quotient from name to weight is 0.00303284
+This is the Beast with type: Herbivores
+The name of animal is kikxjnqjrjy
+The weight of animal is 501999
+The quotient from name to weight is 0.00242032
+This is the Bird that is transferable
+The name of animal is epapmuikkn
+The weight of animal is 700157
+The quotient from name to weight is 0.00153823
+This is fish with location: Lake
+The name of animal is asjyqmnyai
+The weight of animal is 554362
+The quotient from name to weight is 0.00197344
+This is fish with location: Ocean
+The name of animal is uuegfztzmr
+The weight of animal is 745540
+The quotient from name to weight is 0.00150629
+This is the Beast with type: Predator
+The name of animal is jdztny
+The weight of animal is 272217
+The quotient from name to weight is 0.00247964
+This is the Bird that is not transferable
+The name of animal is trvu
+The weight of animal is 610335
+The quotient from name to weight is 0.000761877
+This is the Beast with type: Predator
+The name of animal is bwjunwszchnl
+The weight of animal is 941276
+The quotient from name to weight is 0.00140979
+This is the Beast with type: Predator
+The name of animal is cqrsmkzfcgoh
+The weight of animal is 943784
+The quotient from name to weight is 0.00137531
+This is the Beast with type: Herbivores
+The name of animal is dvapnqje
+The weight of animal is 633274
+The quotient from name to weight is 0.00135328
+This is the Bird that is not transferable
+The name of animal is ponb
+The weight of animal is 455400
+The quotient from name to weight is 0.000946421
+This is the Bird that is transferable
+The name of animal is njfvdekrj
+The weight of animal is 218083
+The quotient from name to weight is 0.00442034
+This is fish with location: Ocean
+The name of animal is einopgux
+The weight of animal is 417149
+The quotient from name to weight is 0.00210716
+This is fish with location: Ocean
+The name of animal is hcqzop
+The weight of animal is 933740
+The quotient from name to weight is 0.000707906
+This is the Beast with type: Insectivores
+The name of animal is cmjbrycptuz
+The weight of animal is 132666
+The quotient from name to weight is 0.00914326
+This is the Bird that is transferable
+The name of animal is xnfpkwizq
+The weight of animal is 273707
+The quotient from name to weight is 0.00369008
+This is the Beast with type: Herbivores
+The name of animal is qjfiy
+The weight of animal is 874412
+The quotient from name to weight is 0.000625563
+This is the Bird that is transferable
+The name of animal is etkf
+The weight of animal is 734531
+The quotient from name to weight is 0.000579962
+This is the Beast with type: Insectivores
+The name of animal is nepzwuh
+The weight of animal is 229559
+The quotient from name to weight is 0.0034196
+This is the Bird that is transferable
+The name of animal is fndi
+The weight of animal is 798014
+The quotient from name to weight is 0.000522547
+This is fish with location: Sea
+The name of animal is qip
+The weight of animal is 418626
+The quotient from name to weight is 0.000788293
+This is the Beast with type: Predator
+The name of animal is nygxjfuj
+The weight of animal is 828799
+The quotient from name to weight is 0.00106781
+This is fish with location: Lake
+The name of animal is gitt
+The weight of animal is 545640
+The quotient from name to weight is 0.000806392
+This is fish with location: Lake
+The name of animal is pzg
+The weight of animal is 926373
+The quotient from name to weight is 0.000363784
+This is the Bird that is transferable
+The name of animal is dvckhrqfqk
+The weight of animal is 494892
+The quotient from name to weight is 0.00217623
+This is fish with location: Lake
+The name of animal is jsqsxroe
+The weight of animal is 32201
+The quotient from name to weight is 0.0277942
+This is the Bird that is not transferable
+The name of animal is lvtwh
+The weight of animal is 495781
+The quotient from name to weight is 0.00113962
+This is fish with location: Lake
+The name of animal is mvmovfbojy
+The weight of animal is 508382
+The quotient from name to weight is 0.00216963
+This is fish with location: Ocean
+The name of animal is gxupg
+The weight of animal is 302966
+The quotient from name to weight is 0.00183189
+This is the Bird that is transferable
+The name of animal is unqkgl
+The weight of animal is 54004
+The quotient from name to weight is 0.0121843
+This is the Beast with type: Predator
+The name of animal is mkjkgh
+The weight of animal is 617081
+The quotient from name to weight is 0.00103066
+This is the Beast with type: Herbivores
+The name of animal is kyfwh
+The weight of animal is 1480
+The quotient from name to weight is 0.373649
+This is fish with location: Sea
+The name of animal is msrtxqtr
+The weight of animal is 810621
+The quotient from name to weight is 0.00113123
+This is the Bird that is transferable
+The name of animal is gubbitrmxt
+The weight of animal is 826081
+The quotient from name to weight is 0.00132675
+This is the Bird that is not transferable
+The name of animal is cvieshxgrr
+The weight of animal is 507549
+The quotient from name to weight is 0.00215349
+This is fish with location: Lake
+The name of animal is evfztenexi
+The weight of animal is 576033
+The quotient from name to weight is 0.00190267
+This is the Bird that is not transferable
+The name of animal is kvraaj
+The weight of animal is 175217
+The quotient from name to weight is 0.00364691
+This is the Beast with type: Herbivores
+The name of animal is ixwaxuxzb
+The weight of animal is 273503
+The quotient from name to weight is 0.00372208
+This is fish with location: Lake
+The name of animal is oapwltrmjjf
+The weight of animal is 21873
+The quotient from name to weight is 0.0548622
+This is fish with location: Sea
+The name of animal is ufuhoerbho
+The weight of animal is 125239
+The quotient from name to weight is 0.00861553
+This is the Bird that is not transferable
+The name of animal is crifdljjud
+The weight of animal is 333302
+The quotient from name to weight is 0.0031713
+This is the Bird that is transferable
+The name of animal is cimdknyyn
+The weight of animal is 998825
+The quotient from name to weight is 0.000983155
+This is the Bird that is not transferable
+The name of animal is uckyfqeay
+The weight of animal is 33394
+The quotient from name to weight is 0.0292867
+This is the Bird that is not transferable
+The name of animal is vttzdrlidbp
+The weight of animal is 827668
+The quotient from name to weight is 0.00146073
+This is the Beast with type: Herbivores
+The name of animal is kpllajxec
+The weight of animal is 455944
+The quotient from name to weight is 0.00210114
+This is the Beast with type: Insectivores
+The name of animal is ftcvp
+The weight of animal is 256377
+The quotient from name to weight is 0.00213358
+This is the Bird that is not transferable
+The name of animal is hknijam
+The weight of animal is 870060
+The quotient from name to weight is 0.000848217
+This is fish with location: Sea
+The name of animal is yepdojzzufuc
+The weight of animal is 546306
+The quotient from name to weight is 0.00243453
+This is the Bird that is not transferable
+The name of animal is rsy
+The weight of animal is 603757
+The quotient from name to weight is 0.000579703
+This is fish with location: Lake
+The name of animal is sjrczhf
+The weight of animal is 447852
+The quotient from name to weight is 0.00170145
+This is the Beast with type: Herbivores
+The name of animal is ylbnyjsghg
+The weight of animal is 114228
+The quotient from name to weight is 0.00953356
+This is the Beast with type: Predator
+The name of animal is jdfdqwxdr
+The weight of animal is 208052
+The quotient from name to weight is 0.00468152
+This is the Bird that is transferable
+The name of animal is wkyw
+The weight of animal is 338651
+The quotient from name to weight is 0.00137605
+This is the Bird that is transferable
+The name of animal is plwjhaldsln
+The weight of animal is 316708
+The quotient from name to weight is 0.00374793
+This is fish with location: Sea
+The name of animal is qavm
+The weight of animal is 804920
+The quotient from name to weight is 0.000542911
+This is fish with location: Lake
+The name of animal is ruiutxzeg
+The weight of animal is 65490
+The quotient from name to weight is 0.0154985
+This is the Bird that is not transferable
+The name of animal is wftp
+The weight of animal is 21765
+The quotient from name to weight is 0.0206295
+This is the Beast with type: Predator
+The name of animal is rvdjmyj
+The weight of animal is 361895
+The quotient from name to weight is 0.00213874
+This is the Beast with type: Predator
+The name of animal is gqcnmri
+The weight of animal is 843021
+The quotient from name to weight is 0.000893216
+This is the Beast with type: Herbivores
+The name of animal is nwuetfgikqf
+The weight of animal is 466058
+The quotient from name to weight is 0.00256406
+This is the Beast with type: Herbivores
+The name of animal is yoiwykts
+The weight of animal is 447030
+The quotient from name to weight is 0.00204684
+This is the Beast with type: Insectivores
+The name of animal is zqnt
+The weight of animal is 845070
+The quotient from name to weight is 0.000545517
+This is the Beast with type: Predator
+The name of animal is ykh
+The weight of animal is 124396
+The quotient from name to weight is 0.0026689
+This is the Bird that is transferable
+The name of animal is fptiqkszj
+The weight of animal is 117913
+The quotient from name to weight is 0.00846387
+This is the Beast with type: Insectivores
+The name of animal is hjkvlrtdof
+The weight of animal is 851191
+The quotient from name to weight is 0.00127586
+This is fish with location: Sea
+The name of animal is migmzazgtzdg
+The weight of animal is 294559
+The quotient from name to weight is 0.00445072
+This is the Bird that is transferable
+The name of animal is yksmuluz
+The weight of animal is 994310
+The quotient from name to weight is 0.000921242
+This is the Bird that is not transferable
+The name of animal is mmaunrdd
+The weight of animal is 922553
+The quotient from name to weight is 0.00092786
+This is the Bird that is transferable
+The name of animal is czkwvpzctj
+The weight of animal is 177506
+The quotient from name to weight is 0.00630965
+This is fish with location: Lake
+The name of animal is bqvjft
+The weight of animal is 716642
+The quotient from name to weight is 0.000911194
+This is the Beast with type: Predator
+The name of animal is teenvhuhkakt
+The weight of animal is 111191
+The quotient from name to weight is 0.0116736
+This is the Beast with type: Predator
+The name of animal is jixkggmtigy
+The weight of animal is 112151
+The quotient from name to weight is 0.010682
+This is the Bird that is transferable
+The name of animal is fvdaby
+The weight of animal is 380835
+The quotient from name to weight is 0.00167001
+This is the Bird that is not transferable
+The name of animal is eviftrtkcy
+The weight of animal is 695754
+The quotient from name to weight is 0.00157958
+This is fish with location: Sea
+The name of animal is offikkqqdwgr
+The weight of animal is 805720
+The quotient from name to weight is 0.0016085
+This is the Bird that is not transferable
+The name of animal is lzommpp
+The weight of animal is 362858
+The quotient from name to weight is 0.00215787
+This is the Bird that is transferable
+The name of animal is qbnn
+The weight of animal is 775756
+The quotient from name to weight is 0.000555587
+This is the Beast with type: Insectivores
+The name of animal is lze
+The weight of animal is 113420
+The quotient from name to weight is 0.00291836
+This is fish with location: Ocean
+The name of animal is ibkiz
+The weight of animal is 278732
+The quotient from name to weight is 0.00192658
+This is fish with location: Lake
+The name of animal is ufkv
+The weight of animal is 332948
+The quotient from name to weight is 0.00133354
+This is fish with location: Sea
+The name of animal is rursrgi
+The weight of animal is 8060
+The quotient from name to weight is 0.0970223
+This is the Beast with type: Herbivores
+The name of animal is pqryputashgc
+The weight of animal is 191911
+The quotient from name to weight is 0.00689382
+This is the Bird that is transferable
+The name of animal is nlmbpiesqu
+The weight of animal is 445597
+The quotient from name to weight is 0.00244167
+This is fish with location: Sea
+The name of animal is zikbotltpdc
+The weight of animal is 207220
+The quotient from name to weight is 0.00576199
+This is the Beast with type: Insectivores
+The name of animal is ptadslks
+The weight of animal is 626853
+The quotient from name to weight is 0.00138789
+This is the Beast with type: Insectivores
+The name of animal is iesfpb
+The weight of animal is 774044
+The quotient from name to weight is 0.000817783
+This is fish with location: Ocean
+The name of animal is ihuydjkm
+The weight of animal is 27580
+The quotient from name to weight is 0.0315083
+This is the Beast with type: Insectivores
+The name of animal is akjvnkoja
+The weight of animal is 354700
+The quotient from name to weight is 0.00270369
+This is the Beast with type: Predator
+The name of animal is hrdfdxwguvv
+The weight of animal is 860662
+The quotient from name to weight is 0.0014117
+This is the Beast with type: Predator
+The name of animal is yzvk
+The weight of animal is 687953
+The quotient from name to weight is 0.000680279
+This is fish with location: Sea
+The name of animal is twwhsqewewb
+The weight of animal is 208449
+The quotient from name to weight is 0.00587194
+This is the Beast with type: Herbivores
+The name of animal is pxe
+The weight of animal is 654349
+The quotient from name to weight is 0.000508903
+This is the Beast with type: Herbivores
+The name of animal is damyijrvizae
+The weight of animal is 842349
+The quotient from name to weight is 0.00153737
+This is fish with location: Ocean
+The name of animal is uee
+The weight of animal is 953155
+The quotient from name to weight is 0.000334678
+This is the Beast with type: Herbivores
+The name of animal is fspljjsdkyvp
+The weight of animal is 168759
+The quotient from name to weight is 0.00783366
+This is the Bird that is transferable
+The name of animal is qacwapbgf
+The weight of animal is 655417
+The quotient from name to weight is 0.0014342
+This is the Beast with type: Insectivores
+The name of animal is rjvlefv
+The weight of animal is 765458
+The quotient from name to weight is 0.00100201
+This is the Bird that is transferable
+The name of animal is kwvuca
+The weight of animal is 388930
+The quotient from name to weight is 0.00168925
+This is the Beast with type: Predator
+The name of animal is qyhbnl
+The weight of animal is 45296
+The quotient from name to weight is 0.0144384
+This is the Beast with type: Insectivores
+The name of animal is ytatedasxfsg
+The weight of animal is 683516
+The quotient from name to weight is 0.00190632
+This is the Bird that is transferable
+The name of animal is nazdqdus
+The weight of animal is 55270
+The quotient from name to weight is 0.0158133
+This is fish with location: Lake
+The name of animal is eccfoegmnzc
+The weight of animal is 31519
+The quotient from name to weight is 0.0366763
+This is the Bird that is not transferable
+The name of animal is obmr
+The weight of animal is 472969
+The quotient from name to weight is 0.000913379
+This is the Bird that is not transferable
+The name of animal is mifxbyndji
+The weight of animal is 227507
+The quotient from name to weight is 0.00472952
+This is the Beast with type: Predator
+The name of animal is tysmrtiujk
+The weight of animal is 129807
+The quotient from name to weight is 0.00867442
+This is fish with location: Ocean
+The name of animal is lxslxorwdw
+The weight of animal is 157382
+The quotient from name to weight is 0.0072054
+This is fish with location: Sea
+The name of animal is jhdzcbkaf
+The weight of animal is 166887
+The quotient from name to weight is 0.00560259
+This is fish with location: Lake
+The name of animal is vddag
+The weight of animal is 591852
+The quotient from name to weight is 0.000875219
+This is the Bird that is not transferable
+The name of animal is wdxqn
+The weight of animal is 423252
+The quotient from name to weight is 0.00132781
+This is the Bird that is not transferable
+The name of animal is oujbrfhrthz
+The weight of animal is 109023
+The quotient from name to weight is 0.0110802
+This is the Bird that is not transferable
+The name of animal is opvtb
+The weight of animal is 9245
+The quotient from name to weight is 0.0600324
+This is fish with location: Sea
+The name of animal is cpghpsnm
+The weight of animal is 80056
+The quotient from name to weight is 0.0107924
+This is the Beast with type: Insectivores
+The name of animal is bqk
+The weight of animal is 576050
+The quotient from name to weight is 0.000552035
+This is the Beast with type: Insectivores
+The name of animal is tbhlrkzdaul
+The weight of animal is 473213
+The quotient from name to weight is 0.00251684
+This is the Beast with type: Predator
+The name of animal is tqukca
+The weight of animal is 23561
+The quotient from name to weight is 0.0275455
+This is the Bird that is not transferable
+The name of animal is azmqziihilcc
+The weight of animal is 354668
+The quotient from name to weight is 0.00363157
+This is the Beast with type: Predator
+The name of animal is smcd
+The weight of animal is 733278
+The quotient from name to weight is 0.000576862
+This is fish with location: Sea
+The name of animal is xcoounztih
+The weight of animal is 267130
+The quotient from name to weight is 0.004174
+This is the Beast with type: Insectivores
+The name of animal is pmcuogn
+The weight of animal is 325175
+The quotient from name to weight is 0.00234028
+This is the Beast with type: Herbivores
+The name of animal is gohz
+The weight of animal is 307126
+The quotient from name to weight is 0.00143264
+This is the Bird that is not transferable
+The name of animal is bixbkkjvvgrx
+The weight of animal is 932402
+The quotient from name to weight is 0.00140926
+This is the Bird that is transferable
+The name of animal is uuvsdptbcsq
+The weight of animal is 582788
+The quotient from name to weight is 0.00209339
+This is the Bird that is transferable
+The name of animal is isclxptwo
+The weight of animal is 756259
+The quotient from name to weight is 0.00132891
+This is the Bird that is not transferable
+The name of animal is cywwly
+The weight of animal is 210164
+The quotient from name to weight is 0.00326888
+This is the Bird that is not transferable
+The name of animal is jawxs
+The weight of animal is 24609
+The quotient from name to weight is 0.022634
+This is the Beast with type: Insectivores
+The name of animal is detrztctn
+The weight of animal is 657762
+The quotient from name to weight is 0.00151118
+This is fish with location: Sea
+The name of animal is amxgmuvnphz
+The weight of animal is 396446
+The quotient from name to weight is 0.00307986
+This is the Bird that is not transferable
+The name of animal is lnqodgn
+The weight of animal is 645888
+The quotient from name to weight is 0.00116893
+This is the Bird that is transferable
+The name of animal is bpmavbhib
+The weight of animal is 644345
+The quotient from name to weight is 0.00145729
+This is the Beast with type: Insectivores
+The name of animal is jkv
+The weight of animal is 735973
+The quotient from name to weight is 0.000449745
+This is the Beast with type: Insectivores
+The name of animal is ecpaugx
+The weight of animal is 404407
+The quotient from name to weight is 0.00185209
+This is the Bird that is transferable
+The name of animal is gkqyugyhpd
+The weight of animal is 738657
+The quotient from name to weight is 0.00149054
+This is the Bird that is not transferable
+The name of animal is mymhimndpn
+The weight of animal is 749811
+The quotient from name to weight is 0.00145237
+This is fish with location: Ocean
+The name of animal is yevkxtugcf
+The weight of animal is 709313
+The quotient from name to weight is 0.00155644
+This is the Bird that is not transferable
+The name of animal is bcdrwhcqcj
+The weight of animal is 353152
+The quotient from name to weight is 0.00297606
+This is the Beast with type: Insectivores
+The name of animal is zvv
+The weight of animal is 35380
+The quotient from name to weight is 0.0101187
+This is the Bird that is not transferable
+The name of animal is tvrie
+The weight of animal is 903389
+The quotient from name to weight is 0.000613246
+This is the Beast with type: Predator
+The name of animal is umucpfqqzkfr
+The weight of animal is 766882
+The quotient from name to weight is 0.00173038
+This is fish with location: Ocean
+The name of animal is lqihroc
+The weight of animal is 51212
+The quotient from name to weight is 0.0147231
+This is the Beast with type: Insectivores
+The name of animal is xrojq
+The weight of animal is 12991
+The quotient from name to weight is 0.0434147
+This is fish with location: Ocean
+The name of animal is nqugsfg
+The weight of animal is 142162
+The quotient from name to weight is 0.00536712
+This is the Bird that is transferable
+The name of animal is ytjztdkhh
+The weight of animal is 195041
+The quotient from name to weight is 0.00510662
+This is the Bird that is not transferable
+The name of animal is dzws
+The weight of animal is 582898
+The quotient from name to weight is 0.000782298
+This is fish with location: Ocean
+The name of animal is odw
+The weight of animal is 95990
+The quotient from name to weight is 0.00343786
+This is fish with location: Ocean
+The name of animal is euvwhsxm
+The weight of animal is 79264
+The quotient from name to weight is 0.0113923
+This is fish with location: Lake
+The name of animal is afmrao
+The weight of animal is 930338
+The quotient from name to weight is 0.000677173
+This is fish with location: Ocean
+The name of animal is pwkejmuo
+The weight of animal is 467179
+The quotient from name to weight is 0.00188793
+This is fish with location: Sea
+The name of animal is qgobatged
+The weight of animal is 344047
+The quotient from name to weight is 0.002738
+This is fish with location: Lake
+The name of animal is wvnlqesiiy
+The weight of animal is 261153
+The quotient from name to weight is 0.00426953
+This is the Beast with type: Insectivores
+The name of animal is ntbjpzlh
+The weight of animal is 210801
+The quotient from name to weight is 0.00415558
+This is the Bird that is not transferable
+The name of animal is bxj
+The weight of animal is 494662
+The quotient from name to weight is 0.000654993
+This is the Beast with type: Predator
+The name of animal is hyvubaayw
+The weight of animal is 928245
+The quotient from name to weight is 0.00106868
+This is fish with location: Sea
+The name of animal is rghwmtjtlfp
+The weight of animal is 79985
+The quotient from name to weight is 0.0151153
+This is the Beast with type: Insectivores
+The name of animal is luuzjat
+The weight of animal is 381118
+The quotient from name to weight is 0.00205448
+This is the Bird that is transferable
+The name of animal is poyyybeidl
+The weight of animal is 435674
+The quotient from name to weight is 0.00252023
+This is the Beast with type: Insectivores
+The name of animal is hegicjreo
+The weight of animal is 933498
+The quotient from name to weight is 0.00101125
+This is the Beast with type: Herbivores
+The name of animal is jkgsqqhyzoli
+The weight of animal is 447313
+The quotient from name to weight is 0.00296884
+This is the Beast with type: Herbivores
+The name of animal is dzvtswbmckki
+The weight of animal is 209594
+The quotient from name to weight is 0.00627403
+This is the Bird that is not transferable
+The name of animal is kruwyowobxbk
+The weight of animal is 522433
+The quotient from name to weight is 0.00256875
+This is the Bird that is transferable
+The name of animal is dbzkx
+The weight of animal is 357191
+The quotient from name to weight is 0.00153139
+This is the Bird that is not transferable
+The name of animal is rwxppu
+The weight of animal is 586139
+The quotient from name to weight is 0.00118402
+This is fish with location: Sea
+The name of animal is cjyvycaxp
+The weight of animal is 934346
+The quotient from name to weight is 0.00106278
+This is the Bird that is not transferable
+The name of animal is rumw
+The weight of animal is 257737
+The quotient from name to weight is 0.00178089
+This is the Beast with type: Insectivores
+The name of animal is armqhpive
+The weight of animal is 915969
+The quotient from name to weight is 0.00106226
+This is the Bird that is transferable
+The name of animal is bkwoo
+The weight of animal is 589247
+The quotient from name to weight is 0.000926606
+This is the Bird that is not transferable
+The name of animal is rmouxsenxbpn
+The weight of animal is 913184
+The quotient from name to weight is 0.00146411
+This is the Bird that is transferable
+The name of animal is nlbwtpwhbf
+The weight of animal is 346717
+The quotient from name to weight is 0.00313224
+This is the Beast with type: Predator
+The name of animal is cqvu
+The weight of animal is 603107
+The quotient from name to weight is 0.000741162
+This is fish with location: Sea
+The name of animal is ddfaibxjcxsj
+The weight of animal is 241232
+The quotient from name to weight is 0.00525635
+This is the Bird that is not transferable
+The name of animal is mkbhkxt
+The weight of animal is 748705
+The quotient from name to weight is 0.00101642
+This is fish with location: Lake
+The name of animal is lycpwvuaj
+The weight of animal is 177972
+The quotient from name to weight is 0.005602
+This is the Bird that is not transferable
+The name of animal is qba
+The weight of animal is 483814
+The quotient from name to weight is 0.000636608
+This is fish with location: Sea
+The name of animal is acivrlax
+The weight of animal is 258728
+The quotient from name to weight is 0.00331622
+This is the Bird that is not transferable
+The name of animal is bippr
+The weight of animal is 781232
+The quotient from name to weight is 0.000692496
+This is fish with location: Lake
+The name of animal is xkjsevxc
+The weight of animal is 787832
+The quotient from name to weight is 0.00112461
+This is the Bird that is not transferable
+The name of animal is pborb
+The weight of animal is 798488
+The quotient from name to weight is 0.000667512
+This is the Bird that is not transferable
+The name of animal is ypmfr
+The weight of animal is 314227
+The quotient from name to weight is 0.00177579
+This is the Beast with type: Herbivores
+The name of animal is xysqojtzn
+The weight of animal is 758724
+The quotient from name to weight is 0.00136281
+This is the Bird that is transferable
+The name of animal is rwcsurthvb
+The weight of animal is 642699
+The quotient from name to weight is 0.00173332
+This is fish with location: Sea
+The name of animal is pxgsul
+The weight of animal is 119890
+The quotient from name to weight is 0.00563016
+This is the Beast with type: Insectivores
+The name of animal is knaksbon
+The weight of animal is 659026
+The quotient from name to weight is 0.00129737
+This is the Beast with type: Herbivores
+The name of animal is slomyrifh
+The weight of animal is 51333
+The quotient from name to weight is 0.0192664
+This is the Beast with type: Predator
+The name of animal is vemoudkwiy
+The weight of animal is 847352
+The quotient from name to weight is 0.0013076
+This is the Bird that is transferable
+The name of animal is qirwk
+The weight of animal is 671604
+The quotient from name to weight is 0.000830847
+This is the Beast with type: Insectivores
+The name of animal is sxfvwbs
+The weight of animal is 954212
+The quotient from name to weight is 0.000824764
+This is fish with location: Ocean
+The name of animal is tjjfvlypppx
+The weight of animal is 284912
+The quotient from name to weight is 0.00432765
+This is the Bird that is not transferable
+The name of animal is cyj
+The weight of animal is 171031
+The quotient from name to weight is 0.00190609
+This is the Beast with type: Predator
+The name of animal is cqaxzyol
+The weight of animal is 824006
+The quotient from name to weight is 0.0010813
+This is the Bird that is transferable
+The name of animal is xedhemntp
+The weight of animal is 363741
+The quotient from name to weight is 0.00267498
+This is fish with location: Ocean
+The name of animal is vygaib
+The weight of animal is 606312
+The quotient from name to weight is 0.00105886
+This is fish with location: Sea
+The name of animal is fsadirzzqs
+The weight of animal is 256306
+The quotient from name to weight is 0.00431125
+This is the Beast with type: Herbivores
+The name of animal is hdc
+The weight of animal is 16070
+The quotient from name to weight is 0.018855
+This is the Bird that is not transferable
+The name of animal is wnscutgob
+The weight of animal is 644249
+The quotient from name to weight is 0.00153357
+This is the Beast with type: Predator
+The name of animal is jntmt
+The weight of animal is 477303
+The quotient from name to weight is 0.00116697
+This is the Bird that is transferable
+The name of animal is izue
+The weight of animal is 597190
+The quotient from name to weight is 0.000745156
+This is fish with location: Lake
+The name of animal is taxzic
+The weight of animal is 257958
+The quotient from name to weight is 0.00255468
+This is the Bird that is transferable
+The name of animal is gmva
+The weight of animal is 268560
+The quotient from name to weight is 0.00158996
+This is fish with location: Lake
+The name of animal is pjmsytlu
+The weight of animal is 513279
+The quotient from name to weight is 0.00176123
+This is the Bird that is transferable
+The name of animal is ufxhplt
+The weight of animal is 441762
+The quotient from name to weight is 0.00176339
+This is fish with location: Ocean
+The name of animal is pzg
+The weight of animal is 235237
+The quotient from name to weight is 0.0014326
+This is the Beast with type: Herbivores
+The name of animal is dpuodryny
+The weight of animal is 796474
+The quotient from name to weight is 0.00126307
+This is fish with location: Lake
+The name of animal is tnldochsk
+The weight of animal is 146495
+The quotient from name to weight is 0.00662139
+This is the Beast with type: Herbivores
+The name of animal is lspy
+The weight of animal is 600313
+The quotient from name to weight is 0.000759604
+This is the Bird that is not transferable
+The name of animal is ppjohqe
+The weight of animal is 606569
+The quotient from name to weight is 0.0012513
+This is fish with location: Sea
+The name of animal is ofxknhmq
+The weight of animal is 872932
+The quotient from name to weight is 0.00100351
+This is the Bird that is not transferable
+The name of animal is pteg
+The weight of animal is 588265
+The quotient from name to weight is 0.000734363
+This is fish with location: Sea
+The name of animal is qkwyef
+The weight of animal is 618198
+The quotient from name to weight is 0.00107247
+This is the Beast with type: Predator
+The name of animal is ydqvppkfh
+The weight of animal is 264781
+The quotient from name to weight is 0.00373516
+This is fish with location: Lake
+The name of animal is qicyzy
+The weight of animal is 956405
+The quotient from name to weight is 0.000712041
+This is the Beast with type: Insectivores
+The name of animal is eoquh
+The weight of animal is 196823
+The quotient from name to weight is 0.00277407
+This is the Beast with type: Insectivores
+The name of animal is vfmkknsjvys
+The weight of animal is 193103
+The quotient from name to weight is 0.0063593
+This is the Beast with type: Herbivores
+The name of animal is qcfnqctwwyi
+The weight of animal is 871546
+The quotient from name to weight is 0.00139522
+This is the Beast with type: Herbivores
+The name of animal is cqu
+The weight of animal is 397594
+The quotient from name to weight is 0.000827477
+This is the Bird that is not transferable
+The name of animal is jfmyc
+The weight of animal is 994990
+The quotient from name to weight is 0.000539704
+This is fish with location: Lake
+The name of animal is pywjfa
+The weight of animal is 242945
+The quotient from name to weight is 0.00270432
+This is the Beast with type: Herbivores
+The name of animal is xfqzarjqjxdc
+The weight of animal is 320413
+The quotient from name to weight is 0.00409472
+This is the Beast with type: Predator
+The name of animal is vxdnbwmjfayw
+The weight of animal is 633862
+The quotient from name to weight is 0.00208089
+This is the Beast with type: Insectivores
+The name of animal is tknii
+The weight of animal is 1203
+The quotient from name to weight is 0.451372
+This is fish with location: Sea
+The name of animal is kttdqpi
+The weight of animal is 846595
+The quotient from name to weight is 0.000908345
+This is fish with location: Ocean
+The name of animal is dmxumeapgpj
+The weight of animal is 792790
+The quotient from name to weight is 0.00149598
+This is the Beast with type: Herbivores
+The name of animal is atsatavqwpkf
+The weight of animal is 980794
+The quotient from name to weight is 0.00133463
+This is the Bird that is transferable
+The name of animal is djqokghgim
+The weight of animal is 297222
+The quotient from name to weight is 0.00356972
+This is the Bird that is transferable
+The name of animal is suvqgtwesgz
+The weight of animal is 235019
+The quotient from name to weight is 0.00528468
+This is the Beast with type: Insectivores
+The name of animal is hokcmfhmncc
+The weight of animal is 59640
+The quotient from name to weight is 0.0193327
+This is the Beast with type: Herbivores
+The name of animal is tscqa
+The weight of animal is 529403
+The quotient from name to weight is 0.00102002
+This is fish with location: Sea
+The name of animal is igxtes
+The weight of animal is 938580
+The quotient from name to weight is 0.00070319
+This is the Bird that is transferable
+The name of animal is bakiut
+The weight of animal is 81218
+The quotient from name to weight is 0.00788003
+This is the Bird that is not transferable
+The name of animal is ynpfy
+The weight of animal is 66925
+The quotient from name to weight is 0.00845723
+This is fish with location: Sea
+The name of animal is vigxrrv
+The weight of animal is 466489
+The quotient from name to weight is 0.00169779
+This is fish with location: Sea
+The name of animal is uwhkowkt
+The weight of animal is 968783
+The quotient from name to weight is 0.000929001
+This is the Bird that is transferable
+The name of animal is juylstctsfg
+The weight of animal is 508701
+The quotient from name to weight is 0.00239433
+This is the Bird that is transferable
+The name of animal is zyqhecsz
+The weight of animal is 67997
+The quotient from name to weight is 0.0131918
+This is the Beast with type: Predator
+The name of animal is xjr
+The weight of animal is 376240
+The quotient from name to weight is 0.000903679
+This is the Beast with type: Insectivores
+The name of animal is dmwfqq
+The weight of animal is 295673
+The quotient from name to weight is 0.00221867
+This is the Beast with type: Herbivores
+The name of animal is irowmitnxk
+The weight of animal is 298728
+The quotient from name to weight is 0.00373584
+This is fish with location: Sea
+The name of animal is pvnvtlxe
+The weight of animal is 60872
+The quotient from name to weight is 0.0148344
+This is the Bird that is transferable
+The name of animal is tjheoyczb
+The weight of animal is 895161
+The quotient from name to weight is 0.00109254
+This is fish with location: Ocean
+The name of animal is xahohe
+The weight of animal is 661428
+The quotient from name to weight is 0.000963068
+This is the Beast with type: Insectivores
+The name of animal is xcmts
+The weight of animal is 862603
+The quotient from name to weight is 0.000648039
+This is the Beast with type: Predator
+The name of animal is jjoyc
+The weight of animal is 161768
+The quotient from name to weight is 0.00335666
+This is the Bird that is not transferable
+The name of animal is eqjl
+The weight of animal is 196028
+The quotient from name to weight is 0.00218336
+This is the Beast with type: Herbivores
+The name of animal is rqlrdsgt
+The weight of animal is 846196
+The quotient from name to weight is 0.00104349
+This is fish with location: Sea
+The name of animal is qwa
+The weight of animal is 914472
+The quotient from name to weight is 0.00035977
+This is fish with location: Ocean
+The name of animal is qkgskfm
+The weight of animal is 235268
+The quotient from name to weight is 0.00321336
+This is the Beast with type: Predator
+The name of animal is qgjwmmssfuws
+The weight of animal is 82031
+The quotient from name to weight is 0.0163597
+This is the Beast with type: Insectivores
+The name of animal is pfijkjrnbn
+The weight of animal is 473044
+The quotient from name to weight is 0.00226195
+This is fish with location: Ocean
+The name of animal is udwpwcz
+The weight of animal is 804365
+The quotient from name to weight is 0.000979655
+This is the Bird that is transferable
+The name of animal is wxnbl
+The weight of animal is 363224
+The quotient from name to weight is 0.00152798
+This is fish with location: Lake
+The name of animal is vrpxx
+The weight of animal is 33568
+The quotient from name to weight is 0.0173975
+This is fish with location: Ocean
+The name of animal is jaffkeypi
+The weight of animal is 586670
+The quotient from name to weight is 0.00162442
+This is fish with location: Sea
+The name of animal is dixy
+The weight of animal is 27407
+The quotient from name to weight is 0.0162732
+This is the Bird that is not transferable
+The name of animal is yqfusobmtfvz
+The weight of animal is 237722
+The quotient from name to weight is 0.00565366
+This is the Beast with type: Insectivores
+The name of animal is tywymiwx
+The weight of animal is 892129
+The quotient from name to weight is 0.00104245
+This is the Beast with type: Herbivores
+The name of animal is ijxqy
+The weight of animal is 678930
+The quotient from name to weight is 0.000832192
+This is fish with location: Sea
+The name of animal is usgm
+The weight of animal is 792852
+The quotient from name to weight is 0.000560004
+This is the Beast with type: Predator
+The name of animal is enjp
+The weight of animal is 269204
+The quotient from name to weight is 0.00159359
+This is fish with location: Lake
+The name of animal is aannmwklvpgs
+The weight of animal is 501063
+The quotient from name to weight is 0.00260446
+This is fish with location: Lake
+The name of animal is rscf
+The weight of animal is 743485
+The quotient from name to weight is 0.000578357
+This is the Beast with type: Insectivores
+The name of animal is ynsslqbqukvz
+The weight of animal is 22238
+The quotient from name to weight is 0.0610217
+This is fish with location: Sea
+The name of animal is adwz
+The weight of animal is 543974
+The quotient from name to weight is 0.000805186
+This is the Bird that is transferable
+The name of animal is geqwlhz
+The weight of animal is 340165
+The quotient from name to weight is 0.00226361
+This is the Bird that is transferable
+The name of animal is mle
+The weight of animal is 400474
+The quotient from name to weight is 0.000794059
+This is the Beast with type: Predator
+The name of animal is sijw
+The weight of animal is 653830
+The quotient from name to weight is 0.000680605
+This is the Bird that is transferable
+The name of animal is skddpxsnq
+The weight of animal is 49991
+The quotient from name to weight is 0.0198436
+This is the Bird that is not transferable
+The name of animal is srck
+The weight of animal is 791588
+The quotient from name to weight is 0.000549528
+This is the Bird that is not transferable
+The name of animal is lphncktftnq
+The weight of animal is 23905
+The quotient from name to weight is 0.0500732
+This is fish with location: Sea
+The name of animal is pqfhwp
+The weight of animal is 422475
+The quotient from name to weight is 0.00156696
+This is the Beast with type: Insectivores
+The name of animal is wvpyw
+The weight of animal is 515435
+The quotient from name to weight is 0.00114272
+This is fish with location: Sea
+The name of animal is rct
+The weight of animal is 475179
+The quotient from name to weight is 0.000692371
+This is fish with location: Lake
+The name of animal is fvbgxhjsgz
+The weight of animal is 922957
+The quotient from name to weight is 0.00118207
+This is fish with location: Lake
+The name of animal is aombirz
+The weight of animal is 192833
+The quotient from name to weight is 0.00392049
+This is fish with location: Ocean
+The name of animal is qerfkpjbnums
+The weight of animal is 874403
+The quotient from name to weight is 0.0014913
+This is fish with location: Lake
+The name of animal is xohiy
+The weight of animal is 810733
+The quotient from name to weight is 0.000691966
+This is fish with location: Ocean
+The name of animal is prujlrwgzaaa
+The weight of animal is 117630
+The quotient from name to weight is 0.0111026
+This is fish with location: Ocean
+The name of animal is vszgizv
+The weight of animal is 189132
+The quotient from name to weight is 0.00424571
+This is fish with location: Sea
+The name of animal is ghzcwyn
+The weight of animal is 639400
+The quotient from name to weight is 0.00121677
+This is the Beast with type: Predator
+The name of animal is eib
+The weight of animal is 206499
+The quotient from name to weight is 0.00147216
+This is the Bird that is not transferable
+The name of animal is maoqd
+The weight of animal is 496491
+The quotient from name to weight is 0.00106749
+This is the Bird that is not transferable
+The name of animal is edsvqb
+The weight of animal is 482044
+The quotient from name to weight is 0.00133805
+This is the Beast with type: Predator
+The name of animal is sfcqaxhg
+The weight of animal is 315066
+The quotient from name to weight is 0.00270737
+This is the Bird that is not transferable
+The name of animal is xyqebvfftlg
+The weight of animal is 462583
+The quotient from name to weight is 0.00259845
+This is fish with location: Ocean
+The name of animal is kakso
+The weight of animal is 314645
+The quotient from name to weight is 0.00170669
+This is fish with location: Sea
+The name of animal is wnkxrkwysg
+The weight of animal is 361834
+The quotient from name to weight is 0.0031368
+This is the Bird that is not transferable
+The name of animal is xnm
+The weight of animal is 288221
+The quotient from name to weight is 0.00117618
+This is fish with location: Sea
+The name of animal is dhkkuv
+The weight of animal is 166464
+The quotient from name to weight is 0.00392277
+This is fish with location: Ocean
+The name of animal is ljcvrtq
+The weight of animal is 473503
+The quotient from name to weight is 0.00163463
+This is the Beast with type: Herbivores
+The name of animal is ckphxqefxxqq
+The weight of animal is 526615
+The quotient from name to weight is 0.00251417
+This is fish with location: Lake
+The name of animal is sfmepdtdx
+The weight of animal is 241512
+The quotient from name to weight is 0.00403707
+This is the Beast with type: Predator
+The name of animal is wkcxcabihmr
+The weight of animal is 245083
+The quotient from name to weight is 0.00477797
+This is the Bird that is not transferable
+The name of animal is jqztfayozjo
+The weight of animal is 873346
+The quotient from name to weight is 0.00140494
+This is the Bird that is transferable
+The name of animal is ckjwynuzqfww
+The weight of animal is 945084
+The quotient from name to weight is 0.00143268
+This is the Beast with type: Predator
+The name of animal is vetdfyztm
+The weight of animal is 677795
+The quotient from name to weight is 0.00148275
+This is the Beast with type: Herbivores
+The name of animal is lhsclkigec
+The weight of animal is 59492
+The quotient from name to weight is 0.0176326
+This is the Beast with type: Herbivores
+The name of animal is ctjrbf
+The weight of animal is 713671
+The quotient from name to weight is 0.000889766
+This is fish with location: Lake
+The name of animal is ijxxnmtk
+The weight of animal is 595758
+The quotient from name to weight is 0.00149893
+This is the Bird that is transferable
+The name of animal is uawjvuqc
+The weight of animal is 696612
+The quotient from name to weight is 0.00127187
+This is the Bird that is transferable
+The name of animal is xizuodftyc
+The weight of animal is 353973
+The quotient from name to weight is 0.00314431
+This is the Bird that is transferable
+The name of animal is jlsoldsw
+The weight of animal is 437872
+The quotient from name to weight is 0.00201429
+This is fish with location: Ocean
+The name of animal is ffv
+The weight of animal is 842914
+The quotient from name to weight is 0.000382008
+This is the Beast with type: Herbivores
+The name of animal is ucwkpyzm
+The weight of animal is 559267
+The quotient from name to weight is 0.00161998
+This is the Bird that is not transferable
+The name of animal is yiqkykab
+The weight of animal is 221994
+The quotient from name to weight is 0.00391452
+This is fish with location: Ocean
+The name of animal is ydojwotyud
+The weight of animal is 191888
+The quotient from name to weight is 0.00584716
+This is the Beast with type: Predator
+The name of animal is fdpcngcmqsdz
+The weight of animal is 344664
+The quotient from name to weight is 0.00372537
+This is fish with location: Lake
+The name of animal is wbscx
+The weight of animal is 962260
+The quotient from name to weight is 0.00057261
+This is fish with location: Lake
+The name of animal is asjbqn
+The weight of animal is 456027
+The quotient from name to weight is 0.00140123
+This is the Bird that is not transferable
+The name of animal is mlssuwizzphe
+The weight of animal is 770038
+The quotient from name to weight is 0.00175186
+This is fish with location: Lake
+The name of animal is obf
+The weight of animal is 563810
+The quotient from name to weight is 0.000551604
+This is the Bird that is transferable
+The name of animal is axducnxo
+The weight of animal is 252935
+The quotient from name to weight is 0.00345543
+This is fish with location: Ocean
+The name of animal is oarxo
+The weight of animal is 720661
+The quotient from name to weight is 0.000767351
+This is the Bird that is not transferable
+The name of animal is vojfes
+The weight of animal is 519554
+The quotient from name to weight is 0.00125685
+This is the Bird that is transferable
+The name of animal is sqidjacxmelo
+The weight of animal is 551620
+The quotient from name to weight is 0.00232769
+This is fish with location: Ocean
+The name of animal is mivryrnlq
+The weight of animal is 833271
+The quotient from name to weight is 0.00121449
+This is the Bird that is not transferable
+The name of animal is byue
+The weight of animal is 701441
+The quotient from name to weight is 0.000623003
+This is the Beast with type: Herbivores
+The name of animal is rgxrejnv
+The weight of animal is 392555
+The quotient from name to weight is 0.00225701
+This is fish with location: Lake
+The name of animal is bfzqg
+The weight of animal is 837753
+The quotient from name to weight is 0.000642194
+This is the Bird that is not transferable
+The name of animal is pbtzblnd
+The weight of animal is 131828
+The quotient from name to weight is 0.00655399
+This is fish with location: Lake
+The name of animal is njvktpbpbwtw
+The weight of animal is 958989
+The quotient from name to weight is 0.00138792
+This is the Bird that is transferable
+The name of animal is veixqxvymog
+The weight of animal is 594949
+The quotient from name to weight is 0.00208253
+This is fish with location: Lake
+The name of animal is fbxftrw
+The weight of animal is 197590
+The quotient from name to weight is 0.00390202
+This is fish with location: Ocean
+The name of animal is zwkxani
+The weight of animal is 617224
+The quotient from name to weight is 0.00126372
+This is the Beast with type: Herbivores
+The name of animal is fvffk
+The weight of animal is 766933
+The quotient from name to weight is 0.000692368
+This is the Bird that is not transferable
+The name of animal is ajde
+The weight of animal is 88825
+The quotient from name to weight is 0.00454827
+This is fish with location: Ocean
+The name of animal is bnblspb
+The weight of animal is 971040
+The quotient from name to weight is 0.00076104
+This is fish with location: Sea
+The name of animal is wyi
+The weight of animal is 685968
+The quotient from name to weight is 0.000502939
+This is the Beast with type: Predator
+The name of animal is jzsih
+The weight of animal is 838701
+The quotient from name to weight is 0.000658161
+This is fish with location: Lake
+The name of animal is dxwfcuj
+The weight of animal is 669340
+The quotient from name to weight is 0.00113993
+This is fish with location: Sea
+The name of animal is yjvfgoplbk
+The weight of animal is 384005
+The quotient from name to weight is 0.00282809
+This is fish with location: Lake
+The name of animal is fym
+The weight of animal is 664128
+The quotient from name to weight is 0.000499904
+This is the Beast with type: Insectivores
+The name of animal is aypzmngsn
+The weight of animal is 816838
+The quotient from name to weight is 0.00122301
+This is fish with location: Lake
+The name of animal is lbnnsct
+The weight of animal is 79169
+The quotient from name to weight is 0.00954919
+This is the Bird that is not transferable
+The name of animal is aabdd
+The weight of animal is 905222
+The quotient from name to weight is 0.000543513
+This is fish with location: Ocean
+The name of animal is gjbc
+The weight of animal is 106938
+The quotient from name to weight is 0.00379659
+This is the Bird that is transferable
+The name of animal is ulygl
+The weight of animal is 647014
+The quotient from name to weight is 0.000860878
