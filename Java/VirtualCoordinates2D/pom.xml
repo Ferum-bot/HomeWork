@@ -6,7 +6,12 @@
 
     <groupId>com.github.ferum_bot</groupId>
     <artifactId>VirtualCoordinates2D</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>api-core</module>
+        <module>api</module>
+    </modules>
 
     <dependencies>
         <dependency>
