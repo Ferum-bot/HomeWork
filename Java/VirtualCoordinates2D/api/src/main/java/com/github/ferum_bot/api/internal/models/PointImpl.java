@@ -6,6 +6,8 @@ import com.github.ferum_bot.api.models.BoundBox;
 import com.github.ferum_bot.api.models.Coord2D;
 import com.github.ferum_bot.api.models.Point;
 
+import java.util.Objects;
+
 public class PointImpl implements Point {
 
     private Coord2D coordinates;
@@ -35,5 +37,18 @@ public class PointImpl implements Point {
     @Override
     public BoundBox getBounds() {
         return new BoundBox(coordinates, coordinates);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PointImpl point = (PointImpl) o;
+        return Objects.equals(coordinates, point.coordinates);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(coordinates);
     }
 }
