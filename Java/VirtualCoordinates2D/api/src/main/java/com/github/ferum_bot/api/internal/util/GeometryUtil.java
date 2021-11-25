@@ -6,7 +6,7 @@ import com.github.ferum_bot.api.models.Coord2D;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
-public class MathUtil {
+public class GeometryUtil {
 
     public static BoundBox mergeBounds(BoundBox first, BoundBox second) {
         var firstTopLeftX = first.topLeftCoordinate().x();

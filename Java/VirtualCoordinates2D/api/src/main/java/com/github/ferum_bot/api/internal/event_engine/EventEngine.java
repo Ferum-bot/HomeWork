@@ -10,12 +10,24 @@ import com.github.ferum_bot.api.internal.event_engine.models.event.impl.OnOrigin
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Api library event engine. Uses to handling different events.
+ * @author matvejpopov
+ * @version 1.0.0
+ * @see Event
+ * @see Effect
+ * @see EventConsumer
+ */
 public class EventEngine {
 
     private static EventEngine INSTANCE = null;
 
-    private Map<Class<?>, EventConsumer> consumers = new HashMap<>();
+    private final Map<Class<? extends Event>, EventConsumer> consumers = new HashMap<>();
 
+    /**
+     * EventEngine class accessor.
+     * @return EventEngine instance.
+     */
     public static EventEngine getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new EventEngine();
@@ -32,6 +44,14 @@ public class EventEngine {
         registerConsumerFor(new CalculateBoundsConsumer(), calculateBoundsClass);
     }
 
+    /**
+     * Main engine method. Uses for handling events.
+     * @param event event to handle.
+     * @return result of handled event.
+     * @see Event
+     * @see Effect
+     * @see EventConsumer
+     */
     public Effect onEventRaised(Event event) {
         var eventClass = event.getClass();
         var consumer = consumers.get(eventClass);
@@ -39,7 +59,14 @@ public class EventEngine {
         return consumer.handleEvent(event);
     }
 
-    public void registerConsumerFor(EventConsumer consumer, Class<?> eventClass) {
+    /**
+     * Allows adding custom consumers for events.
+     * @param consumer event consumer for current event.
+     * @param eventClass which event consumer will handle.
+     * @see EventConsumer
+     * @see Event
+     */
+    public void registerConsumerFor(EventConsumer consumer, Class<? extends Event> eventClass) {
         consumers.put(eventClass, consumer);
     }
 }

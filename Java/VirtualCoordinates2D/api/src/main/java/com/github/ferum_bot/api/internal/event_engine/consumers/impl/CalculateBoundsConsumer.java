@@ -5,7 +5,7 @@ import com.github.ferum_bot.api.internal.event_engine.models.effect.Effect;
 import com.github.ferum_bot.api.internal.event_engine.models.effect.impl.CalculatedBounds;
 import com.github.ferum_bot.api.internal.event_engine.models.event.Event;
 import com.github.ferum_bot.api.internal.event_engine.models.event.impl.CalculateBounds;
-import com.github.ferum_bot.api.internal.util.MathUtil;
+import com.github.ferum_bot.api.internal.util.GeometryUtil;
 import com.github.ferum_bot.api.models.*;
 import java.util.Set;
 
@@ -69,7 +69,7 @@ public class CalculateBoundsConsumer implements EventConsumer {
             if (currentBounds == null) {
                 currentBounds = bounds;
             } else {
-                currentBounds = MathUtil.mergeBounds(currentBounds, bounds);
+                currentBounds = GeometryUtil.mergeBounds(currentBounds, bounds);
             }
         }
 
