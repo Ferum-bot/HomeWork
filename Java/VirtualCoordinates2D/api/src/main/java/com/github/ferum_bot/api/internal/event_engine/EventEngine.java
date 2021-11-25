@@ -14,7 +14,7 @@ public class EventEngine {
 
     private static EventEngine INSTANCE = null;
 
-    private Map<String, EventConsumer> consumers = new HashMap<>();
+    private Map<Class<?>, EventConsumer> consumers = new HashMap<>();
 
     public static EventEngine getInstance() {
         if (INSTANCE == null) {
@@ -25,21 +25,21 @@ public class EventEngine {
     }
 
     private EventEngine() {
-        var onOriginAddName = OnOriginAdd.class.getName();
-        var calculateBoundsName = CalculateBounds.class.getName();
+        var onOriginAddClass = OnOriginAdd.class;
+        var calculateBoundsClass = CalculateBounds.class;
 
-        registerConsumerFor(new OnOriginAddConsumer(), onOriginAddName);
-        registerConsumerFor(new CalculateBoundsConsumer(), calculateBoundsName);
+        registerConsumerFor(new OnOriginAddConsumer(), onOriginAddClass);
+        registerConsumerFor(new CalculateBoundsConsumer(), calculateBoundsClass);
     }
 
     public Effect onEventRaised(Event event) {
-        var eventName = event.getClass().getName();
-        var consumer = consumers.get(eventName);
+        var eventClass = event.getClass();
+        var consumer = consumers.get(eventClass);
 
         return consumer.handleEvent(event);
     }
 
-    public void registerConsumerFor(EventConsumer consumer, String eventClassName) {
-        consumers.put(eventClassName, consumer);
+    public void registerConsumerFor(EventConsumer consumer, Class<?> eventClass) {
+        consumers.put(eventClass, consumer);
     }
 }

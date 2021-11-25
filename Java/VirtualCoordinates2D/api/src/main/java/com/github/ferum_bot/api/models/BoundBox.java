@@ -9,5 +9,4 @@ package com.github.ferum_bot.api.models;
 public record BoundBox(
     Coord2D topLeftCoordinate,
     Coord2D bottomRightCoordinate
-) {
-}
+) { }
