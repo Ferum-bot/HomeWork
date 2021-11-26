@@ -6,8 +6,8 @@ import com.github.ferum_bot.api.internal.event_engine.models.effect.Effect;
 import com.github.ferum_bot.api.internal.event_engine.models.effect.impl.Empty;
 import com.github.ferum_bot.api.internal.event_engine.models.event.Event;
 import com.github.ferum_bot.api.internal.event_engine.models.event.impl.OnOriginAdd;
-import com.github.ferum_bot.api.internal.visitor.DAGVisitor;
-import com.github.ferum_bot.api.internal.visitor.DfsDAGVisitor;
+import com.github.ferum_bot.api.internal.visitor.DAGSimpleVisitor;
+import com.github.ferum_bot.api.internal.visitor.impl.DfsDAGVisitor;
 import com.github.ferum_bot.api.models.Coordinatable;
 import com.github.ferum_bot.api.models.Origin;
 import com.github.ferum_bot.api.models.Space;
@@ -19,7 +19,7 @@ public class OnOriginAddConsumer implements EventConsumer {
 
     private final Set<Coordinatable> visitedEntities = new HashSet<>();
 
-    private DAGVisitor visitor;
+    private DAGSimpleVisitor visitor;
 
     @Override
     public Effect handleEvent(Event event) {
@@ -32,9 +32,7 @@ public class OnOriginAddConsumer implements EventConsumer {
 
     private void checkCyclicityOrThrow(OnOriginAdd event) {
         var eventOrigin = event.getOrigin();
-        visitor = new DfsDAGVisitor(eventOrigin.getChildren());
-
-        visitedEntities.add(eventOrigin);
+        visitor = new DfsDAGVisitor(eventOrigin);
         visitor.visit(visitedEntities::add);
 
         var causedEntity = event.getCausedEntity();

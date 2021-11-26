@@ -1,33 +1,30 @@
 package com.github.ferum_bot.api.internal.visitor;
 
 import com.github.ferum_bot.api.models.Coordinatable;
-import com.github.ferum_bot.api.internal.event_engine.consumers.EventConsumer;
-import com.github.ferum_bot.api.manager.ApiManager;
-import java.util.Collection;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
- * Simple implementation of pattern Iterator.
- * Allows to visit all graph nodes.
+ * Modified graph visitor. Adds some control to graph visiting.
  * @author matvejpopov
  * @version 1.0.0
+ * @see DAGSimpleVisitor
  * @see Coordinatable
- * @see EventConsumer
- * @see ApiManager
  */
-public interface DAGVisitor {
+public interface DAGVisitor extends DAGSimpleVisitor {
 
     /**
-     * Sets new graph on which iterate.
-     * @param nodes graph by which to iterate.
+     * Performs graph visiting.
+     * @param needToVisitSubGraph predicate that invokes before visit subgraph of current node.
+     * @param onNodeAction action that invokes on current node.
+     * @param afterSubGraphVisited action that invokes after subgraph of current node was visited.
      * @see Coordinatable
+     * @see Predicate
+     * @see Consumer
      */
-    void setNodes(Collection<Coordinatable> nodes);
-
-    /**
-     * Performs the graph visiting.
-     * @param action lambda consumer that invokes on each graph node.
-     * @see Coordinatable
-     */
-    void visit(Consumer<Coordinatable> action);
+    void visit(
+        Predicate<Coordinatable> needToVisitSubGraph,
+        Consumer<Coordinatable> onNodeAction,
+        Consumer<Coordinatable> afterSubGraphVisited
+    );
 }
