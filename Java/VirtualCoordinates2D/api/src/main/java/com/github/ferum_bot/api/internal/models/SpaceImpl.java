@@ -104,4 +104,12 @@ public class SpaceImpl implements Space {
     public int hashCode() {
         return Objects.hash(coordinates);
     }
+
+    @Override
+    public String toString() {
+        return "SpaceImpl{" +
+                "children=" + children +
+                ", coordinates=" + coordinates +
+                '}';
+    }
 }

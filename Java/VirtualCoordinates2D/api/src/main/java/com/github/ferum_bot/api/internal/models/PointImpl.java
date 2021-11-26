@@ -51,4 +51,11 @@ public class PointImpl implements Point {
     public int hashCode() {
         return Objects.hash(coordinates);
     }
+
+    @Override
+    public String toString() {
+        return "PointImpl{" +
+                "coordinates=" + coordinates +
+                '}';
+    }
 }

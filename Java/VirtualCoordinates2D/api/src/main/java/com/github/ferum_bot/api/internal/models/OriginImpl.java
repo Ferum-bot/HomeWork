@@ -104,4 +104,12 @@ public class OriginImpl implements Origin {
     public int hashCode() {
         return Objects.hash(coordinates);
     }
+
+    @Override
+    public String toString() {
+        return "OriginImpl{" +
+                "children=" + children +
+                ", coordinates=" + coordinates +
+                '}';
+    }
 }
