@@ -1,5 +1,6 @@
 package com.github.ferum_bot.api.util;
 
+import com.github.ferum_bot.api.exception.DAGSerializationException;
 import com.github.ferum_bot.api.manager.ApiManager;
 import com.github.ferum_bot.api.models.Coord2D;
 import com.github.ferum_bot.api.models.Space;
@@ -356,17 +357,55 @@ class DAGUtilsTest {
 
     @Test
     public void ImportFromString_InvalidGraph1_ThrowException() {
+        var actualString = """
+                {
+                }
+                """;
 
+        assertThrows(DAGSerializationException.class, (() -> {
+            DAGUtils.importFromString(actualString);
+        }));
     }
 
     @Test
     public void ImportFromString_InvalidGraph2_ThrowException() {
+        var actualString = """
+                {
+                type: ORIGIN
+                coordinates: (0.0, 0.0)
+                children:
+                [
+                ]
+                }
+                """;
 
+        assertThrows(DAGSerializationException.class, (() -> {
+            DAGUtils.importFromString(actualString);
+        }));
     }
 
     @Test
     public void ImportFromString_InvalidGraph3_ThrowException() {
+        var actualString = """
+                {
+                type: SPACE
+                coordinates: (0.0, 0.0)
+                children:
+                [
+                {
+                type: POINT
+                coordinatess: (0.0, 0.0)
+                children:
+                [
+                ]
+                }
+                ]
+                }
+                """;
 
+        assertThrows(DAGSerializationException.class, (() -> {
+            DAGUtils.importFromString(actualString);
+        }));
     }
 
     private Space buildGraph1() {
