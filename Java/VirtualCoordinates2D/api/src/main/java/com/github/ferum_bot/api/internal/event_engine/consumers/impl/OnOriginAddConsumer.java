@@ -39,11 +39,19 @@ public class OnOriginAddConsumer implements EventConsumer {
         switch (causedEntity.getEntityType()) {
             case SPACE -> {
                 var space = (Space) causedEntity;
+                if (visitedEntities.contains(space)) {
+                    throwConstraintException(space);
+                }
+
                 var children = space.getChildren();
                 checkChildrenNotContainsOrThrow(children);
             }
             case ORIGIN -> {
                 var origin = (Origin) causedEntity;
+                if (visitedEntities.contains(origin)) {
+                    throwConstraintException(origin);
+                }
+
                 var children = origin.getChildren();
                 checkChildrenNotContainsOrThrow(children);
             }
