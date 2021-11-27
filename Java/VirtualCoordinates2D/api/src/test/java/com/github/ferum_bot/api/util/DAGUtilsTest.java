@@ -332,27 +332,62 @@ class DAGUtilsTest {
 
     @Test
     public void ImportFromString_EmptyGraph_SuccessImport() {
+        var string = EMPTY_GRAPH;
 
+        var actualSpace = DAGUtils.importFromString(string);
+        var expectedSpace = ApiManager.defaultSpace();
+
+        assertEquals(expectedSpace, actualSpace);
+    }
+
+    @Test
+    public void ImportFromString_SomeGraph1_SuccessImport() {
+        var string = GRAPH_1;
+
+        var actualSpace = DAGUtils.importFromString(string);
+        var expectedSpace = buildGraph1();
+
+        assertTrue(simpleEquals(expectedSpace, actualSpace));
     }
 
     @Test
     public void ImportFromString_SomeGraph2_SuccessImport() {
+        var string = GRAPH_2;
 
+        var actualSpace = DAGUtils.importFromString(string);
+        var expectedSpace = buildGraph2();
+
+        assertTrue(simpleEquals(expectedSpace, actualSpace));
     }
 
     @Test
     public void ImportFromString_SomeGraph3_SuccessImport() {
+        var string = GRAPH_3;
 
+        var actualSpace = DAGUtils.importFromString(string);
+        var expectedSpace = buildGraph3();
+
+        assertTrue(simpleEquals(expectedSpace, actualSpace));
     }
 
     @Test
     public void ImportFromString_SomeGraph4_SuccessImport() {
+        var string = GRAPH_4;
 
+        var actualSpace = DAGUtils.importFromString(string);
+        var expectedSpace = buildGraph4();
+
+        assertTrue(simpleEquals(expectedSpace, actualSpace));
     }
 
     @Test
     public void ImportFromString_SomeGraph5_SuccessImport() {
+        var string = GRAPH_5;
 
+        var actualSpace = DAGUtils.importFromString(string);
+        var expectedSpace = buildGraph5();
+
+        assertTrue(simpleEquals(expectedSpace, actualSpace));
     }
 
     @Test
@@ -515,5 +550,13 @@ class DAGUtilsTest {
         origin4.addPoint(point6);
 
         return space;
+    }
+
+    private boolean simpleEquals(Space first, Space second) {
+        if (!first.equals(second)) {
+            return false;
+        }
+        return first.getChildren().equals(second.getChildren()) &&
+                first.getBounds().equals(second.getBounds());
     }
 }

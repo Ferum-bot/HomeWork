@@ -34,8 +34,8 @@ public class DeserializationDelegate {
     }
 
     private Coordinatable parseEntity(String stringEntity) {
-        var typeAlias = SerializationAliases.TYPE_ALIAS + ": ";
-        var coordinatesAlias = SerializationAliases.COORDINATES_ALIAS + ": ";
+        var typeAlias = SerializationAliases.TYPE_ALIAS.getAlias() + ": ";
+        var coordinatesAlias = SerializationAliases.COORDINATES_ALIAS.getAlias() + ": ";
 
         var typeAliasIndex = stringEntity.indexOf(typeAlias);
         var coordinatesAliasIndex = stringEntity.indexOf(coordinatesAlias);
@@ -147,7 +147,7 @@ public class DeserializationDelegate {
             if (rawChildren.charAt(i) == '{') {
                 balance++;
             }
-            if (balance == 1) {
+            if (balance == 1 && rawChildren.charAt(i) == '{') {
                 lastOpenIndex = i;
             }
             if (rawChildren.charAt(i) == '}') {

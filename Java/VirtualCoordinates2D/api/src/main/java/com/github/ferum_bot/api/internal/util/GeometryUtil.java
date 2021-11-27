@@ -9,6 +9,13 @@ import static java.lang.Math.min;
 public class GeometryUtil {
 
     public static BoundBox mergeBounds(BoundBox first, BoundBox second) {
+        if (first == null) {
+            return second;
+        }
+        if (second == null) {
+            return first;
+        }
+
         var firstTopLeftX = first.topLeftCoordinate().x();
         var secondTopLeftX = second.topLeftCoordinate().x();
 
