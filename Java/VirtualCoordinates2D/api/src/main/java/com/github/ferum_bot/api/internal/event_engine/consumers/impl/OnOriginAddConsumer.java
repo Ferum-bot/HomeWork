@@ -19,7 +19,7 @@ public class OnOriginAddConsumer implements EventConsumer {
 
     private final Set<Coordinatable> visitedEntities = new HashSet<>();
 
-    private DAGSimpleVisitor visitor;
+    private final DAGSimpleVisitor visitor = new DfsDAGVisitor();
 
     @Override
     public Effect handleEvent(Event event) {
@@ -32,7 +32,7 @@ public class OnOriginAddConsumer implements EventConsumer {
 
     private void checkCyclicityOrThrow(OnOriginAdd event) {
         var eventOrigin = event.getOrigin();
-        visitor = new DfsDAGVisitor(eventOrigin);
+        visitor.setRootNode(eventOrigin);
         visitor.visit(visitedEntities::add);
 
         var causedEntity = event.getCausedEntity();
@@ -54,7 +54,6 @@ public class OnOriginAddConsumer implements EventConsumer {
         visitor.setNodes(children);
 
         visitor.visit(entity -> {
-
             if (entity instanceof Space space) {
                 var visitedSpace = visitedEntities.stream()
                         .filter(coordinatable -> coordinatable == space).findFirst();
