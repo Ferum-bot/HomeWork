@@ -80,14 +80,76 @@ public class ApplicationMain {
     }
 
     private static void firstSample() {
+        var space = ApiManager.defaultSpace();
+        var point1 = ApiManager.pointOf(new Coord2D(0, 0));
+        var point2 = ApiManager.pointOf(new Coord2D(1, 1));
+        var point3 = ApiManager.pointOf(new Coord2D(12.2, -124));
+        var point4 = ApiManager.pointOf(new Coord2D(12.23, -0.123));
+        var origin1 = ApiManager.originOf(new Coord2D(1.5, -1.5));
+        var origin2 = ApiManager.originOf(new Coord2D(0.002, 0));
 
+        space.addPoint(point1);
+        space.addPoint(point2);
+        space.addOrigin(origin1);
+        space.addOrigin(origin2);
+        origin1.addPoint(point3);
+        origin1.addPoint(point4);
+        origin2.addPoint(point3);
+        origin2.addPoint(point1);
+
+        var bounds = space.getBounds();
+
+        System.out.println("First sample bounds -> \n" + bounds);
     }
 
     private static void secondSample() {
+        var space = ApiManager.spaceOf(new Coord2D(0.1, -0.1));
+        var point1 = ApiManager.pointOf(new Coord2D(0, 0));
+        var point2 = ApiManager.pointOf(new Coord2D(1, 1));
+        var origin1 = ApiManager.originOf(new Coord2D(-0.2, 55));
 
+        space.addPoint(point1);
+        space.addPoint(point2);
+        space.addOrigin(origin1);
+        origin1.addPoint(point1);
+
+        var serializedGraph = DAGUtils.exportAsString(space);
+        var deserializedGraph = DAGUtils.importFromString(serializedGraph);
+
+        System.out.println("Second sample serialized graph -> \n" + serializedGraph);
+        System.out.println("Second sample deserialized graph -> \n" + deserializedGraph);
     }
 
     private static void thirdSample() {
+        var space = ApiManager.defaultSpace();
+        var point1 = ApiManager.pointOf(new Coord2D(0, 0));
+        var point2 = ApiManager.pointOf(new Coord2D(1, 1));
+        var point3 = ApiManager.pointOf(new Coord2D(2, 2));
+        var point4 = ApiManager.pointOf(new Coord2D(3, 3));
+        var origin1 = ApiManager.originOf(new Coord2D(4, 4));
+        var origin2 = ApiManager.originOf(new Coord2D(5, 5));
 
+        space.addOrigin(origin1);
+        space.addPoint(point1);
+        space.addPoint(point2);
+        space.addPoint(point3);
+        space.addPoint(point4);
+        origin1.addPoint(point3);
+        origin1.addPoint(point4);
+        origin1.addOrigin(origin2);
+        origin2.addPoint(point1);
+        origin2.addPoint(point2);
+
+        var spaceChildren = space.getChildren();
+        System.out.println("Third sample space children -> \n" + spaceChildren);
+
+        var origin1Children = origin1.getChildren();
+        System.out.println("Third sample origin1 children -> \n" + origin1Children);
+
+        space.removePoint(point1);
+        space.removePoint(point2);
+
+        var spaceNewChildren = space.getChildren();
+        System.out.println("Third sample space children after remove -> \n" + spaceNewChildren);
     }
 }
