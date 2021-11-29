@@ -45,6 +45,7 @@ public interface Origin extends Coordinatable {
      * @see Point
      * @apiNote returns false if origin is null or children already contains this origin.
      * @throws DAGConstraintException if adding led to a violation of the acyclicity of the graph.
+     * @implNote after DAGConstraintException was thrown, the graph remains in a valid state.
      */
     boolean addOrigin(Origin origin);
 

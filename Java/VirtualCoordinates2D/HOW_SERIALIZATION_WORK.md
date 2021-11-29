@@ -5,9 +5,9 @@ There is a class `DAGUtils` in the library which allows serializing and deserial
 * Use `exportAsString(Space)` to serialize
 * Use `importFromString(String)` to deserialize
 
-[Click]() for class docs.
+[Click](./api/src/main/java/com/github/ferum_bot/api/util/DAGUtils.java) for class docs.
 
-## How does it works?
+## How does it work?
 Well, serialization takes place in a highly simplified object in the likeness of JSON.
 
 Every entity has each types and coordinates. And some of them has children. 
