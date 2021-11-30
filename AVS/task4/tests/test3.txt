@@ -1,0 +1,16 @@
+15
+1 Bob 15 1
+2 Mashs 10 Sea
+3 Matvey 5 Predator
+1 Stas 1 0
+2 Jonh 17 Sea
+1 Bobby 151 1
+2 I_AM_NOT 110 Sea
+3 GOODBuy 52 Herbivores
+1 oppps 13 0
+2 Maksim 137 Lake
+2 Sahar 150 Ocean
+2 XXX_SSS 2 Sea
+3 NOT_MATVEY 3 Insectivores
+1 WHO_ARE_YOU 4 1
+2 PSSSSS 7 Lake

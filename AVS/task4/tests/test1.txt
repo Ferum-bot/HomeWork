@@ -1,0 +1,6 @@
+5
+1 Bob 15 1
+2 Mashs 10 Sea
+3 Matvey 5 Predator
+1 Stas 1 0
+2 Jonh 17 Sea
