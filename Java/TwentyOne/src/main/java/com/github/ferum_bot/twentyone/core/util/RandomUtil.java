@@ -30,4 +30,31 @@ public class RandomUtil {
     public static int getRandomSleepMillis() {
         return ThreadLocalRandom.current().nextInt(MIN_SLEEP_MILLIS, MAX_SLEEP_MILLIS);
     }
+
+    /**
+     * Provides random digit. Between 0 and 9.
+     * @return random digit.
+     */
+    public static int getRandomDigit() {
+        return ThreadLocalRandom.current().nextInt(10);
+    }
+
+    /**
+     * Provides random int till bounds.
+     * @param bounds up border.
+     * @return random int.
+     */
+    public static int getRandomInt(int bounds) {
+        return ThreadLocalRandom.current().nextInt(bounds);
+    }
+
+    /**
+     * Provides random number.
+     * @param from number from(inclusive).
+     * @param to number to(exclusive).
+     * @return random number.
+     */
+    public static int getRandomInt(int from, int to) {
+        return ThreadLocalRandom.current().nextInt(from, to);
+    }
 }

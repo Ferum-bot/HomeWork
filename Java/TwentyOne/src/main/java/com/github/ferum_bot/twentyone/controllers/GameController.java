@@ -9,6 +9,14 @@ import com.github.ferum_bot.twentyone.service.GameService;
 import com.github.ferum_bot.twentyone.ui.InputHandler;
 import com.github.ferum_bot.twentyone.ui.OutputHandler;
 
+/**
+ * Game entrypoint. Configures game and handles errors.
+ * @author matvejpopov
+ * @version 1.0.0
+ * @see GameService
+ * @see InputHandler
+ * @see OutputHandler
+ */
 public class GameController {
 
     private final InputHandler inputHandler;
