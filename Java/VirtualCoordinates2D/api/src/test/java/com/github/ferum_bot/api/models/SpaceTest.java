@@ -217,6 +217,34 @@ class SpaceTest {
     }
 
     @Test
+    public void AddOrigin_SomeSpace3_ExceptionNotThrown() {
+        var space = ApiManager.defaultSpace();
+        var origin1 = ApiManager.originOf(new Coord2D(1, 1));
+        var origin2 = ApiManager.originOf(new Coord2D(2, 2));
+        var origin3 = ApiManager.originOf(new Coord2D(3, 3));
+        var point1 = ApiManager.pointOf(new Coord2D(0, 0));
+        var point2 = ApiManager.pointOf(new Coord2D(1, 1));
+
+        space.addOrigin(origin1);
+        space.addOrigin(origin2);
+        space.addPoint(point1);
+        space.addPoint(point2);
+
+        origin1.addPoint(point1);
+        origin1.addPoint(point2);
+        origin2.addPoint(point1);
+        origin2.addPoint(point2);
+
+        origin3.addPoint(point1);
+        origin3.addPoint(point2);
+
+        assertDoesNotThrow((() -> {
+            origin1.addOrigin(origin3);
+            origin2.addOrigin(origin3);
+        }));
+    }
+
+    @Test
     public void RemovePoint_SomeSpace_ChildrenWithoutPoint() {
         var space = ApiManager.spaceOf(new Coord2D(0, 0));
         var point = ApiManager.pointOf(new Coord2D(1, 1));
