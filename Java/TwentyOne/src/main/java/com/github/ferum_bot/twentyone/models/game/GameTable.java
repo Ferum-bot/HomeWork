@@ -18,7 +18,7 @@ public class GameTable {
      * @see RandomUtil
      * @apiNote this method is blocking.
      */
-    public int getCard() {
+    public synchronized int getCard() {
         return RandomUtil.getRandomCardNumber();
     }
 }
