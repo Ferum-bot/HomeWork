@@ -16,6 +16,9 @@ public class GameParametersGuard implements Guard<GameParameters> {
         if (value.numberOfCheaters() < 0 || value.numberOfCommonPlayers() < 0) {
             return GuardResult.FAILURE;
         }
+        if (value.numberOfCommonPlayers() < 2) {
+            return GuardResult.FAILURE;
+        }
         if (totalPlayers <= MIN_PLAYERS_COUNT || totalPlayers >= MAX_PLAYERS_COUNT) {
             return GuardResult.FAILURE;
         }

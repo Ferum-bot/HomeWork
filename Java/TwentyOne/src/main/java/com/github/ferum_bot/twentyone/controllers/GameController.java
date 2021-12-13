@@ -30,10 +30,11 @@ public class GameController {
     }
 
     public void start() {
+        outputHandler.onGameStart();
+
         var parameters = getParameters();
         var gameService = new GameService(parameters);
 
-        outputHandler.OnGameStart();
         gameService.startGame();
 
         var winner = gameService.getWinner();
@@ -43,12 +44,14 @@ public class GameController {
     }
 
     private GameParameters getParameters() {
+        outputHandler.inputGameParameters();
         GameParameters parameters = null;
 
         while (parameters == null) {
             parameters = tryToGetGameParameters();
         }
 
+        outputHandler.parametersIsValid();
         return parameters;
     }
 
@@ -58,9 +61,11 @@ public class GameController {
             parameters = inputHandler.getParameters();
             var guardResult = gameParametersGuard.obtainValue(parameters);
             if (guardResult != GuardResult.SUCCESS) {
+                outputHandler.invalidGameParameters();
                 return null;
             }
         } catch (InvalidInputException exception) {
+            outputHandler.invalidGameParameters();
             return null;
         }
         return parameters;

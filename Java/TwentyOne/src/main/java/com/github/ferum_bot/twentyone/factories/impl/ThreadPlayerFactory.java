@@ -36,15 +36,15 @@ public class ThreadPlayerFactory implements PlayerFactory {
 
     @Override
     public Player createCommonPlayer(GameTable table) {
-        return new CommonThreadPlayer(table, counter++);
+        return new CommonThreadPlayer(table, ++counter);
     }
 
     @Override
     public Player createCheaterPlayer(GameTable table) {
-        return new CheaterThreadPlayer(table, counter++, Collections.emptyList());
+        return new CheaterThreadPlayer(table, ++counter, Collections.emptyList());
     }
 
     private ThreadPlayer createCheaterPlayer(GameTable table, Collection<ThreadPlayer> commonPlayers) {
-        return new CheaterThreadPlayer(table, counter++, commonPlayers);
+        return new CheaterThreadPlayer(table, ++counter, commonPlayers);
     }
 }

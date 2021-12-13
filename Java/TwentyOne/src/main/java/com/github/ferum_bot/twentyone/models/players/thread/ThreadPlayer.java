@@ -26,6 +26,7 @@ public abstract class ThreadPlayer extends Thread implements Player {
 
     public ThreadPlayer(GameTable table, int number) {
         this.table = table;
+        playerNumber = number;
     }
 
     /**
