@@ -5,6 +5,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Used to define ignoring property.
+ * @see Mapper
+ * @see Ignored
+ * @see Exported
+ * @see PropertyName
+ * @author matvejpopov
+ * @version 1.0.0
+ */
 @Target({
         ElementType.RECORD_COMPONENT,
         ElementType.FIELD,
