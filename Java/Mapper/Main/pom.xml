@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Main</artifactId>
+    <artifactId>main</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>ru.hse.homework4</groupId>
-            <artifactId>Interface</artifactId>
+            <artifactId>interface</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
