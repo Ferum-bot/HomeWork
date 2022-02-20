@@ -5,7 +5,7 @@ import com.ferumbot.mapper.impl.components.filter.ObjectMapperFilter;
 public class DateTimeFormatFilter implements ObjectMapperFilter {
 
     @Override
-    public void filter(Object object) {
+    public void filter(Class<?> objectClass) {
 
     }
 }

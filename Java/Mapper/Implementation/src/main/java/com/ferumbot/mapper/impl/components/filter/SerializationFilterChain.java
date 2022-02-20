@@ -16,8 +16,9 @@ public class SerializationFilterChain {
     }
 
     public void invokeFilters(Object object) {
+        var clazz = object.getClass();
         filterChain.forEach(filter -> {
-            filter.filter(object);
+            filter.filter(clazz);
         });
     }
 }

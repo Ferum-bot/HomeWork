@@ -5,8 +5,7 @@ public class IdentifierProvider {
     private static final ThreadLocal<Long> sequence;
 
     static {
-        sequence = new ThreadLocal<>();
-        sequence.set(0L);
+        sequence = ThreadLocal.withInitial(() -> 0L);
     }
 
     public static Long nextId() {

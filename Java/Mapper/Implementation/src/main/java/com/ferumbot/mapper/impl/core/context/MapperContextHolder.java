@@ -7,8 +7,7 @@ public class MapperContextHolder {
     private static final ThreadLocal<Optional<MapperContext>> threadLocalContext;
 
     static {
-        threadLocalContext = new ThreadLocal<>();
-        threadLocalContext.set(Optional.empty());
+        threadLocalContext = ThreadLocal.withInitial(Optional::empty);
     }
 
     public static MapperContext getContext() {
