@@ -32,17 +32,32 @@ public class DefaultMapperInteractor implements MapperInteractor {
 
     @Override
     public <T> T validateStringAndParse(Class<T> clazz, String input) {
-        return null;
+        var reader = Injector.provideStringInputReader(input);
+
+        deserializationFilterChain.filterInput(reader);
+        deserializationFilterChain.filterClass(clazz);
+
+        return deserializationProcessor.deserialize(clazz, reader);
     }
 
     @Override
     public <T> T validateStreamAndParse(Class<T> clazz, InputStream stream) throws IOException {
-        return null;
+        var reader = Injector.provideStreamInputReader(stream);
+
+        deserializationFilterChain.filterInput(reader);
+        deserializationFilterChain.filterClass(clazz);
+
+        return deserializationProcessor.deserialize(clazz, reader);
     }
 
     @Override
     public <T> T validateFileAndParse(Class<T> clazz, File file) throws IOException {
-        return null;
+        var reader = Injector.provideFileInputReader(file);
+
+        deserializationFilterChain.filterInput(reader);
+        deserializationFilterChain.filterClass(clazz);
+
+        return deserializationProcessor.deserialize(clazz, reader);
     }
 
     @Override

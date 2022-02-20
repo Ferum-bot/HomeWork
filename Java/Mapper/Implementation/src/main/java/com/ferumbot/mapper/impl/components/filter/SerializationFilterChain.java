@@ -1,5 +1,7 @@
 package com.ferumbot.mapper.impl.components.filter;
 
+import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
+
 import java.util.Collection;
 import java.util.Collections;
 

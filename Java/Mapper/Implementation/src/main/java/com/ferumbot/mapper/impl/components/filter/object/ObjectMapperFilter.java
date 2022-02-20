@@ -1,4 +1,4 @@
-package com.ferumbot.mapper.impl.components.filter;
+package com.ferumbot.mapper.impl.components.filter.object;
 
 public interface ObjectMapperFilter {
 
