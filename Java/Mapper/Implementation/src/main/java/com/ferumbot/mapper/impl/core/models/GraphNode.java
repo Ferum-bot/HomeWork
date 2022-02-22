@@ -2,17 +2,18 @@ package com.ferumbot.mapper.impl.core.models;
 
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
 
+import java.lang.annotation.Annotation;
 import java.util.Collection;
 
 public record GraphNode(
 
     long id,
 
-    Object object,
+    Class<?> objectClass,
 
     ObjectType type,
 
-    String nameAlias,
+    Collection<Annotation> annotations,
 
     Collection<GraphNode> children
 ) {
