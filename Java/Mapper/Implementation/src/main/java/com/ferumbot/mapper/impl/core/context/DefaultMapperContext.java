@@ -2,6 +2,7 @@ package com.ferumbot.mapper.impl.core.context;
 
 import com.ferumbot.mapper.impl.core.models.GraphNode;
 import com.ferumbot.mapper.impl.core.models.MappingSettings;
+import ru.hse.homework4.Exported;
 
 import java.util.Optional;
 

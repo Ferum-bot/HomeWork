@@ -20,5 +20,7 @@ public enum ObjectType {
 
     LOCAL_TIME,
 
-    LOCAL_DATE_TIME;
+    LOCAL_DATE_TIME,
+
+    UN_SUPPORTED;
 }

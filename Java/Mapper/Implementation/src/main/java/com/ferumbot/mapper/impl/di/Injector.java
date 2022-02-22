@@ -7,6 +7,7 @@ import com.ferumbot.mapper.impl.components.filter.input.impl.InputStructureFilte
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
 import com.ferumbot.mapper.impl.components.filter.object.impl.DateTimeFormatFilter;
 import com.ferumbot.mapper.impl.components.filter.object.impl.RetainCycleFilter;
+import com.ferumbot.mapper.impl.components.filter.object.impl.SupportedClassFilter;
 import com.ferumbot.mapper.impl.components.inputreader.InputReader;
 import com.ferumbot.mapper.impl.components.inputreader.impl.FileInputReader;
 import com.ferumbot.mapper.impl.components.inputreader.impl.InputStreamInputReader;
@@ -42,6 +43,7 @@ public class Injector {
         var filterChain = new SerializationFilterChain();
 
         filterChain.addFilter(provideRetainCycleFilter());
+        filterChain.addFilter(provideSupportedClassFilter());
         filterChain.addFilter(provideDateTimeFilter());
 
         return filterChain;
@@ -51,6 +53,7 @@ public class Injector {
         var filterChain = new DeserializationFilterChain();
 
         filterChain.addObjectFilter(provideRetainCycleFilter());
+        filterChain.addObjectFilter(provideSupportedClassFilter());
         filterChain.addObjectFilter(provideDateTimeFilter());
 
         filterChain.addInputFilter(provideInputStructureFilter());
@@ -66,6 +69,11 @@ public class Injector {
     public static ObjectMapperFilter provideRetainCycleFilter() {
         var graphBuildService = provideGraphBuildService();
         return new RetainCycleFilter(graphBuildService);
+    }
+
+    public static ObjectMapperFilter provideSupportedClassFilter() {
+        var graphBuildService = provideGraphBuildService();
+        return new SupportedClassFilter(graphBuildService);
     }
 
     public static InputMapperFilter provideInputStructureFilter() {
@@ -97,7 +105,8 @@ public class Injector {
     }
 
     public static SerializationProcessor provideSerializationProcessor() {
-        return new SerializationProcessor();
+        var graphBuildService = provideGraphBuildService();
+        return new SerializationProcessor(graphBuildService);
     }
 
     public static DeserializationProcessor provideDeserializationProcessor() {

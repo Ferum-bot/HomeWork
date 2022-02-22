@@ -4,11 +4,18 @@ import java.time.format.DateTimeFormatter;
 
 public class MapperConstants {
 
-    public static final String localTimePattern = "hh.mm.ss";
-    public static final String localDatePattern = "dd.MM.yyyy";
-    public static final String localDateTimePattern = "dd.MM.yyyy:hh.mm.ss";
+    public static final String LOCAL_TIME_PATTERN = "hh.mm.ss";
+    public static final String LOCAL_DATE_PATTERN = "dd.MM.yyyy";
+    public static final String LOCAL_DATE_TIME_PATTERN = "dd.MM.yyyy:hh.mm.ss";
 
-    public static final DateTimeFormatter localTimeFormat = DateTimeFormatter.ofPattern(localTimePattern);
-    public static final DateTimeFormatter localDateFormat = DateTimeFormatter.ofPattern(localDatePattern);
-    public static final DateTimeFormatter localDateTimeFormat = DateTimeFormatter.ofPattern(localDateTimePattern);
+    public static final DateTimeFormatter LOCAL_TIME_FORMAT = DateTimeFormatter.ofPattern(LOCAL_TIME_PATTERN);
+    public static final DateTimeFormatter LOCAL_DATE_FORMAT = DateTimeFormatter.ofPattern(LOCAL_DATE_PATTERN);
+    public static final DateTimeFormatter LOCAL_DATE_TIME_FORMAT = DateTimeFormatter.ofPattern(LOCAL_DATE_TIME_PATTERN);
+
+    public static final String COLLECTION_BEGIN_SYMBOL = "[";
+    public static final String COLLECTION_END_SYMBOL = "]";
+    public static final String OBJECT_BEGIN_SYMBOL = "{";
+    public static final String OBJECT_END_SYMBOL = "}";
+
+    public static final String OBJECT_ID_SUFFIX = "_id";
 }

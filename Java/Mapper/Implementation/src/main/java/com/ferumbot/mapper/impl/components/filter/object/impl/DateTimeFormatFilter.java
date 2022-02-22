@@ -25,18 +25,8 @@ public class DateTimeFormatFilter implements ObjectMapperFilter {
 
     @Override
     public void filter(Class<?> objectClass) {
-        GraphNode rootNode;
-        var context = MapperContextHolder.getContext();
-        var graphHolder = context.getObjectGraph();
-
-        if (graphHolder.isEmpty()) {
-            rootNode = graphBuildService.buildGraphFrom(objectClass);
-            context.setObjectGraph(rootNode);
-        } else {
-            rootNode = graphHolder.get();
-        }
-
-        checkDateTimeFormat(rootNode);
+        var graph = graphBuildService.getFromContextOrBuild(objectClass);
+        checkDateTimeFormat(graph);
     }
 
     private void checkDateTimeFormat(GraphNode node) {

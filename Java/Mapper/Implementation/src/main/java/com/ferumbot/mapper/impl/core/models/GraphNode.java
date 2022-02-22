@@ -1,6 +1,7 @@
 package com.ferumbot.mapper.impl.core.models;
 
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
+import ru.hse.homework4.Exported;
 
 import java.lang.annotation.Annotation;
 import java.util.Collection;
