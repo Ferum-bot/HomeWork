@@ -13,12 +13,47 @@ public class FileObjectWriter implements ObjectWriter<File> {
     }
 
     @Override
-    public void writeToStart(String string) {
+    public void writeToEnd(String string) {
 
     }
 
     @Override
-    public void writeToEnd(String string) {
+    public void writeToEnd(Integer string) {
+
+    }
+
+    @Override
+    public void writeToEnd(Long string) {
+
+    }
+
+    @Override
+    public void writeToEnd(Short string) {
+
+    }
+
+    @Override
+    public void writeToEnd(Character string) {
+
+    }
+
+    @Override
+    public void writeToEnd(Byte string) {
+
+    }
+
+    @Override
+    public void writeToEnd(Float string) {
+
+    }
+
+    @Override
+    public void writeToEnd(Double string) {
+
+    }
+
+    @Override
+    public void writeToEnd(Boolean string) {
 
     }
 

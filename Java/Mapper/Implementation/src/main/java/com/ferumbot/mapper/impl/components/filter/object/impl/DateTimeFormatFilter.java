@@ -5,6 +5,7 @@ import com.ferumbot.mapper.impl.core.context.MapperContextHolder;
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.models.GraphNode;
 import com.ferumbot.mapper.impl.di.Injector;
+import com.ferumbot.mapper.impl.service.GraphNodeService;
 import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
 import ru.hse.homework4.DateFormat;
 import ru.hse.homework4.exceptions.InvalidDateFormatException;
@@ -19,8 +20,14 @@ public class DateTimeFormatFilter implements ObjectMapperFilter {
 
     private final ObjectGraphBuildService graphBuildService;
 
-    public DateTimeFormatFilter(ObjectGraphBuildService graphBuildService) {
+    private final GraphNodeService graphNodeService;
+
+    public DateTimeFormatFilter(
+        ObjectGraphBuildService graphBuildService,
+        GraphNodeService graphNodeService
+    ) {
         this.graphBuildService = graphBuildService;
+        this.graphNodeService = graphNodeService;
     }
 
     @Override
@@ -42,7 +49,8 @@ public class DateTimeFormatFilter implements ObjectMapperFilter {
 
     private void checkFormat(GraphNode node) {
         try {
-            node.annotations().stream()
+            var annotations = graphNodeService.getAnnotations(node);
+            annotations.stream()
                     .filter(annotation -> annotation.annotationType().equals(DateFormat.class))
                     .findFirst()
                     .map(annotation -> (DateFormat) annotation)

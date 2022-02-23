@@ -5,6 +5,7 @@ import com.ferumbot.mapper.impl.components.filter.SerializationFilterChain;
 import com.ferumbot.mapper.impl.components.filter.input.InputMapperFilter;
 import com.ferumbot.mapper.impl.components.filter.input.impl.InputStructureFilter;
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
+import com.ferumbot.mapper.impl.components.filter.object.impl.ClassConstructorFilter;
 import com.ferumbot.mapper.impl.components.filter.object.impl.DateTimeFormatFilter;
 import com.ferumbot.mapper.impl.components.filter.object.impl.RetainCycleFilter;
 import com.ferumbot.mapper.impl.components.filter.object.impl.SupportedClassFilter;
@@ -25,12 +26,17 @@ import com.ferumbot.mapper.impl.interactor.MapperInteractor;
 import com.ferumbot.mapper.impl.interactor.impl.DefaultMapperInteractor;
 import com.ferumbot.mapper.impl.processor.DeserializationProcessor;
 import com.ferumbot.mapper.impl.processor.SerializationProcessor;
+import com.ferumbot.mapper.impl.service.DateTimeService;
+import com.ferumbot.mapper.impl.service.GraphNodeService;
 import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
+import com.ferumbot.mapper.impl.service.SerializationTemplatesService;
+import com.ferumbot.mapper.impl.service.impl.CommonGraphNodeService;
+import com.ferumbot.mapper.impl.service.impl.CommonSerializationTemplateService;
+import com.ferumbot.mapper.impl.service.impl.DefaultDateTimeService;
 import com.ferumbot.mapper.impl.service.impl.DefaultGraphBuildService;
 
 import java.io.File;
 import java.io.InputStream;
-import java.io.ObjectInputFilter;
 import java.io.OutputStream;
 
 public class Injector {
@@ -44,6 +50,7 @@ public class Injector {
 
         filterChain.addFilter(provideRetainCycleFilter());
         filterChain.addFilter(provideSupportedClassFilter());
+        filterChain.addFilter(provideClassConstructorFilter());
         filterChain.addFilter(provideDateTimeFilter());
 
         return filterChain;
@@ -54,6 +61,7 @@ public class Injector {
 
         filterChain.addObjectFilter(provideRetainCycleFilter());
         filterChain.addObjectFilter(provideSupportedClassFilter());
+        filterChain.addObjectFilter(provideClassConstructorFilter());
         filterChain.addObjectFilter(provideDateTimeFilter());
 
         filterChain.addInputFilter(provideInputStructureFilter());
@@ -63,7 +71,8 @@ public class Injector {
 
     public static ObjectMapperFilter provideDateTimeFilter() {
         var graphBuildService = provideGraphBuildService();
-        return new DateTimeFormatFilter(graphBuildService);
+        var graphNodeService = provideGraphNodeService();
+        return new DateTimeFormatFilter(graphBuildService, graphNodeService);
     }
 
     public static ObjectMapperFilter provideRetainCycleFilter() {
@@ -74,6 +83,12 @@ public class Injector {
     public static ObjectMapperFilter provideSupportedClassFilter() {
         var graphBuildService = provideGraphBuildService();
         return new SupportedClassFilter(graphBuildService);
+    }
+
+    public static ObjectMapperFilter provideClassConstructorFilter() {
+        var graphBuildService = provideGraphBuildService();
+        var graphNodeService = provideGraphNodeService();
+        return new ClassConstructorFilter(graphBuildService, graphNodeService);
     }
 
     public static InputMapperFilter provideInputStructureFilter() {
@@ -106,7 +121,12 @@ public class Injector {
 
     public static SerializationProcessor provideSerializationProcessor() {
         var graphBuildService = provideGraphBuildService();
-        return new SerializationProcessor(graphBuildService);
+        var graphNodeService = provideGraphNodeService();
+        var serializationTemplateService = provideSerializationTemplateService();
+        var dateTimeService = provideDateTimeService();
+        return new SerializationProcessor(
+            graphBuildService, graphNodeService, serializationTemplateService, dateTimeService
+        );
     }
 
     public static DeserializationProcessor provideDeserializationProcessor() {
@@ -115,6 +135,18 @@ public class Injector {
 
     public static ObjectGraphBuildService provideGraphBuildService() {
         return new DefaultGraphBuildService();
+    }
+
+    public static GraphNodeService provideGraphNodeService() {
+        return new CommonGraphNodeService();
+    }
+
+    public static SerializationTemplatesService provideSerializationTemplateService() {
+        return new CommonSerializationTemplateService();
+    }
+
+    public static DateTimeService provideDateTimeService() {
+        return new DefaultDateTimeService();
     }
 
     public static SimpleVisitor provideSimpleVisitor(GraphNode rootNode) {

@@ -6,7 +6,7 @@ import ru.hse.homework4.Mapper;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Mapper main");
-        Mapper mapper = new DefaultMapper();
+        var value1 = 124L;
+        System.out.println("ASSAYS" + String.valueOf(value1));
     }
 }

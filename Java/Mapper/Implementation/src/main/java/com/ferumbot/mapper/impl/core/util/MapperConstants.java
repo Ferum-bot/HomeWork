@@ -12,6 +12,13 @@ public class MapperConstants {
     public static final DateTimeFormatter LOCAL_DATE_FORMAT = DateTimeFormatter.ofPattern(LOCAL_DATE_PATTERN);
     public static final DateTimeFormatter LOCAL_DATE_TIME_FORMAT = DateTimeFormatter.ofPattern(LOCAL_DATE_TIME_PATTERN);
 
+    public static final String SPACE = " ";
+    public static final String NEW_LINE = "\n";
+
+    public static final String NAME_SEPARATOR = ":";
+    public static final String NAME_BEGIN_SYMBOL = "\"";
+    public static final String NAME_END_SYMBOL = "\"";
+
     public static final String COLLECTION_BEGIN_SYMBOL = "[";
     public static final String COLLECTION_END_SYMBOL = "]";
     public static final String OBJECT_BEGIN_SYMBOL = "{";
