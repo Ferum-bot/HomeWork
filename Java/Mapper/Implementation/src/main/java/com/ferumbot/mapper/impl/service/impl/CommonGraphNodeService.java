@@ -6,6 +6,7 @@ import ru.hse.homework4.enums.NullHandling;
 import ru.hse.homework4.enums.UnknownPropertiesPolicy;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Optional;
@@ -33,7 +34,17 @@ public class CommonGraphNodeService implements GraphNodeService {
     }
 
     @Override
+    public Collection<Constructor<?>> getConstructors(GraphNode node) {
+        return null;
+    }
+
+    @Override
     public Optional<String> getNameAlias(GraphNode node) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<String> getDateFormatValue(GraphNode node) {
         return Optional.empty();
     }
 }

@@ -1,7 +1,6 @@
 package com.ferumbot.mapper.impl.processor;
 
 import com.ferumbot.mapper.impl.components.objectwriter.ObjectWriter;
-import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.models.GraphNode;
 import com.ferumbot.mapper.impl.core.util.MapperConstants;
 import com.ferumbot.mapper.impl.di.Injector;
@@ -9,13 +8,10 @@ import com.ferumbot.mapper.impl.service.DateTimeService;
 import com.ferumbot.mapper.impl.service.GraphNodeService;
 import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
 import com.ferumbot.mapper.impl.service.SerializationTemplatesService;
-import ru.hse.homework4.enums.NullHandling;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.Collection;
 
 import static com.ferumbot.mapper.impl.core.enums.ObjectType.*;
 import static ru.hse.homework4.enums.NullHandling.INCLUDE;
@@ -74,7 +70,7 @@ public class SerializationProcessor {
             case EXPORTED_CLASS -> {
                 writer.writeToEnd(MapperConstants.OBJECT_BEGIN_SYMBOL);
             }
-            case ARRAY_COLLECTION, SET_COLLECTION -> {
+            case LIST_COLLECTION, SET_COLLECTION -> {
                 writer.writeToEnd(MapperConstants.COLLECTION_BEGIN_SYMBOL);
             }
             case LOCAL_DATE -> {
@@ -111,8 +107,10 @@ public class SerializationProcessor {
                 writer.writeToEnd(value);
                 writer.writeToEnd(MapperConstants.NAME_END_SYMBOL);
             }
-            case RAW_PRIMITIVE, PRIMITIVE_WRAPPER -> {
+            case PRIMITIVE -> {
+                var value = String.valueOf(graphNode.object());
 
+                writer.writeToEnd(value);
             }
             case ENUM_CLASS -> {
                 var value = graphNode.object().toString();
@@ -130,7 +128,7 @@ public class SerializationProcessor {
             writer.writeToEnd(MapperConstants.OBJECT_END_SYMBOL);
             writer.writeToEnd(MapperConstants.NEW_LINE);
         }
-        if (type == ARRAY_COLLECTION || type == SET_COLLECTION) {
+        if (type == LIST_COLLECTION || type == SET_COLLECTION) {
             writer.writeToEnd(MapperConstants.COLLECTION_END_SYMBOL);
             writer.writeToEnd(MapperConstants.NEW_LINE);
         }

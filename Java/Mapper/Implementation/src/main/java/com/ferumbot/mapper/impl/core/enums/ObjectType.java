@@ -2,15 +2,13 @@ package com.ferumbot.mapper.impl.core.enums;
 
 public enum ObjectType {
 
-    RAW_PRIMITIVE,
-
-    PRIMITIVE_WRAPPER,
+    PRIMITIVE,
 
     STRING,
 
     EXPORTED_CLASS,
 
-    ARRAY_COLLECTION,
+    LIST_COLLECTION,
 
     SET_COLLECTION,
 
