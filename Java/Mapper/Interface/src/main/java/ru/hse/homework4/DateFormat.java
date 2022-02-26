@@ -17,8 +17,8 @@ import java.lang.annotation.Target;
  * @version 1.0.0
  */
 @Target({
-        ElementType.RECORD_COMPONENT,
-        ElementType.FIELD,
+    ElementType.RECORD_COMPONENT,
+    ElementType.FIELD,
 })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DateFormat {

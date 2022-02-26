@@ -51,7 +51,7 @@ public class DateTimeFormatFilter implements ObjectMapperFilter {
 
     private void checkFormat(GraphNode node) {
         try {
-            var annotations = graphNodeService.getAnnotations(node);
+            var annotations = graphNodeService.getFieldAnnotations(node);
             annotations.stream()
                     .filter(annotation -> annotation.annotationType().equals(DateFormat.class))
                     .findFirst()

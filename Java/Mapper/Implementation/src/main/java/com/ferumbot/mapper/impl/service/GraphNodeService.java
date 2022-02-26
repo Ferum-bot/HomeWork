@@ -18,7 +18,9 @@ public interface GraphNodeService {
 
     Collection<Field> getFields(GraphNode node);
 
-    Collection<Annotation> getAnnotations(GraphNode node);
+    Collection<Annotation> getFieldAnnotations(GraphNode node);
+
+    Collection<Annotation> getClassAnnotations(GraphNode node);
 
     Collection<Constructor<?>> getConstructors(GraphNode node);
 
