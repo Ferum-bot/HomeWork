@@ -59,7 +59,6 @@ public class Injector {
     public static DeserializationFilterChain provideDeserializationFilterChain() {
         var filterChain = new DeserializationFilterChain();
 
-        filterChain.addObjectFilter(provideRetainCycleFilter());
         filterChain.addObjectFilter(provideSupportedClassFilter());
         filterChain.addObjectFilter(provideClassConstructorFilter());
         filterChain.addObjectFilter(provideDateTimeFilter());

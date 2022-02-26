@@ -1,8 +1,6 @@
 package com.ferumbot.mapper.impl.components.filter.object.impl;
 
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
-import com.ferumbot.mapper.impl.core.context.MapperContextHolder;
-import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.models.GraphNode;
 import com.ferumbot.mapper.impl.di.Injector;
 import com.ferumbot.mapper.impl.service.GraphNodeService;
@@ -10,9 +8,7 @@ import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
 import ru.hse.homework4.DateFormat;
 import ru.hse.homework4.exceptions.InvalidDateFormatException;
 
-import java.lang.annotation.Annotation;
 import java.time.format.DateTimeFormatter;
-import java.util.Collection;
 
 import static com.ferumbot.mapper.impl.core.enums.ObjectType.*;
 
@@ -31,8 +27,14 @@ public class DateTimeFormatFilter implements ObjectMapperFilter {
     }
 
     @Override
-    public void filter(Class<?> objectClass) {
-        var graph = graphBuildService.getFromContextOrBuild(objectClass);
+    public void filter(Object object) {
+        var graph = graphBuildService.getFromContextOrBuild(object);
+        checkDateTimeFormat(graph);
+    }
+
+    @Override
+    public void filter(Class<?> clazz) {
+        var graph = graphBuildService.getFromContextOrBuild(clazz);
         checkDateTimeFormat(graph);
     }
 

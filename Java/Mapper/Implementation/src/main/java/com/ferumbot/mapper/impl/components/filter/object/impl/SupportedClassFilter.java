@@ -17,8 +17,14 @@ public class SupportedClassFilter implements ObjectMapperFilter {
     }
 
     @Override
-    public void filter(Class<?> objectClass) {
-        var graph = graphBuildService.getFromContextOrBuild(objectClass);
+    public void filter(Object object) {
+        var graph = graphBuildService.getFromContextOrBuild(object);
+        checkSupportedClasses(graph);
+    }
+
+    @Override
+    public void filter(Class<?> clazz) {
+        var graph = graphBuildService.getFromContextOrBuild(clazz);
         checkSupportedClasses(graph);
     }
 

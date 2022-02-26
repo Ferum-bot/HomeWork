@@ -11,6 +11,7 @@ import ru.hse.homework4.exceptions.RetainCycleException;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.ParameterizedType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -57,7 +58,12 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
     @Override
     public GraphNode buildGraphFrom(Class<?> clazz) {
         graphIds.clear();
-        return null;
+        try {
+            return buildNode(Optional.empty(), Optional.empty(), clazz);
+        } catch (IllegalAccessException exception) {
+            var message = "Can't access class field. " + exception.getMessage();
+            throw new MapperReflectException(message);
+        }
     }
 
     @Override
@@ -69,6 +75,25 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
             var message = "Can't access class field. " + exception.getMessage();
             throw new MapperReflectException(message);
         }
+    }
+
+    private GraphNode buildNode(
+        Optional<Field> fieldInParent, Optional<Class<?>> parentClass, Class<?> objectClass
+    ) throws IllegalAccessException {
+        var type = getObjectType(objectClass);
+        Collection<GraphNode> children = Collections.emptyList();
+
+        if (type == ObjectType.EXPORTED_CLASS) {
+            children = getExportedChildren(objectClass);
+        }
+        if (type == ObjectType.LIST_COLLECTION || type == ObjectType.SET_COLLECTION) {
+            children = getCollectionChildren(fieldInParent, parentClass);
+        }
+
+        return new GraphNode(
+            null, objectClass, null, fieldInParent,
+            parentClass, type, children
+        );
     }
 
     private GraphNode buildNode(
@@ -132,17 +157,25 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
     private Collection<GraphNode> getExportedChildren(Object object) throws IllegalAccessException {
         var objectClass = object.getClass();
-        var fields = Arrays.stream(objectClass.getDeclaredFields())
-                .filter(field -> !field.isSynthetic())
-                .filter(field -> !Modifier.isStatic(field.getModifiers()))
-                .peek(Field::trySetAccessible)
-                .toList();
+        var fields = getFilteredFields(objectClass);
 
         Collection<GraphNode> resultNodes = new ArrayList<>();
         for (Field field: fields) {
             var fieldObject = field.get(object);
             var node = buildNode(Optional.of(field), Optional.of(objectClass), fieldObject);
             resultNodes.add(node);
+        }
+
+        return resultNodes;
+    }
+
+    private Collection<GraphNode> getExportedChildren(Class<?> objectClass) throws IllegalAccessException {
+        var fields = getFilteredFields(objectClass);
+
+        Collection<GraphNode> resultNodes = new ArrayList<>();
+        for (Field field: fields) {
+            var fieldClass = field.getType();
+            resultNodes.add(buildNode(Optional.of(field), Optional.of(objectClass), fieldClass));
         }
 
         return resultNodes;
@@ -160,6 +193,30 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
         }
 
         return resultNodes;
+    }
+
+    private Collection<GraphNode> getCollectionChildren(
+        Optional<Field> fieldInParent, Optional<Class<?>> parentClass
+    ) throws IllegalAccessException {
+        Field parentField;
+        if (fieldInParent.isEmpty()) {
+            return Collections.emptyList();
+        } else {
+            parentField = fieldInParent.get();
+        }
+
+        var type = (ParameterizedType) parentField.getGenericType();
+        var typeClass = type.getActualTypeArguments()[0];
+
+        return List.of(buildNode(fieldInParent, parentClass, typeClass));
+    }
+
+    private Collection<Field> getFilteredFields(Class<?> objectClass) {
+        return Arrays.stream(objectClass.getDeclaredFields())
+                .filter(field -> !field.isSynthetic())
+                .filter(field -> !Modifier.isStatic(field.getModifiers()))
+                .peek(Field::trySetAccessible)
+                .toList();
     }
 
     private boolean isExportedClass(Class<?> clazz) {

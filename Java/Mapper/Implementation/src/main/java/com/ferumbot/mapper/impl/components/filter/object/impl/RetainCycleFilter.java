@@ -12,7 +12,10 @@ public class RetainCycleFilter implements ObjectMapperFilter {
     }
 
     @Override
-    public void filter(Class<?> objectClass) {
-        var graph = graphBuildService.getFromContextOrBuild(objectClass);
+    public void filter(Object object) {
+        graphBuildService.getFromContextOrBuild(object);
     }
+
+    @Override
+    public void filter(Class<?> clazz) {  }
 }

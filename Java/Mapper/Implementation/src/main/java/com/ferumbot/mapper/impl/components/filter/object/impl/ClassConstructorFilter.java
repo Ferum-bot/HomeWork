@@ -24,8 +24,14 @@ public class ClassConstructorFilter implements ObjectMapperFilter {
     }
 
     @Override
-    public void filter(Class<?> objectClass) {
-        var graph = graphBuildService.getFromContextOrBuild(objectClass);
+    public void filter(Object object) {
+        var graph = graphBuildService.getFromContextOrBuild(object);
+        checkConstructs(graph);
+    }
+
+    @Override
+    public void filter(Class<?> clazz) {
+        var graph = graphBuildService.getFromContextOrBuild(clazz);
         checkConstructs(graph);
     }
 

@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public record GraphNode(
 
-    long id,
+    Long id,
 
     Class<?> objectClass,
 
