@@ -40,7 +40,7 @@ public class DefaultMapper implements Mapper {
     }
 
     @Override
-    public String writeToString(Object object) {
+    public String writeToString(Object object) throws IOException {
         return interactor.validateAndWriteToString(object);
     }
 

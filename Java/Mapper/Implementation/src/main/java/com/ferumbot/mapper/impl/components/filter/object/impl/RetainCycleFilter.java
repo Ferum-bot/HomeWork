@@ -3,6 +3,7 @@ package com.ferumbot.mapper.impl.components.filter.object.impl;
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
 import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class RetainCycleFilter implements ObjectMapperFilter {
 
     private final ObjectGraphBuildService graphBuildService;

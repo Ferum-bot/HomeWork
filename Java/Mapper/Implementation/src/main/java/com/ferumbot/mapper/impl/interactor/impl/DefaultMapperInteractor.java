@@ -61,7 +61,7 @@ public class DefaultMapperInteractor implements MapperInteractor {
     }
 
     @Override
-    public String validateAndWriteToString(Object object) {
+    public String validateAndWriteToString(Object object) throws IOException {
         serializationFilterChain.invokeFilters(object);
 
         var writer = Injector.provideStringObjectWriter();

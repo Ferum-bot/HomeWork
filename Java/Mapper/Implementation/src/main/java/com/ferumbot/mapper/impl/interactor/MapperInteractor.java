@@ -13,7 +13,7 @@ public interface MapperInteractor {
 
     <T> T validateFileAndParse(Class<T> clazz, File file) throws IOException;
 
-    String validateAndWriteToString(Object object);
+    String validateAndWriteToString(Object object) throws IOException;
 
     void validateAndWriteToStream(Object object, OutputStream stream) throws IOException;
 

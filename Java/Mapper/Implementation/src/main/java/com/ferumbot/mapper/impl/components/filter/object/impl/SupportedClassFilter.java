@@ -8,6 +8,7 @@ import ru.hse.homework4.exceptions.UnSupportedClassException;
 
 import static com.ferumbot.mapper.impl.core.enums.ObjectType.UN_SUPPORTED;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class SupportedClassFilter implements ObjectMapperFilter {
 
     private final ObjectGraphBuildService graphBuildService;

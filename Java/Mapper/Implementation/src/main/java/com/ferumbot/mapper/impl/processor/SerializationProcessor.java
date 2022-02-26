@@ -9,6 +9,7 @@ import com.ferumbot.mapper.impl.service.GraphNodeService;
 import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
 import com.ferumbot.mapper.impl.service.SerializationTemplatesService;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -16,6 +17,7 @@ import java.time.LocalTime;
 import static com.ferumbot.mapper.impl.core.enums.ObjectType.*;
 import static ru.hse.homework4.enums.NullHandling.INCLUDE;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class SerializationProcessor {
 
     private final ObjectGraphBuildService graphBuildService;
@@ -38,7 +40,7 @@ public class SerializationProcessor {
         this.dateTimeService = dateTimeService;
     }
 
-    public void serialize(Object object, ObjectWriter<?> objectWriter) {
+    public void serialize(Object object, ObjectWriter<?> objectWriter) throws IOException {
         var graph = graphBuildService.getFromContextOrBuild(object);
         var visitor = Injector.provideManagedVisitor(graph);
 

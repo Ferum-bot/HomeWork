@@ -9,6 +9,7 @@ import ru.hse.homework4.exceptions.UnSupportedClassException;
 
 import java.lang.reflect.Constructor;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class ClassConstructorFilter implements ObjectMapperFilter {
 
     private final ObjectGraphBuildService graphBuildService;

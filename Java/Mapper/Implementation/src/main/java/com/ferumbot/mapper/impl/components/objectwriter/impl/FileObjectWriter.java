@@ -3,62 +3,39 @@ package com.ferumbot.mapper.impl.components.objectwriter.impl;
 import com.ferumbot.mapper.impl.components.objectwriter.ObjectWriter;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class FileObjectWriter implements ObjectWriter<File> {
 
     private final File file;
 
+    private final Writer fileWriter;
+
     public FileObjectWriter(File file) {
         this.file = file;
+
+        try {
+            fileWriter = new FileWriter(file, StandardCharsets.UTF_8, true);
+        } catch (IOException exception) {
+            throw new ru.hse.homework4.exceptions.IOException(exception.getMessage());
+        }
     }
 
     @Override
     public void writeToEnd(String string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Integer string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Long string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Short string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Character string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Byte string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Float string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Double string) {
-
-    }
-
-    @Override
-    public void writeToEnd(Boolean string) {
-
+        try {
+            fileWriter.write(string);
+        } catch (IOException exception) {
+            throw new ru.hse.homework4.exceptions.IOException(exception.getMessage());
+        }
     }
 
     @Override
     public File getWriter() {
-        return null;
+        return file;
     }
 }

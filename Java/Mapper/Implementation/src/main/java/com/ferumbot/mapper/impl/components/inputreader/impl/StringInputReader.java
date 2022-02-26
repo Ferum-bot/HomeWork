@@ -2,6 +2,7 @@ package com.ferumbot.mapper.impl.components.inputreader.impl;
 
 import com.ferumbot.mapper.impl.components.inputreader.InputReader;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class StringInputReader implements InputReader<String> {
 
     private final String input;

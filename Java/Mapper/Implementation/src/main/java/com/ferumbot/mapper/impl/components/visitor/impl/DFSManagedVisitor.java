@@ -6,6 +6,7 @@ import com.ferumbot.mapper.impl.core.models.GraphNode;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class DFSManagedVisitor implements ManagedVisitor {
 
     private final GraphNode rootNode;

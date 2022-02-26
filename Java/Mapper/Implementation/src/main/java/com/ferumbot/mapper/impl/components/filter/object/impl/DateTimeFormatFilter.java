@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 import static com.ferumbot.mapper.impl.core.enums.ObjectType.*;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class DateTimeFormatFilter implements ObjectMapperFilter {
 
     private final ObjectGraphBuildService graphBuildService;

@@ -56,8 +56,9 @@ public interface Mapper {
      * Saves object to string.
      * @param object the object to serialize.
      * @return serialized object.
+     * @throws IOException in case of input-output error.
      */
-    String writeToString(Object object);
+    String writeToString(Object object) throws IOException;
 
     /**
      * Saves object to output stream.

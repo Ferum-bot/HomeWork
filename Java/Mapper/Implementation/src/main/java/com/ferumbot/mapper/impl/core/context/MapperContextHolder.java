@@ -10,6 +10,7 @@ public class MapperContextHolder {
         threadLocalContext = ThreadLocal.withInitial(Optional::empty);
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public static MapperContext getContext() {
         var currentContext = threadLocalContext.get();
         if (currentContext.isEmpty()) {
