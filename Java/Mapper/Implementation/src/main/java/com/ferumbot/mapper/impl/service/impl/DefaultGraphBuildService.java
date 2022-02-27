@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
 
+@SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
     private enum ObjectColor {

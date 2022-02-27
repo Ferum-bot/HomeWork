@@ -12,9 +12,7 @@ class DefaultMapperContext implements MapperContext {
 
     private GraphNode graphNode = null;
 
-    DefaultMapperContext() {
-
-    }
+    DefaultMapperContext() {  }
 
     @Override
     public Optional<MappingSettings> getSettings() {
@@ -42,5 +40,10 @@ class DefaultMapperContext implements MapperContext {
     @Override
     public void setObjectGraph(GraphNode node) {
         graphNode = node;
+    }
+
+    @Override
+    public void clearObjectGraph() {
+        graphNode = null;
     }
 }

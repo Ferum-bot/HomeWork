@@ -10,6 +10,7 @@ import com.ferumbot.mapper.impl.processor.DeserializationProcessor;
 import com.ferumbot.mapper.impl.processor.SerializationProcessor;
 
 import java.io.*;
+import java.util.Map;
 
 public class DefaultMapperInteractor implements MapperInteractor {
 
@@ -33,6 +34,8 @@ public class DefaultMapperInteractor implements MapperInteractor {
     @Override
     public <T> T validateStringAndParse(Class<T> clazz, String input) {
         var reader = Injector.provideStringInputReader(input);
+        var context = MapperContextHolder.getContext();
+        context.clearObjectGraph();
 
         deserializationFilterChain.filterInput(reader);
         deserializationFilterChain.filterClass(clazz);
@@ -41,8 +44,10 @@ public class DefaultMapperInteractor implements MapperInteractor {
     }
 
     @Override
-    public <T> T validateStreamAndParse(Class<T> clazz, InputStream stream) throws IOException {
+    public <T> T validateStreamAndParse(Class<T> clazz, InputStream stream) {
         var reader = Injector.provideStreamInputReader(stream);
+        var context = MapperContextHolder.getContext();
+        context.clearObjectGraph();
 
         deserializationFilterChain.filterInput(reader);
         deserializationFilterChain.filterClass(clazz);
@@ -51,8 +56,10 @@ public class DefaultMapperInteractor implements MapperInteractor {
     }
 
     @Override
-    public <T> T validateFileAndParse(Class<T> clazz, File file) throws IOException {
+    public <T> T validateFileAndParse(Class<T> clazz, File file) {
         var reader = Injector.provideFileInputReader(file);
+        var context = MapperContextHolder.getContext();
+        context.clearObjectGraph();
 
         deserializationFilterChain.filterInput(reader);
         deserializationFilterChain.filterClass(clazz);
@@ -61,7 +68,10 @@ public class DefaultMapperInteractor implements MapperInteractor {
     }
 
     @Override
-    public String validateAndWriteToString(Object object) throws IOException {
+    public String validateAndWriteToString(Object object) {
+        var context = MapperContextHolder.getContext();
+        context.clearObjectGraph();
+
         serializationFilterChain.invokeFilters(object);
 
         var writer = Injector.provideStringObjectWriter();
@@ -71,7 +81,10 @@ public class DefaultMapperInteractor implements MapperInteractor {
     }
 
     @Override
-    public void validateAndWriteToStream(Object object, OutputStream stream) throws IOException {
+    public void validateAndWriteToStream(Object object, OutputStream stream) {
+        var context = MapperContextHolder.getContext();
+        context.clearObjectGraph();
+
         serializationFilterChain.invokeFilters(object);
 
         var writer = Injector.provideStreamObjectWriter(stream);
@@ -79,7 +92,10 @@ public class DefaultMapperInteractor implements MapperInteractor {
     }
 
     @Override
-    public void validateAndWriteToFile(Object object, File file) throws IOException {
+    public void validateAndWriteToFile(Object object, File file) {
+        var context = MapperContextHolder.getContext();
+        context.clearObjectGraph();
+
         serializationFilterChain.invokeFilters(object);
 
         var writer = Injector.provideFileObjectWriter(file);

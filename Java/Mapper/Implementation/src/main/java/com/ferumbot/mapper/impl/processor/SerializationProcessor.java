@@ -40,7 +40,7 @@ public class SerializationProcessor {
         this.dateTimeService = dateTimeService;
     }
 
-    public void serialize(Object object, ObjectWriter<?> objectWriter) throws IOException {
+    public void serialize(Object object, ObjectWriter<?> objectWriter) {
         var graph = graphBuildService.getFromContextOrBuild(object);
         var visitor = Injector.provideManagedVisitor(graph);
 
@@ -58,6 +58,7 @@ public class SerializationProcessor {
 
     private void onVisit(GraphNode graphNode, ObjectWriter<?> writer) {
         var type = graphNode.type();
+        var objectClass = graphNode.objectClass();
 
         if (type == UN_SUPPORTED) {
             return;
@@ -70,7 +71,12 @@ public class SerializationProcessor {
 
         switch (type) {
             case EXPORTED_CLASS -> {
+                var id = graphNode.id();
+                var idPropertyAlias = serializationTemplatesService.getIdPropertyTemplate(id);
+
                 writer.writeToEnd(MapperConstants.OBJECT_BEGIN_SYMBOL);
+                writer.writeToEnd(MapperConstants.NEW_LINE);
+                writer.writeToEnd(idPropertyAlias);
             }
             case LIST_COLLECTION, SET_COLLECTION -> {
                 writer.writeToEnd(MapperConstants.COLLECTION_BEGIN_SYMBOL);

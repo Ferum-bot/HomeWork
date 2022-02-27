@@ -14,4 +14,15 @@ public class CommonSerializationTemplateService implements SerializationTemplate
                 MapperConstants.NAME_SEPARATOR +
                 MapperConstants.SPACE;
     }
+
+    @Override
+    public String getIdPropertyTemplate(Long id) {
+        return MapperConstants.NAME_BEGIN_SYMBOL +
+                MapperConstants.OBJECT_ID_ALIAS +
+                MapperConstants.NAME_END_SYMBOL +
+                MapperConstants.SPACE +
+                MapperConstants.NAME_SEPARATOR +
+                MapperConstants.SPACE +
+                id;
+    }
 }
