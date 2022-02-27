@@ -1,11 +1,12 @@
 package com.ferumbot.mapper.impl.interactor;
 
+import com.ferumbot.mapper.impl.DefaultMapper;
+import com.ferumbot.mapper.impl.processor.DeserializationProcessor;
+import com.ferumbot.mapper.impl.processor.SerializationProcessor;
+
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import com.ferumbot.mapper.impl.DefaultMapper;
-import com.ferumbot.mapper.impl.processor.*;
 
 /**
  * Layer between public interface and processors.

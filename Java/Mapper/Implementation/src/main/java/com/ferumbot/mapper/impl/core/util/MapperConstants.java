@@ -4,9 +4,9 @@ import java.time.format.DateTimeFormatter;
 
 public class MapperConstants {
 
-    public static final String LOCAL_TIME_PATTERN = "hh.mm.ss";
+    public static final String LOCAL_TIME_PATTERN = "HH:mm:ss";
     public static final String LOCAL_DATE_PATTERN = "dd.MM.yyyy";
-    public static final String LOCAL_DATE_TIME_PATTERN = "dd.MM.yyyy:hh.mm.ss";
+    public static final String LOCAL_DATE_TIME_PATTERN = "dd.MM.yyyy-HH:mm:ss";
 
     public static final DateTimeFormatter LOCAL_TIME_FORMAT = DateTimeFormatter.ofPattern(LOCAL_TIME_PATTERN);
     public static final DateTimeFormatter LOCAL_DATE_FORMAT = DateTimeFormatter.ofPattern(LOCAL_DATE_PATTERN);

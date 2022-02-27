@@ -1,7 +1,7 @@
 package com.ferumbot.mapper.impl.service;
 
-import com.ferumbot.mapper.impl.core.models.GraphNode;
-import com.ferumbot.mapper.impl.processor.*;
+import com.ferumbot.mapper.impl.processor.DeserializationProcessor;
+import com.ferumbot.mapper.impl.processor.SerializationProcessor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

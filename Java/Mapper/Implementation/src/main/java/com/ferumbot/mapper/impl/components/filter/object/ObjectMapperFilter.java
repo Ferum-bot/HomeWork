@@ -1,7 +1,7 @@
 package com.ferumbot.mapper.impl.components.filter.object;
 
-import com.ferumbot.mapper.impl.components.filter.SerializationFilterChain;
 import com.ferumbot.mapper.impl.components.filter.DeserializationFilterChain;
+import com.ferumbot.mapper.impl.components.filter.SerializationFilterChain;
 
 /**
  * Filters mapper class or object.

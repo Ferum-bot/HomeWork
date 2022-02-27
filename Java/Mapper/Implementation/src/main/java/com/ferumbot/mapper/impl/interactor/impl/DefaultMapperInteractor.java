@@ -9,8 +9,9 @@ import com.ferumbot.mapper.impl.interactor.MapperInteractor;
 import com.ferumbot.mapper.impl.processor.DeserializationProcessor;
 import com.ferumbot.mapper.impl.processor.SerializationProcessor;
 
-import java.io.*;
-import java.util.Map;
+import java.io.File;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class DefaultMapperInteractor implements MapperInteractor {
 

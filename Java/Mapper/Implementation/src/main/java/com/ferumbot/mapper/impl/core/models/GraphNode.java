@@ -2,7 +2,6 @@ package com.ferumbot.mapper.impl.core.models;
 
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Optional;

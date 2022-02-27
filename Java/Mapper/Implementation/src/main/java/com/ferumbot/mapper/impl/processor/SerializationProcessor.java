@@ -9,7 +9,6 @@ import com.ferumbot.mapper.impl.service.GraphNodeService;
 import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
 import com.ferumbot.mapper.impl.service.SerializationTemplatesService;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;

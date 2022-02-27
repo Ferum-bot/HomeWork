@@ -1,7 +1,7 @@
 package ru.hse.homework4.enums;
 
-import ru.hse.homework4.Mapper;
 import ru.hse.homework4.Exported;
+import ru.hse.homework4.Mapper;
 
 /**
  * Defines null handling policy.

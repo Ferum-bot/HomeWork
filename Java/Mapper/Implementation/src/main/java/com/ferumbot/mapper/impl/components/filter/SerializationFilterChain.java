@@ -2,6 +2,7 @@ package com.ferumbot.mapper.impl.components.filter;
 
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -10,7 +11,7 @@ public class SerializationFilterChain {
     private Collection<ObjectMapperFilter> filterChain;
 
     public SerializationFilterChain() {
-        filterChain = Collections.emptyList();
+        filterChain = new ArrayList<>();
     }
 
     public void addFilter(ObjectMapperFilter filter) {

@@ -1,11 +1,8 @@
 package com.ferumbot.mapper.impl.components.filter.input;
 
-import com.ferumbot.mapper.impl.components.inputreader.InputReader;
 import com.ferumbot.mapper.impl.components.filter.DeserializationFilterChain;
 import com.ferumbot.mapper.impl.components.filter.SerializationFilterChain;
-
-import java.io.File;
-import java.io.InputStream;
+import com.ferumbot.mapper.impl.components.inputreader.InputReader;
 
 /**
  * Filters mapper input.

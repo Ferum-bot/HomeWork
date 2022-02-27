@@ -26,7 +26,7 @@ public @interface DateFormat {
     /**
      * Defines custom date/time pattern format.
      * @apiNote if empty, used dd.MM.yyyy format for {@link java.time.LocalDate},
-     * hh.mm.ss for {@link java.time.LocalTime} and dd.MM.yyyy:hh.mm.ss for {@link java.time.LocalDateTime} class.
+     * HH:mm:ss for {@link java.time.LocalTime} and dd.MM.yyyy-HH.mm.ss for {@link java.time.LocalDateTime} class.
      * @return the date/time format.
      */
     String value() default "";

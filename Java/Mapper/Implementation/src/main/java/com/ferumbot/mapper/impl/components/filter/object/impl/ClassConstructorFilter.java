@@ -1,6 +1,7 @@
 package com.ferumbot.mapper.impl.components.filter.object.impl;
 
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
+import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.models.GraphNode;
 import com.ferumbot.mapper.impl.di.Injector;
 import com.ferumbot.mapper.impl.service.GraphNodeService;
@@ -39,16 +40,22 @@ public class ClassConstructorFilter implements ObjectMapperFilter {
     private void checkConstructs(GraphNode rootNode) {
         var visitor = Injector.provideSimpleVisitor(rootNode);
 
-        visitor.visit(node -> {
-            var constructs = graphNodeService.getConstructors(node);
-            var hasEmptyConstructor = constructs.stream().anyMatch(this::isEmptyConstructor);
+        visitor.visit(this::onEachNode);
+    }
 
-            if (!hasEmptyConstructor) {
-                var message = "This class not supported: " + node.objectClass().getName() +
+    private void onEachNode(GraphNode node) {
+        if (node.type() != ObjectType.EXPORTED_CLASS) {
+            return;
+        }
+
+        var constructs = graphNodeService.getConstructors(node);
+        var hasEmptyConstructor = constructs.stream().anyMatch(this::isEmptyConstructor);
+
+        if (!hasEmptyConstructor) {
+            var message = "This class not supported: " + node.objectClass().getName() +
                     ". Class doesn't have empty constructs!";
-                throw new UnSupportedClassException(message);
-            }
-        });
+            throw new UnSupportedClassException(message);
+        }
     }
 
     private boolean isEmptyConstructor(Constructor<?> constructor) {

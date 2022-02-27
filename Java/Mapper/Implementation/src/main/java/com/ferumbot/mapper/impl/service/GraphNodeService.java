@@ -2,10 +2,10 @@ package com.ferumbot.mapper.impl.service;
 
 import com.ferumbot.mapper.impl.core.models.GraphNode;
 import com.ferumbot.mapper.impl.processor.SerializationProcessor;
+import ru.hse.homework4.DateFormat;
+import ru.hse.homework4.PropertyName;
 import ru.hse.homework4.enums.NullHandling;
 import ru.hse.homework4.enums.UnknownPropertiesPolicy;
-import ru.hse.homework4.PropertyName;
-import ru.hse.homework4.DateFormat;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;

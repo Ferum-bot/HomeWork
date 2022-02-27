@@ -4,8 +4,7 @@ import com.ferumbot.mapper.impl.components.filter.input.InputMapperFilter;
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
 import com.ferumbot.mapper.impl.components.inputreader.InputReader;
 
-import java.io.File;
-import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -16,8 +15,8 @@ public class DeserializationFilterChain {
     private Collection<InputMapperFilter> inputFilters;
 
     public DeserializationFilterChain() {
-        classFilters = Collections.emptyList();
-        inputFilters = Collections.emptyList();
+        classFilters = new ArrayList<>();
+        inputFilters = new ArrayList<>();
     }
 
     public void addObjectFilter(ObjectMapperFilter filter) {
