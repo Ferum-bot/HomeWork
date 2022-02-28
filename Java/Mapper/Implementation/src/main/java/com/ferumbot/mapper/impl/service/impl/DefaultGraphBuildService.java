@@ -6,6 +6,7 @@ import com.ferumbot.mapper.impl.core.models.GraphNode;
 import com.ferumbot.mapper.impl.core.util.IdentifierProvider;
 import com.ferumbot.mapper.impl.service.ObjectGraphBuildService;
 import ru.hse.homework4.Exported;
+import ru.hse.homework4.Ignored;
 import ru.hse.homework4.exceptions.MapperReflectException;
 import ru.hse.homework4.exceptions.RetainCycleException;
 
@@ -162,6 +163,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
         Collection<GraphNode> resultNodes = new ArrayList<>();
         for (Field field: fields) {
+            if (isIgnoredField(field)) {
+                continue;
+            }
+
             var fieldObject = field.get(object);
             var node = buildNode(Optional.of(field), Optional.of(objectClass), fieldObject);
             resultNodes.add(node);
@@ -175,6 +180,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
         Collection<GraphNode> resultNodes = new ArrayList<>();
         for (Field field: fields) {
+            if (isIgnoredField(field)) {
+                continue;
+            }
+
             var fieldClass = field.getType();
             resultNodes.add(buildNode(Optional.of(field), Optional.of(objectClass), fieldClass));
         }
@@ -252,6 +261,12 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
         }
 
         return false;
+    }
+
+    private boolean isIgnoredField(Field field) {
+        var annotations = field.getAnnotations();
+        return Arrays.stream(annotations)
+            .anyMatch(annotation -> annotation.annotationType().equals(Ignored.class));
     }
 
     private Long getNodeId(Object object) {

@@ -1,5 +1,6 @@
 package com.ferumbot.mapper.impl;
 
+import com.ferumbot.mapper.impl.classes.ComplicatedClass1;
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.util.MapperConstants;
 import com.ferumbot.mapper.impl.service.DateTimeService;
@@ -36,7 +37,7 @@ class DefaultMapperTest {
     }
 
     @Test
-    void WriteToString_SimpleObject1_SuccessSerialization() throws IOException {
+    void WriteToString_SimpleClass1_SuccessSerializationToString() throws IOException {
         var simpleObject1 = "Test String";
         var simpleObject2 = 123;
         var simpleObject3 = 13.4;
@@ -59,7 +60,7 @@ class DefaultMapperTest {
     }
 
     @Test
-    void WriteToString_SimpleObject2_SuccessSerialization() throws IOException {
+    void WriteToString_SimpleClass2_SuccessSerializationToString() throws IOException {
         var simpleObject1 = LocalDateTime.now();
         var simpleObject2 = LocalDate.now();
         var simpleObject3 = LocalTime.now();
@@ -82,7 +83,7 @@ class DefaultMapperTest {
     }
 
     @Test
-    void WriteToString_SimpleObject3_SuccessSerialization() throws IOException {
+    void WriteToString_SimpleClass3_SuccessSerializationToString() throws IOException {
         var simpleObject1 = ObjectType.EXPORTED_CLASS;
         var simpleObject2 = List.of("test1", "test2", "test3");
         var simpleObject3 = new TreeSet<>(List.of("test4", "test5", "test6"));
@@ -121,12 +122,21 @@ class DefaultMapperTest {
     }
 
     @Test
-    void WriteToString_ComplicatedObject1_SuccessSerialization() {
+    void WriteToString_ComplicatedClass1_SuccessSerializationToString() throws IOException {
+        var complicatedClass = new ComplicatedClass1();
+
+        var actualResult = mapper.writeToString(complicatedClass);
+
+        System.out.println(actualResult);
+    }
+
+    @Test
+    void WriteToString_ComplicatedClass2_SuccessSerializationToString() {
 
     }
 
     @Test
-    void WriteToString_ComplicatedObject2_SuccessSerialization() {
+    void WriteToString_ComplicatedClass3_SuccessSerializationToString() {
 
     }
 }

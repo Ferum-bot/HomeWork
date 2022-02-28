@@ -57,7 +57,6 @@ public class SerializationProcessor {
 
     private void onVisit(GraphNode graphNode, ObjectWriter<?> writer) {
         var type = graphNode.type();
-        var objectClass = graphNode.objectClass();
 
         if (type == UN_SUPPORTED) {
             return;
