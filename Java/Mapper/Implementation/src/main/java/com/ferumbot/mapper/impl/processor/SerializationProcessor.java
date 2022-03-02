@@ -44,13 +44,13 @@ public class SerializationProcessor {
         var visitor = Injector.provideManagedVisitor(graph);
 
         visitor.visit(
-            graphNode -> beforeVisit(graphNode, objectWriter),
+            this::beforeVisit,
             graphNode -> onVisit(graphNode, objectWriter),
             graphNode -> afterVisit(graphNode, objectWriter)
         );
     }
 
-    private boolean beforeVisit(GraphNode graphNode, ObjectWriter<?> writer) {
+    private boolean beforeVisit(GraphNode graphNode) {
         var type = graphNode.type();
         return type != UN_SUPPORTED;
     }
@@ -65,7 +65,7 @@ public class SerializationProcessor {
         writeNameAlias(graphNode, writer);
 
         switch (type) {
-            case EXPORTED_CLASS -> {
+            case EXPORTED_CLASS, EXPORTED_RECORD -> {
                 var id = graphNode.id();
                 var idPropertyAlias = serializationTemplatesService.getIdPropertyTemplate(id);
 
@@ -127,7 +127,7 @@ public class SerializationProcessor {
     private void afterVisit(GraphNode graphNode, ObjectWriter<?> writer) {
         var type = graphNode.type();
 
-        if (type == EXPORTED_CLASS) {
+        if (type == EXPORTED_CLASS || type == EXPORTED_RECORD) {
             writer.writeToEnd(MapperConstants.OBJECT_END_SYMBOL);
             writer.writeToEnd(MapperConstants.NEW_LINE);
         }

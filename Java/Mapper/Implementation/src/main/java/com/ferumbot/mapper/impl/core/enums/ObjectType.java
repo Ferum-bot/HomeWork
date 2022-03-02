@@ -8,6 +8,8 @@ public enum ObjectType {
 
     EXPORTED_CLASS,
 
+    EXPORTED_RECORD,
+
     LIST_COLLECTION,
 
     SET_COLLECTION,

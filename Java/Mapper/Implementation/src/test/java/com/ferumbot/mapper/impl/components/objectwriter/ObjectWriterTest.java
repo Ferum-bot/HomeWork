@@ -29,6 +29,8 @@ class ObjectWriterTest {
 
     @AfterEach
     void tearDown() {
-
+        fileObjectWriter = null;
+        outputStreamObjectWriter = null;
+        stringObjectWriter = null;
     }
 }

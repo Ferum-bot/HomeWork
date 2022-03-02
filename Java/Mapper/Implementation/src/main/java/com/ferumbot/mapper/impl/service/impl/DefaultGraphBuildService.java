@@ -18,6 +18,9 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
 
+import static com.ferumbot.mapper.impl.core.enums.ObjectType.EXPORTED_RECORD;
+import static com.ferumbot.mapper.impl.core.enums.ObjectType.SET_COLLECTION;
+
 @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
@@ -85,10 +88,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
         var type = getObjectType(objectClass);
         Collection<GraphNode> children = Collections.emptyList();
 
-        if (type == ObjectType.EXPORTED_CLASS) {
+        if (type == ObjectType.EXPORTED_CLASS || type == EXPORTED_RECORD) {
             children = getExportedChildren(objectClass);
         }
-        if (type == ObjectType.LIST_COLLECTION || type == ObjectType.SET_COLLECTION) {
+        if (type == ObjectType.LIST_COLLECTION || type == SET_COLLECTION) {
             children = getCollectionChildren(fieldInParent);
         }
 
@@ -112,10 +115,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
         checkForRetainCycleOrThrow(object);
 
-        if (type == ObjectType.EXPORTED_CLASS) {
+        if (type == ObjectType.EXPORTED_CLASS || type == EXPORTED_RECORD) {
             children = getExportedChildren(object);
         }
-        if (type == ObjectType.LIST_COLLECTION || type == ObjectType.SET_COLLECTION) {
+        if (type == ObjectType.LIST_COLLECTION || type == SET_COLLECTION) {
             children = getCollectionChildren(object, fieldInParent);
         }
 
@@ -128,7 +131,7 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
     private ObjectType getObjectType(Class<?> clazz) {
         if (Set.class.isAssignableFrom(clazz)) {
-            return ObjectType.SET_COLLECTION;
+            return SET_COLLECTION;
         }
         if (List.class.isAssignableFrom(clazz)) {
             return ObjectType.LIST_COLLECTION;
@@ -149,6 +152,9 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
         if (clazz.isEnum()) {
             return ObjectType.ENUM_CLASS;
+        }
+        if (clazz.isRecord()) {
+            return EXPORTED_RECORD;
         }
 
         if (isExportedClass(clazz)) {
