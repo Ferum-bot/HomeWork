@@ -91,4 +91,12 @@ public interface GraphNodeService {
      * @apiNote returns empty optional if {@link DateFormat} is not presented.
      */
     Optional<String> getDateFormatValue(GraphNode node);
+
+    /**
+     * Checks if parent class of node is Collection.
+     * @see GraphNode
+     * @param node the node to invoke from.
+     * @return true if parent class is collection and false otherwise.
+     */
+    boolean parentClassIsCollection(GraphNode node);
 }

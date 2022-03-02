@@ -138,19 +138,25 @@ public class SerializationProcessor {
     }
 
     private void writeNameAlias(GraphNode node, ObjectWriter<?> writer) {
-        var object = node.object();
+        if (graphNodeService.parentClassIsCollection(node)) {
+            return;
+        }
 
+        var object = node.object();
         var nameAlias = graphNodeService.getNameAlias(node);
         var nullHandling = graphNodeService.getNullHandlingPolicy(node);
 
-        if (nameAlias.isPresent()) {
-            if (nullHandling == INCLUDE) {
-                var nameAliasTemplate = serializationTemplatesService.getNameAliasTemplate(nameAlias.get());
-                writer.writeToEnd(nameAliasTemplate);
-            } else if (object != null) {
-                var nameAliasTemplate = serializationTemplatesService.getNameAliasTemplate(nameAlias.get());
-                writer.writeToEnd(nameAliasTemplate);
-            }
+        if (nameAlias.isEmpty()) {
+            return;
+        }
+        if (object != null) {
+            var nameAliasTemplate = serializationTemplatesService.getNameAliasTemplate(nameAlias.get());
+            writer.writeToEnd(nameAliasTemplate);
+            return;
+        }
+        if (nullHandling == INCLUDE) {
+            var nameAliasTemplate = serializationTemplatesService.getNullNameAliasTemplate(nameAlias.get());
+            writer.writeToEnd(nameAliasTemplate);
         }
     }
 

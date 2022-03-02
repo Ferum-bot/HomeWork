@@ -4,6 +4,7 @@ import com.ferumbot.mapper.impl.components.filter.DeserializationFilterChain;
 import com.ferumbot.mapper.impl.components.filter.SerializationFilterChain;
 import com.ferumbot.mapper.impl.core.context.MapperContextHolder;
 import com.ferumbot.mapper.impl.core.models.MappingSettings;
+import com.ferumbot.mapper.impl.core.util.IdentifierProvider;
 import com.ferumbot.mapper.impl.di.Injector;
 import com.ferumbot.mapper.impl.interactor.MapperInteractor;
 import com.ferumbot.mapper.impl.processor.DeserializationProcessor;
@@ -24,6 +25,7 @@ public class DefaultMapperInteractor implements MapperInteractor {
     public DefaultMapperInteractor(MappingSettings settings) {
         var context = MapperContextHolder.getContext();
         context.setSettings(settings);
+        IdentifierProvider.flush();
 
         serializationFilterChain = Injector.provideSerializationFilterChain();
         deserializationFilterChain = Injector.provideDeserializationFilterChain();

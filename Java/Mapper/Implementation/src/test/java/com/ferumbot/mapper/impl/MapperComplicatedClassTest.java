@@ -2,6 +2,7 @@ package com.ferumbot.mapper.impl;
 
 import com.ferumbot.mapper.impl.classes.ComplicatedClass1;
 import com.ferumbot.mapper.impl.classes.ComplicatedClass2;
+import com.ferumbot.mapper.impl.classes.ComplicatedClass3;
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.util.MapperConstants;
 import com.ferumbot.mapper.impl.service.DateTimeService;
@@ -16,11 +17,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.List;
+import java.util.TreeSet;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DefaultMapperTest {
+class MapperComplicatedClassTest {
 
     private Mapper mapper;
 
@@ -165,16 +168,59 @@ class DefaultMapperTest {
         var localTime = LocalTime.now();
         var complicatedClass = new ComplicatedClass2();
         var timeFormatter = DateTimeFormatter.ofPattern(MapperConstants.LOCAL_TIME_PATTERN);
+        complicatedClass.setExportedTime(localTime);
 
         var actualResult = mapper.writeToString(complicatedClass);
 
         var expectedTime = localTime.format(timeFormatter);
+        var expectedResult = new StringBuilder()
+                .append("""
+                        {
+                        "$OBJECT_ID$" : 0
+                        "notes" : [
+                        "TestNote1"
+                        "TestNote2"
+                        "TestNote3"
+                        "TestNote4"
+                        ]
+                        "costs" : [
+                        23.0
+                        -123.1
+                        0.123
+                        123.3
+                        ]
+                        "testEnum" : SECOND_VALUE
+                        "exportedTime" : \"""")
+                .append(expectedTime)
+                .append("\"\n")
+                .append("""
+                        "nullString" : null
+                        }
+                        """)
+                .toString();
 
-        System.out.println(actualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    void WriteToString_ComplicatedClass3_SuccessSerializationToString() throws IOException {
+    void WriteToString_ComplicatedClass3_SuccessSerializationToString() {
+        var complicatedClass = new ComplicatedClass3();
+
+        assertDoesNotThrow(() -> mapper.writeToString(complicatedClass));
+    }
+
+    @Test
+    void WriteToString_RetainIdentityClass_SuccessSerializationWithWriteIds() throws IOException {
+
+    }
+
+    @Test
+    void WriteToInputStream_ComplicatedClass1_SuccessSerializationToStream() throws IOException {
+
+    }
+
+    @Test
+    void WriteToFile_ComplicatedClass1_SuccessSerializationToFile() throws IOException {
 
     }
 }

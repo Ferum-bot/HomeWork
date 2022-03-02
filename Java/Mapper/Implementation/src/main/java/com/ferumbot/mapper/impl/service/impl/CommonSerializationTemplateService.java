@@ -16,6 +16,12 @@ public class CommonSerializationTemplateService implements SerializationTemplate
     }
 
     @Override
+    public String getNullNameAliasTemplate(String nameAlias) {
+        var nameTemplate = getNameAliasTemplate(nameAlias);
+        return nameTemplate + MapperConstants.UN_DEFINED_VALUE;
+    }
+
+    @Override
     public String getIdPropertyTemplate(Long id) {
         return MapperConstants.NAME_BEGIN_SYMBOL +
                 MapperConstants.OBJECT_ID_ALIAS +

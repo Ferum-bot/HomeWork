@@ -18,6 +18,13 @@ public interface SerializationTemplatesService {
     String getNameAliasTemplate(String nameAlias);
 
     /**
+     * Substitute the name alias of null object in template.
+     * @param nameAlias the alias of object
+     * @return name alias template.
+     */
+    String getNullNameAliasTemplate(String nameAlias);
+
+    /**
      * Substitute the id value of object in template.
      * @param id the id of object.
      * @return id property template.

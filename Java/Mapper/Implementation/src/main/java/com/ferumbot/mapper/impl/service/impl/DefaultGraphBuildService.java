@@ -89,7 +89,7 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
             children = getExportedChildren(objectClass);
         }
         if (type == ObjectType.LIST_COLLECTION || type == ObjectType.SET_COLLECTION) {
-            children = getCollectionChildren(fieldInParent, parentClass);
+            children = getCollectionChildren(fieldInParent);
         }
 
         return new GraphNode(
@@ -116,7 +116,7 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
             children = getExportedChildren(object);
         }
         if (type == ObjectType.LIST_COLLECTION || type == ObjectType.SET_COLLECTION) {
-            children = getCollectionChildren(object, fieldInParent, parentClass);
+            children = getCollectionChildren(object, fieldInParent);
         }
 
         objectsColor.put(object, ObjectColor.BLACK);
@@ -196,8 +196,9 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
     }
 
     private Collection<GraphNode> getCollectionChildren(
-        Object object, Optional<Field> fieldInParent, Optional<Class<?>> parentClass
+        Object object, Optional<Field> fieldInParent
     ) throws IllegalAccessException {
+        Optional<Class<?>> parentClass = Optional.of(Collection.class);
         var collection = (Collection<?>) object;
 
         Collection<GraphNode> resultNodes = new ArrayList<>();
@@ -210,7 +211,7 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
     }
 
     private Collection<GraphNode> getCollectionChildren(
-        Optional<Field> fieldInParent, Optional<Class<?>> parentClass
+        Optional<Field> fieldInParent
     ) throws IllegalAccessException {
         Field parentField;
         if (fieldInParent.isEmpty()) {
@@ -219,6 +220,7 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
             parentField = fieldInParent.get();
         }
 
+        Optional<Class<?>> parentClass = Optional.of(Collection.class);
         var type = (ParameterizedType) parentField.getGenericType();
         var typeClass = type.getActualTypeArguments()[0];
 

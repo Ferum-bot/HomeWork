@@ -124,6 +124,15 @@ public class CommonGraphNodeService implements GraphNodeService {
         }
     }
 
+    @Override
+    public boolean parentClassIsCollection(GraphNode node) {
+        var parentClass = node.parentClass();
+        if (parentClass.isEmpty()) {
+            return false;
+        }
+        return Collection.class.isAssignableFrom(parentClass.get());
+    }
+
     private Optional<Exported> getExportedAnnotation(GraphNode node) {
         var objectClass = node.objectClass();
         var parentClassHolder = node.parentClass();
