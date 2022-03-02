@@ -101,6 +101,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
     private GraphNode buildNode(
         Optional<Field> fieldInParent, Optional<Class<?>> parentClass, Object object
     ) throws IllegalAccessException {
+        if (object == null) {
+            return GraphNode.ofNullObject(fieldInParent, parentClass);
+        }
+
         var objectClass = object.getClass();
         var type = getObjectType(objectClass);
         var id = getNodeId(object);
@@ -274,7 +278,8 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
             return graphIds.get(object);
         }
         var id = IdentifierProvider.nextId();
-        return graphIds.put(object, id);
+        graphIds.put(object, id);
+        return id;
     }
 
     private void checkForRetainCycleOrThrow(Object object) {

@@ -4,6 +4,7 @@ import com.ferumbot.mapper.impl.core.enums.ObjectType;
 
 import java.lang.reflect.Field;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
 
 public record GraphNode(
@@ -22,4 +23,12 @@ public record GraphNode(
 
     Collection<GraphNode> children
 ) {
+
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
+    public static GraphNode ofNullObject(Optional<Field> fieldInParent, Optional<Class<?>> parentClass) {
+        return new GraphNode(
+            null, null, null, fieldInParent,
+                parentClass, ObjectType.UN_DEFINED, Collections.emptyList()
+        );
+    }
 }

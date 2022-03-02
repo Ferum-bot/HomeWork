@@ -62,10 +62,7 @@ public class SerializationProcessor {
             return;
         }
 
-        var nodeIsNull = checkNullOrWriteNameAlias(graphNode, writer);
-        if (nodeIsNull) {
-            return;
-        }
+        writeNameAlias(graphNode, writer);
 
         switch (type) {
             case EXPORTED_CLASS -> {
@@ -140,8 +137,9 @@ public class SerializationProcessor {
         }
     }
 
-    private boolean checkNullOrWriteNameAlias(GraphNode node, ObjectWriter<?> writer) {
+    private void writeNameAlias(GraphNode node, ObjectWriter<?> writer) {
         var object = node.object();
+
         var nameAlias = graphNodeService.getNameAlias(node);
         var nullHandling = graphNodeService.getNullHandlingPolicy(node);
 
@@ -149,10 +147,11 @@ public class SerializationProcessor {
             if (nullHandling == INCLUDE) {
                 var nameAliasTemplate = serializationTemplatesService.getNameAliasTemplate(nameAlias.get());
                 writer.writeToEnd(nameAliasTemplate);
+            } else if (object != null) {
+                var nameAliasTemplate = serializationTemplatesService.getNameAliasTemplate(nameAlias.get());
+                writer.writeToEnd(nameAliasTemplate);
             }
         }
-
-        return object == null;
     }
 
     private String getDateTimePattern(GraphNode node) {

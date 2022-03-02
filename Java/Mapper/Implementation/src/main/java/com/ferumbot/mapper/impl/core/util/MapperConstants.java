@@ -25,4 +25,6 @@ public class MapperConstants {
     public static final String OBJECT_END_SYMBOL = "}";
 
     public static final String OBJECT_ID_ALIAS = "$OBJECT_ID$";
+
+    public static final String UN_DEFINED_VALUE = "null";
 }

@@ -1,6 +1,7 @@
 package com.ferumbot.mapper.impl;
 
 import com.ferumbot.mapper.impl.classes.ComplicatedClass1;
+import com.ferumbot.mapper.impl.classes.ComplicatedClass2;
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.util.MapperConstants;
 import com.ferumbot.mapper.impl.service.DateTimeService;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -123,20 +125,56 @@ class DefaultMapperTest {
 
     @Test
     void WriteToString_ComplicatedClass1_SuccessSerializationToString() throws IOException {
+        var localDateTime = LocalDateTime.now();
+        var localDate = LocalDate.now();
         var complicatedClass = new ComplicatedClass1();
+        var dateTimeFormatter = DateTimeFormatter.ofPattern(MapperConstants.LOCAL_DATE_TIME_PATTERN);
+        var dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        complicatedClass.setCurrentDate(localDateTime);
+        complicatedClass.setLastDate(localDate);
 
         var actualResult = mapper.writeToString(complicatedClass);
+
+        var expectedDateTime = localDateTime.format(dateTimeFormatter);
+        var expectedDate = localDateTime.format(dateFormatter);
+        var expectedResult = new StringBuilder()
+                .append("""
+                        {
+                        "$OBJECT_ID$" : 0
+                        "name" : "name"
+                        "surname" : "surname"
+                        "count" : 124
+                        "last_price" : 123.3
+                        "currentDate" : \"""")
+                .append(expectedDateTime)
+                .append("\"\n")
+                .append("""
+                        "lastDate" : \"""")
+                .append(expectedDate)
+                .append("\"\n")
+                .append("""
+                        }
+                        """)
+                .toString();
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    void WriteToString_ComplicatedClass2_SuccessSerializationToString() throws IOException {
+        var localTime = LocalTime.now();
+        var complicatedClass = new ComplicatedClass2();
+        var timeFormatter = DateTimeFormatter.ofPattern(MapperConstants.LOCAL_TIME_PATTERN);
+
+        var actualResult = mapper.writeToString(complicatedClass);
+
+        var expectedTime = localTime.format(timeFormatter);
 
         System.out.println(actualResult);
     }
 
     @Test
-    void WriteToString_ComplicatedClass2_SuccessSerializationToString() {
-
-    }
-
-    @Test
-    void WriteToString_ComplicatedClass3_SuccessSerializationToString() {
+    void WriteToString_ComplicatedClass3_SuccessSerializationToString() throws IOException {
 
     }
 }

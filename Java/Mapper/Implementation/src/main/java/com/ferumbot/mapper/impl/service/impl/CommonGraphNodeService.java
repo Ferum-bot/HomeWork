@@ -44,6 +44,10 @@ public class CommonGraphNodeService implements GraphNodeService {
     @Override
     public Collection<Field> getFields(GraphNode node) {
         var objectClass = node.objectClass();
+        if (objectClass == null) {
+            return Collections.emptyList();
+        }
+
         return Arrays.stream(objectClass.getDeclaredFields())
             .filter(field -> !field.isSynthetic())
             .filter(field -> !Modifier.isStatic(field.getModifiers()))
@@ -66,12 +70,20 @@ public class CommonGraphNodeService implements GraphNodeService {
     @Override
     public Collection<Annotation> getClassAnnotations(GraphNode node) {
         var objectClass = node.objectClass();
+        if (objectClass == null) {
+            return Collections.emptyList();
+        }
+
         return Arrays.stream(objectClass.getAnnotations()).toList();
     }
 
     @Override
     public Collection<Constructor<?>> getConstructors(GraphNode node) {
         var objectClass = node.objectClass();
+        if (objectClass == null) {
+            return Collections.emptyList();
+        }
+
         return Arrays.stream(objectClass.getConstructors()).toList();
     }
 
@@ -113,8 +125,32 @@ public class CommonGraphNodeService implements GraphNodeService {
     }
 
     private Optional<Exported> getExportedAnnotation(GraphNode node) {
-        var annotations = getClassAnnotations(node);
-        return annotations.stream()
+        var objectClass = node.objectClass();
+        var parentClassHolder = node.parentClass();
+
+        if (objectClass == null && parentClassHolder.isEmpty()) {
+            return Optional.empty();
+        }
+        if (objectClass == null) {
+            var parentClass = parentClassHolder.get();
+            return getExportedAnnotation(parentClass);
+        }
+
+        var objectExported = getExportedAnnotation(objectClass);
+        if (objectExported.isPresent()) {
+            return objectExported;
+        }
+        if (parentClassHolder.isEmpty()) {
+            return Optional.empty();
+        }
+
+        var parentClass = parentClassHolder.get();
+        return getExportedAnnotation(parentClass);
+    }
+
+    private Optional<Exported> getExportedAnnotation(Class<?> clazz) {
+        var annotations = Arrays.stream(clazz.getAnnotations());
+        return annotations
                 .filter(annotation -> annotation.annotationType().equals(Exported.class))
                 .map(annotation -> (Exported) annotation)
                 .findFirst();

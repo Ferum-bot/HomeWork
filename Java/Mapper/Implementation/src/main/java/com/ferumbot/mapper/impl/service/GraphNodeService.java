@@ -27,6 +27,8 @@ public interface GraphNodeService {
      * @see NullHandling
      * @param node the node to invoke from.
      * @return null handling policy.
+     * @apiNote if object in node is not exported class, method will return the nearest value of null
+     * handling policy in the graph. Default value is {@code EXCLUDE}.
      */
     NullHandling getNullHandlingPolicy(GraphNode node);
 
