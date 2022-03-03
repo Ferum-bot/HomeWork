@@ -17,7 +17,7 @@ public class InputStreamInputReader implements InputReader<InputStream> {
     }
 
     @Override
-    public String readAll() throws IOException {
+    public String readAll() {
         if (cachedInput == null) {
             cachedInput = getStreamString();
         }
@@ -29,8 +29,12 @@ public class InputStreamInputReader implements InputReader<InputStream> {
         return input;
     }
 
-    private String getStreamString() throws IOException {
-        var bytes = input.readAllBytes();
-        return new String(bytes, StandardCharsets.UTF_8);
+    private String getStreamString() {
+        try {
+            var bytes = input.readAllBytes();
+            return new String(bytes, StandardCharsets.UTF_8);
+        } catch (IOException exception) {
+            throw new ru.hse.homework4.exceptions.IOException(exception.getMessage());
+        }
     }
 }

@@ -3,6 +3,7 @@ package com.ferumbot.mapper.impl.di;
 import com.ferumbot.mapper.impl.components.filter.DeserializationFilterChain;
 import com.ferumbot.mapper.impl.components.filter.SerializationFilterChain;
 import com.ferumbot.mapper.impl.components.filter.input.InputMapperFilter;
+import com.ferumbot.mapper.impl.components.filter.input.impl.InputGrammarFilter;
 import com.ferumbot.mapper.impl.components.filter.input.impl.InputStructureFilter;
 import com.ferumbot.mapper.impl.components.filter.object.ObjectMapperFilter;
 import com.ferumbot.mapper.impl.components.filter.object.impl.ClassConstructorFilter;
@@ -63,6 +64,7 @@ public class Injector {
         filterChain.addObjectFilter(provideClassConstructorFilter());
         filterChain.addObjectFilter(provideDateTimeFilter());
 
+        filterChain.addInputFilter(provideInputGrammarFilter());
         filterChain.addInputFilter(provideInputStructureFilter());
 
         return filterChain;
@@ -88,6 +90,10 @@ public class Injector {
         var graphBuildService = provideGraphBuildService();
         var graphNodeService = provideGraphNodeService();
         return new ClassConstructorFilter(graphBuildService, graphNodeService);
+    }
+
+    public static InputMapperFilter provideInputGrammarFilter() {
+        return new InputGrammarFilter();
     }
 
     public static InputMapperFilter provideInputStructureFilter() {

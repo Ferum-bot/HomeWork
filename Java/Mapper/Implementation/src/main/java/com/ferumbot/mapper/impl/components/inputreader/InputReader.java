@@ -15,7 +15,7 @@ public interface InputReader <T> {
      * @return all data from input.
      * @throws IOException in case of input-output errors.
      */
-    String readAll() throws IOException;
+    String readAll();
 
     /**
      * Gets the reader.

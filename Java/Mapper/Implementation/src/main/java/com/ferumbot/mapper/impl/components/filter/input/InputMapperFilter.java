@@ -17,7 +17,7 @@ public interface InputMapperFilter {
     /**
      * Filters input.
      * @see InputReader
-     * @param input to get input from.
+     * @param inputReader to get input from.
      */
-    void filter(InputReader<?> input);
+    void filter(InputReader<?> inputReader);
 }

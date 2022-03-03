@@ -18,7 +18,7 @@ public class FileInputReader implements InputReader<File> {
     }
 
     @Override
-    public String readAll() throws IOException {
+    public String readAll() {
         if (cachedInput == null) {
             cachedInput = getFileString();
         }
@@ -30,8 +30,12 @@ public class FileInputReader implements InputReader<File> {
         return input;
     }
 
-    private String getFileString() throws IOException {
-        var path = input.toPath();
-        return Files.readString(path, StandardCharsets.UTF_8);
+    private String getFileString() {
+        try {
+            var path = input.toPath();
+            return Files.readString(path, StandardCharsets.UTF_8);
+        } catch (IOException exception) {
+            throw new ru.hse.homework4.exceptions.IOException(exception.getMessage());
+        }
     }
 }
