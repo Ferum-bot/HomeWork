@@ -3,10 +3,12 @@ package com.ferumbot.mapper.impl;
 import com.ferumbot.mapper.impl.classes.ComplicatedClass1;
 import com.ferumbot.mapper.impl.classes.ComplicatedClass2;
 import com.ferumbot.mapper.impl.classes.ComplicatedClass3;
+import com.ferumbot.mapper.impl.classes.RetainIdentityClass;
 import com.ferumbot.mapper.impl.core.enums.ObjectType;
 import com.ferumbot.mapper.impl.core.util.MapperConstants;
 import com.ferumbot.mapper.impl.service.DateTimeService;
 import com.ferumbot.mapper.impl.service.impl.DefaultDateTimeService;
+import com.ferumbot.mapper.impl.util.StringUtil;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,8 +22,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.TreeSet;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MapperComplicatedClassTest {
 
@@ -211,7 +212,31 @@ class MapperComplicatedClassTest {
 
     @Test
     void WriteToString_RetainIdentityClass_SuccessSerializationWithWriteIds() throws IOException {
+        var retainClass = new RetainIdentityClass();
+        var firstClass = new ComplicatedClass1();
+        var testClass = new ComplicatedClass2();
+        retainClass.setFirstClass(firstClass);
+        retainClass.setSecondClass(firstClass);
+        retainClass.setTest1(testClass);
+        retainClass.setTest2(testClass);
+        retainClass.setTest3(testClass);
 
+        var actualResult = mapper.writeToString(retainClass);
+
+        var expectedFirstClassId = """
+                "$OBJECT_ID$" : 1
+                """;
+        var expectedTestClassId = """
+                "$OBJECT_ID$" : 8
+                """;
+        var expectedFirstClassCount = 2;
+        var expectedTestClassCount = 3;
+
+        var actualFirstClassCount = StringUtil.countEntries(expectedFirstClassId, actualResult);
+        var actualTestClassCount = StringUtil.countEntries(expectedTestClassId, actualResult);
+
+        assertEquals(expectedFirstClassCount, actualFirstClassCount);
+        assertEquals(expectedTestClassCount, actualTestClassCount);
     }
 
     @Test

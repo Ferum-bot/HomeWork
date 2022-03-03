@@ -18,8 +18,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
 
-import static com.ferumbot.mapper.impl.core.enums.ObjectType.EXPORTED_RECORD;
-import static com.ferumbot.mapper.impl.core.enums.ObjectType.SET_COLLECTION;
+import static com.ferumbot.mapper.impl.core.enums.ObjectType.*;
 
 @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 public class DefaultGraphBuildService implements ObjectGraphBuildService {
@@ -88,10 +87,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
         var type = getObjectType(objectClass);
         Collection<GraphNode> children = Collections.emptyList();
 
-        if (type == ObjectType.EXPORTED_CLASS || type == EXPORTED_RECORD) {
+        if (type == EXPORTED_CLASS || type == EXPORTED_RECORD) {
             children = getExportedChildren(objectClass);
         }
-        if (type == ObjectType.LIST_COLLECTION || type == SET_COLLECTION) {
+        if (type == LIST_COLLECTION || type == SET_COLLECTION) {
             children = getCollectionChildren(fieldInParent);
         }
 
@@ -115,10 +114,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
 
         checkForRetainCycleOrThrow(object);
 
-        if (type == ObjectType.EXPORTED_CLASS || type == EXPORTED_RECORD) {
+        if (type == EXPORTED_CLASS || type == EXPORTED_RECORD) {
             children = getExportedChildren(object);
         }
-        if (type == ObjectType.LIST_COLLECTION || type == SET_COLLECTION) {
+        if (type == LIST_COLLECTION || type == SET_COLLECTION) {
             children = getCollectionChildren(object, fieldInParent);
         }
 
@@ -134,37 +133,37 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
             return SET_COLLECTION;
         }
         if (List.class.isAssignableFrom(clazz)) {
-            return ObjectType.LIST_COLLECTION;
+            return LIST_COLLECTION;
         }
 
         if (clazz.equals(String.class)) {
-            return ObjectType.STRING;
+            return STRING;
         }
         if (clazz.equals(LocalDate.class)) {
-            return ObjectType.LOCAL_DATE;
+            return LOCAL_DATE;
         }
         if (clazz.equals(LocalTime.class)) {
-            return ObjectType.LOCAL_TIME;
+            return LOCAL_TIME;
         }
         if (clazz.equals(LocalDateTime.class)) {
-            return ObjectType.LOCAL_DATE_TIME;
+            return LOCAL_DATE_TIME;
         }
 
         if (clazz.isEnum()) {
-            return ObjectType.ENUM_CLASS;
+            return ENUM_CLASS;
         }
-        if (clazz.isRecord()) {
+
+        if (isExportedRecordClass(clazz)) {
             return EXPORTED_RECORD;
         }
-
         if (isExportedClass(clazz)) {
-            return ObjectType.EXPORTED_CLASS;
+            return EXPORTED_CLASS;
         }
         if (isPrimitive(clazz)) {
-            return ObjectType.PRIMITIVE;
+            return PRIMITIVE;
         }
 
-        return ObjectType.UN_SUPPORTED;
+        return UN_SUPPORTED;
     }
 
     private Collection<GraphNode> getExportedChildren(Object object) throws IllegalAccessException {
@@ -239,6 +238,10 @@ public class DefaultGraphBuildService implements ObjectGraphBuildService {
                 .filter(field -> !Modifier.isStatic(field.getModifiers()))
                 .peek(Field::trySetAccessible)
                 .toList();
+    }
+
+    private boolean isExportedRecordClass(Class<?> clazz) {
+        return clazz.isRecord() && isExportedClass(clazz);
     }
 
     private boolean isExportedClass(Class<?> clazz) {
