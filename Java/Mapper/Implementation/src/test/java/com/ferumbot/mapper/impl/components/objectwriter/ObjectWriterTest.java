@@ -5,6 +5,7 @@ import com.ferumbot.mapper.impl.components.objectwriter.impl.OutputStreamObjectW
 import com.ferumbot.mapper.impl.components.objectwriter.impl.StringObjectWriter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.OutputStream;
@@ -20,17 +21,26 @@ class ObjectWriterTest {
     private File testFile;
     private OutputStream testOutputStream;
 
-    @BeforeEach
-    void setUp() {
-        fileObjectWriter = new FileObjectWriter(testFile);
-        outputStreamObjectWriter = new OutputStreamObjectWriter(testOutputStream);
-        stringObjectWriter = new StringObjectWriter();
+    @Test
+    void FileObjectWriter_WriteToEnd_SuccessWrite() {
+
     }
 
-    @AfterEach
-    void tearDown() {
-        fileObjectWriter = null;
-        outputStreamObjectWriter = null;
-        stringObjectWriter = null;
+    @Test
+    void OutputStreamObjectWriter_WriteToEnd_SuccessWrite() {
+
+    }
+
+    @Test
+    void StringObjectWriter_WriteToEnd_SuccessWrite() {
+
+    }
+
+    private void initTestFile(String path) {
+
+    }
+
+    private void initTestOutputStream(String data) {
+
     }
 }

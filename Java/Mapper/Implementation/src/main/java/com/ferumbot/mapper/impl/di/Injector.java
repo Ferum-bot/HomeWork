@@ -135,7 +135,8 @@ public class Injector {
     }
 
     public static DeserializationProcessor provideDeserializationProcessor() {
-        return new DeserializationProcessor();
+        var graphBuildService = provideGraphBuildService();
+        return new DeserializationProcessor(graphBuildService);
     }
 
     public static ObjectGraphBuildService provideGraphBuildService() {
