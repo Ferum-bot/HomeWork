@@ -7,6 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Jigsaw-UI" />
+        <module name="core" />
+        <module name="ui" />
+        <module name="client" />
+        <module name="main" />
         <module name="Main" />
         <module name="Core" />
         <module name="Jigsaw-Client" />
