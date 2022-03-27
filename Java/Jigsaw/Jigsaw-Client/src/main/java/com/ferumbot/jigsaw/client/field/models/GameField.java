@@ -1,17 +1,17 @@
 package com.ferumbot.jigsaw.client.field.models;
 
 import com.ferumbot.jigsaw.client.field.exception.FigureNotAddedException;
-import com.ferumbot.jigsaw.client.field.models.FieldParams;
 import com.ferumbot.jigsaw.client.field.service.GameFieldService;
+import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.client.figure.model.GameFigure;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GameField {
+import static com.ferumbot.jigsaw.client.field.core.FieldConstants.DEFAULT_FIELD_SIZE;
 
-    private static final int DEFAULT_FIELD_SIZE = 9;
+public class GameField {
 
     private final GameFieldService service;
 
@@ -35,15 +35,21 @@ public class GameField {
         return Collections.unmodifiableList(figures);
     }
 
-    public boolean addFigure(GameFigure figure) {
-        if (service.canAddNewFigure(this, figure)) {
+    public FieldParams getParams() {
+        return params;
+    }
+
+    public boolean addFigure(GameFigure figure, Coordinates targetCoordinates) {
+        if (service.canAddNewFigure(this, figure, targetCoordinates)) {
+            figure.setCoordinates(targetCoordinates);
             return figures.add(figure);
         }
         return false;
     }
 
-    public void tryToAddFigure(GameFigure figure) {
-        if (service.canAddNewFigure(this, figure)) {
+    public void tryToAddFigure(GameFigure figure, Coordinates targetCoordinates) {
+        if (service.canAddNewFigure(this, figure, targetCoordinates)) {
+            figure.setCoordinates(targetCoordinates);
             figures.add(figure);
         }
 

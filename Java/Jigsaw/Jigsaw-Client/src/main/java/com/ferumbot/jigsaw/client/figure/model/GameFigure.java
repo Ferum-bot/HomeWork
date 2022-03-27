@@ -14,8 +14,10 @@ public class GameFigure {
 
     private final List<FigureBlock> blocks;
 
-    public GameFigure() {
-        blocks = new LinkedList<>();
+    private Coordinates coordinates;
+
+    public GameFigure(List<FigureBlock> blocks) {
+        this.blocks = blocks;
         id = ValueThreadSequence.generateInt();
     }
 
@@ -34,6 +36,14 @@ public class GameFigure {
 
     public int getId() {
         return id;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
     }
 
     public void addBlock(FigureBlock block) {
