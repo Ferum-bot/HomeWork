@@ -8,6 +8,7 @@ import com.ferumbot.jigsaw.client.figure.model.GameFigure;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import static com.ferumbot.jigsaw.client.field.core.FieldConstants.DEFAULT_FIELD_SIZE;
 
@@ -39,6 +40,10 @@ public class GameField {
         return params;
     }
 
+    public List<FieldBlock> getFieldBlocks() {
+        return service.generateFieldBlocks(this);
+    }
+
     public boolean addFigure(GameFigure figure, Coordinates targetCoordinates) {
         if (service.canAddNewFigure(this, figure, targetCoordinates)) {
             figure.setCoordinates(targetCoordinates);
@@ -58,5 +63,21 @@ public class GameField {
 
     public boolean removeFigure(GameFigure figure) {
         return figures.remove(figure);
+    }
+
+    public Optional<GameFigure> getFigure(int id) {
+        return figures.stream()
+            .filter(figure -> figure.getId() == id)
+            .findFirst();
+    }
+
+    public boolean removeFigure(int id) {
+        var figureToRemove = figures.stream()
+            .filter(figure -> figure.getId() == id)
+            .findFirst();
+        if (figureToRemove.isEmpty()) {
+            return false;
+        }
+        return removeFigure(figureToRemove.get());
     }
 }
