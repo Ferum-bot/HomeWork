@@ -18,11 +18,12 @@ public class GameAdapter {
     }
 
     public boolean addFigureToGameField(FigureView figureView, FieldView fieldView) {
-
+        return false;
     }
 
     public FigureView getNewFigureView() {
-
+        var gameFigure = gameClient.generateRandomGameFigure();
+        return new FigureView(gameFigure);
     }
 
     public GameStatistics onFinishButtonClicked() {
