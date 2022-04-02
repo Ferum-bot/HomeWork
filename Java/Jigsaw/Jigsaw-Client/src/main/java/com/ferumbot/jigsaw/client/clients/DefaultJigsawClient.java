@@ -3,11 +3,9 @@ package com.ferumbot.jigsaw.client.clients;
 import com.ferumbot.jigsaw.client.exception.GameNotStartedException;
 import com.ferumbot.jigsaw.client.field.models.FieldParams;
 import com.ferumbot.jigsaw.client.field.models.GameField;
-import com.ferumbot.jigsaw.client.field.service.GameFieldService;
 import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.client.figure.model.GameFigure;
 import com.ferumbot.jigsaw.client.figure.service.GameFigureGenerator;
-import com.ferumbot.jigsaw.client.figure.service.GameFigureService;
 import com.ferumbot.jigsaw.client.game.GameStatistics;
 
 class DefaultJigsawClient implements JigsawGameClient {
