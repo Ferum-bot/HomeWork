@@ -1,13 +1,15 @@
 package com.ferumbot.jigsaw.ui.views;
 
-import com.ferumbot.jigsaw.client.figure.model.GameFigure;
+import com.ferumbot.jigsaw.client.figure.model.MutableGameFigure;
 import javafx.scene.layout.Pane;
 
 public class FigureView extends Pane {
 
-    private final GameFigure gameFigure;
+    private final MutableGameFigure gameFigure;
 
-    public FigureView(GameFigure gameFigure) {
+    public FigureView(MutableGameFigure gameFigure) {
         this.gameFigure = gameFigure;
     }
+
+
 }

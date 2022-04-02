@@ -12,9 +12,4 @@ public record FieldBlock(
 
     Optional<GameFigure> figureReference,
     Optional<FigureBlock> blockReference
-) {
-
-    public boolean equalsTo(FigureBlock figureBlock) {
-        return xCoordinate == figureBlock.xCoordinate() && yCoordinate == figureBlock.yCoordinate();
-    }
-}
+) { }

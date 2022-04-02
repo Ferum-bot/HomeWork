@@ -1,10 +1,12 @@
 package com.ferumbot.jigsaw.client.clients;
 
 import com.ferumbot.jigsaw.client.exception.GameNotStartedException;
+import com.ferumbot.jigsaw.client.exception.UnSupportedClassImplementationException;
 import com.ferumbot.jigsaw.client.field.models.FieldParams;
-import com.ferumbot.jigsaw.client.field.models.GameField;
+import com.ferumbot.jigsaw.client.field.models.MutableGameField;
 import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.client.figure.model.GameFigure;
+import com.ferumbot.jigsaw.client.figure.model.MutableGameFigure;
 import com.ferumbot.jigsaw.client.figure.service.GameFigureGenerator;
 import com.ferumbot.jigsaw.client.game.GameStatistics;
 
@@ -12,7 +14,7 @@ class DefaultJigsawClient implements JigsawGameClient {
 
     private boolean isStarted = false;
 
-    private GameField gameField;
+    private MutableGameField gameField;
 
     private int turnsCount = 0;
 
@@ -22,14 +24,14 @@ class DefaultJigsawClient implements JigsawGameClient {
     public void startGame() {
         isStarted = true;
         turnsCount = 0;
-        gameField = new GameField();
+        gameField = new MutableGameField();
     }
 
     @Override
     public void startGame(FieldParams fieldParams) {
         isStarted = true;
         turnsCount = 0;
-        gameField = new GameField(fieldParams);
+        gameField = new MutableGameField(fieldParams);
     }
 
     @Override
@@ -45,7 +47,10 @@ class DefaultJigsawClient implements JigsawGameClient {
         if (!isStarted) {
             throw new GameNotStartedException();
         }
-        return gameField.addFigure(figure, targetCoordinates);
+        if (figure instanceof MutableGameFigure mutableFigure) {
+            return gameField.addFigure(mutableFigure, targetCoordinates);
+        }
+        throw new UnSupportedClassImplementationException("Unsupported class implementation of GameFigure: " + figure);
     }
 
     @Override
@@ -53,11 +58,14 @@ class DefaultJigsawClient implements JigsawGameClient {
         if (!isStarted) {
             throw new GameNotStartedException();
         }
-        gameField.tryToAddFigure(figure, targetCoordinates);
+        if (figure instanceof MutableGameFigure mutableFigure) {
+            gameField.tryToAddFigure(mutableFigure, targetCoordinates);
+        }
+        throw new UnSupportedClassImplementationException("Unsupported class implementation of GameFigure: " + figure);
     }
 
     @Override
-    public GameFigure generateRandomGameFigure() {
+    public MutableGameFigure generateRandomGameFigure() {
         if (!isStarted) {
             throw new GameNotStartedException();
         }
@@ -65,7 +73,7 @@ class DefaultJigsawClient implements JigsawGameClient {
     }
 
     @Override
-    public GameField getGameField() {
+    public MutableGameField getGameField() {
         if (!isStarted) {
             throw new GameNotStartedException();
         }

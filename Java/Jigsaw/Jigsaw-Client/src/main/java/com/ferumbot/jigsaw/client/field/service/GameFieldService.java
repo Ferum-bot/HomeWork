@@ -1,9 +1,9 @@
 package com.ferumbot.jigsaw.client.field.service;
 
 import com.ferumbot.jigsaw.client.field.models.FieldBlock;
-import com.ferumbot.jigsaw.client.field.models.GameField;
+import com.ferumbot.jigsaw.client.field.models.MutableGameField;
 import com.ferumbot.jigsaw.client.figure.block.model.FigureBlock;
-import com.ferumbot.jigsaw.client.figure.model.GameFigure;
+import com.ferumbot.jigsaw.client.figure.model.MutableGameFigure;
 import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 
 import java.util.ArrayList;
@@ -12,9 +12,9 @@ import java.util.Optional;
 
 public class GameFieldService {
 
-    public boolean canAddNewFigure(GameField field, GameFigure figure, Coordinates targetCoordinate) {
+    public boolean canAddNewFigure(MutableGameField field, MutableGameFigure figure, Coordinates targetCoordinate) {
         var params = field.getParams();
-        var figureBlocks = figure.getBlocks();
+        var figureBlocks = figure.getFigureBlocks();
         var fieldBlocks = generateFieldBlocks(field);
 
         for (FigureBlock figureBlock: figureBlocks) {
@@ -36,15 +36,15 @@ public class GameFieldService {
         return true;
     }
 
-    public List<FieldBlock> generateFieldBlocks(GameField field) {
-        var figures = field.getFigures();
+    public List<FieldBlock> generateFieldBlocks(MutableGameField field) {
+        var figures = field.getMutableFigures();
         var fieldBlocks = new ArrayList<FieldBlock>();
         var fieldParams = field.getParams();
         boolean[][] usedCoordinates = new boolean[fieldParams.blockWidth()][fieldParams.blockHeight()];
 
         figures.forEach(figure -> {
-            var absoluteCoordinates = figure.getCoordinates();
-            var blocks = figure.getBlocks();
+            var absoluteCoordinates = figure.getRawFieldCoordinates();
+            var blocks = figure.getFigureBlocks();
 
             blocks.forEach(block -> {
                 var relativeX = block.xCoordinate();

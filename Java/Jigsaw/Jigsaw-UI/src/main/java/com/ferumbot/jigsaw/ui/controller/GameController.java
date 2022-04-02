@@ -5,6 +5,7 @@ import com.ferumbot.jigsaw.core.base.BaseTimeFormatter;
 import com.ferumbot.jigsaw.ui.adapters.GameAdapter;
 import com.ferumbot.jigsaw.ui.settings.ViewsCoordinatesSettings;
 import com.ferumbot.jigsaw.ui.settings.ViewsSizeSettings;
+import com.ferumbot.jigsaw.ui.views.FieldView;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -15,6 +16,9 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 public class GameController {
+
+    private static final int FIELD_BLOCK_WIDTH = 9;
+    private static final int FIELD_BLOCK_HEIGHT = 9;
 
     private final GameAdapter gameAdapter;
 
@@ -27,6 +31,8 @@ public class GameController {
     private Button finishButton;
 
     private Timeline timeline;
+
+    private FieldView fieldView;
 
     private int playedTime = 0;
 
@@ -51,6 +57,10 @@ public class GameController {
 
         playButton = new Button("Play");
         finishButton = new Button("Finish");
+
+        var fieldWidth = ViewsSizeSettings.FIELD_CELL_WIDTH * FIELD_BLOCK_WIDTH;
+        var fieldHeight = ViewsSizeSettings.FIELD_CELL_HEIGHT * FIELD_BLOCK_HEIGHT;
+        fieldView = new FieldView(FIELD_BLOCK_WIDTH, FIELD_BLOCK_HEIGHT, fieldWidth, fieldHeight);
     }
 
     private void configureAllViews() {
@@ -66,6 +76,7 @@ public class GameController {
         timeLabel.setLayoutX(ViewsCoordinatesSettings.DEFAULT_TIME_LABEL_X);
         timeLabel.setLayoutY(ViewsCoordinatesSettings.DEFAULT_TIME_LABEL_Y);
 
+        mainLayout.getChildren().add(fieldView);
         mainLayout.getChildren().add(playButton);
         mainLayout.getChildren().add(finishButton);
         mainLayout.getChildren().add(scoreLabel);
@@ -77,11 +88,16 @@ public class GameController {
             gameAdapter.onPlayButtonClicked();
             playedTime = 0;
             timeline.play();
+            fieldView.clear();
         });
 
         finishButton.setOnMouseClicked(event -> {
             timeline.stop();
             var statistics = gameAdapter.onFinishButtonClicked();
+        });
+
+        mainLayout.setOnMouseReleased(event -> {
+
         });
     }
 

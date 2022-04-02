@@ -2,7 +2,7 @@ package com.ferumbot.jigsaw.client.figure.service;
 
 import com.ferumbot.jigsaw.client.figure.block.model.FigureBlock;
 import com.ferumbot.jigsaw.client.figure.block.service.FigureBlockService;
-import com.ferumbot.jigsaw.client.figure.model.GameFigure;
+import com.ferumbot.jigsaw.client.figure.model.MutableGameFigure;
 import com.ferumbot.jigsaw.core.support.RandomValueGenerator;
 
 import java.util.LinkedList;
@@ -12,7 +12,7 @@ public class GameFigureGenerator {
 
     private final FigureBlockService figureBlockService = new FigureBlockService();
 
-    private final List<GameFigure> allFigures = new LinkedList<>();
+    private final List<MutableGameFigure> allFigures = new LinkedList<>();
 
     public GameFigureGenerator() {
         allFigures.add(generateFigure1Position1());
@@ -56,7 +56,7 @@ public class GameFigureGenerator {
         allFigures.add(generateFigure9Position4());
     }
 
-    public GameFigure generateRandomFigure() {
+    public MutableGameFigure generateRandomFigure() {
         var bound = allFigures.size();
         var randomIndex = RandomValueGenerator.generateInt(bound);
         return allFigures.get(randomIndex);
@@ -70,12 +70,12 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure1Position1() {
+    public MutableGameFigure generateFigure1Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(1, 0), blockOf(1, 1),
             blockOf(1, 2), blockOf(2, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -86,12 +86,12 @@ public class GameFigureGenerator {
      * ***</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure1Position2() {
+    public MutableGameFigure generateFigure1Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(1, 0),
             blockOf(2, 0), blockOf(0, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -102,12 +102,12 @@ public class GameFigureGenerator {
      * **-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure1Position3() {
+    public MutableGameFigure generateFigure1Position3() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(1, 0),
             blockOf(1, 1), blockOf(1, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -118,12 +118,12 @@ public class GameFigureGenerator {
      * --*</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure1Position4() {
+    public MutableGameFigure generateFigure1Position4() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(1, 1),
             blockOf(2, 1), blockOf(2, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -134,12 +134,12 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure2Position1() {
+    public MutableGameFigure generateFigure2Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(1, 0), blockOf(1, 1),
             blockOf(1, 2), blockOf(0, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -150,12 +150,12 @@ public class GameFigureGenerator {
      * ---</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure2Position2() {
+    public MutableGameFigure generateFigure2Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(1, 1),
             blockOf(2, 1), blockOf(2, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -166,12 +166,12 @@ public class GameFigureGenerator {
      * **-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure2Position3() {
+    public MutableGameFigure generateFigure2Position3() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 2), blockOf(0, 1),
             blockOf(0, 0), blockOf(1, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -182,12 +182,12 @@ public class GameFigureGenerator {
      * *--</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure2Position4() {
+    public MutableGameFigure generateFigure2Position4() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(0, 1),
             blockOf(1, 1), blockOf(2, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -198,12 +198,12 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure3Position1() {
+    public MutableGameFigure generateFigure3Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 2), blockOf(0, 1),
             blockOf(1, 1), blockOf(1, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -214,12 +214,12 @@ public class GameFigureGenerator {
      * **-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure3Position2() {
+    public MutableGameFigure generateFigure3Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(1, 0),
             blockOf(1, 1), blockOf(2, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -230,12 +230,12 @@ public class GameFigureGenerator {
      * *--</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure3Position3() {
+    public MutableGameFigure generateFigure3Position3() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(0, 1),
             blockOf(1, 1), blockOf(1, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -246,12 +246,12 @@ public class GameFigureGenerator {
      * -**</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure3Position4() {
+    public MutableGameFigure generateFigure3Position4() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(1, 1),
             blockOf(1, 0), blockOf(2, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -262,13 +262,13 @@ public class GameFigureGenerator {
      * ***</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure4Position1() {
+    public MutableGameFigure generateFigure4Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(1, 0),
             blockOf(2, 0), blockOf(2, 1),
             blockOf(2, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -279,13 +279,13 @@ public class GameFigureGenerator {
      * ***</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure4Position2() {
+    public MutableGameFigure generateFigure4Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 2), blockOf(0, 1),
             blockOf(0, 0), blockOf(1, 0),
             blockOf(2, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -296,13 +296,13 @@ public class GameFigureGenerator {
      * *--</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure4Position3() {
+    public MutableGameFigure generateFigure4Position3() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(0, 1),
             blockOf(0, 2), blockOf(1, 2),
             blockOf(2, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -313,13 +313,13 @@ public class GameFigureGenerator {
      * --*</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure4Position4() {
+    public MutableGameFigure generateFigure4Position4() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 2), blockOf(1, 2),
             blockOf(2, 2), blockOf(2, 1),
             blockOf(2, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -330,13 +330,13 @@ public class GameFigureGenerator {
      * ***</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure5Position1() {
+    public MutableGameFigure generateFigure5Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(1, 0),
             blockOf(2, 0), blockOf(1, 1),
             blockOf(1, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -347,13 +347,13 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure5Position2() {
+    public MutableGameFigure generateFigure5Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 2), blockOf(1, 2),
             blockOf(2, 2), blockOf(1, 1),
             blockOf(1, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -364,13 +364,13 @@ public class GameFigureGenerator {
      * *--</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure5Position3() {
+    public MutableGameFigure generateFigure5Position3() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 2), blockOf(0, 1),
             blockOf(0, 0), blockOf(1, 1),
             blockOf(2, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -381,13 +381,13 @@ public class GameFigureGenerator {
      * --*</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure5Position4() {
+    public MutableGameFigure generateFigure5Position4() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(1, 1),
             blockOf(2, 1), blockOf(2, 2),
             blockOf(2, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -398,11 +398,11 @@ public class GameFigureGenerator {
      * ---</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure6Position1() {
+    public MutableGameFigure generateFigure6Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(1, 1), blockOf(2, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -413,11 +413,11 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure6Position2() {
+    public MutableGameFigure generateFigure6Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(1, 0), blockOf(1, 1), blockOf(1, 2)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -428,11 +428,11 @@ public class GameFigureGenerator {
      * ---</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure7() {
+    public MutableGameFigure generateFigure7() {
         List<FigureBlock> blocks = List.of(
             blockOf(1, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -443,11 +443,11 @@ public class GameFigureGenerator {
      * *--</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure8Position1() {
+    public MutableGameFigure generateFigure8Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(0, 1), blockOf(1, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -458,11 +458,11 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure8Position2() {
+    public MutableGameFigure generateFigure8Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(1, 1), blockOf(1, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -473,11 +473,11 @@ public class GameFigureGenerator {
      * **-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure8Position3() {
+    public MutableGameFigure generateFigure8Position3() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(1, 0), blockOf(1, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -488,11 +488,11 @@ public class GameFigureGenerator {
      * **-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure8Position4() {
+    public MutableGameFigure generateFigure8Position4() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(0, 0), blockOf(1, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -503,12 +503,12 @@ public class GameFigureGenerator {
      * *--</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure9Position1() {
+    public MutableGameFigure generateFigure9Position1() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 2), blockOf(0, 1),
             blockOf(0, 0), blockOf(1, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -519,12 +519,12 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure9Position2() {
+    public MutableGameFigure generateFigure9Position2() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 1), blockOf(1, 1),
             blockOf(2, 1), blockOf(1, 0)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -535,12 +535,12 @@ public class GameFigureGenerator {
      * -*-</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure9Position3() {
+    public MutableGameFigure generateFigure9Position3() {
         List<FigureBlock> blocks = List.of(
             blockOf(2, 0), blockOf(2, 1),
             blockOf(2, 2), blockOf(1, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     /**
@@ -551,12 +551,12 @@ public class GameFigureGenerator {
      * ***</pre>
      * @return game figure.
      */
-    public GameFigure generateFigure9Position4() {
+    public MutableGameFigure generateFigure9Position4() {
         List<FigureBlock> blocks = List.of(
             blockOf(0, 0), blockOf(1, 0),
             blockOf(2, 0), blockOf(1, 1)
         );
-        return new GameFigure(blocks);
+        return new MutableGameFigure(blocks);
     }
 
     private FigureBlock blockOf(int x, int y) {

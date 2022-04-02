@@ -1,60 +1,45 @@
 package com.ferumbot.jigsaw.client.figure.model;
 
+import com.ferumbot.jigsaw.client.clients.JigsawGameClient;
+import com.ferumbot.jigsaw.client.field.models.GameField;
 import com.ferumbot.jigsaw.client.figure.block.model.FigureBlock;
-import com.ferumbot.jigsaw.core.support.ValueThreadSequence;
 
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
+import java.util.Optional;
 
-public class GameFigure {
+/**
+ * Base game figure API interface.
+ * @see GameField
+ * @see JigsawGameClient
+ * @author matvejpopov
+ * @version 1.0.0
+ */
+public interface GameFigure {
 
-    private final int id;
+    /**
+     * Get's unique figure id.
+     * @return unique id.
+     */
+    int getId();
 
-    private final List<FigureBlock> blocks;
+    /**
+     * Сhecks if figure has been added to the field.
+     * @return true if figure is added to field and false otherwise.
+     */
+    boolean isAddedToField();
 
-    private Coordinates coordinates;
+    /**
+     * Returns field coordinates of current figure.
+     * @return Coordinates if figure is added to field and empty optional otherwise.
+     * @see Coordinates
+     */
+    Optional<Coordinates> getFieldCoordinates();
 
-    public GameFigure(List<FigureBlock> blocks) {
-        this.blocks = blocks;
-        id = ValueThreadSequence.generateInt();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        GameFigure that = (GameFigure) o;
-        return id == that.id && blocks.equals(that.blocks);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, blocks);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Coordinates coordinates) {
-        this.coordinates = coordinates;
-    }
-
-    public void addBlock(FigureBlock block) {
-        blocks.add(block);
-    }
-
-    public boolean removeBlock(FigureBlock block) {
-        return blocks.remove(block);
-    }
-
-    public List<FigureBlock> getBlocks() {
-        return Collections.unmodifiableList(blocks);
-    }
+    /**
+     * Returns the figure blocks.
+     * @return the figure blocks.
+     * @apiNote List is unmodifiable.
+     * @see FigureBlock
+     */
+    List<FigureBlock> getFigureBlocks();
 }
