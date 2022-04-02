@@ -8,7 +8,7 @@ import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.client.figure.model.GameFigure;
 import com.ferumbot.jigsaw.client.figure.model.MutableGameFigure;
 import com.ferumbot.jigsaw.client.figure.service.GameFigureGenerator;
-import com.ferumbot.jigsaw.client.game.GameStatistics;
+import com.ferumbot.jigsaw.client.stuff.GameStatistics;
 
 class DefaultJigsawClient implements JigsawGameClient {
 

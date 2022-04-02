@@ -2,11 +2,9 @@ package com.ferumbot.jigsaw.client.clients;
 
 import com.ferumbot.jigsaw.client.field.models.FieldParams;
 import com.ferumbot.jigsaw.client.field.models.GameField;
-import com.ferumbot.jigsaw.client.field.models.MutableGameField;
 import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.client.figure.model.GameFigure;
-import com.ferumbot.jigsaw.client.figure.model.MutableGameFigure;
-import com.ferumbot.jigsaw.client.game.GameStatistics;
+import com.ferumbot.jigsaw.client.stuff.GameStatistics;
 import com.ferumbot.jigsaw.client.exception.GameNotStartedException;
 import com.ferumbot.jigsaw.client.field.exception.FigureNotAddedException;
 
