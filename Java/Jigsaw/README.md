@@ -12,7 +12,7 @@ You can run using idea:
  3. Open Plugins
  4. Open javafx and run `javafx:run`
  
-<img src="screenshots/how_to_install.png" width="200px" height="400px" alt="How To Install">
+<img src="screenshots/how_to_install.png" width="250px" height="300px" alt="How To Install">
 
 Or you can run nex command:
 
