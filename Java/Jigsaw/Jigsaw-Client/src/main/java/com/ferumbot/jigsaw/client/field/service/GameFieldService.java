@@ -83,6 +83,9 @@ public class GameFieldService {
         var absoluteY = figureBlock.yCoordinate() + targetCoordinates.yCoordinate();
 
         for (FieldBlock fieldBlock: fieldBlocks) {
+            if (fieldBlock.isEmpty()) {
+                continue;
+            }
             if (fieldBlock.xCoordinate() == absoluteX && fieldBlock.yCoordinate() == absoluteY) {
                 return true;
             }

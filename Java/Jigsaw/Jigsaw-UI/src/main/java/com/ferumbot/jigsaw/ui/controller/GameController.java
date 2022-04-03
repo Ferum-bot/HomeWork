@@ -1,6 +1,7 @@
 package com.ferumbot.jigsaw.ui.controller;
 
 import com.ferumbot.jigsaw.client.clients.JigsawGameClient;
+import com.ferumbot.jigsaw.client.field.core.FieldConstants;
 import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.core.base.BaseTimeFormatter;
 import com.ferumbot.jigsaw.ui.adapters.GameAdapter;
@@ -19,8 +20,8 @@ import javafx.util.Duration;
 
 public class GameController {
 
-    private static final int FIELD_BLOCK_WIDTH = 9;
-    private static final int FIELD_BLOCK_HEIGHT = 9;
+    private static final int FIELD_BLOCK_WIDTH = FieldConstants.DEFAULT_FIELD_SIZE;
+    private static final int FIELD_BLOCK_HEIGHT = FieldConstants.DEFAULT_FIELD_SIZE;
 
     private final GameAdapter gameAdapter;
 
@@ -110,7 +111,6 @@ public class GameController {
     }
 
     private void figureReleasedCallback(Coordinates figureBlockCoordinate, Coordinates layoutCoordinate) {
-        System.out.println("ASDASDASD");
         if (figureIsAddedToField(figureBlockCoordinate, layoutCoordinate)) {
             var figure = gameAdapter.getNewFigureView();
             removeCurrentFigure();
@@ -121,9 +121,15 @@ public class GameController {
     }
 
     private boolean figureIsAddedToField(Coordinates figureBlockCoordinate, Coordinates layoutCoordinate) {
-        var addResult = gameAdapter.addFigureToGameField(currentFigure, figureBlockCoordinate, layoutCoordinate);
+        var addResult = gameAdapter.addFigureToGameField(currentFigure, fieldView, figureBlockCoordinate, layoutCoordinate);
+        System.out.println("Add result: " + addResult);
         if (addResult) {
-//            fieldView.addFigure();
+            var figure = currentFigure.getGameFigure();
+            var coordinates = figure.getFigureBlocks().stream()
+                    .map(block -> new Coordinates(block.xCoordinate(), block.yCoordinate()))
+                    .peek(System.out::println)
+                    .toList();
+            fieldView.addFigure(coordinates);
         }
         return addResult;
     }

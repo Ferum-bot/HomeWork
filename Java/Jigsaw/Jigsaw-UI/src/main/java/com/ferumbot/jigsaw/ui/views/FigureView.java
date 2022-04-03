@@ -44,6 +44,10 @@ public class FigureView extends Pane {
         this.figureBlockAndLayoutCoordinatesAction = figureBlockAndLayoutCoordinatesAction;
     }
 
+    public GameFigure getGameFigure() {
+        return gameFigure;
+    }
+
     private void createFigure() {
         var blocks = gameFigure.getFigureBlocks();
         blocks.forEach(block -> {
