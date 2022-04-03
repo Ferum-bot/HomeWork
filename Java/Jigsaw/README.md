@@ -2,7 +2,8 @@
 
 ## Features:
 * Multi module structure.
-* 
+* JavaFX
+* Test coverage
 
 ## Structure:
 

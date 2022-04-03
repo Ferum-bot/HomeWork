@@ -26,11 +26,11 @@ public class FigureView extends Pane {
     }
 
     public void enableDragAndDrop() {
-        dragController.enableWith(this);
+        dragController.enable();
     }
 
     public void disableDragAndDrop() {
-        dragController.disableWith(this);
+        dragController.disable();
     }
 
     public void setPosition(double xCoordinate, double yCoordinate) {

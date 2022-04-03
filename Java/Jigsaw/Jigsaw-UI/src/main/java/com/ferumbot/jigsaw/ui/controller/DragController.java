@@ -13,7 +13,7 @@ public class DragController {
         this.node = node;
     }
 
-    public void enableWith(Node node) {
+    public void enable() {
         node.setOnMousePressed(event -> {
             mouseX = event.getX();
             mouseY = event.getY();
@@ -28,7 +28,7 @@ public class DragController {
         });
     }
 
-    public void disableWith(Node node) {
+    public void disable() {
         node.setOnMousePressed(null);
         node.setOnMouseDragged(null);
     }
