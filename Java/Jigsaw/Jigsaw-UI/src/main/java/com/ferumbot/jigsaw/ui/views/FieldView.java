@@ -14,6 +14,7 @@ public class FieldView extends Pane {
     private int height = 0;
 
     public FieldView(int width, int height, double widthSize, double heightSize) {
+        super();
         this.width = width;
         this.height = height;
         setPrefSize(widthSize, heightSize);

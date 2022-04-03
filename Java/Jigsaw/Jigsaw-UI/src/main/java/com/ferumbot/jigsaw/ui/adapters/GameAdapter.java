@@ -1,6 +1,7 @@
 package com.ferumbot.jigsaw.ui.adapters;
 
 import com.ferumbot.jigsaw.client.clients.JigsawGameClient;
+import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.client.stuff.GameStatistics;
 import com.ferumbot.jigsaw.ui.views.FieldView;
 import com.ferumbot.jigsaw.ui.views.FigureView;
@@ -17,7 +18,9 @@ public class GameAdapter {
         gameClient.startGame();
     }
 
-    public boolean addFigureToGameField(FigureView figureView, FieldView fieldView) {
+    public boolean addFigureToGameField(FigureView figureView, Coordinates figureBlockCoordinates, Coordinates fieldCoordinates) {
+        System.out.println(figureBlockCoordinates);
+        System.out.println(fieldCoordinates);
         return false;
     }
 

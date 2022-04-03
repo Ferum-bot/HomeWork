@@ -2,8 +2,8 @@ package com.ferumbot.jigsaw.ui.settings;
 
 public class ViewsCoordinatesSettings {
 
-    public final static double INIT_FIGURE_X = 5;
-    public final static double INIT_FIGURE_Y = 12;
+    public final static double INIT_FIGURE_X = 13;
+    public final static double INIT_FIGURE_Y = 6;
 
     public final static double DEFAULT_BUTTON_X = 12 * 30;
     public final static double DEFAULT_BUTTON_Y = 30;

@@ -1,11 +1,13 @@
 package com.ferumbot.jigsaw.ui.controller;
 
 import com.ferumbot.jigsaw.client.clients.JigsawGameClient;
+import com.ferumbot.jigsaw.client.figure.model.Coordinates;
 import com.ferumbot.jigsaw.core.base.BaseTimeFormatter;
 import com.ferumbot.jigsaw.ui.adapters.GameAdapter;
 import com.ferumbot.jigsaw.ui.settings.ViewsCoordinatesSettings;
 import com.ferumbot.jigsaw.ui.settings.ViewsSizeSettings;
 import com.ferumbot.jigsaw.ui.views.FieldView;
+import com.ferumbot.jigsaw.ui.views.FigureView;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -33,6 +35,8 @@ public class GameController {
     private Timeline timeline;
 
     private FieldView fieldView;
+
+    private FigureView currentFigure;
 
     private int playedTime = 0;
 
@@ -85,19 +89,13 @@ public class GameController {
 
     private void setAllListeners() {
         playButton.setOnMouseClicked(event -> {
-            gameAdapter.onPlayButtonClicked();
-            playedTime = 0;
-            timeline.play();
-            fieldView.clear();
+            prepareGame();
+            var figure = gameAdapter.getNewFigureView();
+            addNewFigure(figure);
         });
 
         finishButton.setOnMouseClicked(event -> {
-            timeline.stop();
-            var statistics = gameAdapter.onFinishButtonClicked();
-        });
-
-        mainLayout.setOnMouseReleased(event -> {
-
+            releaseGame();
         });
     }
 
@@ -109,5 +107,61 @@ public class GameController {
             timeLabel.setText(formattedTime);
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
+    }
+
+    private void figureReleasedCallback(Coordinates figureBlockCoordinate, Coordinates layoutCoordinate) {
+        System.out.println("ASDASDASD");
+        if (figureIsAddedToField(figureBlockCoordinate, layoutCoordinate)) {
+            var figure = gameAdapter.getNewFigureView();
+            removeCurrentFigure();
+            addNewFigure(figure);
+        } else {
+            moveFigureToStart(currentFigure);
+        }
+    }
+
+    private boolean figureIsAddedToField(Coordinates figureBlockCoordinate, Coordinates layoutCoordinate) {
+        var addResult = gameAdapter.addFigureToGameField(currentFigure, figureBlockCoordinate, layoutCoordinate);
+        if (addResult) {
+//            fieldView.addFigure();
+        }
+        return addResult;
+    }
+
+    private void prepareGame() {
+        gameAdapter.onPlayButtonClicked();
+        playedTime = 0;
+        timeline.play();
+        fieldView.clear();
+        setScore(0);
+    }
+
+    private void releaseGame() {
+        timeline.stop();
+        currentFigure.disableDragAndDrop();
+        moveFigureToStart(currentFigure);
+        removeCurrentFigure();
+        gameAdapter.onFinishButtonClicked();
+    }
+
+    private void addNewFigure(FigureView figureView) {
+        currentFigure = figureView;
+        currentFigure.enableDragAndDrop();
+        moveFigureToStart(currentFigure);
+        currentFigure.setOnFigureReleased(this::figureReleasedCallback);
+
+        mainLayout.getChildren().add(currentFigure);
+    }
+
+    private void removeCurrentFigure() {
+        mainLayout.getChildren().remove(currentFigure);
+    }
+
+    private void moveFigureToStart(FigureView figureView) {
+        figureView.setPosition(ViewsCoordinatesSettings.INIT_FIGURE_X, ViewsCoordinatesSettings.INIT_FIGURE_Y);
+    }
+
+    private void setScore(int score) {
+        scoreLabel.setText("Score: " + score);
     }
 }

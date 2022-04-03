@@ -10,6 +10,7 @@ public class BlockView extends StackPane {
     private final Rectangle block;
 
     public BlockView() {
+        super();
         block = new Rectangle(ViewsSizeSettings.FIELD_CELL_WIDTH, ViewsSizeSettings.FIELD_CELL_HEIGHT);
 
         block.setFill(null);
