@@ -15,6 +15,8 @@ Project contains 4 modules:
 
 ## How to run:
 
+Important! Run `mvn clean install` before each launch.
+
 You can run using idea:
  1. Open Maven
  2. Open main module

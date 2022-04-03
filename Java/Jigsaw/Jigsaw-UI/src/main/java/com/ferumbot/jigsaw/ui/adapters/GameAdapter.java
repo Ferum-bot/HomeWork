@@ -50,10 +50,11 @@ public class GameAdapter {
     ) {
         return gameFigure.getFigureBlocks().stream()
             .map(block -> {
-                var newX = block.xCoordinate() + layoutCoordinate.xCoordinate() + figureBlockCoordinates.xCoordinate();
-                var newY = block.yCoordinate() + layoutCoordinate.yCoordinate() + figureBlockCoordinates.yCoordinate();
+                var newX = block.xCoordinate() + layoutCoordinate.xCoordinate() - figureBlockCoordinates.xCoordinate();
+                var newY = block.yCoordinate() + layoutCoordinate.yCoordinate() - figureBlockCoordinates.yCoordinate();
                 return new Coordinates(newX, newY);
-            }).toList();
+            })
+            .toList();
     }
 
     private boolean isOnField(
@@ -64,7 +65,8 @@ public class GameAdapter {
                 var newX = figureBlock.xCoordinate() + fieldCoordinates.xCoordinate() - figureBlockCoordinates.xCoordinate();
                 var newY = figureBlock.yCoordinate() + fieldCoordinates.yCoordinate() - figureBlockCoordinates.yCoordinate();
                 return new Coordinates(newX, newY);
-            }).toList();
+            })
+            .toList();
 
         for (Coordinates block: actualBlocks) {
             if (block.xCoordinate() < 0 || block.yCoordinate() < 0) {
@@ -81,21 +83,24 @@ public class GameAdapter {
     private Coordinates mapToClientCoordinates(
         Coordinates fieldCoordinates, Coordinates figureBlockCoordinates, GameFigure figure
     ) {
+        var distanceX = fieldCoordinates.xCoordinate() - figureBlockCoordinates.xCoordinate();
+        var distanceY = fieldCoordinates.yCoordinate() - figureBlockCoordinates.yCoordinate();
+
         var blocks = figure.getFigureBlocks();
         FigureBlock minBlock = blocks.get(0);
         for (FigureBlock block: blocks) {
-            if (minBlock.xCoordinate() > block.xCoordinate()) {
+            if (minBlock.yCoordinate() > block.yCoordinate()) {
                 minBlock = block;
             }
-            if (minBlock.xCoordinate() == block.xCoordinate()) {
-                if (minBlock.yCoordinate() > block.yCoordinate()) {
+            if (minBlock.yCoordinate() == block.yCoordinate()) {
+                if (minBlock.xCoordinate() > block.xCoordinate()) {
                     minBlock = block;
                 }
             }
         }
 
-        var newX = fieldCoordinates.xCoordinate() + minBlock.xCoordinate() - figureBlockCoordinates.xCoordinate();
-        var newY = fieldCoordinates.yCoordinate() + minBlock.yCoordinate() - figureBlockCoordinates.yCoordinate();
+        var newX = fieldCoordinates.xCoordinate() - figureBlockCoordinates.xCoordinate();
+        var newY = fieldCoordinates.yCoordinate() - figureBlockCoordinates.yCoordinate();
         return new Coordinates(newX, newY);
     }
 }

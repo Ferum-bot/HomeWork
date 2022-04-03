@@ -128,7 +128,6 @@ public class GameController {
         if (addResult) {
             var figure = currentFigure.getGameFigure();
             var coordinates = gameAdapter.mapToUICoordinates(figure, layoutCoordinate, figureBlockCoordinate);
-            System.out.println(coordinates);
             fieldView.addFigure(coordinates);
         }
         return addResult;

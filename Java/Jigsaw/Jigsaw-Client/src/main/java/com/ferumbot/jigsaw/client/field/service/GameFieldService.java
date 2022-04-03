@@ -17,9 +17,12 @@ public class GameFieldService {
         var figureBlocks = figure.getFigureBlocks();
         var fieldBlocks = generateFieldBlocks(field);
 
+        System.out.println("Target Coordinates: " + targetCoordinate);
+
         for (FigureBlock figureBlock: figureBlocks) {
             var absoluteX = figureBlock.xCoordinate() + targetCoordinate.xCoordinate();
             var absoluteY = figureBlock.yCoordinate() + targetCoordinate.yCoordinate();
+            System.out.println("Absolute Block: " + absoluteX + " " + absoluteY);
 
             if (absoluteX < 0 || absoluteX >= params.blockWidth()) {
                 return false;
@@ -86,6 +89,7 @@ public class GameFieldService {
             if (fieldBlock.isEmpty()) {
                 continue;
             }
+            System.out.println("FieldBlock: " + fieldBlock.xCoordinate() + " " + fieldBlock.yCoordinate());
             if (fieldBlock.xCoordinate() == absoluteX && fieldBlock.yCoordinate() == absoluteY) {
                 return true;
             }
