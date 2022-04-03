@@ -30,7 +30,6 @@ public class GameAdapter {
 
         var figure = figureView.getGameFigure();
         var targetCoordinates = mapToClientCoordinates(fieldView, figureBlockCoordinates, fieldCoordinates);
-        System.out.println(targetCoordinates);
         return gameClient.addFigureToField(figure, targetCoordinates);
     }
 

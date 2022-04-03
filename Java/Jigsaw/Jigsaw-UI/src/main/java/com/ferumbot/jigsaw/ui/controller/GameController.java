@@ -128,9 +128,12 @@ public class GameController {
         if (addResult) {
             var figure = currentFigure.getGameFigure();
             var coordinates = figure.getFigureBlocks().stream()
-                    .map(block -> new Coordinates(block.xCoordinate(), block.yCoordinate()))
-                    .peek(System.out::println)
-                    .toList();
+                    .map(block -> {
+                        var newX = block.xCoordinate() + layoutCoordinate.xCoordinate() - 1;
+                        var newY = block.yCoordinate() + layoutCoordinate.yCoordinate() ;
+                        return new Coordinates(newX, newY);
+                    }).toList();
+            System.out.println(coordinates);
             fieldView.addFigure(coordinates);
         }
         return addResult;
