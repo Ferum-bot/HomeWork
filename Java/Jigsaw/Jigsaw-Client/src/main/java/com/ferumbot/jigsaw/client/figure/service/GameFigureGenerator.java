@@ -65,15 +65,15 @@ public class GameFigureGenerator {
     /**
      * Generates figure:
      * <pre>
-     * -**
-     * -*-
-     * -*-</pre>
+     * **-
+     * *--
+     * *--</pre>
      * @return game figure.
      */
     public MutableGameFigure generateFigure1Position1() {
         List<FigureBlock> blocks = List.of(
-            blockOf(1, 0), blockOf(1, 1),
-            blockOf(1, 2), blockOf(2, 2)
+            blockOf(0, 0), blockOf(0, 1),
+            blockOf(0, 2), blockOf(1, 2)
         );
         return new MutableGameFigure(blocks);
     }
@@ -145,15 +145,15 @@ public class GameFigureGenerator {
     /**
      * Generates figure:
      * <pre>
+     * ---
      * --*
-     * ***
-     * ---</pre>
+     * ***</pre>
      * @return game figure.
      */
     public MutableGameFigure generateFigure2Position2() {
         List<FigureBlock> blocks = List.of(
-            blockOf(0, 1), blockOf(1, 1),
-            blockOf(2, 1), blockOf(2, 2)
+            blockOf(0, 0), blockOf(1, 0),
+            blockOf(2, 0), blockOf(2, 1)
         );
         return new MutableGameFigure(blocks);
     }
@@ -394,13 +394,13 @@ public class GameFigureGenerator {
      * Generates figure:
      * <pre>
      * ---
-     * ***
-     * ---</pre>
+     * ---
+     * ***</pre>
      * @return game figure.
      */
     public MutableGameFigure generateFigure6Position1() {
         List<FigureBlock> blocks = List.of(
-            blockOf(0, 1), blockOf(1, 1), blockOf(2, 1)
+            blockOf(0, 0), blockOf(1, 0), blockOf(2, 0)
         );
         return new MutableGameFigure(blocks);
     }
@@ -408,14 +408,14 @@ public class GameFigureGenerator {
     /**
      * Generates figure:
      * <pre>
-     * -*-
-     * -*-
-     * -*-</pre>
+     * *--
+     * *--
+     * *--</pre>
      * @return game figure.
      */
     public MutableGameFigure generateFigure6Position2() {
         List<FigureBlock> blocks = List.of(
-            blockOf(1, 0), blockOf(1, 1), blockOf(1, 2)
+            blockOf(0, 0), blockOf(0, 1), blockOf(0, 2)
         );
         return new MutableGameFigure(blocks);
     }
@@ -424,13 +424,13 @@ public class GameFigureGenerator {
      * Generates figure:
      * <pre>
      * ---
-     * -*-
-     * ---</pre>
+     * -0-
+     * *--</pre>
      * @return game figure.
      */
     public MutableGameFigure generateFigure7() {
         List<FigureBlock> blocks = List.of(
-            blockOf(1, 1)
+            blockOf(0, 0)
         );
         return new MutableGameFigure(blocks);
     }

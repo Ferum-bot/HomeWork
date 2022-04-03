@@ -127,12 +127,7 @@ public class GameController {
         var addResult = gameAdapter.addFigureToGameField(currentFigure, fieldView, figureBlockCoordinate, layoutCoordinate);
         if (addResult) {
             var figure = currentFigure.getGameFigure();
-            var coordinates = figure.getFigureBlocks().stream()
-                    .map(block -> {
-                        var newX = block.xCoordinate() + layoutCoordinate.xCoordinate() - 1;
-                        var newY = block.yCoordinate() + layoutCoordinate.yCoordinate() ;
-                        return new Coordinates(newX, newY);
-                    }).toList();
+            var coordinates = gameAdapter.mapToUICoordinates(figure, layoutCoordinate, figureBlockCoordinate);
             System.out.println(coordinates);
             fieldView.addFigure(coordinates);
         }
