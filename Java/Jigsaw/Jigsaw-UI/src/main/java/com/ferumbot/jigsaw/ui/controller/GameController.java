@@ -40,6 +40,7 @@ public class GameController {
     private FigureView currentFigure;
 
     private int playedTime = 0;
+    private int score = 0;
 
     public GameController() {
         gameAdapter = new GameAdapter(JigsawGameClient.getInstance());
@@ -113,6 +114,8 @@ public class GameController {
     private void figureReleasedCallback(Coordinates figureBlockCoordinate, Coordinates layoutCoordinate) {
         if (figureIsAddedToField(figureBlockCoordinate, layoutCoordinate)) {
             var figure = gameAdapter.getNewFigureView();
+            score += figure.getGameFigure().getFigureBlocks().size();
+            setScore(score);
             removeCurrentFigure();
             addNewFigure(figure);
         } else {
@@ -122,7 +125,6 @@ public class GameController {
 
     private boolean figureIsAddedToField(Coordinates figureBlockCoordinate, Coordinates layoutCoordinate) {
         var addResult = gameAdapter.addFigureToGameField(currentFigure, fieldView, figureBlockCoordinate, layoutCoordinate);
-        System.out.println("Add result: " + addResult);
         if (addResult) {
             var figure = currentFigure.getGameFigure();
             var coordinates = figure.getFigureBlocks().stream()
@@ -137,9 +139,10 @@ public class GameController {
     private void prepareGame() {
         gameAdapter.onPlayButtonClicked();
         playedTime = 0;
+        score = 0;
         timeline.play();
         fieldView.clear();
-        setScore(0);
+        setScore(score);
     }
 
     private void releaseGame() {

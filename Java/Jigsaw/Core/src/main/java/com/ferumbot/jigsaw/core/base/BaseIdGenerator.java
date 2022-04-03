@@ -2,7 +2,7 @@ package com.ferumbot.jigsaw.core.base;
 
 public class BaseIdGenerator {
 
-    private static final Character SEPARATOR = '$';
+    public static final Character SEPARATOR = '$';
 
     public static String generateId(int first, int second) {
         return String.valueOf(first) + SEPARATOR + second;
