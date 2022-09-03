@@ -1,0 +1,61 @@
+header {
+    background-color: blueviolet;
+    color: aliceblue;
+    height: 10%;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+main {
+    margin: 20px 20px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+form {
+    width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input, form select {
+    padding: 0.5rem, 1rem;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+form > button {
+    cursor: pointer;
+    background-color: blueviolet;
+    color: aliceblue;
+    border: none;
+    padding: 0.5rem 0.8rem;
+}
+
+form > button:hover {
+    background-color: violet;
+}
+
+ul {
+    list-style: none;
+    width: 500px;
+    margin: 2rem auto;
+    padding: 0;
+}
+
+.new-todo-input {
+    height: 150px;
+}
+
+.todo-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
