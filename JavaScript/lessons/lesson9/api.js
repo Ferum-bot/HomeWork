@@ -15,8 +15,15 @@ async function getAllTasks() {
     return await getData(url)
 }
 
-async function createNewTask() {
-
+async function createNewTask(taskData) {
+    const url = host = '/todos'
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(taskData),
+    })
 }
 
 async function changeTaskStatus() {

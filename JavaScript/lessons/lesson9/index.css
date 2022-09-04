@@ -40,15 +40,15 @@ input[type="text"] {
     width: 100%;
 }
 
-form > button {
+#add-todo-button {
     cursor: pointer;
-    background-color: blueviolet;
+    background-color: rgb(211, 226, 43);
     color: aliceblue;
     border: none;
     padding: 0.5rem 0.8rem;
 }
 
-form > button:hover {
+#add-todo-button:hover {
     background-color: violet;
 }
 
