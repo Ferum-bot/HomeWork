@@ -1,19 +1,28 @@
-export async function getUsers() {
+const host = 'https://jsonplaceholder.typicode.com'
+
+async function getData(url) {
+    const response = await fetch(url)
+    return await response.json()
+}
+
+async function getUsers() {
+    const url = host + '/users'
+    return await getData(url)
+}
+
+async function getAllTasks() {
+    const url = host + '/todos'
+    return await getData(url)
+}
+
+async function createNewTask() {
 
 }
 
-export async function getAllTasks() {
-    
-}
-
-export async function createNewTask() {
+async function changeTaskStatus() {
 
 }
 
-export async function changeTaskStatus() {
-
-}
-
-export async function deleteTask() {
+async function deleteTask() {
 
 }

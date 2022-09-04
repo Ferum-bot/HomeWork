@@ -1,0 +1,2 @@
+let currentTasks = []
+let availableUsers = []
