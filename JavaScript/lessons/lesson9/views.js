@@ -1,2 +1,5 @@
 const taskList = document.getElementById('todo-list')
 const userSelector = document.getElementById('user-selector')
+const addTaskButton = document.getElementById('add-todo-button')
+const taskInput = document.getElementById('new-todo-input')
+const taskForm = document.getElementById('task-form')

@@ -16,7 +16,7 @@ async function getAllTasks() {
 }
 
 async function createNewTask(taskData) {
-    const url = host = '/todos'
+    const url = host + '/todos'
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -24,12 +24,33 @@ async function createNewTask(taskData) {
         },
         body: JSON.stringify(taskData),
     })
+    return await response.json()
 }
 
-async function changeTaskStatus() {
-
+async function changeTaskStatus(taskId, newStatus) {
+    const url = host + `/todos/${taskId}`
+    const response = await fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            completed: newStatus
+        })
+    })
+    return await response.json()
 }
 
-async function deleteTask() {
+async function deleteTask(taskId) {
+    const url = host + `/todos/${taskId}`
+    const response = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
 
+    if (response.status !== 200) {
+        throw new Error('Something wen wrong')
+    }
 }
