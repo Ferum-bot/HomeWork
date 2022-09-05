@@ -1,0 +1,31 @@
+{
+  "name": "lesson10-task",
+  "version": "1.0.0",
+  "description": "SPA for ip map resolution",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --out-dir=build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ferum-bot/HomeWork.git"
+  },
+  "keywords": [
+    "JS",
+    "JavaScript",
+    "npm",
+    "Maps",
+    "API",
+    "IP"
+  ],
+  "author": "Ferum-bot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ferum-bot/HomeWork/issues"
+  },
+  "homepage": "https://github.com/Ferum-bot/HomeWork#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
