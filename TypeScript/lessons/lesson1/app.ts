@@ -14,3 +14,28 @@ const user = {
 getFullName(user)
 
 const skills: readonly string[] = ['dev', 'devops']
+const newSkills: Array<string> = []
+
+enum QuastionStatus {
+    PUBLISHED = 'published',
+    DRAFT = 'draft',
+    DELETED = 'deleted'
+}
+
+async function getFaqs(req: { 
+    topicId: number,
+    status: QuastionStatus
+ }): Promise<{
+    quastion: string,
+    answer: string,
+    tags: string[],
+    likes: number,
+    statis: QuastionStatus
+ }[]> {
+    const res = await fetch('/faqs', {
+        method: 'POST',
+        body: JSON.stringify(req)
+    })
+    const data = await res.json()
+    return data
+ }
