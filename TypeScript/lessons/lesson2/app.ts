@@ -15,3 +15,7 @@ function signWithAuth(url: string, method: HttpMethod): 1 | -1 {
     
     return -1
 }
+
+function isString(input: any): input is string {
+    return typeof input === 'string'
+}
