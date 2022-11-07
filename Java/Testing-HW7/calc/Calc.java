@@ -18,12 +18,19 @@ public class Calc {
         }
     }
 
+    public static Double opnAndCalculate(String input) throws CalcException {
+        return calculate(opn(input));
+    }
+
     /**
      * Преобразовать строку в обратную польскую нотацию
      * @param sIn Входная строка
      * @return Выходная строка в обратной польской нотации
      */
     public static String opn(String sIn) throws CalcException {
+        if (sIn == null) {
+            throw new CalcException("Input can't be null");
+        }
         StringBuilder sbStack = new StringBuilder(), sbOut = new StringBuilder();
         char cIn, cTmp;
 
@@ -44,10 +51,10 @@ public class Calc {
                 sbStack.append(cIn);
             } else if ('(' == cIn) {
                 sbStack.append(cIn);
-            } else if (')' == cIn) {
+            } else if (')' == cIn && sbStack.length() != 0) {
                 cTmp = sbStack.substring(sbStack.length()-1).charAt(0);
                 while ('(' != cTmp) {
-                    if (sbStack.length() < 1) {
+                    if (sbStack.length() <= 1) {
                         throw new CalcException("Ошибка разбора скобок. Проверьте правильность выражения.");
                     }
                     sbOut.append(" ").append(cTmp);
@@ -154,10 +161,12 @@ public class Calc {
                 }
             } catch (CalcException e) {
                 throw new CalcException("Недопустимый символ в выражении");
+            } catch (NumberFormatException | StringIndexOutOfBoundsException e) {
+                throw new CalcException("Invalid input format");
             }
         }
 
-        if (stack.size() > 1) {
+        if (stack.size() != 1) {
             throw new CalcException("Количество операторов не соответствует количеству операндов");
         }
 
