@@ -1,5 +1,6 @@
 # Fuzzer results
 ## Total suites `#7954740`. Founded bugs:
+
 ## № 1
 ```java
 == Java Exception: java.lang.NullPointerException
